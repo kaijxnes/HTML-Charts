@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML Charts</title>
+<meta name="description" content="Custom Chart.js visuals for HTML containers – live demos on mock data and copy-paste snippets.">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
+  <nav class="nav"><a href="index.html" class="on">Home</a><a href="monthly-bars.html">Monthly Bars</a><a href="stacked-segments.html">Stacked Segments</a><a href="segment-breakdown.html">Segment Breakdown</a><a href="cost-vs-return.html">Cost vs Return</a></nav>
+</div></header>
+<main>
+
+<section class="hero">
+  <div class="eyebrow">For dashboards with HTML containers</div>
+  <h1>Custom charts that sit inside an HTML container</h1>
+  <p class="lede">Each chart reads a normal grid on the same page and redraws it as a richer visual – cards, toggles, segments, filters. Pick a chart to see it running on mock data and copy its snippet.</p>
+</section>
+
+<div class="steps">
+  <div class="step"><div class="n">1</div><h3>Add a grid</h3><p>Put a grid with the chart's columns on the page. It's the data source – tuck it behind the chart.</p></div>
+  <div class="step"><div class="n">2</div><h3>Paste the snippet</h3><p>Add an HTML container and paste the chart's snippet. It loads the pinned chart script from here.</p></div>
+  <div class="step"><div class="n">3</div><h3>Present</h3><p>The chart reads every row of the grid and follows filters automatically.</p></div>
+</div>
+
+<h2>Charts</h2>
+<div class="cards"><a class="card" href="monthly-bars.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/monthly-bars.png)"></div>
+  <div class="body"><h3>Monthly Bars</h3><p>A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.</p>
+  <div class="tags"><span class="tag">Bar + line</span><span class="tag">Metric toggle</span><span class="tag">Averages</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="stacked-segments.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/stacked-segments.png)"></div>
+  <div class="body"><h3>Stacked Segments</h3><p>Metric × count by month, stacked by segment (any combination of three dimensions), with filters and a ranking.</p>
+  <div class="tags"><span class="tag">Stacked bars</span><span class="tag">Segments</span><span class="tag">Filters</span><span class="tag">Large grids</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="segment-breakdown.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/segment-breakdown.png)"></div>
+  <div class="body"><h3>Segment Breakdown</h3><p>The stacked segment view for grids with the month first and two dimensions – starts on Dimension A, combine with Dimension C.</p>
+  <div class="tags"><span class="tag">Stacked bars</span><span class="tag">Segments</span><span class="tag">Large grids</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="cost-vs-return.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/cost-vs-return.png)"></div>
+  <div class="body"><h3>Cost vs Return</h3><p>A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.</p>
+  <div class="tags"><span class="tag">KPIs</span><span class="tag">ROI</span><span class="tag">Cost per unit</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a></div>
+
+<h2>Safe by design</h2>
+<div class="trust">
+  <div><h3>No data leaves the page</h3><p>Charts read what the page shows the viewer and calculate in their browser. Nothing is uploaded.</p></div>
+  <div><h3>Pinned &amp; integrity-checked</h3><p>Every script is versioned and loaded with an SRI hash, so altered code is refused before it runs.</p></div>
+  <div><h3>Permissions still apply</h3><p>Charts only see rows the viewer is allowed to see. No logins, keys or API calls.</p></div>
+</div>
+
+</main>
+<footer><div class="in">
+  <span>HTML Charts · charts v1.0.0 · built on <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>All values on this site are placeholders.</span>
+</div></footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
