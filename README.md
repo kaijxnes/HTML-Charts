@@ -31,6 +31,11 @@ Each chart has a page with a live demo on random data (hit *Shuffle data* to wat
 | Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.0.0.js` |
 | Treemap | `treemap.html` | `charts/treemap-1.0.0.js` |
 | Small Multiples | `small-multiples.html` | `charts/small-multiples-1.0.0.js` |
+| Variance Table | `variance-table.html` | `charts/variance-table-1.0.0.js` |
+| Gauges | `gauges.html` | `charts/gauges-1.0.0.js` |
+| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.0.0.js` |
+| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.0.0.js` |
+| Box Plot | `box-plot.html` | `charts/box-plot-1.0.0.js` |
 
 ## How it works
 

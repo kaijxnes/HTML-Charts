@@ -227,6 +227,50 @@
       return { hd: hd, num: [2], rows: rows };
     },
 
+    "variance-table": function () {
+      var hd = ["Month Key", "Dimension A", "Metric 1", "Metric 2", "Metric 3"], rows = [], n = 10, b = [], tr = [];
+      for (var j = 0; j < n; j++) { b.push([Math.exp(R(9, 12)), R(100, 3000), R(2, 15)]); tr.push(R(-0.04, 0.05)); }
+      keys(13).forEach(function (k, i) {
+        var t = 12 - i;
+        for (var j = 0; j < n; j++) { var f = Math.pow(1 + tr[j], t); rows.push([j ? "" : k, "A" + (j + 1), money(b[j][0] * f * noise(0.12)), count(b[j][1] * f * noise(0.1)), pct(b[j][2] * noise(0.12))]); }
+      });
+      return { hd: hd, num: [2, 3, 4], rows: rows };
+    },
+
+    "gauges": function () {
+      var hd = ["Dimension A", "Metric 1", "Metric 2"], t;
+      var rows = [];
+      t = R(2e5, 9e5); rows.push(["Goal 1", money(t * R(0.8, 1.2)), money(t)]);
+      t = R(1000, 9000); rows.push(["Goal 2", count(t * R(0.8, 1.2)), count(t)]);
+      t = R(5, 30); rows.push(["Goal 3", pct(t * R(0.8, 1.2)), pct(t)]);
+      t = R(20, 90); rows.push(["Goal 4", money2(t * R(0.85, 1.2)), money2(t)]);
+      t = R(50, 400); rows.push(["Goal 5", count(t * R(0.8, 1.2)), count(t)]);
+      t = R(40, 95); rows.push(["Goal 6", pct(Math.min(99, t * R(0.85, 1.15))), pct(t)]);
+      return { hd: hd, num: [1, 2], rows: rows };
+    },
+
+    "combo-chart": function () {
+      var hd = ["Date", "Metric 1", "Metric 2", "Metric 3"], rows = [], b = R(1e5, 6e5), g = R(-0.01, 0.025), m = R(10, 35), c = R(500, 5000);
+      var season = [0.85, 0.82, 0.95, 0.97, 1.0, 0.98, 0.92, 0.94, 1.02, 1.08, 1.12, 1.3];
+      keys(30).forEach(function (k, i) {
+        var t = 29 - i, mo = Number(k.slice(4)) - 1;
+        rows.push([k, money(b * Math.pow(1 + g, t) * season[mo] * noise(0.08)), pct(m * noise(0.12)), count(c * Math.pow(1 + g, t) * season[mo] * noise(0.1))]);
+      });
+      return { hd: hd, num: [1, 2, 3], rows: rows };
+    },
+
+    "flow-sankey": function () {
+      var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], A = 6, B = 5;
+      for (var a = 1; a <= A; a++) { var w = Math.exp(R(0, 1.8)), first = true; for (var bb = 1; bb <= B; bb++) if (bb === 1 || R(0, 1) > 0.15) { rows.push([first ? "A" + a : "", "B" + bb, count(w * Math.exp(R(5, 8)) * (bb === a % B + 1 ? 2.5 : 1))]); first = false; } }
+      return { hd: hd, num: [2], rows: rows };
+    },
+
+    "box-plot": function () {
+      var hd = ["Dimension A", "Metric 1"], rows = [];
+      for (var a = 1; a <= 6; a++) { var mu = R(3, 4.5), sd = R(0.3, 0.7); for (var i = 0; i < 80; i++) rows.push(["A" + a, money2(Math.exp(mu + sd * (R(-1, 1) + R(-1, 1) + R(-1, 1))))]); }
+      return { hd: hd, num: [1], rows: rows };
+    },
+
     "kpi-scorecard": function () {
       var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"];
       var s = { m1: R(2e5, 9e5), m2: R(2000, 9000), m3: R(5e4, 2e5), m4: R(8, 30), m5: R(40, 120), m6: R(200, 1500) };

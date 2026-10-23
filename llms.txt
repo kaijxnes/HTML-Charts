@@ -29,6 +29,11 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Anomaly Watch](https://kaijxnes.github.io/HTML-Charts/anomaly-watch.html): A daily or monthly metric against its rolling average with a normal band, flagging the points that are unusually high or low. Script: https://kaijxnes.github.io/HTML-Charts/charts/anomaly-watch-1.0.0.js
 - [Treemap](https://kaijxnes.github.io/HTML-Charts/treemap.html): Rectangles sized by value, grouped by one dimension and split by a second – click a group to zoom in. Script: https://kaijxnes.github.io/HTML-Charts/charts/treemap-1.0.0.js
 - [Small Multiples](https://kaijxnes.github.io/HTML-Charts/small-multiples.html): A small chart per segment, side by side, with the latest value and change – on the same scale or each on its own. Script: https://kaijxnes.github.io/HTML-Charts/charts/small-multiples-1.0.0.js
+- [Variance Table](https://kaijxnes.github.io/HTML-Charts/variance-table.html): A table of up to three metrics by segment for any month against the previous month or last year, with colour-coded changes and totals. Script: https://kaijxnes.github.io/HTML-Charts/charts/variance-table-1.0.0.js
+- [Gauges](https://kaijxnes.github.io/HTML-Charts/gauges.html): Up to 12 KPIs as dials against their targets, with red/amber/green zones and a target marker. Script: https://kaijxnes.github.io/HTML-Charts/charts/gauges-1.0.0.js
+- [Combo Chart](https://kaijxnes.github.io/HTML-Charts/combo-chart.html): Bars for one metric with one or two more as lines on a second axis, grouped by day, week, month, quarter or year. Script: https://kaijxnes.github.io/HTML-Charts/charts/combo-chart-1.0.0.js
+- [Flow (Sankey)](https://kaijxnes.github.io/HTML-Charts/flow-sankey.html): How a total flows from one dimension to another – e.g. source to outcome – as bands sized by value. Click a node to highlight its flows. Script: https://kaijxnes.github.io/HTML-Charts/charts/flow-sankey-1.0.0.js
+- [Box Plot](https://kaijxnes.github.io/HTML-Charts/box-plot.html): The spread of a value within each group – median, middle 50%, whiskers, mean and outliers – to compare groups fairly. Script: https://kaijxnes.github.io/HTML-Charts/charts/box-plot-1.0.0.js
 
 ## Optional
 
