@@ -18,7 +18,7 @@
 
   var GEN = {
     "monthly-bars": function () {
-      var hd = ["Month Index", "Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 1 Avg", "Metric 2 Avg", "Metric 3 Avg", "Metric 4"];
+      var hd = ["Month Index", "Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 1 Avg", "Metric 2 Avg", "Metric 3 Avg", "Units"];
       var ks = keys(12), base = R(30, 90), trend = R(-0.03, 0.04), low = RI(6, 11), rows = [];
       ks.forEach(function (k, i) {
         var v1 = base * Math.pow(1 + trend, 11 - i) * noise(0.18), v2 = v1 * R(1.1, 1.3), v3 = v2 * R(1.1, 1.3);
@@ -32,7 +32,7 @@
     },
 
     "stacked-segments": function () {
-      var hd = ["Month Index", "Dimension C", "Dimension A", "Dimension B", "Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4"];
+      var hd = ["Month Index", "Dimension C", "Dimension A", "Dimension B", "Month Key", "Metric 1", "Metric 2", "Metric 3", "Units"];
       var A = ["A1", "A2", "A3", "A4"], B = ["B1", "B2", "B3"], C = ["C1", "C2", "C3"];
       var w = {}; A.concat(B, C).forEach(function (x) { w[x] = R(0.4, 1.6); });
       var rows = [];
@@ -48,7 +48,7 @@
     },
 
     "segment-breakdown": function () {
-      var hd = ["Month Key", "Dimension C", "Month Index", "Dimension A", "Metric 4", "Metric 1"];
+      var hd = ["Month Key", "Dimension C", "Month Index", "Dimension A", "Units", "Metric 1"];
       var A = ["A1", "A2", "A3", "A4", "A5"], C = ["C1", "C2", "C3", "C4"];
       var w = {}; A.concat(C).forEach(function (x) { w[x] = R(0.4, 1.6); });
       var rows = [];
@@ -62,7 +62,7 @@
     },
 
     "cost-vs-return": function () {
-      var hd = ["Month Index", "Month Key", "Metric 4", "Metric 1", "Metric 5"];
+      var hd = ["Month Index", "Month Key", "Units", "Metric 1", "Cost"];
       var rows = [], eff = R(0.45, 0.85);
       for (var t = -2; t < 0; t++) rows.push([String(t), "", "", "$0", money2(R(2000, 20000))]);     // no month key: left out
       keys(12).forEach(function (k, t) {
@@ -74,7 +74,7 @@
     },
 
     "month-heatmap": function () {
-      var hd = ["Month Key", "Month Index", "Metric 1", "Metric 2"];
+      var hd = ["Month Key", "Month Index", "Metric 1", "Units"];
       var rows = [], ks = keys(12).reverse(), decay = R(0.72, 0.88);
       ks.forEach(function (k, mi) {
         var base = RI(400, 3000), vpu = R(8, 30) * noise(0.25), age = ks.length - mi;

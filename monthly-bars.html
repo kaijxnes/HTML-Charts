@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Monthly Bars – HTML container chart", "description": "A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.", "url": "https://kaijxnes.github.io/HTML-Charts/monthly-bars.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/monthly-bars.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.0.0.js", "version": "1.0.0", "keywords": "Bar + line, Metric toggle, Averages, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Monthly Bars – HTML container chart", "description": "A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.", "url": "https://kaijxnes.github.io/HTML-Charts/monthly-bars.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/monthly-bars.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.1.0.js", "version": "1.1.0", "keywords": "Bar + line, Metric toggle, Averages, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://kaijxnes.github.io/HTML-Charts/"}, {"@type": "ListItem", "position": 2, "name": "Monthly Bars", "item": "https://kaijxnes.github.io/HTML-Charts/monthly-bars.html"}]}</script>
 </head>
 <body>
@@ -33,7 +33,7 @@
   <div class="eyebrow">Free Chart.js chart for HTML containers</div>
   <h1>Monthly Bars</h1>
   <p class="lede">A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.</p>
-  <div class="pillrow"><span class="pill">v1.0.0</span><span class="pill mock">Live demo · random data</span><span class="pill">1–4 metrics · 0 dimensions · date</span><span class="pill">Over time</span><span class="pill">KPIs</span></div>
+  <div class="pillrow"><span class="pill">v1.1.0</span><span class="pill mock">Live demo · random data</span><span class="pill">1–4 metrics · 0 dimensions · date</span><span class="pill">Over time</span><span class="pill">KPIs</span></div>
 </section>
 
 <div class="demo">
@@ -55,20 +55,20 @@
     <li>Add an <b>HTML container</b> (one that runs JavaScript) and paste the snippet.</li>
     <li>View the page. The chart finds the grid, reads every row and draws itself; it updates when filters change the grid.</li>
   </ol>
-  <table class="cols"><thead><tr><th>Default header</th><th>Key</th><th></th><th>What it's for</th></tr></thead><tbody><tr><td><code>Month Key</code></td><td><code>month</code></td><td><span class="req">Required</span></td><td>One bar per month (e.g. 202608).</td></tr><tr><td><code>Metric 1</code></td><td><code>v12</code></td><td><span class="req">Required</span></td><td>$ value per unit. Metric 2 and Metric 3 add the toggle.</td></tr><tr><td><code>Metric 1 Avg</code></td><td><code>a12</code></td><td><span class="opt">Optional</span></td><td>Filled for the latest 6 months only – drives the average cards (also Metric 2/3 Avg).</td></tr><tr><td><code>Metric 4</code></td><td><code>act</code></td><td><span class="opt">Optional</span></td><td>Count – drawn as the line.</td></tr><tr><td><code>Month Index</code></td><td><code>idx</code></td><td><span class="opt">Optional</span></td><td>Used to order months if the month key can't be read.</td></tr></tbody></table>
+  <table class="cols"><thead><tr><th>Default header</th><th>Key</th><th></th><th>What it's for</th></tr></thead><tbody><tr><td><code>Month Key</code></td><td><code>month</code></td><td><span class="req">Required</span></td><td>One bar per month (e.g. 202608).</td></tr><tr><td><code>Metric 1</code></td><td><code>v12</code></td><td><span class="req">Required</span></td><td>$ value per unit. Metric 2 and Metric 3 add the toggle.</td></tr><tr><td><code>Metric 1 Avg</code></td><td><code>a12</code></td><td><span class="opt">Optional</span></td><td>Filled for the latest 6 months only – drives the average cards (also Metric 2/3 Avg).</td></tr><tr><td><code>Units</code></td><td><code>units</code></td><td><span class="opt">Optional</span></td><td>Units – how many users, customers or orders – drawn as the line.</td></tr><tr><td><code>Month Index</code></td><td><code>idx</code></td><td><span class="opt">Optional</span></td><td>Used to order months if the month key can't be read.</td></tr></tbody></table>
   <div class="code"><div class="bar"><span>Snippet for the HTML container</span><button class="copy" data-copy="snip1">Copy</button></div><pre id="snip1">&lt;div data-chart-embed=&quot;monthly-bars&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.0.0.js&quot;;
-  s.integrity = &quot;sha384-z6+sJQfmoyrSyei3RZRlFxzSG+Rt6mstzHu1xieApmTTqgmPGQE9qR2pkGVRnvd2&quot;;
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.1.0.js&quot;;
+  s.integrity = &quot;sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
 &lt;/script&gt;</pre></div>
   <dl class="kv">
-    <dt>Script URL</dt><dd><a href="charts/monthly-bars-1.0.0.js"><code>https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.0.0.js</code></a></dd>
-    <dt>Integrity (SRI)</dt><dd><code>sha384-z6+sJQfmoyrSyei3RZRlFxzSG+Rt6mstzHu1xieApmTTqgmPGQE9qR2pkGVRnvd2</code></dd>
+    <dt>Script URL</dt><dd><a href="charts/monthly-bars-1.1.0.js"><code>https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.1.0.js</code></a></dd>
+    <dt>Integrity (SRI)</dt><dd><code>sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm</code></dd>
     <dt>Chart.js</dt><dd><code>https://kaijxnes.github.io/HTML-Charts/chart.umd-4.4.1.js</code> · <code>sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG</code></dd>
   </dl>
   <div class="note">The integrity value pins this exact version: the browser refuses to run the script if a single byte changes. New versions get a new file name and a new snippet, so a dashboard only changes when you paste the new snippet.</div>
@@ -78,8 +78,8 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.0.0.js&quot;;
-  s.integrity = &quot;sha384-z6+sJQfmoyrSyei3RZRlFxzSG+Rt6mstzHu1xieApmTTqgmPGQE9qR2pkGVRnvd2&quot;;
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.1.0.js&quot;;
+  s.integrity = &quot;sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
@@ -87,7 +87,7 @@
 </div>
 
 <h2>What it does</h2>
-<ul class="features"><li>Bars for the chosen metric by month; click a card or button to switch</li><li>Cards with the 6-month average of each metric</li><li>Dashed average line; months outside the window are faded</li><li>Metric 4 as a line on its own axis</li><li>Optional low-volume flag: add <code>data-min-volume="600"</code> to stripe and badge months where Metric 4 is below that (on in this demo)</li></ul>
+<ul class="features"><li>Bars for the chosen metric by month; click a card or button to switch</li><li>Cards with the 6-month average of each metric</li><li>Dashed average line; months outside the window are faded</li><li>Units as a line on its own axis</li><li>Optional low-volume flag: add <code>data-min-volume="600"</code> to stripe and badge months with fewer Units than that (on in this demo)</li></ul>
 
 <h2>Data &amp; security</h2>
 <ul class="features">
@@ -106,8 +106,8 @@
 <script>
 (function () {
   var s = document.createElement("script");
-  s.src = "charts/monthly-bars-1.0.0.js";
-  s.integrity = "sha384-z6+sJQfmoyrSyei3RZRlFxzSG+Rt6mstzHu1xieApmTTqgmPGQE9qR2pkGVRnvd2";
+  s.src = "charts/monthly-bars-1.1.0.js";
+  s.integrity = "sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm";
   s.crossOrigin = "anonymous";
   document.head.appendChild(s);
 })();
@@ -115,7 +115,7 @@
 
 </main>
 <footer><div class="in">
-  <span>HTML Charts v1.0.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>HTML Charts v1.1.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
   <span>All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/mock.js"></script>

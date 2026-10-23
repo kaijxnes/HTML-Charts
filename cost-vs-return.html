@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cost vs Return – free Chart.js chart for HTML containers | HTML Charts</title>
-<meta name="description" content="A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.">
+<meta name="description" content="Cost against return (units × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.">
 <meta name="author" content="Kai Jones">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HTML Charts">
 <meta property="og:title" content="Cost vs Return – free Chart.js chart for HTML containers | HTML Charts">
-<meta property="og:description" content="A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.">
+<meta property="og:description" content="Cost against return (units × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.">
 <meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html">
 <meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/cost-vs-return.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Cost vs Return – HTML container chart", "description": "A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.", "url": "https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/cost-vs-return.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.0.0.js", "version": "1.0.0", "keywords": "KPIs, ROI, Cost per unit, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Cost vs Return – HTML container chart", "description": "Cost against return (units × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.", "url": "https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/cost-vs-return.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.1.0.js", "version": "1.1.0", "keywords": "KPIs, ROI, Cost per unit, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://kaijxnes.github.io/HTML-Charts/"}, {"@type": "ListItem", "position": 2, "name": "Cost vs Return", "item": "https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html"}]}</script>
 </head>
 <body>
@@ -32,8 +32,8 @@
 <section class="hero">
   <div class="eyebrow">Free Chart.js chart for HTML containers</div>
   <h1>Cost vs Return</h1>
-  <p class="lede">A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.</p>
-  <div class="pillrow"><span class="pill">v1.0.0</span><span class="pill mock">Live demo · random data</span><span class="pill">3 metrics · 0 dimensions · date</span><span class="pill">Over time</span><span class="pill">KPIs</span></div>
+  <p class="lede">Cost against return (units × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.</p>
+  <div class="pillrow"><span class="pill">v1.1.0</span><span class="pill mock">Live demo · random data</span><span class="pill">3 metrics · 0 dimensions · date</span><span class="pill">Over time</span><span class="pill">KPIs</span></div>
 </section>
 
 <div class="demo">
@@ -55,20 +55,20 @@
     <li>Add an <b>HTML container</b> (one that runs JavaScript) and paste the snippet.</li>
     <li>View the page. The chart finds the grid, reads every row and draws itself; it updates when filters change the grid.</li>
   </ol>
-  <table class="cols"><thead><tr><th>Default header</th><th>Key</th><th></th><th>What it's for</th></tr></thead><tbody><tr><td><code>Month Key</code></td><td><code>month</code></td><td><span class="req">Required</span></td><td>Month. <b>Rows without one are left out.</b></td></tr><tr><td><code>Metric 5</code></td><td><code>cost</code></td><td><span class="req">Required</span></td><td>$ cost for the month.</td></tr><tr><td><code>Metric 4</code></td><td><code>act</code></td><td><span class="req">Required</span></td><td>Count – used for cost per unit and return.</td></tr><tr><td><code>Metric 1</code></td><td><code>v12</code></td><td><span class="req">Required</span></td><td>$ value per unit; return = Metric 4 × Metric 1.</td></tr><tr><td><code>Month Index</code></td><td><code>idx</code></td><td><span class="opt">Optional</span></td><td>Optional.</td></tr></tbody></table>
+  <table class="cols"><thead><tr><th>Default header</th><th>Key</th><th></th><th>What it's for</th></tr></thead><tbody><tr><td><code>Month Key</code></td><td><code>month</code></td><td><span class="req">Required</span></td><td>Month. <b>Rows without one are left out.</b></td></tr><tr><td><code>Cost</code></td><td><code>cost</code></td><td><span class="req">Required</span></td><td>$ cost for the month.</td></tr><tr><td><code>Units</code></td><td><code>units</code></td><td><span class="req">Required</span></td><td>Units – how many users, customers or orders – used for cost per unit and return.</td></tr><tr><td><code>Metric 1</code></td><td><code>v12</code></td><td><span class="req">Required</span></td><td>$ value per unit; return = Units × Metric 1.</td></tr><tr><td><code>Month Index</code></td><td><code>idx</code></td><td><span class="opt">Optional</span></td><td>Optional.</td></tr></tbody></table>
   <div class="code"><div class="bar"><span>Snippet for the HTML container</span><button class="copy" data-copy="snip1">Copy</button></div><pre id="snip1">&lt;div data-chart-embed=&quot;cost-vs-return&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.0.0.js&quot;;
-  s.integrity = &quot;sha384-WvnB4VgGgKR4EHM/Cu8Psiizgl+/mviVX3tshbo+1E2PfBaU5kRpd7zTg4y1hKLq&quot;;
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.1.0.js&quot;;
+  s.integrity = &quot;sha384-9Y7zmqcUwVutmyPDblbXxVGliicdjZSR5V76DIfEZwHXiuhe/3c4NAVjLECLMBWl&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
 &lt;/script&gt;</pre></div>
   <dl class="kv">
-    <dt>Script URL</dt><dd><a href="charts/cost-vs-return-1.0.0.js"><code>https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.0.0.js</code></a></dd>
-    <dt>Integrity (SRI)</dt><dd><code>sha384-WvnB4VgGgKR4EHM/Cu8Psiizgl+/mviVX3tshbo+1E2PfBaU5kRpd7zTg4y1hKLq</code></dd>
+    <dt>Script URL</dt><dd><a href="charts/cost-vs-return-1.1.0.js"><code>https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.1.0.js</code></a></dd>
+    <dt>Integrity (SRI)</dt><dd><code>sha384-9Y7zmqcUwVutmyPDblbXxVGliicdjZSR5V76DIfEZwHXiuhe/3c4NAVjLECLMBWl</code></dd>
     <dt>Chart.js</dt><dd><code>https://kaijxnes.github.io/HTML-Charts/chart.umd-4.4.1.js</code> · <code>sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG</code></dd>
   </dl>
   <div class="note">The integrity value pins this exact version: the browser refuses to run the script if a single byte changes. New versions get a new file name and a new snippet, so a dashboard only changes when you paste the new snippet.</div>
@@ -78,8 +78,8 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.0.0.js&quot;;
-  s.integrity = &quot;sha384-WvnB4VgGgKR4EHM/Cu8Psiizgl+/mviVX3tshbo+1E2PfBaU5kRpd7zTg4y1hKLq&quot;;
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.1.0.js&quot;;
+  s.integrity = &quot;sha384-9Y7zmqcUwVutmyPDblbXxVGliicdjZSR5V76DIfEZwHXiuhe/3c4NAVjLECLMBWl&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
@@ -106,8 +106,8 @@
 <script>
 (function () {
   var s = document.createElement("script");
-  s.src = "charts/cost-vs-return-1.0.0.js";
-  s.integrity = "sha384-WvnB4VgGgKR4EHM/Cu8Psiizgl+/mviVX3tshbo+1E2PfBaU5kRpd7zTg4y1hKLq";
+  s.src = "charts/cost-vs-return-1.1.0.js";
+  s.integrity = "sha384-9Y7zmqcUwVutmyPDblbXxVGliicdjZSR5V76DIfEZwHXiuhe/3c4NAVjLECLMBWl";
   s.crossOrigin = "anonymous";
   document.head.appendChild(s);
 })();
@@ -115,7 +115,7 @@
 
 </main>
 <footer><div class="in">
-  <span>HTML Charts v1.0.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>HTML Charts v1.1.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
   <span>All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/mock.js"></script>
