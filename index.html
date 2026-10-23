@@ -19,13 +19,13 @@
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/", "description": "Free, copy-paste Chart.js charts for dashboard HTML containers. Each chart reads a normal grid on the same page and redraws it as a richer visual – no API, no data leaves the browser.", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "publisher": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "inLanguage": "en"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "HTML container charts", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Monthly Bars", "url": "https://kaijxnes.github.io/HTML-Charts/monthly-bars.html"}, {"@type": "ListItem", "position": 2, "name": "Stacked Segments", "url": "https://kaijxnes.github.io/HTML-Charts/stacked-segments.html"}, {"@type": "ListItem", "position": 3, "name": "Segment Breakdown", "url": "https://kaijxnes.github.io/HTML-Charts/segment-breakdown.html"}, {"@type": "ListItem", "position": 4, "name": "Cost vs Return", "url": "https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html"}, {"@type": "ListItem", "position": 5, "name": "Month Heatmap", "url": "https://kaijxnes.github.io/HTML-Charts/month-heatmap.html"}, {"@type": "ListItem", "position": 6, "name": "KPI Scorecard", "url": "https://kaijxnes.github.io/HTML-Charts/kpi-scorecard.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "HTML container charts", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Monthly Bars", "url": "https://kaijxnes.github.io/HTML-Charts/monthly-bars.html"}, {"@type": "ListItem", "position": 2, "name": "Stacked Segments", "url": "https://kaijxnes.github.io/HTML-Charts/stacked-segments.html"}, {"@type": "ListItem", "position": 3, "name": "Segment Breakdown", "url": "https://kaijxnes.github.io/HTML-Charts/segment-breakdown.html"}, {"@type": "ListItem", "position": 4, "name": "Cost vs Return", "url": "https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html"}, {"@type": "ListItem", "position": 5, "name": "Month Heatmap", "url": "https://kaijxnes.github.io/HTML-Charts/month-heatmap.html"}, {"@type": "ListItem", "position": 6, "name": "KPI Scorecard", "url": "https://kaijxnes.github.io/HTML-Charts/kpi-scorecard.html"}, {"@type": "ListItem", "position": 7, "name": "Time Series Trio", "url": "https://kaijxnes.github.io/HTML-Charts/time-series-trio.html"}, {"@type": "ListItem", "position": 8, "name": "Funnel", "url": "https://kaijxnes.github.io/HTML-Charts/funnel.html"}, {"@type": "ListItem", "position": 9, "name": "Change Bridge", "url": "https://kaijxnes.github.io/HTML-Charts/change-bridge.html"}, {"@type": "ListItem", "position": 10, "name": "Pareto", "url": "https://kaijxnes.github.io/HTML-Charts/pareto.html"}, {"@type": "ListItem", "position": 11, "name": "Target Pacing", "url": "https://kaijxnes.github.io/HTML-Charts/target-pacing.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I put a custom chart in a dashboard HTML container?", "acceptedAnswer": {"@type": "Answer", "text": "Add a grid with the chart's columns to the same dashboard page, add an HTML container that runs JavaScript, and paste the chart's snippet. The chart finds the grid, reads every row and draws itself."}}, {"@type": "Question", "name": "Does any data leave the page?", "acceptedAnswer": {"@type": "Answer", "text": "No. The chart reads the grid that is already drawn in the viewer's browser and does every calculation there. The only network requests load the chart script and Chart.js, both checked with an SRI hash."}}, {"@type": "Question", "name": "My grid's column names are different – can I still use a chart?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Map your headers to the chart's keys with a data-columns attribute on the placeholder, e.g. data-columns='{\"v1\":\"Revenue\"}'. The chart then shows your names."}}, {"@type": "Question", "name": "Does it work with large grids?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If the grid only draws the rows on screen, the chart scrolls through it, waits for each batch and only draws once every row has been read."}}, {"@type": "Question", "name": "Is it free to use?", "acceptedAnswer": {"@type": "Answer", "text": "The charts are published openly on GitHub Pages with copy-paste snippets. Chart.js is MIT-licensed."}}]}</script>
 </head>
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="index.html" class="on">Home</a><a href="monthly-bars.html">Monthly Bars</a><a href="stacked-segments.html">Stacked Segments</a><a href="segment-breakdown.html">Segment Breakdown</a><a href="cost-vs-return.html">Cost vs Return</a><a href="month-heatmap.html">Month Heatmap</a><a href="kpi-scorecard.html">KPI Scorecard</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
+  <nav class="nav"><a href="index.html" class="on">Home</a><a href="index.html#charts">All charts</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
 </div></header>
 <main>
 
@@ -41,7 +41,7 @@
   <div class="step"><div class="n">3</div><h3>View</h3><p>The chart reads every row of the grid and follows filters automatically.</p></div>
 </div>
 
-<h2>Charts</h2>
+<h2 id="charts">Charts</h2>
 <div class="cards"><a class="card" href="monthly-bars.html">
   <div class="thumb" style="background-image:url(assets/thumbs/monthly-bars.png)"></div>
   <div class="body"><h3>Monthly Bars</h3><p>A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.</p>
@@ -66,6 +66,26 @@
   <div class="thumb" style="background-image:url(assets/thumbs/kpi-scorecard.png)"></div>
   <div class="body"><h3>KPI Scorecard</h3><p>Up to six metrics as cards with the latest value, change vs the previous month, a 3-month average or last year, and a sparkline; click one for its trend.</p>
   <div class="tags"><span class="tag">KPI cards</span><span class="tag">Sparklines</span><span class="tag">Comparisons</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="time-series-trio.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/time-series-trio.png)"></div>
+  <div class="body"><h3>Time Series Trio</h3><p>Three metrics, each on its own row: a scorecard for the latest 7/28/90 days or months against the period before, next to a chart of all the data over time.</p>
+  <div class="tags"><span class="tag">Time series</span><span class="tag">Scorecards</span><span class="tag">Date ranges</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="funnel.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/funnel.png)"></div>
+  <div class="body"><h3>Funnel</h3><p>Counts through ordered stages as a funnel, with step and overall conversion, the biggest drop-off and a conversion curve per segment.</p>
+  <div class="tags"><span class="tag">Funnel</span><span class="tag">Conversion</span><span class="tag">Segments</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="change-bridge.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/change-bridge.png)"></div>
+  <div class="body"><h3>Change Bridge</h3><p>A waterfall from one total to another, showing how much each item added or took away – e.g. last period to this period.</p>
+  <div class="tags"><span class="tag">Waterfall</span><span class="tag">Variance</span><span class="tag">Drivers</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="pareto.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/pareto.png)"></div>
+  <div class="body"><h3>Pareto</h3><p>Items ranked largest first with a cumulative share line, showing how few items make up 80% of the total.</p>
+  <div class="tags"><span class="tag">Ranking</span><span class="tag">80/20</span><span class="tag">Cumulative</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="target-pacing.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/target-pacing.png)"></div>
+  <div class="body"><h3>Target Pacing</h3><p>Month-to-date actual against target by day, with a month-end projection, % of target and the daily rate needed to hit it.</p>
+  <div class="tags"><span class="tag">Targets</span><span class="tag">Projection</span><span class="tag">Daily</span></div>
   <span class="go">View demo &amp; snippet →</span></div></a></div>
 
 <h2>Safe by design</h2>

@@ -86,6 +86,57 @@
       return { hd: hd, num: [2, 3], rows: rows };
     },
 
+    "time-series-trio": function () {
+      var hd = ["Date", "Metric 1", "Metric 2", "Metric 3"], rows = [];
+      var b1 = R(8000, 30000), b2 = R(300, 1500), b3 = R(2, 9), t1 = R(-0.0004, 0.0012), t2 = R(-0.0004, 0.0012);
+      var wk = [R(0.7, 0.9), R(0.9, 1.05), R(0.9, 1.05), R(0.95, 1.1), R(1.05, 1.25), R(1.15, 1.45), R(0.85, 1.1)];
+      var end = Date.UTC(2026, 9, 22);
+      for (var i = 0; i < 400; i++) {
+        var d = new Date(end - i * 864e5), t = 399 - i, w = wk[d.getUTCDay()], season = 1 + 0.12 * Math.sin(t / 58);
+        rows.push([d.toISOString().slice(0, 10), money(b1 * Math.pow(1 + t1, t) * w * season * noise(0.12)),
+                   count(b2 * Math.pow(1 + t2, t) * w * noise(0.15)), pct(b3 * season * noise(0.1))]);
+      }
+      return { hd: hd, num: [1, 2, 3], rows: rows };
+    },
+
+    "funnel": function () {
+      var hd = ["Stage", "Dimension A", "Metric 1"], rows = [];
+      var stages = ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"], A = ["A1", "A2", "A3", "A4"];
+      var conv = A.map(function () { return [1, R(0.35, 0.7), R(0.4, 0.8), R(0.3, 0.7), R(0.4, 0.85)]; });
+      var top = A.map(function () { return RI(4000, 30000); });
+      stages.forEach(function (st, si) {
+        A.forEach(function (a, ai) {
+          var v = top[ai]; for (var k = 1; k <= si; k++) v *= conv[ai][k];
+          rows.push([ai ? "" : st, a, count(v)]);
+        });
+      });
+      return { hd: hd, num: [2], rows: rows };
+    },
+
+    "change-bridge": function () {
+      var hd = ["Dimension A", "Metric 1", "Metric 2"], rows = [];
+      for (var i = 1; i <= 12; i++) { var a = R(5000, 90000); rows.push(["A" + i, money(a), money(a * (1 + R(-0.35, 0.45)))]); }
+      return { hd: hd, num: [1, 2], rows: rows };
+    },
+
+    "pareto": function () {
+      var hd = ["Dimension A", "Metric 1"], rows = [];
+      for (var i = 1; i <= 40; i++) rows.push(["A" + (i < 10 ? "0" : "") + i, money(Math.exp(R(6, 12)))]);
+      return { hd: hd, num: [1], rows: rows };
+    },
+
+    "target-pacing": function () {
+      var hd = ["Date", "Metric 1", "Metric 2"], rows = [];
+      var base = R(5000, 20000), perf = R(0.85, 1.15), wk = [0.8, 0.95, 1, 1, 1.05, 1.25, 1.2];
+      [[2026, 8, 30, 30], [2026, 9, 31, 22]].forEach(function (m) {
+        for (var d = m[2]; d >= 1; d--) {
+          var dt = new Date(Date.UTC(m[0], m[1], d)), tgt = base * wk[dt.getUTCDay()] * (1 + (m[1] - 8) * 0.04);
+          rows.push([dt.toISOString().slice(0, 10), d <= m[3] ? money(tgt * perf * noise(0.18)) : "", money(tgt)]);
+        }
+      });
+      return { hd: hd, num: [1, 2], rows: rows };
+    },
+
     "kpi-scorecard": function () {
       var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"];
       var s = { m1: R(2e5, 9e5), m2: R(2000, 9000), m3: R(5e4, 2e5), m4: R(8, 30), m5: R(40, 120), m6: R(200, 1500) };

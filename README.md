@@ -16,6 +16,11 @@ Each chart has a page with a live demo on random data (hit *Shuffle data* to wat
 | Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.0.0.js` |
 | Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.0.0.js` |
 | KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.0.0.js` |
+| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.0.0.js` |
+| Funnel | `funnel.html` | `charts/funnel-1.0.0.js` |
+| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.0.0.js` |
+| Pareto | `pareto.html` | `charts/pareto-1.0.0.js` |
+| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.0.0.js` |
 
 ## How it works
 

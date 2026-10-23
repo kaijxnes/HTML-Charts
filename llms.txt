@@ -14,6 +14,11 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Cost vs Return](https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html): A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table. Script: https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.0.0.js
 - [Month Heatmap](https://kaijxnes.github.io/HTML-Charts/month-heatmap.html): A heatmap of a $ metric by start month and month index – per month, cumulative or per unit – with every month's curve against the average. Script: https://kaijxnes.github.io/HTML-Charts/charts/month-heatmap-1.0.0.js
 - [KPI Scorecard](https://kaijxnes.github.io/HTML-Charts/kpi-scorecard.html): Up to six metrics as cards with the latest value, change vs the previous month, a 3-month average or last year, and a sparkline; click one for its trend. Script: https://kaijxnes.github.io/HTML-Charts/charts/kpi-scorecard-1.0.0.js
+- [Time Series Trio](https://kaijxnes.github.io/HTML-Charts/time-series-trio.html): Three metrics, each on its own row: a scorecard for the latest 7/28/90 days or months against the period before, next to a chart of all the data over time. Script: https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.0.0.js
+- [Funnel](https://kaijxnes.github.io/HTML-Charts/funnel.html): Counts through ordered stages as a funnel, with step and overall conversion, the biggest drop-off and a conversion curve per segment. Script: https://kaijxnes.github.io/HTML-Charts/charts/funnel-1.0.0.js
+- [Change Bridge](https://kaijxnes.github.io/HTML-Charts/change-bridge.html): A waterfall from one total to another, showing how much each item added or took away – e.g. last period to this period. Script: https://kaijxnes.github.io/HTML-Charts/charts/change-bridge-1.0.0.js
+- [Pareto](https://kaijxnes.github.io/HTML-Charts/pareto.html): Items ranked largest first with a cumulative share line, showing how few items make up 80% of the total. Script: https://kaijxnes.github.io/HTML-Charts/charts/pareto-1.0.0.js
+- [Target Pacing](https://kaijxnes.github.io/HTML-Charts/target-pacing.html): Month-to-date actual against target by day, with a month-end projection, % of target and the daily rate needed to hit it. Script: https://kaijxnes.github.io/HTML-Charts/charts/target-pacing-1.0.0.js
 
 ## Optional
 
