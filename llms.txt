@@ -50,6 +50,10 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Quadrant Scatter – 2 metrics](https://kaijxnes.github.io/HTML-Charts/quadrant-scatter-plain.html): Items plotted by two metrics, split into quadrants at the averages, without bubble sizing. Script: https://kaijxnes.github.io/HTML-Charts/charts/quadrant-scatter-1.1.0.js
 - [Radar Compare – 4 metrics](https://kaijxnes.github.io/HTML-Charts/radar-compare-four.html): Segments compared across four metrics on a radar. Script: https://kaijxnes.github.io/HTML-Charts/charts/radar-compare-1.1.0.js
 
+## Setup
+
+- [How to set up](https://kaijxnes.github.io/HTML-Charts/platforms.html): MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik
+
 ## Optional
 
 - [Chart.js 4.4.1 copy](https://kaijxnes.github.io/HTML-Charts/chart.umd-4.4.1.js): unmodified, MIT-licensed

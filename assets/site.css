@@ -161,3 +161,5 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 22px 20px 34px; font-si
 .noresult { color: var(--muted); }
 .more a.here { border-color: var(--accent); background: var(--accent-soft); }
 @media (max-width: 640px) { .flbl { width: 100%; } }
+.fit { font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.fit.ok { background: #e7f7f1; color: #0B7A5C; } .fit.mid { background: #fff7e6; color: #92400e; } .fit.no { background: #fdecec; color: #B4232A; }

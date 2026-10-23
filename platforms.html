@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to set up HTML Charts – MicroStrategy, Tableau, Looker, Power BI | HTML Charts</title>
+<meta name="description" content="How to get the HTML Charts working on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik, with example code.">
+<meta name="author" content="Kai Jones">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/platforms.html">
+<link rel="author" href="https://kaijxnes.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HTML Charts">
+<meta property="og:title" content="How to set up HTML Charts – MicroStrategy, Tableau, Looker, Power BI | HTML Charts">
+<meta property="og:description" content="How to get the HTML Charts working on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik, with example code.">
+<meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/platforms.html">
+<meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/monthly-bars.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to add HTML Charts to a dashboard", "description": "Set up Chart.js charts that read a grid on the same page, on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik.", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "step": [{"@type": "HowToStep", "text": "Add a table or grid with the chart's column headers to the page."}, {"@type": "HowToStep", "text": "Add a placeholder div with data-chart-embed set to the chart id."}, {"@type": "HowToStep", "text": "Paste the chart's script loader, which loads the pinned, integrity-checked chart script."}]}</script>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
+  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html" class="on">How to set up</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
+</div></header>
+<main>
+
+<div class="crumbs"><a href="index.html">HTML Charts</a> / How to set up</div>
+<section class="hero">
+  <div class="eyebrow">Setup guide</div>
+  <h1>Getting the charts working on your platform</h1>
+  <p class="lede">Every chart does the same thing: it finds a table or grid on the same page by its column headers, reads the rows and draws itself. So it works anywhere you can put a table and a script on one page – and with a little glue code where the platform hands you data instead of a page.</p>
+</section>
+
+<h2>Which platforms work</h2>
+<table class="cols"><thead><tr><th>Platform</th><th>Fit</th><th>How</th></tr></thead><tbody><tr><td><b>MicroStrategy</b></td><td><span class="fit ok">Works as-is</span></td><td>HTML container in a dossier or document, with the grid on the same page. Add the two class names so big grids are read in full. Tested.</td></tr><tr><td><b>Any web page / intranet</b></td><td><span class="fit ok">Works as-is</span></td><td>Any page that lets you add HTML and JavaScript next to a table – an intranet page, a static report, a CMS block. Tested (it&#x27;s how the demos on this site run).</td></tr><tr><td><b>Tableau</b></td><td><span class="fit mid">With an extension</span></td><td>A dashboard extension reads the worksheet&#x27;s summary data, writes it to a table and loads the chart. Needs the extension allowed on your Server/Cloud site. Not tested.</td></tr><tr><td><b>Looker</b></td><td><span class="fit mid">With a custom visualization</span></td><td>A custom visualization receives the query results, writes them to a table and loads the chart. Needs an admin to register it. Not tested.</td></tr><tr><td><b>Power BI</b></td><td><span class="fit no">Only as a custom visual</span></td><td>Power BI doesn&#x27;t run JavaScript from HTML in a report, and visuals can&#x27;t read each other. You&#x27;d package the chart into a custom visual (pbiviz) – more work, not tested.</td></tr><tr><td><b>Qlik Sense</b></td><td><span class="fit mid">With an extension</span></td><td>Same pattern as Looker: an extension gets the hypercube data, writes a table and loads the chart. Not tested.</td></tr></tbody></table>
+<div class="note">The chart scripts are tested on MicroStrategy and plain web pages. The Tableau, Looker, Power BI and Qlik routes follow each platform's documented extension model, but haven't been tested here – treat the code below as a starting point.</div>
+
+<h2>The three things every setup needs</h2>
+<ol class="how">
+  <li><b>A table or grid with the right headers.</b> Each chart page lists its default headers (<code>Date</code>, <code>Metric 1</code>, <code>Units</code> …). Use those names, or map your own with <code>data-columns</code>.</li>
+  <li><b>A placeholder</b> – <code>&lt;div data-chart-embed="chart-id"&gt;</code> – where the chart should appear.</li>
+  <li><b>The script loader</b> from the chart's page, which loads the pinned, integrity-checked script.</li>
+</ol>
+
+<h2 id="mstr">MicroStrategy</h2>
+<ol class="how">
+  <li>On the dossier or document page, add a <b>grid</b> with the chart's columns. Keep it on the <b>same page</b>, tuck it behind the chart and make it tall – MicroStrategy only draws the page you're on, and only the rows on screen.</li>
+  <li>Add an <b>HTML container</b>, choose <b>HTML Text</b>, and paste the snippet. Map your header names with <code>data-columns</code>.</li>
+  <li>Add <code>data-grid-class="mstrmojo-Xtab"</code> and <code>data-scroll-class="mstrmojo-scrollNode"</code> so the chart can scroll through big grids and read every row.</li>
+  <li>View it in <b>presentation mode</b>. Point filters and selectors at the grid – the chart follows the grid.</li>
+</ol>
+<div class="code"><div class="bar"><span>MicroStrategy – HTML container (example: Time Series Trio)</span><button class="copy" data-copy="g1">Copy</button></div><pre id="g1">&lt;div data-chart-embed=&quot;time-series-trio&quot;
+     data-columns=&#x27;{&quot;date&quot;:&quot;Day&quot;,&quot;v1&quot;:&quot;Revenue&quot;,&quot;v2&quot;:&quot;Orders&quot;,&quot;v3&quot;:&quot;Conversion Rate&quot;}&#x27;
+     data-grid-class=&quot;mstrmojo-Xtab&quot; data-scroll-class=&quot;mstrmojo-scrollNode&quot;
+     style=&quot;height:100%&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+(function () {
+var s = document.createElement(&quot;script&quot;);
+s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
+s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
+s.crossOrigin = &quot;anonymous&quot;;
+document.head.appendChild(s);
+})();
+&lt;/script&gt;</pre></div>
+
+<h2 id="web">Any web page or intranet</h2>
+<p class="small muted">If the page already shows the data as an HTML table, put the placeholder and loader next to it. Hide the table with CSS if you only want the chart.</p>
+<div class="code"><div class="bar"><span>Plain HTML</span><button class="copy" data-copy="g2">Copy</button></div><pre id="g2">&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Metric 1&lt;/th&gt;&lt;th&gt;Metric 2&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;2026-10-22&lt;/td&gt;&lt;td&gt;$12,400&lt;/td&gt;&lt;td&gt;380&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;2026-10-21&lt;/td&gt;&lt;td&gt;$11,950&lt;/td&gt;&lt;td&gt;366&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:600px&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+(function () {
+var s = document.createElement(&quot;script&quot;);
+s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
+s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
+s.crossOrigin = &quot;anonymous&quot;;
+document.head.appendChild(s);
+})();
+&lt;/script&gt;</pre></div>
+
+<h2 id="bridge">Tableau, Looker, Power BI and Qlik</h2>
+<p class="small muted">These platforms don't let a script read other parts of the dashboard, but their extension models hand your code the query results. Write those into a table on the extension's own page, then load the chart as usual.</p>
+<div class="code"><div class="bar"><span>Shared helper – write rows into a table</span><button class="copy" data-copy="g3">Copy</button></div><pre id="g3">// Shared idea for Tableau, Looker and Power BI: write the platform&#x27;s data
+// into a plain HTML table on the same page, then load the chart script.
+// The chart reads the table exactly as it reads a dashboard grid.
+function writeTable(headers, rows) {
+  var t = document.getElementById(&quot;grid&quot;) || document.body.appendChild(Object.assign(document.createElement(&quot;table&quot;), { id: &quot;grid&quot; }));
+  t.innerHTML = &quot;&lt;thead&gt;&lt;tr&gt;&quot; + headers.map(function (h) { return &quot;&lt;th&gt;&quot; + h + &quot;&lt;/th&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&quot; +
+    rows.map(function (r) { return &quot;&lt;tr&gt;&quot; + r.map(function (v) { return &quot;&lt;td&gt;&quot; + v + &quot;&lt;/td&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tr&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tbody&gt;&quot;;
+}</pre></div>
+<h3 style="margin-top:18px" id="tableau">Tableau – dashboard extension</h3>
+<p class="small muted">Put a worksheet with the chart's fields on the dashboard (it can be hidden), host this page somewhere your Tableau site allows, and add the extension with a .trex manifest pointing at it.</p>
+<div class="code"><div class="bar"><span>Tableau extension page</span><button class="copy" data-copy="g4">Copy</button></div><pre id="g4">&lt;!-- index.html of a Tableau dashboard extension (.trex manifest points here) --&gt;
+&lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:100vh&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;tableau.extensions.1.latest.min.js&quot;&gt;&lt;/script&gt;  &lt;!-- from Tableau&#x27;s Extensions API download --&gt;
+&lt;script&gt;
+tableau.extensions.initializeAsync().then(async function () {
+  var ws = tableau.extensions.dashboardContent.dashboard.worksheets.find(function (w) { return w.name === &quot;Chart data&quot;; });
+  var reader = await ws.getSummaryDataReaderAsync();
+  var table = await reader.getAllPagesAsync();
+  await reader.releaseAsync();
+  writeTable(table.columns.map(function (c) { return c.fieldName; }),
+             table.data.map(function (row) { return row.map(function (v) { return v.formattedValue; }); }));
+  loadChart();   // the script loader from the snippet
+});
+&lt;/script&gt;</pre></div>
+<h3 style="margin-top:18px" id="looker">Looker – custom visualization</h3>
+<p class="small muted">Host the file and register it under Admin → Visualizations (or in a LookML project manifest). Choose dimensions and measures named like the chart's headers, or map them with <code>data-columns</code>.</p>
+<div class="code"><div class="bar"><span>Looker custom visualization</span><button class="copy" data-copy="g5">Copy</button></div><pre id="g5">// Looker custom visualization (registered in the admin Visualizations page or a LookML manifest)
+looker.plugins.visualizations.add({
+  create: function (element) {
+    element.innerHTML = &#x27;&lt;table id=&quot;grid&quot; style=&quot;display:none&quot;&gt;&lt;/table&gt;&#x27; +
+                        &#x27;&lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;&#x27;;
+    loadChart();
+  },
+  updateAsync: function (data, element, config, queryResponse, details, done) {
+    var f = queryResponse.fields.dimension_like.concat(queryResponse.fields.measure_like);
+    writeTable(f.map(function (x) { return x.label_short || x.label; }),
+               data.map(function (row) { return f.map(function (x) { return row[x.name].rendered || row[x.name].value; }); }));
+    done();
+  }
+});</pre></div>
+<h3 style="margin-top:18px" id="pbi">Power BI – custom visual</h3>
+<p class="small muted">Power BI's HTML visuals don't run JavaScript, so a snippet can't be pasted in. Build a custom visual with the <code>pbiviz</code> tools, bundle the chart script and Chart.js into it, and write the data view into a table in <code>update()</code>. Organisations often need to approve custom visuals before use.</p>
+<div class="code"><div class="bar"><span>Power BI visual.ts (sketch)</span><button class="copy" data-copy="g6">Copy</button></div><pre id="g6">// Power BI custom visual (pbiviz) – src/visual.ts, update()
+// Copy the chart script into the visual&#x27;s source and bundle it: Power BI visuals
+// run in a sandbox and shouldn&#x27;t load scripts from the internet.
+public update(options: VisualUpdateOptions) {
+  const t = options.dataViews[0].table;
+  writeTable(t.columns.map(c =&gt; c.displayName),
+             t.rows.map(r =&gt; r.map((v, i) =&gt; formatValue(v, t.columns[i].format))));
+}</pre></div>
+
+<h2>Troubleshooting</h2>
+<ul class="features">
+  <li><b>"Couldn't find the grid"</b> – a header doesn't match. Check spelling, or map it with <code>data-columns</code>. Matching ignores spaces and capital letters.</li>
+  <li><b>Only some rows read</b> – the grid only draws what's on screen. Make it taller, and on MicroStrategy add the two class attributes above.</li>
+  <li><b>Nothing appears at all</b> – the platform may block JavaScript or outside scripts. Ask your admin whether HTML containers can run scripts and whether <code>kaijxnes.github.io</code> is reachable.</li>
+  <li><b>Wrong numbers</b> – open <i>Read details</i> under the chart to see which headers and how many rows it read.</li>
+</ul>
+
+<div class="byline">Made by <a href="https://kaijxnes.com" rel="author">Kai Jones</a> – data analyst building custom visuals for reporting. <a href="https://kaijxnes.com">See my CV →</a></div>
+
+</main>
+<footer><div class="in">
+  <span>HTML Charts v1.1.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>All values on this site are random placeholders.</span>
+</div></footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

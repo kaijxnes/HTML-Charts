@@ -25,7 +25,7 @@
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="index.html" class="on">Home</a><a href="index.html#charts">All charts</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
+  <nav class="nav"><a href="index.html" class="on">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html">How to set up</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
 </div></header>
 <main>
 
@@ -52,6 +52,8 @@
   <div><h3>Pinned &amp; integrity-checked</h3><p>Every script is versioned and loaded with an SRI hash, so altered code is refused before it runs.</p></div>
   <div><h3>Permissions still apply</h3><p>Charts only see rows the viewer is allowed to see. No logins, keys or API calls.</p></div>
 </div>
+
+<div class="note">Using MicroStrategy, Tableau, Looker or Power BI? See <a href="platforms.html">how to set up</a> for step-by-step examples.</div>
 
 <h2>Questions</h2>
 <div class="faqs"><details class="faq"><summary>How do I put a custom chart in a dashboard HTML container?</summary><p>Add a grid with the chart&#x27;s columns to the same dashboard page, add an HTML container that runs JavaScript, and paste the chart&#x27;s snippet. The chart finds the grid, reads every row and draws itself.</p></details><details class="faq"><summary>Does any data leave the page?</summary><p>No. The chart reads the grid that is already drawn in the viewer&#x27;s browser and does every calculation there. The only network requests load the chart script and Chart.js, both checked with an SRI hash.</p></details><details class="faq"><summary>My grid&#x27;s column names are different – can I still use a chart?</summary><p>Yes. Map your headers to the chart&#x27;s keys with a data-columns attribute on the placeholder, e.g. data-columns=&#x27;{&quot;v1&quot;:&quot;Revenue&quot;}&#x27;. The chart then shows your names.</p></details><details class="faq"><summary>Does it work with large grids?</summary><p>Yes. If the grid only draws the rows on screen, the chart scrolls through it, waits for each batch and only draws once every row has been read.</p></details><details class="faq"><summary>Is it free to use?</summary><p>The charts are published openly on GitHub Pages with copy-paste snippets. Chart.js is MIT-licensed.</p></details></div>
