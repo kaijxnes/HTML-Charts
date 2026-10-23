@@ -6,7 +6,7 @@ Custom Chart.js charts for HTML containers, hosted on GitHub Pages.
 
 **Site:** https://kaijxnes.github.io/HTML-Charts/
 
-Each chart has a page with a live demo on random data (hit *Shuffle data* to watch it redraw), the grid columns it reads, and a copy-paste snippet.
+The home page can be filtered by chart type, number of metrics, number of dimensions and whether a date column is needed. Each chart has a page with a live demo on random data (hit *Shuffle data* to watch it redraw), the grid columns it reads, and a copy-paste snippet.
 
 | Chart | Page | Script |
 |---|---|---|
@@ -41,6 +41,9 @@ Each chart has a page with a live demo on random data (hit *Shuffle data* to wat
 | Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.0.0.js` |
 | Dumbbell | `dumbbell.html` | `charts/dumbbell-1.0.0.js` |
 | Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.0.0.js` |
+| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.0.0.js` |
+
+The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
 
 ## How it works
 

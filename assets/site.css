@@ -146,3 +146,18 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 22px 20px 34px; font-si
 .more a { display: flex; flex-direction: column; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; color: var(--ink); }
 .more a:hover { border-color: var(--accent); text-decoration: none; }
 .more a span { font-size: 12px; color: var(--muted); }
+/* ---------- chart list filters ---------- */
+.filters { display: flex; flex-direction: column; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin-top: 10px; }
+.fsearch { font: inherit; font-size: 14px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; outline: none; background: var(--soft); }
+.fsearch:focus { border-color: var(--accent); background: #fff; }
+.frow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.flbl { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); width: 104px; flex: none; }
+.chip { all: unset; cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--ink-2); background: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px; }
+.chip:hover { border-color: #c9cdd8; }
+.chip.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+.fcount { font-size: 12.5px; color: var(--muted); }
+.card[hidden] { display: none; }
+.card .spec { font-size: 12px; font-weight: 600; color: var(--accent); }
+.noresult { color: var(--muted); }
+.more a.here { border-color: var(--accent); background: var(--accent-soft); }
+@media (max-width: 640px) { .flbl { width: 100%; } }

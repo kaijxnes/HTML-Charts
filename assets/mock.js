@@ -307,6 +307,18 @@
       return { hd: hd, num: [1, 2, 3, 4, 5], rows: rows };
     },
 
+    "time-series-stack": function () {
+      var hd = ["Date", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], rows = [], end = Date.UTC(2026, 9, 22);
+      var b = [R(8000, 30000), R(300, 1500), R(2, 9), R(20, 80), R(1000, 6000), R(30, 70)], tr = b.map(function () { return R(-0.0004, 0.0012); });
+      var wk = [R(0.7, 0.9), R(0.9, 1.05), R(0.9, 1.05), R(0.95, 1.1), R(1.05, 1.25), R(1.15, 1.45), R(0.85, 1.1)];
+      for (var i = 0; i < 400; i++) {
+        var d = new Date(end - i * 864e5), t = 399 - i, w = wk[d.getUTCDay()], se = 1 + 0.12 * Math.sin(t / 58), f = function (j) { return b[j] * Math.pow(1 + tr[j], t); };
+        rows.push([d.toISOString().slice(0, 10), money(f(0) * w * se * noise(0.12)), count(f(1) * w * noise(0.15)), pct(b[2] * se * noise(0.1)),
+                   money2(f(3) * noise(0.08)), count(f(4) * w * noise(0.12)), pct(Math.min(99, b[5] * noise(0.06)))]);
+      }
+      return { hd: hd, num: [1, 2, 3, 4, 5, 6], rows: rows };
+    },
+
     "kpi-scorecard": function () {
       var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"];
       var s = { m1: R(2e5, 9e5), m2: R(2000, 9000), m3: R(5e4, 2e5), m4: R(8, 30), m5: R(40, 120), m6: R(200, 1500) };
@@ -319,6 +331,32 @@
       return { hd: hd, num: [1, 2, 3, 4, 5, 6], rows: rows };
     }
   };
+
+  // variants reuse a generator and keep only some of its columns
+  var pick = function (base, cols, names) {
+    return function () {
+      var d = GEN[base]();
+      return { hd: cols.map(function (i, j) { return names ? names[j] : d.hd[i]; }), num: cols.map(function (i, j) { return d.num.indexOf(i) > -1 ? j : -1; }).filter(function (j) { return j > -1; }),
+               rows: d.rows.map(function (r) { return cols.map(function (i) { return r[i]; }); }).filter(function (r) { return r.some(function (v) { return v !== ""; }); }) };
+    };
+  };
+  GEN["time-series-single"] = pick("time-series-trio", [0, 1]);
+  GEN["time-series-duo"] = pick("time-series-trio", [0, 1, 2]);
+  GEN["kpi-scorecard-trio"] = pick("kpi-scorecard", [0, 1, 2, 4], ["Month Key", "Metric 1", "Metric 2", "Metric 3"]);
+  GEN["combo-bar-line"] = pick("combo-chart", [0, 1, 2]);
+  GEN["variance-table-single"] = pick("variance-table", [0, 1, 2]);
+  GEN["funnel-simple"] = function () {
+    var d = GEN["funnel"](), tot = {}, order = [], cur = "";
+    d.rows.forEach(function (r) { if (r[0]) cur = r[0]; if (!(cur in tot)) { tot[cur] = 0; order.push(cur); } tot[cur] += Number(r[2].replace(/,/g, "")); });
+    return { hd: ["Stage", "Metric 1"], num: [1], rows: order.map(function (k) { return [k, count(tot[k])]; }) };
+  };
+  GEN["treemap-flat"] = function () {
+    var hd = ["Dimension A", "Metric 1"], rows = [];
+    for (var a = 1; a <= 14; a++) rows.push(["A" + a, money(Math.exp(R(9, 13)))]);
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
+  GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
 
