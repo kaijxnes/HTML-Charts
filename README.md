@@ -26,6 +26,11 @@ Each chart has a page with a live demo on random data (hit *Shuffle data* to wat
 | Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.0.0.js` |
 | Year over Year | `year-over-year.html` | `charts/year-over-year-1.0.0.js` |
 | Leaderboard | `leaderboard.html` | `charts/leaderboard-1.0.0.js` |
+| Distribution | `distribution.html` | `charts/distribution-1.0.0.js` |
+| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.0.0.js` |
+| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.0.0.js` |
+| Treemap | `treemap.html` | `charts/treemap-1.0.0.js` |
+| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.0.0.js` |
 
 ## How it works
 

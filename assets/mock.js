@@ -187,6 +187,46 @@
       return { hd: hd, num: [2], rows: rows };
     },
 
+    "distribution": function () {
+      var hd = ["Dimension A", "Metric 1"], rows = [], mu = R(3, 4.5), sh = R(0, 0.5);
+      for (var i = 0; i < 600; i++) { var g = i % 3 ? "A1" : "A2"; rows.push([g, money2(Math.exp(mu + (g === "A2" ? sh : 0) + 0.7 * (R(-1, 1) + R(-1, 1) + R(-1, 1))))]); }
+      return { hd: hd, num: [1], rows: rows };
+    },
+
+    "target-attainment": function () {
+      var hd = ["Dimension A", "Metric 1", "Metric 2"], rows = [];
+      for (var i = 1; i <= 14; i++) { var t = R(2e4, 2e5); rows.push(["A" + i, money(t * R(0.7, 1.25)), money(t)]); }
+      return { hd: hd, num: [1, 2], rows: rows };
+    },
+
+    "anomaly-watch": function () {
+      var hd = ["Date", "Metric 1"], rows = [], end = Date.UTC(2026, 9, 22), base = R(800, 4000);
+      var wk = [0.8, 1, 1, 1.02, 1.08, 1.25, 1.1], spikes = {};
+      for (var s = 0; s < 6; s++) spikes[RI(30, 239)] = R(0, 1) > 0.5 ? R(1.5, 2.1) : R(0.35, 0.6);
+      spikes[RI(0, 3)] = R(0, 1) > 0.5 ? R(1.6, 2) : R(0.4, 0.6);
+      for (var i = 0; i < 240; i++) {
+        var d = new Date(end - i * 864e5), t = 239 - i;
+        rows.push([d.toISOString().slice(0, 10), count(base * (1 + t * 0.0008) * wk[d.getUTCDay()] * noise(0.06) * (spikes[i] || 1))]);
+      }
+      return { hd: hd, num: [1], rows: rows };
+    },
+
+    "treemap": function () {
+      var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [];
+      for (var a = 1; a <= 7; a++) { var n = RI(2, 6), w = Math.exp(R(0, 2)); for (var b = 1; b <= n; b++) rows.push([b === 1 ? "A" + a : "", "B" + a + "." + b, money(w * Math.exp(R(9, 11.5)))]); }
+      return { hd: hd, num: [2], rows: rows };
+    },
+
+    "small-multiples": function () {
+      var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], n = 12, base = [], tr = [], amp = [];
+      for (var j = 0; j < n; j++) { base.push(Math.exp(R(9, 11.5))); tr.push(R(-0.05, 0.07)); amp.push(R(0, 0.25)); }
+      keys(18).forEach(function (k, i) {
+        var t = 17 - i;
+        for (var j = 0; j < n; j++) rows.push([j ? "" : k, "A" + (j + 1), money(base[j] * Math.pow(1 + tr[j], t) * (1 + amp[j] * Math.sin(t / 2)) * noise(0.08))]);
+      });
+      return { hd: hd, num: [2], rows: rows };
+    },
+
     "kpi-scorecard": function () {
       var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"];
       var s = { m1: R(2e5, 9e5), m2: R(2000, 9000), m3: R(5e4, 2e5), m4: R(8, 30), m5: R(40, 120), m6: R(200, 1500) };

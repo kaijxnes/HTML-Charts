@@ -24,6 +24,11 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Calendar Heatmap](https://kaijxnes.github.io/HTML-Charts/calendar-heatmap.html): A daily metric laid out as a calendar, one square per day, with averages by weekday and totals by month. Script: https://kaijxnes.github.io/HTML-Charts/charts/calendar-heatmap-1.0.0.js
 - [Year over Year](https://kaijxnes.github.io/HTML-Charts/year-over-year.html): A metric by calendar month for this year against the two before, monthly or year to date, with the YTD change. Script: https://kaijxnes.github.io/HTML-Charts/charts/year-over-year-1.0.0.js
 - [Leaderboard](https://kaijxnes.github.io/HTML-Charts/leaderboard.html): A ranked table for any month with change vs the month before, rank movement, share, a 12-month total and a trend sparkline. Script: https://kaijxnes.github.io/HTML-Charts/charts/leaderboard-1.0.0.js
+- [Distribution](https://kaijxnes.github.io/HTML-Charts/distribution.html): A histogram of one value per row (e.g. per customer or order), with median, mean, P10–P90 and how much the top 10% hold – optionally split into groups. Script: https://kaijxnes.github.io/HTML-Charts/charts/distribution-1.0.0.js
+- [Target Attainment](https://kaijxnes.github.io/HTML-Charts/target-attainment.html): Actual against target for every item as bullet bars, coloured by % of target, with the overall position and who's furthest ahead or behind. Script: https://kaijxnes.github.io/HTML-Charts/charts/target-attainment-1.0.0.js
+- [Anomaly Watch](https://kaijxnes.github.io/HTML-Charts/anomaly-watch.html): A daily or monthly metric against its rolling average with a normal band, flagging the points that are unusually high or low. Script: https://kaijxnes.github.io/HTML-Charts/charts/anomaly-watch-1.0.0.js
+- [Treemap](https://kaijxnes.github.io/HTML-Charts/treemap.html): Rectangles sized by value, grouped by one dimension and split by a second – click a group to zoom in. Script: https://kaijxnes.github.io/HTML-Charts/charts/treemap-1.0.0.js
+- [Small Multiples](https://kaijxnes.github.io/HTML-Charts/small-multiples.html): A small chart per segment, side by side, with the latest value and change – on the same scale or each on its own. Script: https://kaijxnes.github.io/HTML-Charts/charts/small-multiples-1.0.0.js
 
 ## Optional
 
