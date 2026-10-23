@@ -36,6 +36,11 @@ Each chart has a page with a live demo on random data (hit *Shuffle data* to wat
 | Combo Chart | `combo-chart.html` | `charts/combo-chart-1.0.0.js` |
 | Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.0.0.js` |
 | Box Plot | `box-plot.html` | `charts/box-plot-1.0.0.js` |
+| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.0.0.js` |
+| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.0.0.js` |
+| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.0.0.js` |
+| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.0.0.js` |
+| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.0.0.js` |
 
 ## How it works
 

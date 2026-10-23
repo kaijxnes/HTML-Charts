@@ -271,6 +271,42 @@
       return { hd: hd, num: [1], rows: rows };
     },
 
+    "radar-compare": function () {
+      var hd = ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], rows = [];
+      for (var a = 1; a <= 6; a++) rows.push(["A" + a, money(R(1e5, 9e5)), count(R(500, 5000)), pct(R(2, 15)), money2(R(20, 120)), pct(R(40, 90)), count(R(10, 200))]);
+      return { hd: hd, num: [1, 2, 3, 4, 5, 6], rows: rows };
+    },
+
+    "bump-chart": function () {
+      var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], n = 10, base = [], tr = [];
+      for (var j = 0; j < n; j++) { base.push(R(4e4, 1.2e5)); tr.push(R(-0.08, 0.1)); }
+      keys(12).forEach(function (k, i) { var t = 11 - i; for (var j = 0; j < n; j++) rows.push([j ? "" : k, "A" + (j + 1), money(base[j] * Math.pow(1 + tr[j], t) * noise(0.12))]); });
+      return { hd: hd, num: [2], rows: rows };
+    },
+
+    "indexed-growth": function () {
+      var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], n = 7, base = [], tr = [];
+      for (var j = 0; j < n; j++) { base.push(Math.exp(R(9, 12))); tr.push(R(-0.04, 0.07)); }
+      keys(18).forEach(function (k, i) { var t = 17 - i; for (var j = 0; j < n; j++) rows.push([j ? "" : k, "A" + (j + 1), money(base[j] * Math.pow(1 + tr[j], t) * noise(0.06))]); });
+      return { hd: hd, num: [2], rows: rows };
+    },
+
+    "dumbbell": function () {
+      var hd = ["Dimension A", "Metric 1", "Metric 2"], rows = [];
+      for (var i = 1; i <= 14; i++) { var a = R(3, 25); rows.push(["A" + i, pct(a), pct(Math.max(0.5, a * (1 + R(-0.35, 0.45))))]); }
+      return { hd: hd, num: [1, 2], rows: rows };
+    },
+
+    "correlation-matrix": function () {
+      var hd = ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5"], rows = [];
+      var w = [R(0.5, 1.5), R(-1.2, 1.2), R(-1, 1), R(-0.5, 0.5)];
+      for (var i = 1; i <= 120; i++) {
+        var f = R(-1, 1) + R(-1, 1), g = R(-1, 1);
+        rows.push(["A" + i, money(5e4 * (2 + f + 0.3 * g)), count(2000 * (2 + w[0] * f + 0.5 * R(-1, 1))), pct(10 + 3 * (w[1] * f + R(-1, 1))), money2(60 + 15 * (w[2] * g + R(-1, 1))), count(300 * (2 + w[3] * f + R(-1, 1)))]);
+      }
+      return { hd: hd, num: [1, 2, 3, 4, 5], rows: rows };
+    },
+
     "kpi-scorecard": function () {
       var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"];
       var s = { m1: R(2e5, 9e5), m2: R(2000, 9000), m3: R(5e4, 2e5), m4: R(8, 30), m5: R(40, 120), m6: R(200, 1500) };

@@ -34,6 +34,11 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Combo Chart](https://kaijxnes.github.io/HTML-Charts/combo-chart.html): Bars for one metric with one or two more as lines on a second axis, grouped by day, week, month, quarter or year. Script: https://kaijxnes.github.io/HTML-Charts/charts/combo-chart-1.0.0.js
 - [Flow (Sankey)](https://kaijxnes.github.io/HTML-Charts/flow-sankey.html): How a total flows from one dimension to another – e.g. source to outcome – as bands sized by value. Click a node to highlight its flows. Script: https://kaijxnes.github.io/HTML-Charts/charts/flow-sankey-1.0.0.js
 - [Box Plot](https://kaijxnes.github.io/HTML-Charts/box-plot.html): The spread of a value within each group – median, middle 50%, whiskers, mean and outliers – to compare groups fairly. Script: https://kaijxnes.github.io/HTML-Charts/charts/box-plot-1.0.0.js
+- [Radar Compare](https://kaijxnes.github.io/HTML-Charts/radar-compare.html): Compare up to five segments across several metrics on one radar, each metric scored 0–100 against the best segment. Script: https://kaijxnes.github.io/HTML-Charts/charts/radar-compare-1.0.0.js
+- [Bump Chart](https://kaijxnes.github.io/HTML-Charts/bump-chart.html): How each segment's rank changes month by month – who's rising, who's falling and how often the leader changes. Script: https://kaijxnes.github.io/HTML-Charts/charts/bump-chart-1.0.0.js
+- [Indexed Growth](https://kaijxnes.github.io/HTML-Charts/indexed-growth.html): Every segment's trend indexed to 100 at a base month, so growth can be compared regardless of size. Script: https://kaijxnes.github.io/HTML-Charts/charts/indexed-growth-1.0.0.js
+- [Dumbbell](https://kaijxnes.github.io/HTML-Charts/dumbbell.html): Before and after for every item as two joined dots, coloured by whether it got better or worse. Script: https://kaijxnes.github.io/HTML-Charts/charts/dumbbell-1.0.0.js
+- [Correlation Matrix](https://kaijxnes.github.io/HTML-Charts/correlation-matrix.html): How strongly up to six metrics move together across rows, as a colour-coded matrix – click a cell to see the scatter. Script: https://kaijxnes.github.io/HTML-Charts/charts/correlation-matrix-1.0.0.js
 
 ## Optional
 

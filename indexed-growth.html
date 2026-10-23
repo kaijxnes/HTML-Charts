@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indexed Growth – free Chart.js chart for HTML containers | HTML Charts</title>
+<meta name="description" content="Every segment&#x27;s trend indexed to 100 at a base month, so growth can be compared regardless of size.">
+<meta name="author" content="Kai Jones">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/indexed-growth.html">
+<link rel="author" href="https://kaijxnes.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HTML Charts">
+<meta property="og:title" content="Indexed Growth – free Chart.js chart for HTML containers | HTML Charts">
+<meta property="og:description" content="Every segment&#x27;s trend indexed to 100 at a base month, so growth can be compared regardless of size.">
+<meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/indexed-growth.html">
+<meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/indexed-growth.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Indexed Growth – HTML container chart", "description": "Every segment's trend indexed to 100 at a base month, so growth can be compared regardless of size.", "url": "https://kaijxnes.github.io/HTML-Charts/indexed-growth.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/indexed-growth.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/indexed-growth-1.0.0.js", "version": "1.0.0", "keywords": "Growth, Index, Over time, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://kaijxnes.github.io/HTML-Charts/"}, {"@type": "ListItem", "position": 2, "name": "Indexed Growth", "item": "https://kaijxnes.github.io/HTML-Charts/indexed-growth.html"}]}</script>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
+  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
+</div></header>
+<main>
+
+<div class="crumbs"><a href="index.html">HTML Charts</a> / Indexed Growth</div>
+<section class="hero">
+  <div class="eyebrow">Free Chart.js chart for HTML containers</div>
+  <h1>Indexed Growth</h1>
+  <p class="lede">Every segment&#x27;s trend indexed to 100 at a base month, so growth can be compared regardless of size.</p>
+  <div class="pillrow"><span class="pill">v1.0.0</span><span class="pill mock">Live demo · random data</span><span class="pill">Growth</span><span class="pill">Index</span><span class="pill">Over time</span></div>
+</section>
+
+<div class="demo">
+  <div class="label"><span>Live demo – the chart is reading the random grid underneath, exactly as it reads a real one</span>
+    <button class="shuffle" type="button" data-shuffle>↻ Shuffle data</button></div>
+  <div class="frame" style="height:640px">
+    <div data-chart-embed="indexed-growth" style="height:100%"></div>
+  </div>
+  <div class="gridbox">
+    <div class="head"><span>Demo grid · <span data-rows>…</span> rows of random values</span><span>In use this is your grid, tucked behind the chart</span></div>
+    <div class="gridscroll"><table class="mock" data-gen="indexed-growth"></table></div>
+  </div>
+</div>
+
+<h2 id="use">How to use it</h2>
+<div class="usage">
+  <ol class="how">
+    <li>On your dashboard page, add a <b>grid</b> with the columns below (or map your own header names – see below). Keep it on the <b>same page</b> – tuck it behind the chart rather than hiding it, and make it tall.</li>
+    <li>Add an <b>HTML container</b> (one that runs JavaScript) and paste the snippet.</li>
+    <li>View the page. The chart finds the grid, reads every row and draws itself; it updates when filters change the grid.</li>
+  </ol>
+  <table class="cols"><thead><tr><th>Default header</th><th>Key</th><th></th><th>What it's for</th></tr></thead><tbody><tr><td><code>Month Key</code></td><td><code>month</code></td><td><span class="req">Required</span></td><td>Month.</td></tr><tr><td><code>Dimension A</code></td><td><code>dimA</code></td><td><span class="req">Required</span></td><td>The segment – the 8 largest are shown.</td></tr><tr><td><code>Metric 1</code></td><td><code>v1</code></td><td><span class="req">Required</span></td><td>The value.</td></tr></tbody></table>
+  <div class="code"><div class="bar"><span>Snippet for the HTML container</span><button class="copy" data-copy="snip1">Copy</button></div><pre id="snip1">&lt;div data-chart-embed=&quot;indexed-growth&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+(function () {
+  var s = document.createElement(&quot;script&quot;);
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/indexed-growth-1.0.0.js&quot;;
+  s.integrity = &quot;sha384-jgy37omqZbHOKoC5Y/LZdA50FAPunRPQKnPRy9D/NQ0i659z2+8VFPGDBwchPniQ&quot;;
+  s.crossOrigin = &quot;anonymous&quot;;
+  document.head.appendChild(s);
+})();
+&lt;/script&gt;</pre></div>
+  <dl class="kv">
+    <dt>Script URL</dt><dd><a href="charts/indexed-growth-1.0.0.js"><code>https://kaijxnes.github.io/HTML-Charts/charts/indexed-growth-1.0.0.js</code></a></dd>
+    <dt>Integrity (SRI)</dt><dd><code>sha384-jgy37omqZbHOKoC5Y/LZdA50FAPunRPQKnPRy9D/NQ0i659z2+8VFPGDBwchPniQ</code></dd>
+    <dt>Chart.js</dt><dd><code>https://kaijxnes.github.io/HTML-Charts/chart.umd-4.4.1.js</code> · <code>sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG</code></dd>
+  </dl>
+  <div class="note">The integrity value pins this exact version: the browser refuses to run the script if a single byte changes. New versions get a new file name and a new snippet, so a dashboard only changes when you paste the new snippet.</div>
+  <h3 style="margin-top:18px">Your own column names</h3>
+  <p class="small muted" style="margin:0 0 8px">The chart looks for the default headers above. If your grid's headers are different, map them by key with <code>data-columns</code> on the placeholder – the chart then shows your names too. <code>data-labels</code> (same keys) changes just the on-screen names, and <code>data-title</code> changes the heading. For grids that draw rows in batches, <code>data-grid-class</code> and <code>data-scroll-class</code> name the grid's container and its scroll box so every row is read.</p>
+  <div class="code"><div class="bar"><span>Example</span><button class="copy" data-copy="snip2">Copy</button></div><pre id="snip2">&lt;div data-chart-embed=&quot;indexed-growth&quot; data-columns=&#x27;{&quot;month&quot;:&quot;Your Month Header&quot;,&quot;v1&quot;:&quot;Your Metric Header&quot;}&#x27; data-title=&quot;Your title&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+(function () {
+  var s = document.createElement(&quot;script&quot;);
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/indexed-growth-1.0.0.js&quot;;
+  s.integrity = &quot;sha384-jgy37omqZbHOKoC5Y/LZdA50FAPunRPQKnPRy9D/NQ0i659z2+8VFPGDBwchPniQ&quot;;
+  s.crossOrigin = &quot;anonymous&quot;;
+  document.head.appendChild(s);
+})();
+&lt;/script&gt;</pre></div>
+</div>
+
+<h2>What it does</h2>
+<ul class="features"><li>Lines for each segment and the total, all starting at 100</li><li>Pick any base month</li><li>Cards for total growth, the fastest and slowest, and how many beat the total</li></ul>
+
+<h2>Data &amp; security</h2>
+<ul class="features">
+  <li>Reads only what is drawn on the page for the viewer, so the viewer's normal permissions still apply</li>
+  <li>Calculations happen in the viewer's browser; nothing is uploaded or sent anywhere</li>
+  <li>The only downloads are this script and Chart.js, both integrity-checked</li>
+  <li>No logins, API keys, cookies or browser storage</li>
+</ul>
+
+<h2>More charts</h2>
+<div class="more"><a href="monthly-bars.html"><b>Monthly Bars</b><span>Bar + line, Metric toggle, Averages</span></a><a href="stacked-segments.html"><b>Stacked Segments</b><span>Stacked bars, Segments, Filters, Large grids</span></a><a href="segment-breakdown.html"><b>Segment Breakdown</b><span>Stacked bars, Segments, Large grids</span></a><a href="cost-vs-return.html"><b>Cost vs Return</b><span>KPIs, ROI, Cost per unit</span></a><a href="month-heatmap.html"><b>Month Heatmap</b><span>Heatmap, Curves, Large grids</span></a><a href="kpi-scorecard.html"><b>KPI Scorecard</b><span>KPI cards, Sparklines, Comparisons</span></a><a href="time-series-trio.html"><b>Time Series Trio</b><span>Time series, Scorecards, Date ranges</span></a><a href="funnel.html"><b>Funnel</b><span>Funnel, Conversion, Segments</span></a><a href="change-bridge.html"><b>Change Bridge</b><span>Waterfall, Variance, Drivers</span></a><a href="pareto.html"><b>Pareto</b><span>Ranking, 80/20, Cumulative</span></a><a href="target-pacing.html"><b>Target Pacing</b><span>Targets, Projection, Daily</span></a><a href="quadrant-scatter.html"><b>Quadrant Scatter</b><span>Scatter, Bubbles, Quadrants</span></a><a href="mix-shift.html"><b>Mix Shift</b><span>Share, 100% stacked, Trends</span></a><a href="calendar-heatmap.html"><b>Calendar Heatmap</b><span>Calendar, Daily, Weekday patterns</span></a><a href="year-over-year.html"><b>Year over Year</b><span>YoY, Year to date, Seasonality</span></a><a href="leaderboard.html"><b>Leaderboard</b><span>Ranking, Table, Sparklines</span></a><a href="distribution.html"><b>Distribution</b><span>Histogram, Percentiles, Groups</span></a><a href="target-attainment.html"><b>Target Attainment</b><span>Targets, Bullet bars, Ranking</span></a><a href="anomaly-watch.html"><b>Anomaly Watch</b><span>Anomalies, Rolling average, Alerts</span></a><a href="treemap.html"><b>Treemap</b><span>Treemap, Hierarchy, Share</span></a><a href="small-multiples.html"><b>Small Multiples</b><span>Small multiples, Trends, Segments</span></a><a href="variance-table.html"><b>Variance Table</b><span>Table, Variance, Month vs month</span></a><a href="gauges.html"><b>Gauges</b><span>Gauges, Targets, KPIs</span></a><a href="combo-chart.html"><b>Combo Chart</b><span>Bar + line, Dual axis, Time series</span></a><a href="flow-sankey.html"><b>Flow (Sankey)</b><span>Sankey, Flows, Two dimensions</span></a><a href="box-plot.html"><b>Box Plot</b><span>Box plot, Spread, Groups</span></a><a href="radar-compare.html"><b>Radar Compare</b><span>Radar, Profiles, Many metrics</span></a><a href="bump-chart.html"><b>Bump Chart</b><span>Ranks, Over time, Movers</span></a><a href="dumbbell.html"><b>Dumbbell</b><span>Before / after, Change, Ranking</span></a><a href="correlation-matrix.html"><b>Correlation Matrix</b><span>Correlation, Many metrics, Scatter</span></a></div>
+
+<div class="byline">Made by <a href="https://kaijxnes.com" rel="author">Kai Jones</a> – data analyst building custom visuals for reporting. <a href="https://kaijxnes.com">See my CV →</a></div>
+
+<script>
+(function () {
+  var s = document.createElement("script");
+  s.src = "charts/indexed-growth-1.0.0.js";
+  s.integrity = "sha384-jgy37omqZbHOKoC5Y/LZdA50FAPunRPQKnPRy9D/NQ0i659z2+8VFPGDBwchPniQ";
+  s.crossOrigin = "anonymous";
+  document.head.appendChild(s);
+})();
+</script>
+
+</main>
+<footer><div class="in">
+  <span>HTML Charts v1.0.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>All values on this site are random placeholders.</span>
+</div></footer>
+<script src="assets/mock.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
