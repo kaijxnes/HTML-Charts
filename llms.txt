@@ -1,0 +1,21 @@
+# HTML Charts
+
+> Free, copy-paste Chart.js charts for dashboard HTML containers. Each chart reads a normal grid on the same page and redraws it as a richer visual – no API, no data leaves the browser.
+
+Built and maintained by Kai Jones, data analyst (CV: https://kaijxnes.com). Source: https://github.com/kaijxnes/HTML-Charts
+
+How it works: add a grid with the chart's columns to the dashboard page, add an HTML container that runs JavaScript, paste the snippet. Charts look for generic headers (Month Key, Metric 1…, Dimension A…); map other names with data-columns='{"key":"Header"}' on the placeholder div. All demo data on the site is random.
+
+## Charts
+
+- [Monthly Bars](https://kaijxnes.github.io/HTML-Charts/monthly-bars.html): A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line. Script: https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.0.0.js
+- [Stacked Segments](https://kaijxnes.github.io/HTML-Charts/stacked-segments.html): Metric × count by month, stacked by segment (any combination of three dimensions), with filters and a ranking. Script: https://kaijxnes.github.io/HTML-Charts/charts/stacked-segments-1.0.0.js
+- [Segment Breakdown](https://kaijxnes.github.io/HTML-Charts/segment-breakdown.html): The stacked segment view for grids with the month first and two dimensions – starts on Dimension A, combine with Dimension C. Script: https://kaijxnes.github.io/HTML-Charts/charts/segment-breakdown-1.0.0.js
+- [Cost vs Return](https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html): A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table. Script: https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.0.0.js
+- [Month Heatmap](https://kaijxnes.github.io/HTML-Charts/month-heatmap.html): A heatmap of a $ metric by start month and month index – per month, cumulative or per unit – with every month's curve against the average. Script: https://kaijxnes.github.io/HTML-Charts/charts/month-heatmap-1.0.0.js
+- [KPI Scorecard](https://kaijxnes.github.io/HTML-Charts/kpi-scorecard.html): Up to six metrics as cards with the latest value, change vs the previous month, a 3-month average or last year, and a sparkline; click one for its trend. Script: https://kaijxnes.github.io/HTML-Charts/charts/kpi-scorecard-1.0.0.js
+
+## Optional
+
+- [Chart.js 4.4.1 copy](https://kaijxnes.github.io/HTML-Charts/chart.umd-4.4.1.js): unmodified, MIT-licensed
+- [Author CV](https://kaijxnes.com): Kai Jones, data analyst

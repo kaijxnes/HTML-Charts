@@ -1,10 +1,12 @@
 # HTML Charts
 
+Built and maintained by [Kai Jones](https://kaijxnes.com), data analyst.
+
 Custom Chart.js charts for HTML containers, hosted on GitHub Pages.
 
 **Site:** https://kaijxnes.github.io/HTML-Charts/
 
-Each chart has a page with a live demo on placeholder data, the grid columns it reads, and a copy-paste snippet.
+Each chart has a page with a live demo on random data (hit *Shuffle data* to watch it redraw), the grid columns it reads, and a copy-paste snippet.
 
 | Chart | Page | Script |
 |---|---|---|
@@ -12,6 +14,8 @@ Each chart has a page with a live demo on placeholder data, the grid columns it 
 | Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.0.0.js` |
 | Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.0.0.js` |
 | Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.0.0.js` |
+| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.0.0.js` |
+| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.0.0.js` |
 
 ## How it works
 

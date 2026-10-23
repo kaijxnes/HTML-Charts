@@ -3,28 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HTML Charts</title>
-<meta name="description" content="Custom Chart.js visuals for HTML containers – live demos on mock data and copy-paste snippets.">
+<title>HTML Charts – free Chart.js charts for dashboard HTML containers</title>
+<meta name="description" content="Free, copy-paste Chart.js charts for dashboard HTML containers. Each chart reads a normal grid on the same page and redraws it as a richer visual – no API, no data leaves the browser.">
+<meta name="author" content="Kai Jones">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/">
+<link rel="author" href="https://kaijxnes.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HTML Charts">
+<meta property="og:title" content="HTML Charts – free Chart.js charts for dashboard HTML containers">
+<meta property="og:description" content="Free, copy-paste Chart.js charts for dashboard HTML containers. Each chart reads a normal grid on the same page and redraws it as a richer visual – no API, no data leaves the browser.">
+<meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/">
+<meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/monthly-bars.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/", "description": "Free, copy-paste Chart.js charts for dashboard HTML containers. Each chart reads a normal grid on the same page and redraws it as a richer visual – no API, no data leaves the browser.", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "publisher": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "HTML container charts", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Monthly Bars", "url": "https://kaijxnes.github.io/HTML-Charts/monthly-bars.html"}, {"@type": "ListItem", "position": 2, "name": "Stacked Segments", "url": "https://kaijxnes.github.io/HTML-Charts/stacked-segments.html"}, {"@type": "ListItem", "position": 3, "name": "Segment Breakdown", "url": "https://kaijxnes.github.io/HTML-Charts/segment-breakdown.html"}, {"@type": "ListItem", "position": 4, "name": "Cost vs Return", "url": "https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html"}, {"@type": "ListItem", "position": 5, "name": "Month Heatmap", "url": "https://kaijxnes.github.io/HTML-Charts/month-heatmap.html"}, {"@type": "ListItem", "position": 6, "name": "KPI Scorecard", "url": "https://kaijxnes.github.io/HTML-Charts/kpi-scorecard.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I put a custom chart in a dashboard HTML container?", "acceptedAnswer": {"@type": "Answer", "text": "Add a grid with the chart's columns to the same dashboard page, add an HTML container that runs JavaScript, and paste the chart's snippet. The chart finds the grid, reads every row and draws itself."}}, {"@type": "Question", "name": "Does any data leave the page?", "acceptedAnswer": {"@type": "Answer", "text": "No. The chart reads the grid that is already drawn in the viewer's browser and does every calculation there. The only network requests load the chart script and Chart.js, both checked with an SRI hash."}}, {"@type": "Question", "name": "My grid's column names are different – can I still use a chart?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Map your headers to the chart's keys with a data-columns attribute on the placeholder, e.g. data-columns='{\"v1\":\"Revenue\"}'. The chart then shows your names."}}, {"@type": "Question", "name": "Does it work with large grids?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If the grid only draws the rows on screen, the chart scrolls through it, waits for each batch and only draws once every row has been read."}}, {"@type": "Question", "name": "Is it free to use?", "acceptedAnswer": {"@type": "Answer", "text": "The charts are published openly on GitHub Pages with copy-paste snippets. Chart.js is MIT-licensed."}}]}</script>
 </head>
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="index.html" class="on">Home</a><a href="monthly-bars.html">Monthly Bars</a><a href="stacked-segments.html">Stacked Segments</a><a href="segment-breakdown.html">Segment Breakdown</a><a href="cost-vs-return.html">Cost vs Return</a></nav>
+  <nav class="nav"><a href="index.html" class="on">Home</a><a href="monthly-bars.html">Monthly Bars</a><a href="stacked-segments.html">Stacked Segments</a><a href="segment-breakdown.html">Segment Breakdown</a><a href="cost-vs-return.html">Cost vs Return</a><a href="month-heatmap.html">Month Heatmap</a><a href="kpi-scorecard.html">KPI Scorecard</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
 </div></header>
 <main>
 
 <section class="hero">
-  <div class="eyebrow">For dashboards with HTML containers</div>
+  <div class="eyebrow">Free Chart.js charts for dashboard HTML containers</div>
   <h1>Custom charts that sit inside an HTML container</h1>
-  <p class="lede">Each chart reads a normal grid on the same page and redraws it as a richer visual – cards, toggles, segments, filters. Pick a chart to see it running on mock data and copy its snippet.</p>
+  <p class="lede">Each chart reads a normal grid on the same dashboard page and redraws it as a richer visual – cards, toggles, segments, heatmaps, filters. Pick a chart to see it running on random data and copy its snippet.</p>
 </section>
 
 <div class="steps">
   <div class="step"><div class="n">1</div><h3>Add a grid</h3><p>Put a grid with the chart's columns on the page. It's the data source – tuck it behind the chart.</p></div>
   <div class="step"><div class="n">2</div><h3>Paste the snippet</h3><p>Add an HTML container and paste the chart's snippet. It loads the pinned chart script from here.</p></div>
-  <div class="step"><div class="n">3</div><h3>Present</h3><p>The chart reads every row of the grid and follows filters automatically.</p></div>
+  <div class="step"><div class="n">3</div><h3>View</h3><p>The chart reads every row of the grid and follows filters automatically.</p></div>
 </div>
 
 <h2>Charts</h2>
@@ -44,6 +58,14 @@
   <div class="thumb" style="background-image:url(assets/thumbs/cost-vs-return.png)"></div>
   <div class="body"><h3>Cost vs Return</h3><p>A cost metric against return (count × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.</p>
   <div class="tags"><span class="tag">KPIs</span><span class="tag">ROI</span><span class="tag">Cost per unit</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="month-heatmap.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/month-heatmap.png)"></div>
+  <div class="body"><h3>Month Heatmap</h3><p>A heatmap of a $ metric by start month and month index – per month, cumulative or per unit – with every month&#x27;s curve against the average.</p>
+  <div class="tags"><span class="tag">Heatmap</span><span class="tag">Curves</span><span class="tag">Large grids</span></div>
+  <span class="go">View demo &amp; snippet →</span></div></a><a class="card" href="kpi-scorecard.html">
+  <div class="thumb" style="background-image:url(assets/thumbs/kpi-scorecard.png)"></div>
+  <div class="body"><h3>KPI Scorecard</h3><p>Up to six metrics as cards with the latest value, change vs the previous month, a 3-month average or last year, and a sparkline; click one for its trend.</p>
+  <div class="tags"><span class="tag">KPI cards</span><span class="tag">Sparklines</span><span class="tag">Comparisons</span></div>
   <span class="go">View demo &amp; snippet →</span></div></a></div>
 
 <h2>Safe by design</h2>
@@ -53,10 +75,20 @@
   <div><h3>Permissions still apply</h3><p>Charts only see rows the viewer is allowed to see. No logins, keys or API calls.</p></div>
 </div>
 
+<h2>Questions</h2>
+<div class="faqs"><details class="faq"><summary>How do I put a custom chart in a dashboard HTML container?</summary><p>Add a grid with the chart&#x27;s columns to the same dashboard page, add an HTML container that runs JavaScript, and paste the chart&#x27;s snippet. The chart finds the grid, reads every row and draws itself.</p></details><details class="faq"><summary>Does any data leave the page?</summary><p>No. The chart reads the grid that is already drawn in the viewer&#x27;s browser and does every calculation there. The only network requests load the chart script and Chart.js, both checked with an SRI hash.</p></details><details class="faq"><summary>My grid&#x27;s column names are different – can I still use a chart?</summary><p>Yes. Map your headers to the chart&#x27;s keys with a data-columns attribute on the placeholder, e.g. data-columns=&#x27;{&quot;v1&quot;:&quot;Revenue&quot;}&#x27;. The chart then shows your names.</p></details><details class="faq"><summary>Does it work with large grids?</summary><p>Yes. If the grid only draws the rows on screen, the chart scrolls through it, waits for each batch and only draws once every row has been read.</p></details><details class="faq"><summary>Is it free to use?</summary><p>The charts are published openly on GitHub Pages with copy-paste snippets. Chart.js is MIT-licensed.</p></details></div>
+
+<div class="author">
+  <div class="av">KJ</div>
+  <div><h3>About the author</h3>
+  <p>HTML Charts is built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, a data analyst who builds reporting, dashboards and custom visuals with SQL, Python and BI tools.</p>
+  <p><a class="cta" href="https://kaijxnes.com">View my CV →</a> <a class="cta ghost" href="https://github.com/kaijxnes">GitHub</a></p></div>
+</div>
+
 </main>
 <footer><div class="in">
-  <span>HTML Charts · charts v1.0.0 · built on <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
-  <span>All values on this site are placeholders.</span>
+  <span>HTML Charts v1.0.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/site.js"></script>
 </body>
