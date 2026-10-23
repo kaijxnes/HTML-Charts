@@ -51,3 +51,27 @@ function select(el) {
   });
   box.querySelector(".fsearch").addEventListener("input", function (e) { f.q = e.target.value.trim().toLowerCase(); apply(); });
 })();
+
+// Tabs on the setup guide (arrow keys move between tabs)
+document.querySelectorAll("[data-tabs]").forEach(function (box) {
+  var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+  function show(t) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute("aria-selected", on ? "true" : "false");
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { show(t); });
+    t.addEventListener("keydown", function (e) {
+      var j = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : null;
+      if (j === null) return;
+      var n = tabs[(j + tabs.length) % tabs.length]; show(n); n.focus(); e.preventDefault();
+    });
+  });
+  var hash = location.hash.replace("#", "");
+  var pick = tabs.find(function (t) { return t.id === "t-" + hash; });
+  if (pick) show(pick);
+});

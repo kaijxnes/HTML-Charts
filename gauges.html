@@ -16,6 +16,9 @@
 <meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/gauges.html">
 <meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/gauges.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Gauges – HTML container chart", "description": "Up to 12 KPIs as dials against their targets, with red/amber/green zones and a target marker.", "url": "https://kaijxnes.github.io/HTML-Charts/gauges.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/gauges.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/gauges-1.1.0.js", "version": "1.1.0", "keywords": "Gauges, Targets, KPIs, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
@@ -24,7 +27,7 @@
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html">How to set up</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
+  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html">Setup guide</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
 </div></header>
 <main>
 
@@ -33,7 +36,7 @@
   <div class="eyebrow">Free Chart.js chart for HTML containers</div>
   <h1>Gauges</h1>
   <p class="lede">Up to 12 KPIs as dials against their targets, with red/amber/green zones and a target marker.</p>
-  <div class="pillrow"><span class="pill">v1.1.0</span><span class="pill mock">Live demo · random data</span><span class="pill">2 metrics · 1 dimension</span><span class="pill">Targets</span><span class="pill">KPIs</span></div>
+  <div class="pillrow"><span class="pill">v1.1.0</span><span class="pill mock">Live demo · random data</span><span class="pill m">2 metrics</span><span class="pill ">1 dimension</span><span class="pill">Targets</span><span class="pill">KPIs</span></div>
 </section>
 
 <div class="demo">
@@ -101,7 +104,7 @@
 <h2>More charts</h2>
 <div class="more"><a href="monthly-bars.html"><b>Monthly Bars</b><span>Bar + line, Metric toggle, Averages</span></a><a href="stacked-segments.html"><b>Stacked Segments</b><span>Stacked bars, Segments, Filters, Large grids</span></a><a href="segment-breakdown.html"><b>Segment Breakdown</b><span>Stacked bars, Segments, Large grids</span></a><a href="cost-vs-return.html"><b>Cost vs Return</b><span>KPIs, ROI, Cost per unit</span></a><a href="month-heatmap.html"><b>Month Heatmap</b><span>Heatmap, Curves, Large grids</span></a><a href="kpi-scorecard.html"><b>KPI Scorecard</b><span>KPI cards, Sparklines, Comparisons</span></a><a href="time-series-trio.html"><b>Time Series Trio</b><span>Time series, Scorecards, Date ranges</span></a><a href="funnel.html"><b>Funnel</b><span>Funnel, Conversion, Segments</span></a><a href="change-bridge.html"><b>Change Bridge</b><span>Waterfall, Variance, Drivers</span></a><a href="pareto.html"><b>Pareto</b><span>Ranking, 80/20, Cumulative</span></a><a href="target-pacing.html"><b>Target Pacing</b><span>Targets, Projection, Daily</span></a><a href="quadrant-scatter.html"><b>Quadrant Scatter</b><span>Scatter, Bubbles, Quadrants</span></a><a href="mix-shift.html"><b>Mix Shift</b><span>Share, 100% stacked, Trends</span></a><a href="calendar-heatmap.html"><b>Calendar Heatmap</b><span>Calendar, Daily, Weekday patterns</span></a><a href="year-over-year.html"><b>Year over Year</b><span>YoY, Year to date, Seasonality</span></a><a href="leaderboard.html"><b>Leaderboard</b><span>Ranking, Table, Sparklines</span></a><a href="distribution.html"><b>Distribution</b><span>Histogram, Percentiles, Groups</span></a><a href="target-attainment.html"><b>Target Attainment</b><span>Targets, Bullet bars, Ranking</span></a><a href="anomaly-watch.html"><b>Anomaly Watch</b><span>Anomalies, Rolling average, Alerts</span></a><a href="treemap.html"><b>Treemap</b><span>Treemap, Hierarchy, Share</span></a><a href="small-multiples.html"><b>Small Multiples</b><span>Small multiples, Trends, Segments</span></a><a href="variance-table.html"><b>Variance Table</b><span>Table, Variance, Month vs month</span></a><a href="combo-chart.html"><b>Combo Chart</b><span>Bar + line, Dual axis, Time series</span></a><a href="flow-sankey.html"><b>Flow (Sankey)</b><span>Sankey, Flows, Two dimensions</span></a><a href="box-plot.html"><b>Box Plot</b><span>Box plot, Spread, Groups</span></a><a href="radar-compare.html"><b>Radar Compare</b><span>Radar, Profiles, Many metrics</span></a><a href="bump-chart.html"><b>Bump Chart</b><span>Ranks, Over time, Movers</span></a><a href="indexed-growth.html"><b>Indexed Growth</b><span>Growth, Index, Over time</span></a><a href="dumbbell.html"><b>Dumbbell</b><span>Before / after, Change, Ranking</span></a><a href="correlation-matrix.html"><b>Correlation Matrix</b><span>Correlation, Many metrics, Scatter</span></a><a href="time-series-stack.html"><b>Time Series Stack</b><span>Time series, Scorecards, Up to 6 metrics</span></a><a href="time-series-single.html"><b>Time Series – 1 metric</b><span>Time series, Scorecard, 1 metric</span></a><a href="time-series-duo.html"><b>Time Series – 2 metrics</b><span>Time series, Scorecards, 2 metrics</span></a><a href="kpi-scorecard-trio.html"><b>KPI Scorecard – 3 metrics</b><span>KPI cards, Sparklines, 3 metrics</span></a><a href="combo-bar-line.html"><b>Combo Chart – bar + line</b><span>Bar + line, Dual axis, 2 metrics</span></a><a href="variance-table-single.html"><b>Variance Table – 1 metric</b><span>Table, Variance, 1 metric</span></a><a href="funnel-simple.html"><b>Funnel – no segments</b><span>Funnel, Conversion, 0 dimensions</span></a><a href="treemap-flat.html"><b>Treemap – one level</b><span>Treemap, Share, 1 dimension</span></a><a href="quadrant-scatter-plain.html"><b>Quadrant Scatter – 2 metrics</b><span>Scatter, Quadrants, 2 metrics</span></a><a href="radar-compare-four.html"><b>Radar Compare – 4 metrics</b><span>Radar, Profiles, 4 metrics</span></a></div>
 
-<div class="byline">Made by <a href="https://kaijxnes.com" rel="author">Kai Jones</a> – data analyst building custom visuals for reporting. <a href="https://kaijxnes.com">See my CV →</a></div>
+<div class="byline">Made by <a href="https://kaijxnes.com" rel="author">Kai Jones</a> – data analyst building custom visuals for reporting. <a href="https://kaijxnes.com">See my CV</a></div>
 
 <script>
 (function () {
@@ -115,7 +118,7 @@
 
 </main>
 <footer><div class="in">
-  <span>HTML Charts v1.1.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>HTML Charts v1.1.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
   <span>All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/mock.js"></script>

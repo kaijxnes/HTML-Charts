@@ -3,103 +3,139 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to set up HTML Charts – MicroStrategy, Tableau, Looker, Power BI | HTML Charts</title>
-<meta name="description" content="How to get the HTML Charts working on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik, with example code.">
+<title>Setup guide – HTML Charts on MicroStrategy, Tableau, Looker, Power BI</title>
+<meta name="description" content="Set up HTML Charts on MicroStrategy, web pages, Tableau, Looker, Power BI and Qlik: snippet builder with your own column names, every option, and troubleshooting.">
 <meta name="author" content="Kai Jones">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/platforms.html">
 <link rel="author" href="https://kaijxnes.com">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HTML Charts">
-<meta property="og:title" content="How to set up HTML Charts – MicroStrategy, Tableau, Looker, Power BI | HTML Charts">
-<meta property="og:description" content="How to get the HTML Charts working on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik, with example code.">
+<meta property="og:title" content="Setup guide – HTML Charts on MicroStrategy, Tableau, Looker, Power BI">
+<meta property="og:description" content="Set up HTML Charts on MicroStrategy, web pages, Tableau, Looker, Power BI and Qlik: snippet builder with your own column names, every option, and troubleshooting.">
 <meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/platforms.html">
 <meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/monthly-bars.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to add HTML Charts to a dashboard", "description": "Set up Chart.js charts that read a grid on the same page, on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik.", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "step": [{"@type": "HowToStep", "text": "Add a table or grid with the chart's column headers to the page."}, {"@type": "HowToStep", "text": "Add a placeholder div with data-chart-embed set to the chart id."}, {"@type": "HowToStep", "text": "Paste the chart's script loader, which loads the pinned, integrity-checked chart script."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to add HTML Charts to a dashboard", "description": "Set up Chart.js charts that read a grid on the same page, on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik.", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "step": [{"@type": "HowToStep", "text": "Add a grid with the chart's columns to the same page, behind the chart and tall."}, {"@type": "HowToStep", "text": "Map your grid's header names to the chart's column keys with data-columns."}, {"@type": "HowToStep", "text": "Paste the snippet into an HTML container and check the row count against the grid."}]}</script>
 </head>
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html" class="on">How to set up</a><a class="me" href="https://kaijxnes.com" rel="author me">By Kai Jones ↗</a></nav>
+  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html" class="on">Setup guide</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
 </div></header>
 <main>
 
-<div class="crumbs"><a href="index.html">HTML Charts</a> / How to set up</div>
+<div class="crumbs"><a href="index.html">HTML Charts</a> / Setup guide</div>
 <section class="hero">
-  <div class="eyebrow">Setup guide</div>
-  <h1>Getting the charts working on your platform</h1>
-  <p class="lede">Every chart does the same thing: it finds a table or grid on the same page by its column headers, reads the rows and draws itself. So it works anywhere you can put a table and a script on one page – and with a little glue code where the platform hands you data instead of a page.</p>
+  <h1>Set up a chart on your dashboard</h1>
+  <p class="lede">Every chart works the same way: it finds a grid on the same page by its column headers, reads the rows and draws itself. Getting one working is mostly about the grid – the right columns, the right names, on the right page.</p>
 </section>
 
-<h2>Which platforms work</h2>
-<table class="cols"><thead><tr><th>Platform</th><th>Fit</th><th>How</th></tr></thead><tbody><tr><td><b>MicroStrategy</b></td><td><span class="fit ok">Works as-is</span></td><td>HTML container in a dossier or document, with the grid on the same page. Add the two class names so big grids are read in full. Tested.</td></tr><tr><td><b>Any web page / intranet</b></td><td><span class="fit ok">Works as-is</span></td><td>Any page that lets you add HTML and JavaScript next to a table – an intranet page, a static report, a CMS block. Tested (it&#x27;s how the demos on this site run).</td></tr><tr><td><b>Tableau</b></td><td><span class="fit mid">With an extension</span></td><td>A dashboard extension reads the worksheet&#x27;s summary data, writes it to a table and loads the chart. Needs the extension allowed on your Server/Cloud site. Not tested.</td></tr><tr><td><b>Looker</b></td><td><span class="fit mid">With a custom visualization</span></td><td>A custom visualization receives the query results, writes them to a table and loads the chart. Needs an admin to register it. Not tested.</td></tr><tr><td><b>Power BI</b></td><td><span class="fit no">Only as a custom visual</span></td><td>Power BI doesn&#x27;t run JavaScript from HTML in a report, and visuals can&#x27;t read each other. You&#x27;d package the chart into a custom visual (pbiviz) – more work, not tested.</td></tr><tr><td><b>Qlik Sense</b></td><td><span class="fit mid">With an extension</span></td><td>Same pattern as Looker: an extension gets the hypercube data, writes a table and loads the chart. Not tested.</td></tr></tbody></table>
-<div class="note">The chart scripts are tested on MicroStrategy and plain web pages. The Tableau, Looker, Power BI and Qlik routes follow each platform's documented extension model, but haven't been tested here – treat the code below as a starting point.</div>
+<div class="steps">
+  <div class="step"><div class="n">1</div><h3>Build the grid</h3><p>Add a grid with the chart's columns to the same page as the chart, behind it and tall.</p></div>
+  <div class="step"><div class="n">2</div><h3>Map your names</h3><p>Tell the chart what your columns are called – the builder below writes this for you.</p></div>
+  <div class="step"><div class="n">3</div><h3>Paste and check</h3><p>Paste the snippet into an HTML container and compare the row count under the chart with the grid.</p></div>
+</div>
 
-<h2>The three things every setup needs</h2>
-<ol class="how">
-  <li><b>A table or grid with the right headers.</b> Each chart page lists its default headers (<code>Date</code>, <code>Metric 1</code>, <code>Units</code> …). Use those names, or map your own with <code>data-columns</code>.</li>
-  <li><b>A placeholder</b> – <code>&lt;div data-chart-embed="chart-id"&gt;</code> – where the chart should appear.</li>
-  <li><b>The script loader</b> from the chart's page, which loads the pinned, integrity-checked script.</li>
-</ol>
+<h2 id="builder">Snippet builder</h2>
+<p class="muted" style="max-width:70ch;margin:0">Pick a chart, type your grid's header names next to the ones it expects, and copy the snippet. Anything you leave blank uses the default name.</p>
+<div class="builder" data-builder>
+  <div class="form">
+    <div class="row2">
+      <label class="f">Chart<select data-b="chart"></select></label>
+      <label class="f">Platform<select data-b="platform"><option value="mstr">MicroStrategy</option><option value="web">Web page</option></select></label>
+    </div>
+    <div>
+      <table class="map"><thead><tr><th>Chart expects</th><th>Your header</th><th>Show as (optional)</th></tr></thead><tbody data-b="cols"></tbody></table>
+      <p class="hint">Copy header text from the grid itself. Spaces and capital letters don't matter.</p>
+    </div>
+    <div class="row2">
+      <label class="f">Heading<input type="text" data-b="title" placeholder="Chart's own heading"></label>
+      <label class="f">Height<input type="text" data-b="height" value="100%"></label>
+    </div>
+    <fieldset data-b="lowerbox"><legend>Lower is better</legend><div class="checks" data-b="lower"></div><p class="hint">Tick metrics where a fall is good news, like costs.</p></fieldset>
+    <label class="f" data-b="minbox" hidden>Flag months with fewer Units than<input type="number" data-b="min" placeholder="e.g. 600" min="0"></label>
+  </div>
+  <div class="out">
+    <div class="code"><div class="bar"><span>Your snippet</span><button class="copy" data-copy="bout">Copy</button></div><pre id="bout"></pre></div>
+    <ul class="changes" data-b="changes"></ul>
+    <a data-b="demo" href="#">Open this chart's demo</a>
+  </div>
+</div>
+<script type="application/json" id="chart-data">[{"id": "monthly-bars", "name": "Monthly Bars", "script": "monthly-bars", "sri": "sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "One bar per month (e.g. 202608)."}, {"key": "idx", "header": "Month Index", "req": false, "desc": "Used to order months if the month key can't be read."}, {"key": "v12", "header": "Metric 1", "req": true, "desc": "$ value per unit. Metric 2 and Metric 3 add the toggle."}, {"key": "v18", "header": "Metric 2", "req": false, "desc": ""}, {"key": "v24", "header": "Metric 3", "req": false, "desc": ""}, {"key": "a12", "header": "Metric 1 Avg", "req": false, "desc": "Filled for the latest 6 months only – drives the average cards (also Metric 2/3 Avg)."}, {"key": "a18", "header": "Metric 2 Avg", "req": false, "desc": ""}, {"key": "a24", "header": "Metric 3 Avg", "req": false, "desc": ""}, {"key": "units", "header": "Units", "req": false, "desc": "Units – how many users, customers or orders – drawn as the line."}], "minVolume": true, "used": ["month", "v12", "a12", "units", "idx"]}, {"id": "stacked-segments", "name": "Stacked Segments", "script": "stacked-segments", "sri": "sha384-ED8JxT0653JSQ3wohDo2YJP5YMZGIegXZX35PfqEtvslQZY/97584z4awcvrq7nv", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "One bar per month."}, {"key": "idx", "header": "Month Index", "req": false, "desc": "Optional."}, {"key": "dimA", "header": "Dimension A", "req": false, "desc": "Segment and filter."}, {"key": "dimB", "header": "Dimension B", "req": false, "desc": "Segment and filter."}, {"key": "dimC", "header": "Dimension C", "req": false, "desc": "Segment and filter."}, {"key": "v12", "header": "Metric 1", "req": true, "desc": "$ value per unit. Metric 2/3 add the toggle."}, {"key": "v18", "header": "Metric 2", "req": false, "desc": ""}, {"key": "v24", "header": "Metric 3", "req": false, "desc": ""}, {"key": "units", "header": "Units", "req": true, "desc": "Units – how many users, customers or orders in the row – total = Metric × Units."}], "minVolume": false, "used": ["month", "units", "v12", "dimA", "dimB", "dimC", "idx"]}, {"id": "segment-breakdown", "name": "Segment Breakdown", "script": "segment-breakdown", "sri": "sha384-PZvmXROd9rprKYWs/tN7bVET8FcxHENTK4eaSrlmm9FTRFxt6Gd5L6TdsOL2H3uR", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "One bar per month (can be the first column)."}, {"key": "idx", "header": "Month Index", "req": false, "desc": "Optional."}, {"key": "dimA", "header": "Dimension A", "req": false, "desc": "Segment and filter."}, {"key": "dimB", "header": "Dimension B", "req": false, "desc": ""}, {"key": "dimC", "header": "Dimension C", "req": false, "desc": "Segment and filter."}, {"key": "v12", "header": "Metric 1", "req": true, "desc": "$ value per unit."}, {"key": "v18", "header": "Metric 2", "req": false, "desc": ""}, {"key": "v24", "header": "Metric 3", "req": false, "desc": ""}, {"key": "units", "header": "Units", "req": true, "desc": "Units – how many users, customers or orders in the row."}], "minVolume": false, "used": ["month", "units", "v12", "dimA", "dimC", "idx"]}, {"id": "cost-vs-return", "name": "Cost vs Return", "script": "cost-vs-return", "sri": "sha384-9Y7zmqcUwVutmyPDblbXxVGliicdjZSR5V76DIfEZwHXiuhe/3c4NAVjLECLMBWl", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month. Rows without one are left out."}, {"key": "idx", "header": "Month Index", "req": false, "desc": "Optional."}, {"key": "v12", "header": "Metric 1", "req": true, "desc": "$ value per unit; return = Units × Metric 1."}, {"key": "v18", "header": "Metric 2", "req": false, "desc": ""}, {"key": "v24", "header": "Metric 3", "req": false, "desc": ""}, {"key": "units", "header": "Units", "req": true, "desc": "Units – how many users, customers or orders – used for cost per unit and return."}, {"key": "cost", "header": "Cost", "req": true, "desc": "$ cost for the month."}], "minVolume": false, "used": ["month", "cost", "units", "v12", "idx"]}, {"id": "month-heatmap", "name": "Month Heatmap", "script": "month-heatmap", "sri": "sha384-xPGIH88FhKC2LMCPeL4J80aM1aqMOUUQSYmGXMKgOaRU1IykFBUyXBsJb8hoV4vk", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "The start month – one heatmap row each."}, {"key": "idx", "header": "Month Index", "req": true, "desc": "Months since the start month (0, 1, 2 …) – one column each."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "$ value for that month and index."}, {"key": "units", "header": "Units", "req": false, "desc": "Units – how many users, customers or orders – index 0 is the base for the per-unit view."}], "minVolume": false, "used": ["month", "idx", "v1", "units"]}, {"id": "kpi-scorecard", "name": "KPI Scorecard", "script": "kpi-scorecard", "sri": "sha384-guo3/dbqo2UCktPlTwqOD9R5RVjVI0pYuxl8Ec8Fp3dNsRwXSnqp16YgnALFOc5D", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "One point per month; several rows in a month are added together."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Any metric – $, % or a count is read from the grid's own formatting."}, {"key": "v2", "header": "Metric 2", "req": false, "desc": "Up to five more metrics; cards only appear for the ones in the grid."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": "Up to five more metrics; cards only appear for the ones in the grid."}, {"key": "v4", "header": "Metric 4", "req": false, "desc": "Up to five more metrics; cards only appear for the ones in the grid."}, {"key": "v5", "header": "Metric 5", "req": false, "desc": "Up to five more metrics; cards only appear for the ones in the grid."}, {"key": "v6", "header": "Metric 6", "req": false, "desc": "Up to five more metrics; cards only appear for the ones in the grid."}], "minVolume": false, "used": ["month", "v1", "v2", "v3", "v4", "v5", "v6"]}, {"id": "time-series-trio", "name": "Time Series Trio", "script": "time-series-trio", "sri": "sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date (2026-10-23, 23/10/2026, 23 Oct 2026) or a month key (202610). Several rows on a date are added together."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Any metric – $, % or a count, read from the grid's formatting."}, {"key": "v2", "header": "Metric 2", "req": false, "desc": "Second row."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": "Third row."}], "minVolume": false, "used": ["date", "v1", "v2", "v3"]}, {"id": "funnel", "name": "Funnel", "script": "funnel", "sri": "sha384-MWGDjEU6dXop05YJgIIM7lAktUGxObbNbMiPpnc1b0EjUQDbJ+pL0ZpXhRsAPyAa", "cols": [{"key": "stage", "header": "Stage", "req": true, "desc": "Stage name – stages keep the order they first appear in the grid."}, {"key": "dimA", "header": "Dimension A", "req": false, "desc": "Optional segment – adds buttons and a curve per segment."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Count at that stage."}], "minVolume": false, "used": ["stage", "v1", "dimA"]}, {"id": "change-bridge", "name": "Change Bridge", "script": "change-bridge", "sri": "sha384-Kltcq89148pS1Hyto30BR35LLuDxruU43uCnp1LSt92KM5yyEmiHnJXmizBYaHKy", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The item each step belongs to."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The before value (e.g. last period)."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "The after value (e.g. this period)."}], "minVolume": false, "used": ["dimA", "v1", "v2"]}, {"id": "pareto", "name": "Pareto", "script": "pareto", "sri": "sha384-gtP0UdBd/oP0VX+rguxLMfxgmse0WhiPrihYGI2nkk+qENZ3ctWgTTx4Lubx+n5I", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The item – rows with the same item are added together."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value to rank by."}], "minVolume": false, "used": ["dimA", "v1"]}, {"id": "target-pacing", "name": "Target Pacing", "script": "target-pacing", "sri": "sha384-fIRppUBX24rSN8ZRCgIZ0SCh4qxgrHkfBsS+AbyYKU3rRqDtavdYL5wK6roTj+Zb", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date. Future days can have a target and no actual."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The actual for the day."}, {"key": "v2", "header": "Metric 2", "req": false, "desc": "The target for the day – without it you get a run-rate projection."}], "minVolume": false, "used": ["date", "v1", "v2"]}, {"id": "quadrant-scatter", "name": "Quadrant Scatter", "script": "quadrant-scatter", "sri": "sha384-74YJOLIslUCZsMGt2byOa+ekuc80Wzjmh6zc+gwtwckPA8E17qocYbuP/2XKJzFB", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The item – one bubble each; several rows are combined."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Across (x)."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Up (y)."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": "Bubble size."}], "minVolume": false, "used": ["dimA", "v1", "v2", "v3"]}, {"id": "mix-shift", "name": "Mix Shift", "script": "mix-shift", "sri": "sha384-PbFQndI0GEzxRu5TRU1hzGy7ql5iYnFRvajDtgaEmH4YlorhP9vTGR08cRS2Y+Rm", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "One bar per month."}, {"key": "dimA", "header": "Dimension A", "req": true, "desc": "The segment – the top 6 shown, the rest grouped as Other."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value to split."}], "minVolume": false, "used": ["month", "dimA", "v1"]}, {"id": "calendar-heatmap", "name": "Calendar Heatmap", "script": "calendar-heatmap", "sri": "sha384-WWtRh3UlNYYeYh/sUR52PPoNaGsKDX+QH1I/MNZ+giTEH6EEZLj+30hVC3DjGz7i", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value for the day."}], "minVolume": false, "used": ["date", "v1"]}, {"id": "year-over-year", "name": "Year over Year", "script": "year-over-year", "sri": "sha384-/my9xMdCYD/qCoF8YGbIVFVctS+2lH5Ylf+kLK8jNPEr5lcKlCJO/pZ0kRPeypA/", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month (e.g. 202609) – daily dates are rolled up to months."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value."}], "minVolume": false, "used": ["month", "v1"]}, {"id": "leaderboard", "name": "Leaderboard", "script": "leaderboard", "sri": "sha384-1hSro3Xk2W2Mi6pUEYJkMv9RixlZPMdX457g0AXZPU5ooGbYCXCwH1dd9TR9TdIV", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month."}, {"key": "dimA", "header": "Dimension A", "req": true, "desc": "The entry being ranked."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value to rank by."}], "minVolume": false, "used": ["month", "dimA", "v1"]}, {"id": "distribution", "name": "Distribution", "script": "distribution", "sri": "sha384-Vv89kqJwYHMqrbVNgT4kFp3dThQwUHGQfaSp0nucyyb5wsP0b0sx3Fd8tjs8A2SK", "cols": [{"key": "dimA", "header": "Dimension A", "req": false, "desc": "Optional group – up to 4 groups overlaid as % of each group."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "One value per grid row."}], "minVolume": false, "used": ["v1", "dimA"]}, {"id": "target-attainment", "name": "Target Attainment", "script": "target-attainment", "sri": "sha384-wDod7XRxT1br3m4759XOygBgrrYbPUPp8y9RaNuYnhUMiXcR3giwGclzZ1rSFm6o", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The item."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Actual."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Target."}], "minVolume": false, "used": ["dimA", "v1", "v2"]}, {"id": "anomaly-watch", "name": "Anomaly Watch", "script": "anomaly-watch", "sri": "sha384-subGf8z2vYubAdW+u5cS+C3suLPT6d1WEBBFQv+m/SdywKPjFem9esQnV20aPMxM", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date or a month key."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value."}], "minVolume": false, "used": ["date", "v1"]}, {"id": "treemap", "name": "Treemap", "script": "treemap", "sri": "sha384-BC7bl9wNUaj1EWyFi7k2TOQ9Mw3cKBmSGeYk5Sf0Z1Kq4+DIEGBYneXiy0ZlBqJw", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The group."}, {"key": "dimB", "header": "Dimension B", "req": false, "desc": "The items inside each group."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value (positive values only)."}], "minVolume": false, "used": ["dimA", "dimB", "v1"]}, {"id": "small-multiples", "name": "Small Multiples", "script": "small-multiples", "sri": "sha384-Znn5uOu3bZ05NKJr0X8D1mb4/KMclizVH9yb5DGVVzOdkZdydcK2PnTuBKklW/3P", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month (daily dates are rolled up)."}, {"key": "dimA", "header": "Dimension A", "req": true, "desc": "One tile each – up to 16."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value."}], "minVolume": false, "used": ["month", "dimA", "v1"]}, {"id": "variance-table", "name": "Variance Table", "script": "variance-table", "sri": "sha384-D8aC4rCoShNMJ8Ic81qkLVvTWqi4Fz96hh2JF6lGm3ZhQYNdTnEqI0UReKlUciBs", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month."}, {"key": "dimA", "header": "Dimension A", "req": true, "desc": "One table row each."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "First metric."}, {"key": "v2", "header": "Metric 2", "req": false, "desc": "Second metric."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": "Third metric."}], "minVolume": false, "used": ["month", "dimA", "v1", "v2", "v3"]}, {"id": "gauges", "name": "Gauges", "script": "gauges", "sri": "sha384-PsBzpLVrexwoazycsiACLNp0YP2esBOmhvJrumhQC77NqWbeT6qV34+4E6mc+XGC", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The KPI name – one dial each."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Actual. Each KPI keeps its own $, % or count format."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Target."}], "minVolume": false, "used": ["dimA", "v1", "v2"]}, {"id": "combo-chart", "name": "Combo Chart", "script": "combo-chart", "sri": "sha384-K7Um1/Hpi0hcaHoo02pT0M7N9GSiK75fhBOh/VsQ7OyYbzKxXO+TYHSbqkFm7lZ+", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date or a month key."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Bars."}, {"key": "v2", "header": "Metric 2", "req": false, "desc": "Line on the right axis."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": "Second line – shares the right axis if it's the same kind of number."}], "minVolume": false, "used": ["date", "v1", "v2", "v3"]}, {"id": "flow-sankey", "name": "Flow (Sankey)", "script": "flow-sankey", "sri": "sha384-lg2lm4sJ+uwTSG5DP8PvouAvjqumdcXWWQoQccZweUc38bgraZxFOxJ+4GG6YlMV", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "Where it comes from (left)."}, {"key": "dimB", "header": "Dimension B", "req": true, "desc": "Where it goes (right)."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The amount flowing (positive values)."}], "minVolume": false, "used": ["dimA", "dimB", "v1"]}, {"id": "box-plot", "name": "Box Plot", "script": "box-plot", "sri": "sha384-4GXG26xqJ+CNzMBMVE8Cr8bY9SzyDgkdq3i0g2UPHIj/Jz3F84G0HFtDkr9GGqxL", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The group – needs at least 3 values each."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "One value per grid row."}], "minVolume": false, "used": ["dimA", "v1"]}, {"id": "radar-compare", "name": "Radar Compare", "script": "radar-compare", "sri": "sha384-K7Y6BWZfrx+zX78N056lF01cKHuTUDIXLQtpMwA2tgkW5/6GeBO+LhnyfkgJMDx3", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The segment."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "At least 3 metrics – $, % or counts."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "At least 3 metrics – $, % or counts."}, {"key": "v3", "header": "Metric 3", "req": true, "desc": "At least 3 metrics – $, % or counts."}, {"key": "v4", "header": "Metric 4", "req": true, "desc": "At least 3 metrics – $, % or counts."}, {"key": "v5", "header": "Metric 5", "req": true, "desc": "At least 3 metrics – $, % or counts."}, {"key": "v6", "header": "Metric 6", "req": true, "desc": "At least 3 metrics – $, % or counts."}], "minVolume": false, "used": ["dimA", "v1", "v2", "v3", "v4", "v5", "v6"]}, {"id": "bump-chart", "name": "Bump Chart", "script": "bump-chart", "sri": "sha384-kv03UDd9SXXifipTcfngCMv3D4GUj9GM0vCZOskSeutPfnPHbGaJY3KZyMIpgOJA", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month."}, {"key": "dimA", "header": "Dimension A", "req": true, "desc": "The entry being ranked."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value to rank by."}], "minVolume": false, "used": ["month", "dimA", "v1"]}, {"id": "indexed-growth", "name": "Indexed Growth", "script": "indexed-growth", "sri": "sha384-Ir2PBEydGcJt9wE2Md2RDB598CoV6FqhkkGxGGLhT/q+NgN7Yp7gAA+KcmP1F7KI", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month."}, {"key": "dimA", "header": "Dimension A", "req": true, "desc": "The segment – the 8 largest are shown."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value."}], "minVolume": false, "used": ["month", "dimA", "v1"]}, {"id": "dumbbell", "name": "Dumbbell", "script": "dumbbell", "sri": "sha384-gUfdN65fl1U+E1gE+5bjvNvldv3I1XHv/3m7LhrIHOe91iQGWzjc6Jjrlm348Gq1", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The item."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Before."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "After."}], "minVolume": false, "used": ["dimA", "v1", "v2"]}, {"id": "correlation-matrix", "name": "Correlation Matrix", "script": "correlation-matrix", "sri": "sha384-+94+Y0rjevSw8RWLpp/9ghQLMxzKlfYMVC15HUQb2++/fjCKIu+NbvLh1B+s3fbO", "cols": [{"key": "dimA", "header": "Dimension A", "req": false, "desc": "Optional label shown on the scatter tooltip."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "At least 2 metrics; each grid row is one observation."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "At least 2 metrics; each grid row is one observation."}, {"key": "v3", "header": "Metric 3", "req": true, "desc": "At least 2 metrics; each grid row is one observation."}, {"key": "v4", "header": "Metric 4", "req": true, "desc": "At least 2 metrics; each grid row is one observation."}, {"key": "v5", "header": "Metric 5", "req": true, "desc": "At least 2 metrics; each grid row is one observation."}, {"key": "v6", "header": "Metric 6", "req": true, "desc": "At least 2 metrics; each grid row is one observation."}], "minVolume": false, "used": ["v1", "v2", "v3", "v4", "v5", "v6", "dimA"]}, {"id": "time-series-stack", "name": "Time Series Stack", "script": "time-series-stack", "sri": "sha384-a8rcnt9GizqgaId1Vn/qTsDOPb6tHsDfMA0ay4MMNP3Xo08KwS1h3XfI9kr2GKtB", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date or a month key."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "1 to 6 metrics – a row appears for each one in the grid."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "1 to 6 metrics – a row appears for each one in the grid."}, {"key": "v3", "header": "Metric 3", "req": true, "desc": "1 to 6 metrics – a row appears for each one in the grid."}, {"key": "v4", "header": "Metric 4", "req": true, "desc": "1 to 6 metrics – a row appears for each one in the grid."}, {"key": "v5", "header": "Metric 5", "req": true, "desc": "1 to 6 metrics – a row appears for each one in the grid."}, {"key": "v6", "header": "Metric 6", "req": true, "desc": "1 to 6 metrics – a row appears for each one in the grid."}], "minVolume": false, "used": ["date", "v1", "v2", "v3", "v4", "v5", "v6"]}, {"id": "time-series-single", "name": "Time Series – 1 metric", "script": "time-series-trio", "sri": "sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date or a month key."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The metric."}, {"key": "v2", "header": "Metric 2", "req": false, "desc": ""}, {"key": "v3", "header": "Metric 3", "req": false, "desc": ""}], "minVolume": false, "used": ["date", "v1"]}, {"id": "time-series-duo", "name": "Time Series – 2 metrics", "script": "time-series-trio", "sri": "sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date or a month key."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "First row."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Second row."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": ""}], "minVolume": false, "used": ["date", "v1", "v2"]}, {"id": "kpi-scorecard-trio", "name": "KPI Scorecard – 3 metrics", "script": "kpi-scorecard", "sri": "sha384-guo3/dbqo2UCktPlTwqOD9R5RVjVI0pYuxl8Ec8Fp3dNsRwXSnqp16YgnALFOc5D", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Three metrics."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Three metrics."}, {"key": "v3", "header": "Metric 3", "req": true, "desc": "Three metrics."}, {"key": "v4", "header": "Metric 4", "req": false, "desc": ""}, {"key": "v5", "header": "Metric 5", "req": false, "desc": ""}, {"key": "v6", "header": "Metric 6", "req": false, "desc": ""}], "minVolume": false, "used": ["month", "v1", "v2", "v3"]}, {"id": "combo-bar-line", "name": "Combo Chart – bar + line", "script": "combo-chart", "sri": "sha384-K7Um1/Hpi0hcaHoo02pT0M7N9GSiK75fhBOh/VsQ7OyYbzKxXO+TYHSbqkFm7lZ+", "cols": [{"key": "date", "header": "Date", "req": true, "desc": "A daily date or a month key."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Bars."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Line, right axis."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": ""}], "minVolume": false, "used": ["date", "v1", "v2"]}, {"id": "variance-table-single", "name": "Variance Table – 1 metric", "script": "variance-table", "sri": "sha384-D8aC4rCoShNMJ8Ic81qkLVvTWqi4Fz96hh2JF6lGm3ZhQYNdTnEqI0UReKlUciBs", "cols": [{"key": "month", "header": "Month Key", "req": true, "desc": "Month."}, {"key": "dimA", "header": "Dimension A", "req": true, "desc": "One row each."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The metric."}, {"key": "v2", "header": "Metric 2", "req": false, "desc": ""}, {"key": "v3", "header": "Metric 3", "req": false, "desc": ""}], "minVolume": false, "used": ["month", "dimA", "v1"]}, {"id": "funnel-simple", "name": "Funnel – no segments", "script": "funnel", "sri": "sha384-MWGDjEU6dXop05YJgIIM7lAktUGxObbNbMiPpnc1b0EjUQDbJ+pL0ZpXhRsAPyAa", "cols": [{"key": "stage", "header": "Stage", "req": true, "desc": "Stage name, in order."}, {"key": "dimA", "header": "Dimension A", "req": false, "desc": ""}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Count at that stage."}], "minVolume": false, "used": ["stage", "v1"]}, {"id": "treemap-flat", "name": "Treemap – one level", "script": "treemap", "sri": "sha384-BC7bl9wNUaj1EWyFi7k2TOQ9Mw3cKBmSGeYk5Sf0Z1Kq4+DIEGBYneXiy0ZlBqJw", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The item."}, {"key": "dimB", "header": "Dimension B", "req": false, "desc": ""}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "The value."}], "minVolume": false, "used": ["dimA", "v1"]}, {"id": "quadrant-scatter-plain", "name": "Quadrant Scatter – 2 metrics", "script": "quadrant-scatter", "sri": "sha384-74YJOLIslUCZsMGt2byOa+ekuc80Wzjmh6zc+gwtwckPA8E17qocYbuP/2XKJzFB", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The item."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Across (x)."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Up (y)."}, {"key": "v3", "header": "Metric 3", "req": false, "desc": ""}], "minVolume": false, "used": ["dimA", "v1", "v2"]}, {"id": "radar-compare-four", "name": "Radar Compare – 4 metrics", "script": "radar-compare", "sri": "sha384-K7Y6BWZfrx+zX78N056lF01cKHuTUDIXLQtpMwA2tgkW5/6GeBO+LhnyfkgJMDx3", "cols": [{"key": "dimA", "header": "Dimension A", "req": true, "desc": "The segment."}, {"key": "v1", "header": "Metric 1", "req": true, "desc": "Four metrics."}, {"key": "v2", "header": "Metric 2", "req": true, "desc": "Four metrics."}, {"key": "v3", "header": "Metric 3", "req": true, "desc": "Four metrics."}, {"key": "v4", "header": "Metric 4", "req": true, "desc": "Four metrics."}, {"key": "v5", "header": "Metric 5", "req": false, "desc": ""}, {"key": "v6", "header": "Metric 6", "req": false, "desc": ""}], "minVolume": false, "used": ["dimA", "v1", "v2", "v3", "v4"]}]</script>
 
-<h2 id="mstr">MicroStrategy</h2>
+<h2 id="platforms">Platforms</h2>
+<p class="muted" style="max-width:70ch;margin:0">The charts are tested on MicroStrategy and plain web pages. Tableau, Looker, Power BI and Qlik follow each platform's own extension route; that code is a starting point and hasn't been tested here.</p>
+<div class="tabs" data-tabs><div class="tablist" role="tablist" aria-label="Platforms"><button type="button" role="tab" id="t-mstr" aria-controls="p-mstr" aria-selected="true" tabindex="0"><span class="dot ok"></span>MicroStrategy</button><button type="button" role="tab" id="t-web" aria-controls="p-web" aria-selected="false" tabindex="-1"><span class="dot ok"></span>Web page</button><button type="button" role="tab" id="t-tableau" aria-controls="p-tableau" aria-selected="false" tabindex="-1"><span class="dot mid"></span>Tableau</button><button type="button" role="tab" id="t-looker" aria-controls="p-looker" aria-selected="false" tabindex="-1"><span class="dot mid"></span>Looker</button><button type="button" role="tab" id="t-pbi" aria-controls="p-pbi" aria-selected="false" tabindex="-1"><span class="dot no"></span>Power BI</button><button type="button" role="tab" id="t-qlik" aria-controls="p-qlik" aria-selected="false" tabindex="-1"><span class="dot mid"></span>Qlik Sense</button></div><div class="tabpanel" role="tabpanel" id="p-mstr" aria-labelledby="t-mstr"><p><span class="fit ok">Works as-is · tested</span></p>
+<p>The charts were built here first. They read a grid on the same dossier or document page.</p>
 <ol class="how">
-  <li>On the dossier or document page, add a <b>grid</b> with the chart's columns. Keep it on the <b>same page</b>, tuck it behind the chart and make it tall – MicroStrategy only draws the page you're on, and only the rows on screen.</li>
-  <li>Add an <b>HTML container</b>, choose <b>HTML Text</b>, and paste the snippet. Map your header names with <code>data-columns</code>.</li>
-  <li>Add <code>data-grid-class="mstrmojo-Xtab"</code> and <code>data-scroll-class="mstrmojo-scrollNode"</code> so the chart can scroll through big grids and read every row.</li>
-  <li>View it in <b>presentation mode</b>. Point filters and selectors at the grid – the chart follows the grid.</li>
+  <li>Add a <b>grid</b> with the chart's columns to the same page. Keep only the columns the chart needs, make it wide enough that there's no sideways scrollbar, and make it as tall as you can – the taller it is, the faster every row is read.</li>
+  <li>Put the grid <b>behind</b> the chart rather than hiding it – MicroStrategy doesn't draw hidden grids, so there'd be nothing to read.</li>
+  <li>Add an <b>HTML container</b>, choose <b>HTML Text</b>, and paste the snippet from the builder below.</li>
+  <li>Copy header names from the <b>grid itself</b>, not the dataset panel – derived metrics often show a different name in the grid.</li>
+  <li>Keep <code>data-grid-class</code> and <code>data-scroll-class</code> in the snippet. MicroStrategy only draws the rows on screen; these tell the chart which box to scroll so it reads them all.</li>
+  <li>Point filters and selectors at the <b>grid</b> – the HTML container can't be targeted, but the chart redraws whenever the grid changes.</li>
+  <li>Check it in <b>presentation mode</b>. Editor mode adds panels that can get in the way.</li>
 </ol>
-<div class="code"><div class="bar"><span>MicroStrategy – HTML container (example: Time Series Trio)</span><button class="copy" data-copy="g1">Copy</button></div><pre id="g1">&lt;div data-chart-embed=&quot;time-series-trio&quot;
+<div class="code"><div class="bar"><span>MicroStrategy HTML container – Time Series Trio with your own names</span><button class="copy" data-copy="g1">Copy</button></div><pre id="g1">&lt;div data-chart-embed=&quot;time-series-trio&quot;
      data-columns=&#x27;{&quot;date&quot;:&quot;Day&quot;,&quot;v1&quot;:&quot;Revenue&quot;,&quot;v2&quot;:&quot;Orders&quot;,&quot;v3&quot;:&quot;Conversion Rate&quot;}&#x27;
+     data-labels=&#x27;{&quot;v3&quot;:&quot;Conversion&quot;}&#x27;
      data-grid-class=&quot;mstrmojo-Xtab&quot; data-scroll-class=&quot;mstrmojo-scrollNode&quot;
      style=&quot;height:100%&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
 (function () {
-var s = document.createElement(&quot;script&quot;);
-s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
-s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
-s.crossOrigin = &quot;anonymous&quot;;
-document.head.appendChild(s);
+  var s = document.createElement(&quot;script&quot;);
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
+  s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
+  s.crossOrigin = &quot;anonymous&quot;;
+  document.head.appendChild(s);
 })();
 &lt;/script&gt;</pre></div>
-
-<h2 id="web">Any web page or intranet</h2>
-<p class="small muted">If the page already shows the data as an HTML table, put the placeholder and loader next to it. Hide the table with CSS if you only want the chart.</p>
+<div class="note">Copying a page or dossier is fine: each copy of the chart finds its own grid on its own page.</div></div><div class="tabpanel" role="tabpanel" id="p-web" aria-labelledby="t-web" hidden><p><span class="fit ok">Works as-is · tested</span></p>
+<p>Any page where you can add HTML and JavaScript next to a table – an intranet page, a static report, a CMS block. It's how the demos on this site run.</p>
+<ol class="how">
+  <li>Make sure the data is an HTML table (or grid of divs) with a header row.</li>
+  <li>Add the placeholder and loader. Hide the table with CSS if you only want the chart – but keep it in the page.</li>
+</ol>
 <div class="code"><div class="bar"><span>Plain HTML</span><button class="copy" data-copy="g2">Copy</button></div><pre id="g2">&lt;table&gt;
-  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Metric 1&lt;/th&gt;&lt;th&gt;Metric 2&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Date&lt;/th&gt;&lt;th&gt;Revenue&lt;/th&gt;&lt;th&gt;Orders&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;&lt;td&gt;2026-10-22&lt;/td&gt;&lt;td&gt;$12,400&lt;/td&gt;&lt;td&gt;380&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;2026-10-21&lt;/td&gt;&lt;td&gt;$11,950&lt;/td&gt;&lt;td&gt;366&lt;/td&gt;&lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:600px&quot;&gt;&lt;/div&gt;
+&lt;div data-chart-embed=&quot;time-series-trio&quot;
+     data-columns=&#x27;{&quot;v1&quot;:&quot;Revenue&quot;,&quot;v2&quot;:&quot;Orders&quot;}&#x27;
+     style=&quot;height:600px&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
 (function () {
-var s = document.createElement(&quot;script&quot;);
-s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
-s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
-s.crossOrigin = &quot;anonymous&quot;;
-document.head.appendChild(s);
+  var s = document.createElement(&quot;script&quot;);
+  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
+  s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
+  s.crossOrigin = &quot;anonymous&quot;;
+  document.head.appendChild(s);
 })();
-&lt;/script&gt;</pre></div>
-
-<h2 id="bridge">Tableau, Looker, Power BI and Qlik</h2>
-<p class="small muted">These platforms don't let a script read other parts of the dashboard, but their extension models hand your code the query results. Write those into a table on the extension's own page, then load the chart as usual.</p>
-<div class="code"><div class="bar"><span>Shared helper – write rows into a table</span><button class="copy" data-copy="g3">Copy</button></div><pre id="g3">// Shared idea for Tableau, Looker and Power BI: write the platform&#x27;s data
-// into a plain HTML table on the same page, then load the chart script.
-// The chart reads the table exactly as it reads a dashboard grid.
+&lt;/script&gt;</pre></div></div><div class="tabpanel" role="tabpanel" id="p-tableau" aria-labelledby="t-tableau" hidden><p><span class="fit mid">With an extension · not tested</span></p>
+<p>Tableau dashboards don't let a script read other sheets, but a <b>dashboard extension</b> can ask for a worksheet's data. Write it into a table on the extension's page and the chart reads it as normal.</p>
+<ol class="how">
+  <li>Add a worksheet with the chart's fields to the dashboard (it can be small or hidden).</li>
+  <li>Host the extension page somewhere your Tableau Server or Cloud site allows, with a <code>.trex</code> manifest pointing at it.</li>
+  <li>Use field names that match the chart's headers, or map them with <code>data-columns</code>.</li>
+</ol>
+<div class="code"><div class="bar"><span>Shared helper – write rows into a table</span><button class="copy" data-copy="g3">Copy</button></div><pre id="g3">// Writes rows into a plain table on the page so a chart can read them.
 function writeTable(headers, rows) {
-  var t = document.getElementById(&quot;grid&quot;) || document.body.appendChild(Object.assign(document.createElement(&quot;table&quot;), { id: &quot;grid&quot; }));
+  var t = document.getElementById(&quot;grid&quot;);
+  if (!t) { t = document.createElement(&quot;table&quot;); t.id = &quot;grid&quot;; document.body.appendChild(t); }
   t.innerHTML = &quot;&lt;thead&gt;&lt;tr&gt;&quot; + headers.map(function (h) { return &quot;&lt;th&gt;&quot; + h + &quot;&lt;/th&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&quot; +
     rows.map(function (r) { return &quot;&lt;tr&gt;&quot; + r.map(function (v) { return &quot;&lt;td&gt;&quot; + v + &quot;&lt;/td&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tr&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tbody&gt;&quot;;
 }</pre></div>
-<h3 style="margin-top:18px" id="tableau">Tableau – dashboard extension</h3>
-<p class="small muted">Put a worksheet with the chart's fields on the dashboard (it can be hidden), host this page somewhere your Tableau site allows, and add the extension with a .trex manifest pointing at it.</p>
-<div class="code"><div class="bar"><span>Tableau extension page</span><button class="copy" data-copy="g4">Copy</button></div><pre id="g4">&lt;!-- index.html of a Tableau dashboard extension (.trex manifest points here) --&gt;
+<div class="code"><div class="bar"><span>Tableau extension page</span><button class="copy" data-copy="g4">Copy</button></div><pre id="g4">&lt;!-- index.html of a Tableau dashboard extension (a .trex manifest points here) --&gt;
 &lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:100vh&quot;&gt;&lt;/div&gt;
 &lt;script src=&quot;tableau.extensions.1.latest.min.js&quot;&gt;&lt;/script&gt;  &lt;!-- from Tableau&#x27;s Extensions API download --&gt;
 &lt;script&gt;
@@ -110,16 +146,25 @@ tableau.extensions.initializeAsync().then(async function () {
   await reader.releaseAsync();
   writeTable(table.columns.map(function (c) { return c.fieldName; }),
              table.data.map(function (row) { return row.map(function (v) { return v.formattedValue; }); }));
-  loadChart();   // the script loader from the snippet
+  loadChart();   // the script loader from the chart&#x27;s snippet, wrapped in a function
 });
-&lt;/script&gt;</pre></div>
-<h3 style="margin-top:18px" id="looker">Looker – custom visualization</h3>
-<p class="small muted">Host the file and register it under Admin → Visualizations (or in a LookML project manifest). Choose dimensions and measures named like the chart's headers, or map them with <code>data-columns</code>.</p>
-<div class="code"><div class="bar"><span>Looker custom visualization</span><button class="copy" data-copy="g5">Copy</button></div><pre id="g5">// Looker custom visualization (registered in the admin Visualizations page or a LookML manifest)
+&lt;/script&gt;</pre></div></div><div class="tabpanel" role="tabpanel" id="p-looker" aria-labelledby="t-looker" hidden><p><span class="fit mid">Custom visualization · not tested</span></p>
+<p>A Looker <b>custom visualization</b> receives the query results. Write them into a table and load the chart.</p>
+<ol class="how">
+  <li>Host the file and register it under Admin → Visualizations, or in a LookML project manifest.</li>
+  <li>Pick dimensions and measures whose labels match the chart's headers, or map them with <code>data-columns</code>.</li>
+</ol>
+<div class="code"><div class="bar"><span>Shared helper – write rows into a table</span><button class="copy" data-copy="g5">Copy</button></div><pre id="g5">// Writes rows into a plain table on the page so a chart can read them.
+function writeTable(headers, rows) {
+  var t = document.getElementById(&quot;grid&quot;);
+  if (!t) { t = document.createElement(&quot;table&quot;); t.id = &quot;grid&quot;; document.body.appendChild(t); }
+  t.innerHTML = &quot;&lt;thead&gt;&lt;tr&gt;&quot; + headers.map(function (h) { return &quot;&lt;th&gt;&quot; + h + &quot;&lt;/th&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&quot; +
+    rows.map(function (r) { return &quot;&lt;tr&gt;&quot; + r.map(function (v) { return &quot;&lt;td&gt;&quot; + v + &quot;&lt;/td&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tr&gt;&quot;; }).join(&quot;&quot;) + &quot;&lt;/tbody&gt;&quot;;
+}</pre></div>
+<div class="code"><div class="bar"><span>Looker custom visualization</span><button class="copy" data-copy="g6">Copy</button></div><pre id="g6">// Looker custom visualization (registered under Admin &gt; Visualizations or in a LookML manifest)
 looker.plugins.visualizations.add({
   create: function (element) {
-    element.innerHTML = &#x27;&lt;table id=&quot;grid&quot; style=&quot;display:none&quot;&gt;&lt;/table&gt;&#x27; +
-                        &#x27;&lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;&#x27;;
+    element.innerHTML = &#x27;&lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;&#x27;;
     loadChart();
   },
   updateAsync: function (data, element, config, queryResponse, details, done) {
@@ -128,33 +173,70 @@ looker.plugins.visualizations.add({
                data.map(function (row) { return f.map(function (x) { return row[x.name].rendered || row[x.name].value; }); }));
     done();
   }
-});</pre></div>
-<h3 style="margin-top:18px" id="pbi">Power BI – custom visual</h3>
-<p class="small muted">Power BI's HTML visuals don't run JavaScript, so a snippet can't be pasted in. Build a custom visual with the <code>pbiviz</code> tools, bundle the chart script and Chart.js into it, and write the data view into a table in <code>update()</code>. Organisations often need to approve custom visuals before use.</p>
-<div class="code"><div class="bar"><span>Power BI visual.ts (sketch)</span><button class="copy" data-copy="g6">Copy</button></div><pre id="g6">// Power BI custom visual (pbiviz) – src/visual.ts, update()
-// Copy the chart script into the visual&#x27;s source and bundle it: Power BI visuals
-// run in a sandbox and shouldn&#x27;t load scripts from the internet.
+});</pre></div></div><div class="tabpanel" role="tabpanel" id="p-pbi" aria-labelledby="t-pbi" hidden><p><span class="fit no">Only as a custom visual · not tested</span></p>
+<p>Power BI doesn't run JavaScript from HTML in a report, and visuals can't read each other – so a snippet can't simply be pasted in. The route is a <b>custom visual</b> built with the <code>pbiviz</code> tools, with the chart bundled inside it.</p>
+<ol class="how">
+  <li>Create a visual with <code>pbiviz new</code>, add a table data role, and copy the chart script and Chart.js into the project.</li>
+  <li>In <code>update()</code>, write the data view into a table, then start the chart.</li>
+  <li>Expect your organisation to need to approve custom visuals before they can be used.</li>
+</ol>
+<div class="code"><div class="bar"><span>Power BI visual.ts (sketch)</span><button class="copy" data-copy="g7">Copy</button></div><pre id="g7">// Power BI custom visual (pbiviz) – src/visual.ts
+// Bundle the chart script and Chart.js into the visual: Power BI visuals run in a
+// sandbox and shouldn&#x27;t load scripts from the internet.
 public update(options: VisualUpdateOptions) {
   const t = options.dataViews[0].table;
   writeTable(t.columns.map(c =&gt; c.displayName),
              t.rows.map(r =&gt; r.map((v, i) =&gt; formatValue(v, t.columns[i].format))));
-}</pre></div>
+}</pre></div></div><div class="tabpanel" role="tabpanel" id="p-qlik" aria-labelledby="t-qlik" hidden><p><span class="fit mid">With an extension · not tested</span></p>
+<p>A Qlik Sense <b>extension</b> gets the hypercube in <code>paint()</code>. Same pattern: write a table, load the chart.</p>
+<div class="code"><div class="bar"><span>Qlik Sense extension (sketch)</span><button class="copy" data-copy="g8">Copy</button></div><pre id="g8">// Qlik Sense extension – paint() receives the hypercube
+paint: function ($element, layout) {
+  var hc = layout.qHyperCube;
+  writeTable(hc.qDimensionInfo.concat(hc.qMeasureInfo).map(function (f) { return f.qFallbackTitle; }),
+             hc.qDataPages[0].qMatrix.map(function (row) { return row.map(function (c) { return c.qText; }); }));
+  if (!$element.find(&quot;[data-chart-embed]&quot;).length) { $element.append(&#x27;&lt;div data-chart-embed=&quot;time-series-trio&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;&#x27;); loadChart(); }
+}</pre></div></div></div>
 
-<h2>Troubleshooting</h2>
+<h2 id="options">Everything you can set on the placeholder</h2>
+<table class="cols attrs"><thead><tr><th>Attribute</th><th>What it does</th><th>Example</th></tr></thead><tbody><tr><td><code>data-chart-embed</code></td><td>Which chart to draw – the chart's id.</td><td><code>data-chart-embed="funnel"</code></td></tr><tr><td><code>data-columns</code></td><td>Your grid's header names, by the chart's column keys. Only list the ones that differ from the defaults. Matching ignores spaces and capitals.</td><td><code>data-columns='{"v1":"Revenue","units":"Customers"}'</code></td></tr><tr><td><code>data-labels</code></td><td>Shorter names to show on the chart. Without it the chart shows your header names.</td><td><code>data-labels='{"v1":"Revenue (£)"}'</code></td></tr><tr><td><code>data-title</code></td><td>Replaces the chart's heading.</td><td><code>data-title="Weekly trading"</code></td></tr><tr><td><code>data-lower-better</code></td><td>Metrics where a fall is good news, such as costs – their changes show green when they go down. Gauges also accept KPI names.</td><td><code>data-lower-better='["v2"]'</code></td></tr><tr><td><code>data-min-volume</code></td><td>Monthly Bars only: flags months with fewer Units than this as a less reliable reading.</td><td><code>data-min-volume="600"</code></td></tr><tr><td><code>data-grid-class / data-scroll-class</code></td><td>For grids that only draw the rows on screen: the class names of the grid's container and its scroll box. On MicroStrategy use <code>mstrmojo-Xtab</code> and <code>mstrmojo-scrollNode</code>.</td><td><code>data-grid-class="mstrmojo-Xtab"</code></td></tr><tr><td><code>style=&quot;height: …&quot;</code></td><td>The chart fills its placeholder. <code>100%</code> fills an HTML container; on a web page give it a height.</td><td><code>style="height:600px"</code></td></tr></tbody></table>
+
+<h2 id="grid">Getting the grid right</h2>
 <ul class="features">
-  <li><b>"Couldn't find the grid"</b> – a header doesn't match. Check spelling, or map it with <code>data-columns</code>. Matching ignores spaces and capital letters.</li>
-  <li><b>Only some rows read</b> – the grid only draws what's on screen. Make it taller, and on MicroStrategy add the two class attributes above.</li>
-  <li><b>Nothing appears at all</b> – the platform may block JavaScript or outside scripts. Ask your admin whether HTML containers can run scripts and whether <code>kaijxnes.github.io</code> is reachable.</li>
-  <li><b>Wrong numbers</b> – open <i>Read details</i> under the chart to see which headers and how many rows it read.</li>
+  <li><b>Same page.</b> Dashboards only build the page you're looking at, so a grid on another page can't be read.</li>
+  <li><b>Behind, not hidden.</b> Hidden grids aren't drawn. Put the grid under the chart or make it small.</li>
+  <li><b>Tall and wide enough.</b> No sideways scrollbar; the taller it is, the fewer scroll steps it takes to read.</li>
+  <li><b>Only the columns you need.</b> Extra columns are ignored, but fewer columns read faster.</li>
+  <li><b>Merged labels are fine.</b> Labels shown once for a group are carried down to each row; total and subtotal rows are skipped.</li>
+  <li><b>Numbers can be formatted.</b> <code>$1,234</code>, <code>£3.4M</code>, <code>(23)</code> for negatives, <code>12.5%</code> and <code>1.2K</code> are all read. % metrics are averaged; $ and counts are added up.</li>
+  <li><b>Dates.</b> Month keys like <code>202609</code>, <code>Sep 2026</code>, or daily dates like <code>2026-09-30</code>, <code>30/09/2026</code> and <code>30 Sep 2026</code>.</li>
+  <li><b>Filters.</b> Point filters and selectors at the grid; the chart redraws whenever the grid changes.</li>
 </ul>
 
-<div class="byline">Made by <a href="https://kaijxnes.com" rel="author">Kai Jones</a> – data analyst building custom visuals for reporting. <a href="https://kaijxnes.com">See my CV →</a></div>
+<h2 id="troubleshooting">If it doesn't work</h2>
+<ul class="features">
+  <li><b>"Couldn't find the grid"</b> – one of the required headers doesn't match. The message lists the names it looked for; map yours with <code>data-columns</code>.</li>
+  <li><b>Fewer rows than the grid</b> – open <i>Read details</i> under the chart. On MicroStrategy, check the two class attributes are there and make the grid taller.</li>
+  <li><b>A blank box</b> – the platform may block scripts in HTML containers, or block <code>kaijxnes.github.io</code>. Ask your admin.</li>
+  <li><b>"Chart.js couldn't be loaded"</b> – both copies of Chart.js were blocked or didn't match their fingerprint, so nothing ran.</li>
+  <li><b>Numbers look off</b> – check the subtitle's row count against the grid, and whether a % metric should be averaged rather than added.</li>
+</ul>
+
+<h2 id="safety">For your admin</h2>
+<ul class="features">
+  <li>The chart reads only what's drawn on the page for the viewer, so their normal permissions and security filters still apply.</li>
+  <li>Everything is calculated in the viewer's browser. Nothing is uploaded, and there are no logins, keys, cookies or API calls.</li>
+  <li>The only downloads are the chart script and Chart.js, each pinned to an exact version and checked with an SRI hash – a changed file is refused before it runs.</li>
+  <li>Published files never change. A new version gets a new file name, so a dashboard only changes when someone pastes a new snippet.</li>
+</ul>
+
+<div class="byline">Made by <a href="https://kaijxnes.com" rel="author">Kai Jones</a> – data analyst building custom visuals for reporting. <a href="https://kaijxnes.com">See my CV</a></div>
 
 </main>
 <footer><div class="in">
-  <span>HTML Charts v1.1.0 · built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst · <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a> · charts drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>HTML Charts v1.1.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
   <span>All values on this site are random placeholders.</span>
 </div></footer>
+<script src="assets/builder.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>
