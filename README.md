@@ -21,6 +21,11 @@ Each chart has a page with a live demo on random data (hit *Shuffle data* to wat
 | Change Bridge | `change-bridge.html` | `charts/change-bridge-1.0.0.js` |
 | Pareto | `pareto.html` | `charts/pareto-1.0.0.js` |
 | Target Pacing | `target-pacing.html` | `charts/target-pacing-1.0.0.js` |
+| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.0.0.js` |
+| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.0.0.js` |
+| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.0.0.js` |
+| Year over Year | `year-over-year.html` | `charts/year-over-year-1.0.0.js` |
+| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.0.0.js` |
 
 ## How it works
 

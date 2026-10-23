@@ -19,6 +19,11 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Change Bridge](https://kaijxnes.github.io/HTML-Charts/change-bridge.html): A waterfall from one total to another, showing how much each item added or took away – e.g. last period to this period. Script: https://kaijxnes.github.io/HTML-Charts/charts/change-bridge-1.0.0.js
 - [Pareto](https://kaijxnes.github.io/HTML-Charts/pareto.html): Items ranked largest first with a cumulative share line, showing how few items make up 80% of the total. Script: https://kaijxnes.github.io/HTML-Charts/charts/pareto-1.0.0.js
 - [Target Pacing](https://kaijxnes.github.io/HTML-Charts/target-pacing.html): Month-to-date actual against target by day, with a month-end projection, % of target and the daily rate needed to hit it. Script: https://kaijxnes.github.io/HTML-Charts/charts/target-pacing-1.0.0.js
+- [Quadrant Scatter](https://kaijxnes.github.io/HTML-Charts/quadrant-scatter.html): Each item plotted by two metrics, sized by a third, split into four quadrants at the averages – spot the high-value, low-cost winners. Script: https://kaijxnes.github.io/HTML-Charts/charts/quadrant-scatter-1.0.0.js
+- [Mix Shift](https://kaijxnes.github.io/HTML-Charts/mix-shift.html): How the share of a total moves between segments month by month, as 100% stacked bars with gains and losses in points. Script: https://kaijxnes.github.io/HTML-Charts/charts/mix-shift-1.0.0.js
+- [Calendar Heatmap](https://kaijxnes.github.io/HTML-Charts/calendar-heatmap.html): A daily metric laid out as a calendar, one square per day, with averages by weekday and totals by month. Script: https://kaijxnes.github.io/HTML-Charts/charts/calendar-heatmap-1.0.0.js
+- [Year over Year](https://kaijxnes.github.io/HTML-Charts/year-over-year.html): A metric by calendar month for this year against the two before, monthly or year to date, with the YTD change. Script: https://kaijxnes.github.io/HTML-Charts/charts/year-over-year-1.0.0.js
+- [Leaderboard](https://kaijxnes.github.io/HTML-Charts/leaderboard.html): A ranked table for any month with change vs the month before, rank movement, share, a 12-month total and a trend sparkline. Script: https://kaijxnes.github.io/HTML-Charts/charts/leaderboard-1.0.0.js
 
 ## Optional
 

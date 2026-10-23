@@ -137,6 +137,56 @@
       return { hd: hd, num: [1, 2], rows: rows };
     },
 
+    "quadrant-scatter": function () {
+      var hd = ["Dimension A", "Metric 1", "Metric 2", "Metric 3"], rows = [];
+      for (var i = 1; i <= 24; i++) {
+        var size = Math.exp(R(5, 9)), x = R(20, 160) * noise(0.2), y = R(1, 12) + x / 40 * R(-1, 2);
+        rows.push(["A" + (i < 10 ? "0" : "") + i, money(x), pct(Math.max(0.3, y)), count(size)]);
+      }
+      return { hd: hd, num: [1, 2, 3], rows: rows };
+    },
+
+    "mix-shift": function () {
+      var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8"];
+      var base = A.map(function () { return R(0.3, 1.5); }), drift = A.map(function () { return R(-0.05, 0.06); });
+      keys(12).forEach(function (k, i) {
+        var t = 11 - i;
+        A.forEach(function (a, j) { rows.push([j ? "" : k, a, money(1e5 * base[j] * Math.pow(1 + drift[j], t) * noise(0.08))]); });
+      });
+      return { hd: hd, num: [2], rows: rows };
+    },
+
+    "calendar-heatmap": function () {
+      var hd = ["Date", "Metric 1"], rows = [], end = Date.UTC(2026, 9, 22), base = R(200, 900);
+      var wk = [R(0.5, 0.8), R(0.9, 1.1), R(0.9, 1.1), R(0.95, 1.15), R(1.05, 1.3), R(1.2, 1.6), R(0.7, 1.0)];
+      for (var i = 0; i < 540; i++) {
+        var d = new Date(end - i * 864e5), t = 539 - i, season = 1 + 0.25 * Math.sin((d.getUTCMonth() + 1) / 12 * 6.283);
+        rows.push([d.toISOString().slice(0, 10), count(base * (1 + t * 0.0006) * wk[d.getUTCDay()] * season * noise(0.22))]);
+      }
+      return { hd: hd, num: [1], rows: rows };
+    },
+
+    "year-over-year": function () {
+      var hd = ["Month Key", "Metric 1"], rows = [], base = R(1e5, 6e5), g = R(-0.05, 0.25);
+      var season = [0.85, 0.82, 0.95, 0.97, 1.0, 0.98, 0.92, 0.94, 1.02, 1.08, 1.12, 1.3];
+      for (var y = 2023; y <= 2026; y++) for (var m = 1; m <= 12; m++) {
+        if (y === 2026 && m > 9) break;
+        rows.unshift([String(y) + (m < 10 ? "0" : "") + m, money(base * Math.pow(1 + g, y - 2023 + m / 12) * season[m - 1] * noise(0.07))]);
+      }
+      return { hd: hd, num: [1], rows: rows };
+    },
+
+    "leaderboard": function () {
+      var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], n = 15;
+      var base = [], tr = [];
+      for (var j = 0; j < n; j++) { base.push(Math.exp(R(9, 12))); tr.push(R(-0.06, 0.08)); }
+      keys(13).forEach(function (k, i) {
+        var t = 12 - i;
+        for (var j = 0; j < n; j++) rows.push([j ? "" : k, "A" + (j + 1), money(base[j] * Math.pow(1 + tr[j], t) * noise(0.15))]);
+      });
+      return { hd: hd, num: [2], rows: rows };
+    },
+
     "kpi-scorecard": function () {
       var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"];
       var s = { m1: R(2e5, 9e5), m2: R(2000, 9000), m3: R(5e4, 2e5), m4: R(8, 30), m5: R(40, 120), m6: R(200, 1500) };
