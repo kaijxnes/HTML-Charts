@@ -16,4 +16,4 @@ User-agent: CCBot
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://kaijxnes.github.io/HTML-Charts/sitemap.xml
+Sitemap: https://viz.kaijxnes.com/sitemap.xml

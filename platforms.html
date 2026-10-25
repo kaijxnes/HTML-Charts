@@ -8,20 +8,20 @@
 <meta name="author" content="Kai Jones">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#1B2238">
-<link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/platforms.html">
+<link rel="canonical" href="https://viz.kaijxnes.com/platforms.html">
 <link rel="author" href="https://kaijxnes.com">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HTML Charts">
 <meta property="og:title" content="Setup guide: MicroStrategy, Tableau, Looker, Power BI">
 <meta property="og:description" content="Set up the charts on MicroStrategy, web pages, Tableau, Looker, Power BI or Qlik, with a snippet builder for your own column names.">
-<meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/platforms.html">
-<meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/og.png">
+<meta property="og:url" content="https://viz.kaijxnes.com/platforms.html">
+<meta property="og:image" content="https://viz.kaijxnes.com/assets/og.png">
 <meta property="og:image:alt" content="Setup guide: MicroStrategy, Tableau, Looker, Power BI">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Setup guide: MicroStrategy, Tableau, Looker, Power BI">
 <meta name="twitter:description" content="Set up the charts on MicroStrategy, web pages, Tableau, Looker, Power BI or Qlik, with a snippet builder for your own column names.">
-<meta name="twitter:image" content="https://kaijxnes.github.io/HTML-Charts/assets/og.png">
+<meta name="twitter:image" content="https://viz.kaijxnes.com/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
@@ -98,7 +98,7 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/time-series-trio-1.1.0.js&quot;;
   s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
@@ -124,7 +124,7 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/time-series-trio-1.1.0.js&quot;;
   s.integrity = &quot;sha384-F2pDVH7opAMJfPa3jfIzMuP8jLXHCiAQONDIo4mvAXK6GnmXvJypmeGdOX0Hhofb&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
@@ -224,7 +224,7 @@ paint: function ($element, layout) {
 <ul class="features">
   <li><b>"Couldn't find the grid"</b> – one of the required headers doesn't match. The message lists the names it looked for; map yours with <code>data-columns</code>.</li>
   <li><b>Fewer rows than the grid</b> – open <i>Read details</i> under the chart. On MicroStrategy, check the two class attributes are there and make the grid taller.</li>
-  <li><b>A blank box</b> – the platform may block scripts in HTML containers, or block <code>kaijxnes.github.io</code>. Ask your admin.</li>
+  <li><b>A blank box</b> – the platform may block scripts in HTML containers, or block <code>viz.kaijxnes.com</code> (and <code>kaijxnes.github.io</code>, which the charts use to fetch Chart.js). Ask your admin.</li>
   <li><b>"Chart.js couldn't be loaded"</b> – both copies of Chart.js were blocked or didn't match their fingerprint, so nothing ran.</li>
   <li><b>Numbers look off</b> – check the subtitle's row count against the grid, and whether a % metric should be averaged rather than added.</li>
 </ul>

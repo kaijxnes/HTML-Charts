@@ -4,7 +4,7 @@
   var root = document.querySelector("[data-builder]");
   var dataEl = document.getElementById("chart-data");
   if (!root || !dataEl) return;
-  var BASE = "https://kaijxnes.github.io/HTML-Charts";
+  var BASE = "https://viz.kaijxnes.com";
   var charts = JSON.parse(dataEl.textContent);
   var $ = function (k) { return root.querySelector('[data-b="' + k + '"]'); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
