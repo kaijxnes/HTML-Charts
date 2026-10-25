@@ -39,7 +39,7 @@ When to use it: Use it when you track one value per month and want to see the tr
 Questions it answers: Is this month above or below our recent average? Which months had too few units to rely on? How does the 18- or 24-month view compare with 12?
 
 Page: https://viz.kaijxnes.com/monthly-bars.html
-Script: https://viz.kaijxnes.com/charts/monthly-bars-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/monthly-bars-1.2.0.js
 Placeholder id: monthly-bars
 Columns:
 - Month Key (key month, required): One bar per month (e.g. 202608).
@@ -62,7 +62,7 @@ When to use it: Use it when a monthly total is made up of segments and you need 
 Questions it answers: Which segment combination contributes most each month? How does a filtered selection compare with the rest? Is value per unit rising or falling?
 
 Page: https://viz.kaijxnes.com/stacked-segments.html
-Script: https://viz.kaijxnes.com/charts/stacked-segments-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/stacked-segments-1.2.0.js
 Placeholder id: stacked-segments
 Columns:
 - Month Key (key month, required): One bar per month.
@@ -88,7 +88,7 @@ When to use it: Use it when your grid starts with the month and has one or two d
 Questions it answers: Which segment contributes most each month? How do two dimensions combine? What share of the total does the top segment hold?
 
 Page: https://viz.kaijxnes.com/segment-breakdown.html
-Script: https://viz.kaijxnes.com/charts/segment-breakdown-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/segment-breakdown-1.2.0.js
 Placeholder id: segment-breakdown
 Columns:
 - Month Key (key month, required): One bar per month (can be the first column).
@@ -112,7 +112,7 @@ When to use it: Use it when you spend money each month to get units, and want to
 Questions it answers: What's our ROI and ROAS this period? Is cost per unit below value per unit? Which months lost money?
 
 Page: https://viz.kaijxnes.com/cost-vs-return.html
-Script: https://viz.kaijxnes.com/charts/cost-vs-return-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/cost-vs-return-1.2.0.js
 Placeholder id: cost-vs-return
 Columns:
 - Month Key (key month, required): Month. Rows without one are left out.
@@ -135,7 +135,7 @@ When to use it: Use it for cohort-style data: groups that start in a month and b
 Questions it answers: Which start months perform best after six months? How quickly does value build up after the start? Are newer groups ahead of or behind older ones?
 
 Page: https://viz.kaijxnes.com/month-heatmap.html
-Script: https://viz.kaijxnes.com/charts/month-heatmap-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/month-heatmap-1.2.0.js
 Placeholder id: month-heatmap
 Columns:
 - Month Key (key month, required): The start month – one heatmap row each.
@@ -157,7 +157,7 @@ When to use it: Use it as the top strip of a dashboard: the latest value of each
 Questions it answers: How did each KPI move against last month or last year? Which metrics are trending the wrong way? What did the scorecard look like in a past month?
 
 Page: https://viz.kaijxnes.com/kpi-scorecard.html
-Script: https://viz.kaijxnes.com/charts/kpi-scorecard-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/kpi-scorecard-1.2.0.js
 Placeholder id: kpi-scorecard
 Columns:
 - Month Key (key month, required): One point per month; several rows in a month are added together.
@@ -179,7 +179,7 @@ When to use it: Use it when a few metrics each deserve their own row: a scorecar
 Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
 
 Page: https://viz.kaijxnes.com/time-series-trio.html
-Script: https://viz.kaijxnes.com/charts/time-series-trio-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/time-series-trio-1.2.0.js
 Placeholder id: time-series-trio
 Columns:
 - Date (key date, required): A daily date (2026-10-23, 23/10/2026, 23 Oct 2026) or a month key (202610). Several rows on a date are added together.
@@ -202,7 +202,7 @@ When to use it: Use it for any process with ordered steps – sign-up to purchas
 Questions it answers: Where is the biggest drop-off? What's the overall conversion from first to last step? Which segment converts best at each step?
 
 Page: https://viz.kaijxnes.com/funnel.html
-Script: https://viz.kaijxnes.com/charts/funnel-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/funnel-1.2.0.js
 Placeholder id: funnel
 Columns:
 - Stage (key stage, required): Stage name – stages keep the order they first appear in the grid.
@@ -222,7 +222,7 @@ When to use it: Use it to explain why a total moved between two periods, by show
 Questions it answers: What drove the change from last period to this one? Which items grew and which shrank? How much did the smaller items add up to?
 
 Page: https://viz.kaijxnes.com/change-bridge.html
-Script: https://viz.kaijxnes.com/charts/change-bridge-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/change-bridge-1.2.0.js
 Placeholder id: change-bridge
 Columns:
 - Dimension A (key dimA, required): The item each step belongs to.
@@ -243,7 +243,7 @@ When to use it: Use it to find the vital few: how many items make up most of a t
 Questions it answers: How many items make up 80% of the total? How dependent are we on the top item? Where does the long tail start?
 
 Page: https://viz.kaijxnes.com/pareto.html
-Script: https://viz.kaijxnes.com/charts/pareto-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/pareto-1.2.0.js
 Placeholder id: pareto
 Columns:
 - Dimension A (key dimA, required): The item – rows with the same item are added together.
@@ -262,7 +262,7 @@ When to use it: Use it during a month to see whether you're on track to hit targ
 Questions it answers: Are we ahead or behind target so far this month? Where will we land at month end? How much do we need per day to hit target?
 
 Page: https://viz.kaijxnes.com/target-pacing.html
-Script: https://viz.kaijxnes.com/charts/target-pacing-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/target-pacing-1.2.0.js
 Placeholder id: target-pacing
 Columns:
 - Date (key date, required): A daily date. Future days can have a target and no actual.
@@ -282,7 +282,7 @@ When to use it: Use it to compare items on two measures at once and sort them in
 Questions it answers: Which items are high on both measures? Which are high cost but low value? Are the biggest items in the right quadrant?
 
 Page: https://viz.kaijxnes.com/quadrant-scatter.html
-Script: https://viz.kaijxnes.com/charts/quadrant-scatter-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/quadrant-scatter-1.2.0.js
 Placeholder id: quadrant-scatter
 Columns:
 - Dimension A (key dimA, required): The item – one bubble each; several rows are combined.
@@ -303,7 +303,7 @@ When to use it: Use it when the total matters less than how it's split, and you 
 Questions it answers: Which segment gained the most share this year? Is the mix shifting even if the total is flat? What share does the largest segment hold now?
 
 Page: https://viz.kaijxnes.com/mix-shift.html
-Script: https://viz.kaijxnes.com/charts/mix-shift-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/mix-shift-1.2.0.js
 Placeholder id: mix-shift
 Columns:
 - Month Key (key month, required): One bar per month.
@@ -322,7 +322,7 @@ When to use it: Use it for daily data to spot patterns by weekday, season and st
 Questions it answers: Which weekday is strongest? Are there seasonal highs and lows? When were the best and worst days?
 
 Page: https://viz.kaijxnes.com/calendar-heatmap.html
-Script: https://viz.kaijxnes.com/charts/calendar-heatmap-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/calendar-heatmap-1.2.0.js
 Placeholder id: calendar-heatmap
 Columns:
 - Date (key date, required): A daily date.
@@ -340,7 +340,7 @@ When to use it: Use it for any monthly metric with seasonality, to compare this 
 Questions it answers: Are we ahead of last year so far? How many months beat the same month last year? Does this year follow the usual seasonal shape?
 
 Page: https://viz.kaijxnes.com/year-over-year.html
-Script: https://viz.kaijxnes.com/charts/year-over-year-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/year-over-year-1.2.0.js
 Placeholder id: year-over-year
 Columns:
 - Month Key (key month, required): Month (e.g. 202609) – daily dates are rolled up to months.
@@ -359,7 +359,7 @@ When to use it: Use it to rank entries – teams, products, regions – for any 
 Questions it answers: Who's number one this month and for how long? Who climbed or fell the most places? Which entries are trending up?
 
 Page: https://viz.kaijxnes.com/leaderboard.html
-Script: https://viz.kaijxnes.com/charts/leaderboard-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/leaderboard-1.2.0.js
 Placeholder id: leaderboard
 Columns:
 - Month Key (key month, required): Month.
@@ -379,7 +379,7 @@ When to use it: Use it when you have one value per row – per customer, order o
 Questions it answers: What's typical: the median or the mean? How wide is the spread? How much of the total comes from the top 10%?
 
 Page: https://viz.kaijxnes.com/distribution.html
-Script: https://viz.kaijxnes.com/charts/distribution-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/distribution-1.2.0.js
 Placeholder id: distribution
 Columns:
 - Metric 1 (key v1, required): One value per grid row.
@@ -397,7 +397,7 @@ When to use it: Use it to show every item's actual against its own target, so it
 Questions it answers: How many items are on target? Who's furthest behind and by how much? What's the overall attainment?
 
 Page: https://viz.kaijxnes.com/target-attainment.html
-Script: https://viz.kaijxnes.com/charts/target-attainment-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/target-attainment-1.2.0.js
 Placeholder id: target-attainment
 Columns:
 - Dimension A (key dimA, required): The item.
@@ -417,7 +417,7 @@ When to use it: Use it to monitor a daily or monthly metric and catch the days t
 Questions it answers: Is today's number normal? When did something unusual last happen? How many unusual days were there recently?
 
 Page: https://viz.kaijxnes.com/anomaly-watch.html
-Script: https://viz.kaijxnes.com/charts/anomaly-watch-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/anomaly-watch-1.2.0.js
 Placeholder id: anomaly-watch
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -436,7 +436,7 @@ When to use it: Use it to show how a total splits across a hierarchy – groups 
 Questions it answers: Which groups make up most of the total? What's the biggest item inside each group? How concentrated is the total?
 
 Page: https://viz.kaijxnes.com/treemap.html
-Script: https://viz.kaijxnes.com/charts/treemap-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/treemap-1.2.0.js
 Placeholder id: treemap
 Columns:
 - Dimension A (key dimA, required): The group.
@@ -455,7 +455,7 @@ When to use it: Use it to compare the trend of many segments side by side withou
 Questions it answers: Which segments are growing and which are shrinking? Do they share the same seasonal shape? Which segment changed most last month?
 
 Page: https://viz.kaijxnes.com/small-multiples.html
-Script: https://viz.kaijxnes.com/charts/small-multiples-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/small-multiples-1.2.0.js
 Placeholder id: small-multiples
 Columns:
 - Month Key (key month, required): Month (daily dates are rolled up).
@@ -474,7 +474,7 @@ When to use it: Use it when people want the numbers: each segment this month aga
 Questions it answers: Which segments moved most against last month? Is the total up or down on last year? Which metric is driving the change?
 
 Page: https://viz.kaijxnes.com/variance-table.html
-Script: https://viz.kaijxnes.com/charts/variance-table-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/variance-table-1.2.0.js
 Placeholder id: variance-table
 Columns:
 - Month Key (key month, required): Month.
@@ -496,7 +496,7 @@ When to use it: Use it for a handful of headline KPIs with targets, where a dial
 Questions it answers: Which KPIs are on target? Which one needs attention first? How far off target is each one?
 
 Page: https://viz.kaijxnes.com/gauges.html
-Script: https://viz.kaijxnes.com/charts/gauges-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/gauges-1.2.0.js
 Placeholder id: gauges
 Columns:
 - Dimension A (key dimA, required): The KPI name – one dial each.
@@ -516,7 +516,7 @@ When to use it: Use it when a volume and a rate belong together – revenue and 
 Questions it answers: How do volume and rate move together? Did the rate drop when volume grew? What happened last period vs the one before?
 
 Page: https://viz.kaijxnes.com/combo-chart.html
-Script: https://viz.kaijxnes.com/charts/combo-chart-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/combo-chart-1.2.0.js
 Placeholder id: combo-chart
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -536,7 +536,7 @@ When to use it: Use it to show how a total flows from one category to another �
 Questions it answers: Where does each source end up? What's the biggest single flow? Which outcome depends most on one source?
 
 Page: https://viz.kaijxnes.com/flow-sankey.html
-Script: https://viz.kaijxnes.com/charts/flow-sankey-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/flow-sankey-1.2.0.js
 Placeholder id: flow-sankey
 Columns:
 - Dimension A (key dimA, required): Where it comes from (left).
@@ -555,7 +555,7 @@ When to use it: Use it to compare spreads between groups, not just their average
 Questions it answers: Which group has the highest typical value? Which group varies the most? Where are the outliers?
 
 Page: https://viz.kaijxnes.com/box-plot.html
-Script: https://viz.kaijxnes.com/charts/box-plot-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/box-plot-1.2.0.js
 Placeholder id: box-plot
 Columns:
 - Dimension A (key dimA, required): The group – needs at least 3 values each.
@@ -574,7 +574,7 @@ When to use it: Use it to compare the profile of a few segments across several m
 Questions it answers: Which segment is strongest overall? Where is each segment weak? Which segment leads on each metric?
 
 Page: https://viz.kaijxnes.com/radar-compare.html
-Script: https://viz.kaijxnes.com/charts/radar-compare-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/radar-compare-1.2.0.js
 Placeholder id: radar-compare
 Columns:
 - Dimension A (key dimA, required): The segment.
@@ -593,7 +593,7 @@ When to use it: Use it when rank matters more than value: who's first, who's cli
 Questions it answers: Who's held the top spot longest? Who climbed the most places this year? How often did the leader change?
 
 Page: https://viz.kaijxnes.com/bump-chart.html
-Script: https://viz.kaijxnes.com/charts/bump-chart-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/bump-chart-1.2.0.js
 Placeholder id: bump-chart
 Columns:
 - Month Key (key month, required): Month.
@@ -612,7 +612,7 @@ When to use it: Use it to compare growth between segments of very different size
 Questions it answers: Which segment grew fastest since a chosen month? Who's growing faster than the total? Which segments are shrinking?
 
 Page: https://viz.kaijxnes.com/indexed-growth.html
-Script: https://viz.kaijxnes.com/charts/indexed-growth-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/indexed-growth-1.2.0.js
 Placeholder id: indexed-growth
 Columns:
 - Month Key (key month, required): Month.
@@ -631,7 +631,7 @@ When to use it: Use it for before-and-after comparisons across many items – la
 Questions it answers: How many items improved? Which improved or fell the most? Did the overall figure go up?
 
 Page: https://viz.kaijxnes.com/dumbbell.html
-Script: https://viz.kaijxnes.com/charts/dumbbell-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/dumbbell-1.2.0.js
 Placeholder id: dumbbell
 Columns:
 - Dimension A (key dimA, required): The item.
@@ -651,7 +651,7 @@ When to use it: Use it to explore which metrics move together across rows before
 Questions it answers: Which metrics rise and fall together? Is there a negative relationship worth checking? What does the scatter of any pair look like?
 
 Page: https://viz.kaijxnes.com/correlation-matrix.html
-Script: https://viz.kaijxnes.com/charts/correlation-matrix-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/correlation-matrix-1.2.0.js
 Placeholder id: correlation-matrix
 Columns:
 - Metric 1 … Metric 6 (key v1 … v6, required): At least 2 metrics; each grid row is one observation.
@@ -669,7 +669,7 @@ When to use it: Use it when you want the Time Series Trio layout for more metric
 Questions it answers: How did each of six metrics move over the latest range? Which metrics are up and which are down? Where are the peaks across all of them?
 
 Page: https://viz.kaijxnes.com/time-series-stack.html
-Script: https://viz.kaijxnes.com/charts/time-series-stack-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/time-series-stack-1.2.0.js
 Placeholder id: time-series-stack
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -687,7 +687,7 @@ When to use it: Use it when a few metrics each deserve their own row: a scorecar
 Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
 
 Page: https://viz.kaijxnes.com/time-series-single.html
-Script: https://viz.kaijxnes.com/charts/time-series-trio-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/time-series-trio-1.2.0.js
 Placeholder id: time-series-trio
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -703,7 +703,7 @@ When to use it: Use it when a few metrics each deserve their own row: a scorecar
 Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
 
 Page: https://viz.kaijxnes.com/time-series-duo.html
-Script: https://viz.kaijxnes.com/charts/time-series-trio-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/time-series-trio-1.2.0.js
 Placeholder id: time-series-trio
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -720,7 +720,7 @@ When to use it: Use it as the top strip of a dashboard: the latest value of each
 Questions it answers: How did each KPI move against last month or last year? Which metrics are trending the wrong way? What did the scorecard look like in a past month?
 
 Page: https://viz.kaijxnes.com/kpi-scorecard-trio.html
-Script: https://viz.kaijxnes.com/charts/kpi-scorecard-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/kpi-scorecard-1.2.0.js
 Placeholder id: kpi-scorecard
 Columns:
 - Month Key (key month, required): Month.
@@ -736,7 +736,7 @@ When to use it: Use it when a volume and a rate belong together – revenue and 
 Questions it answers: How do volume and rate move together? Did the rate drop when volume grew? What happened last period vs the one before?
 
 Page: https://viz.kaijxnes.com/combo-bar-line.html
-Script: https://viz.kaijxnes.com/charts/combo-chart-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/combo-chart-1.2.0.js
 Placeholder id: combo-chart
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -753,7 +753,7 @@ When to use it: Use it when people want the numbers: each segment this month aga
 Questions it answers: Which segments moved most against last month? Is the total up or down on last year? Which metric is driving the change?
 
 Page: https://viz.kaijxnes.com/variance-table-single.html
-Script: https://viz.kaijxnes.com/charts/variance-table-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/variance-table-1.2.0.js
 Placeholder id: variance-table
 Columns:
 - Month Key (key month, required): Month.
@@ -770,7 +770,7 @@ When to use it: Use it for any process with ordered steps – sign-up to purchas
 Questions it answers: Where is the biggest drop-off? What's the overall conversion from first to last step? Which segment converts best at each step?
 
 Page: https://viz.kaijxnes.com/funnel-simple.html
-Script: https://viz.kaijxnes.com/charts/funnel-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/funnel-1.2.0.js
 Placeholder id: funnel
 Columns:
 - Stage (key stage, required): Stage name, in order.
@@ -786,7 +786,7 @@ When to use it: Use it to show how a total splits across a hierarchy – groups 
 Questions it answers: Which groups make up most of the total? What's the biggest item inside each group? How concentrated is the total?
 
 Page: https://viz.kaijxnes.com/treemap-flat.html
-Script: https://viz.kaijxnes.com/charts/treemap-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/treemap-1.2.0.js
 Placeholder id: treemap
 Columns:
 - Dimension A (key dimA, required): The item.
@@ -802,7 +802,7 @@ When to use it: Use it to compare items on two measures at once and sort them in
 Questions it answers: Which items are high on both measures? Which are high cost but low value? Are the biggest items in the right quadrant?
 
 Page: https://viz.kaijxnes.com/quadrant-scatter-plain.html
-Script: https://viz.kaijxnes.com/charts/quadrant-scatter-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/quadrant-scatter-1.2.0.js
 Placeholder id: quadrant-scatter
 Columns:
 - Dimension A (key dimA, required): The item.
@@ -819,7 +819,7 @@ When to use it: Use it to compare the profile of a few segments across several m
 Questions it answers: Which segment is strongest overall? Where is each segment weak? Which segment leads on each metric?
 
 Page: https://viz.kaijxnes.com/radar-compare-four.html
-Script: https://viz.kaijxnes.com/charts/radar-compare-1.1.0.js
+Script: https://viz.kaijxnes.com/charts/radar-compare-1.2.0.js
 Placeholder id: radar-compare
 Columns:
 - Dimension A (key dimA, required): The segment.

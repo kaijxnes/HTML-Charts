@@ -29,7 +29,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Monthly Bars – HTML container chart", "description": "A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.", "url": "https://viz.kaijxnes.com/monthly-bars.html", "image": "https://viz.kaijxnes.com/assets/thumbs/monthly-bars.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://viz.kaijxnes.com/charts/monthly-bars-1.1.0.js", "version": "1.1.0", "keywords": "Bar + line, Metric toggle, Averages, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-10-25", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://viz.kaijxnes.com/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Monthly Bars – HTML container chart", "description": "A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.", "url": "https://viz.kaijxnes.com/monthly-bars.html", "image": "https://viz.kaijxnes.com/assets/thumbs/monthly-bars.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://viz.kaijxnes.com/charts/monthly-bars-1.2.0.js", "version": "1.2.0", "keywords": "Bar + line, Metric toggle, Averages, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-10-25", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://viz.kaijxnes.com/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://viz.kaijxnes.com/"}, {"@type": "ListItem", "position": 2, "name": "Monthly Bars", "item": "https://viz.kaijxnes.com/monthly-bars.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What data does the Monthly Bars chart need?", "acceptedAnswer": {"@type": "Answer", "text": "A grid on the same page with these columns: Month Key (required); Metric 1 (required); Metric 1 Avg (optional); Units (optional); Month Index (optional). Your own header names can be mapped with data-columns."}}, {"@type": "Question", "name": "What is the Monthly Bars chart good for?", "acceptedAnswer": {"@type": "Answer", "text": "Use it when you track one value per month and want to see the trend, how recent months compare with the six-month average, and whether thin months can be trusted. It answers questions like: Is this month above or below our recent average? Which months had too few units to rely on? How does the 18- or 24-month view compare with 12?"}}, {"@type": "Question", "name": "Does the Monthly Bars chart send data anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads the grid already drawn in the viewer's browser and calculates there. It only downloads its own script and Chart.js, both pinned with an SRI hash."}}]}</script>
 </head>
@@ -45,7 +45,7 @@
   <div class="eyebrow">Free Chart.js chart for HTML containers</div>
   <h1>Monthly Bars</h1>
   <p class="lede">A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.</p>
-  <div class="pillrow"><span class="pill">v1.1.0</span><span class="pill mock">Live demo · random data</span><span class="pill m">1–4 metrics</span><span class="pill ">0 dimensions</span><span class="pill ">needs a date</span><span class="pill">Over time</span><span class="pill">KPIs</span></div>
+  <div class="pillrow"><span class="pill">v1.2.0</span><span class="pill mock">Live demo · random data</span><span class="pill m">1–4 metrics</span><span class="pill ">0 dimensions</span><span class="pill ">needs a date</span><span class="pill">Over time</span><span class="pill">KPIs</span></div>
 </section>
 
 <div class="demo">
@@ -73,15 +73,15 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://viz.kaijxnes.com/charts/monthly-bars-1.1.0.js&quot;;
-  s.integrity = &quot;sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/monthly-bars-1.2.0.js&quot;;
+  s.integrity = &quot;sha384-Cq1D93/TANolhmqWY3kMOaZmS9yR9Bd/DL1RAI9582hcnToUHnFDcQvdN5iH5GH7&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
 &lt;/script&gt;</pre></div>
   <dl class="kv">
-    <dt>Script URL</dt><dd><a href="charts/monthly-bars-1.1.0.js"><code>https://viz.kaijxnes.com/charts/monthly-bars-1.1.0.js</code></a></dd>
-    <dt>Integrity (SRI)</dt><dd><code>sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm</code></dd>
+    <dt>Script URL</dt><dd><a href="charts/monthly-bars-1.2.0.js"><code>https://viz.kaijxnes.com/charts/monthly-bars-1.2.0.js</code></a></dd>
+    <dt>Integrity (SRI)</dt><dd><code>sha384-Cq1D93/TANolhmqWY3kMOaZmS9yR9Bd/DL1RAI9582hcnToUHnFDcQvdN5iH5GH7</code></dd>
     <dt>Chart.js</dt><dd><code>https://viz.kaijxnes.com/chart.umd-4.4.1.js</code> · <code>sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG</code></dd>
   </dl>
   <div class="note">The integrity value pins this exact version: the browser refuses to run the script if a single byte changes. New versions get a new file name and a new snippet, so a dashboard only changes when you paste the new snippet.</div>
@@ -91,8 +91,8 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://viz.kaijxnes.com/charts/monthly-bars-1.1.0.js&quot;;
-  s.integrity = &quot;sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/monthly-bars-1.2.0.js&quot;;
+  s.integrity = &quot;sha384-Cq1D93/TANolhmqWY3kMOaZmS9yR9Bd/DL1RAI9582hcnToUHnFDcQvdN5iH5GH7&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
@@ -119,8 +119,8 @@
 <script>
 (function () {
   var s = document.createElement("script");
-  s.src = "charts/monthly-bars-1.1.0.js";
-  s.integrity = "sha384-MEl3utPKIPYLdHMwiF5iUp0gm00Wy3HpjZtTGXLqrh71BhNvnRtIwRXJ8zPVe6Gm";
+  s.src = "charts/monthly-bars-1.2.0.js";
+  s.integrity = "sha384-Cq1D93/TANolhmqWY3kMOaZmS9yR9Bd/DL1RAI9582hcnToUHnFDcQvdN5iH5GH7";
   s.crossOrigin = "anonymous";
   document.head.appendChild(s);
 })();
@@ -128,7 +128,7 @@
 
 </main>
 <footer><div class="in">
-  <span>HTML Charts v1.1.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>HTML Charts v1.2.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
   <span><a href="about.html">About</a> · <a href="platforms.html">Setup guide</a> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/mock.js"></script>

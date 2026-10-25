@@ -29,7 +29,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Small Multiples – HTML container chart", "description": "A small chart per segment, side by side, with the latest value and change – on the same scale or each on its own.", "url": "https://viz.kaijxnes.com/small-multiples.html", "image": "https://viz.kaijxnes.com/assets/thumbs/small-multiples.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://viz.kaijxnes.com/charts/small-multiples-1.1.0.js", "version": "1.1.0", "keywords": "Small multiples, Trends, Segments, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-10-25", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://viz.kaijxnes.com/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Small Multiples – HTML container chart", "description": "A small chart per segment, side by side, with the latest value and change – on the same scale or each on its own.", "url": "https://viz.kaijxnes.com/small-multiples.html", "image": "https://viz.kaijxnes.com/assets/thumbs/small-multiples.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://viz.kaijxnes.com/charts/small-multiples-1.2.0.js", "version": "1.2.0", "keywords": "Small multiples, Trends, Segments, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-10-25", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://viz.kaijxnes.com/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://viz.kaijxnes.com/"}, {"@type": "ListItem", "position": 2, "name": "Small Multiples", "item": "https://viz.kaijxnes.com/small-multiples.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What data does the Small Multiples chart need?", "acceptedAnswer": {"@type": "Answer", "text": "A grid on the same page with these columns: Month Key (required); Dimension A (required); Metric 1 (required). Your own header names can be mapped with data-columns."}}, {"@type": "Question", "name": "What is the Small Multiples chart good for?", "acceptedAnswer": {"@type": "Answer", "text": "Use it to compare the trend of many segments side by side without one chart turning into spaghetti. It answers questions like: Which segments are growing and which are shrinking? Do they share the same seasonal shape? Which segment changed most last month?"}}, {"@type": "Question", "name": "Does the Small Multiples chart send data anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads the grid already drawn in the viewer's browser and calculates there. It only downloads its own script and Chart.js, both pinned with an SRI hash."}}]}</script>
 </head>
@@ -45,7 +45,7 @@
   <div class="eyebrow">Free Chart.js chart for HTML containers</div>
   <h1>Small Multiples</h1>
   <p class="lede">A small chart per segment, side by side, with the latest value and change – on the same scale or each on its own.</p>
-  <div class="pillrow"><span class="pill">v1.1.0</span><span class="pill mock">Live demo · random data</span><span class="pill m">1 metric</span><span class="pill ">1 dimension</span><span class="pill ">needs a date</span><span class="pill">Over time</span><span class="pill">Comparison</span></div>
+  <div class="pillrow"><span class="pill">v1.2.0</span><span class="pill mock">Live demo · random data</span><span class="pill m">1 metric</span><span class="pill ">1 dimension</span><span class="pill ">needs a date</span><span class="pill">Over time</span><span class="pill">Comparison</span></div>
 </section>
 
 <div class="demo">
@@ -73,15 +73,15 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://viz.kaijxnes.com/charts/small-multiples-1.1.0.js&quot;;
-  s.integrity = &quot;sha384-Znn5uOu3bZ05NKJr0X8D1mb4/KMclizVH9yb5DGVVzOdkZdydcK2PnTuBKklW/3P&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/small-multiples-1.2.0.js&quot;;
+  s.integrity = &quot;sha384-W7OMsLps/FMQFa/cVeelYqcGGvW73Z09b5b9daYFipcF+httm9yBIlg/ZqBPTLRW&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
 &lt;/script&gt;</pre></div>
   <dl class="kv">
-    <dt>Script URL</dt><dd><a href="charts/small-multiples-1.1.0.js"><code>https://viz.kaijxnes.com/charts/small-multiples-1.1.0.js</code></a></dd>
-    <dt>Integrity (SRI)</dt><dd><code>sha384-Znn5uOu3bZ05NKJr0X8D1mb4/KMclizVH9yb5DGVVzOdkZdydcK2PnTuBKklW/3P</code></dd>
+    <dt>Script URL</dt><dd><a href="charts/small-multiples-1.2.0.js"><code>https://viz.kaijxnes.com/charts/small-multiples-1.2.0.js</code></a></dd>
+    <dt>Integrity (SRI)</dt><dd><code>sha384-W7OMsLps/FMQFa/cVeelYqcGGvW73Z09b5b9daYFipcF+httm9yBIlg/ZqBPTLRW</code></dd>
     <dt>Chart.js</dt><dd><code>https://viz.kaijxnes.com/chart.umd-4.4.1.js</code> · <code>sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG</code></dd>
   </dl>
   <div class="note">The integrity value pins this exact version: the browser refuses to run the script if a single byte changes. New versions get a new file name and a new snippet, so a dashboard only changes when you paste the new snippet.</div>
@@ -91,8 +91,8 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://viz.kaijxnes.com/charts/small-multiples-1.1.0.js&quot;;
-  s.integrity = &quot;sha384-Znn5uOu3bZ05NKJr0X8D1mb4/KMclizVH9yb5DGVVzOdkZdydcK2PnTuBKklW/3P&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/small-multiples-1.2.0.js&quot;;
+  s.integrity = &quot;sha384-W7OMsLps/FMQFa/cVeelYqcGGvW73Z09b5b9daYFipcF+httm9yBIlg/ZqBPTLRW&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
@@ -119,8 +119,8 @@
 <script>
 (function () {
   var s = document.createElement("script");
-  s.src = "charts/small-multiples-1.1.0.js";
-  s.integrity = "sha384-Znn5uOu3bZ05NKJr0X8D1mb4/KMclizVH9yb5DGVVzOdkZdydcK2PnTuBKklW/3P";
+  s.src = "charts/small-multiples-1.2.0.js";
+  s.integrity = "sha384-W7OMsLps/FMQFa/cVeelYqcGGvW73Z09b5b9daYFipcF+httm9yBIlg/ZqBPTLRW";
   s.crossOrigin = "anonymous";
   document.head.appendChild(s);
 })();
@@ -128,7 +128,7 @@
 
 </main>
 <footer><div class="in">
-  <span>HTML Charts v1.1.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span>HTML Charts v1.2.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
   <span><a href="about.html">About</a> · <a href="platforms.html">Setup guide</a> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/mock.js"></script>
