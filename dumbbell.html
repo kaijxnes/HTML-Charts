@@ -3,31 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dumbbell – free Chart.js chart for HTML containers | HTML Charts</title>
-<meta name="description" content="Before and after for every item as two joined dots, coloured by whether it got better or worse.">
+<title>Dumbbell – Chart.js dashboard chart | HTML Charts</title>
+<meta name="description" content="Before and after for every item as two joined dots, coloured by whether it got better or worse. Live demo, copy-paste snippet and setup notes.">
 <meta name="author" content="Kai Jones">
 <meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1B2238">
 <link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/dumbbell.html">
 <link rel="author" href="https://kaijxnes.com">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HTML Charts">
-<meta property="og:title" content="Dumbbell – free Chart.js chart for HTML containers | HTML Charts">
-<meta property="og:description" content="Before and after for every item as two joined dots, coloured by whether it got better or worse.">
+<meta property="og:title" content="Dumbbell – Chart.js dashboard chart | HTML Charts">
+<meta property="og:description" content="Before and after for every item as two joined dots, coloured by whether it got better or worse. Live demo, copy-paste snippet and setup notes.">
 <meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/dumbbell.html">
 <meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/dumbbell.png">
+<meta property="og:image:alt" content="Dumbbell – Chart.js dashboard chart | HTML Charts">
+<meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dumbbell – Chart.js dashboard chart | HTML Charts">
+<meta name="twitter:description" content="Before and after for every item as two joined dots, coloured by whether it got better or worse. Live demo, copy-paste snippet and setup notes.">
+<meta name="twitter:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/dumbbell.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Dumbbell – HTML container chart", "description": "Before and after for every item as two joined dots, coloured by whether it got better or worse.", "url": "https://kaijxnes.github.io/HTML-Charts/dumbbell.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/dumbbell.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/dumbbell-1.1.0.js", "version": "1.1.0", "keywords": "Before / after, Change, Ranking, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Dumbbell – HTML container chart", "description": "Before and after for every item as two joined dots, coloured by whether it got better or worse.", "url": "https://kaijxnes.github.io/HTML-Charts/dumbbell.html", "image": "https://kaijxnes.github.io/HTML-Charts/assets/thumbs/dumbbell.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://kaijxnes.github.io/HTML-Charts/charts/dumbbell-1.1.0.js", "version": "1.1.0", "keywords": "Before / after, Change, Ranking, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-10-25", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://kaijxnes.github.io/HTML-Charts/"}, {"@type": "ListItem", "position": 2, "name": "Dumbbell", "item": "https://kaijxnes.github.io/HTML-Charts/dumbbell.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What data does the Dumbbell chart need?", "acceptedAnswer": {"@type": "Answer", "text": "A grid on the same page with these columns: Dimension A (required); Metric 1 (required); Metric 2 (required). Your own header names can be mapped with data-columns."}}, {"@type": "Question", "name": "What is the Dumbbell chart good for?", "acceptedAnswer": {"@type": "Answer", "text": "Use it for before-and-after comparisons across many items – last year vs this year, before vs after a change. It answers questions like: How many items improved? Which improved or fell the most? Did the overall figure go up?"}}, {"@type": "Question", "name": "Does the Dumbbell chart send data anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads the grid already drawn in the viewer's browser and calculates there. It only downloads its own script and Chart.js, both pinned with an SRI hash."}}]}</script>
 </head>
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html">Setup guide</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
+  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html">Setup guide</a><a href="about.html">About</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
 </div></header>
 <main>
 
@@ -51,6 +60,7 @@
   </div>
 </div>
 
+<h2 id="when">When to use it</h2><p class="lede" style="font-size:17px">Use it for before-and-after comparisons across many items – last year vs this year, before vs after a change.</p><h3 style="margin-top:16px">Questions it answers</h3><ul class="features"><li>How many items improved?</li><li>Which improved or fell the most?</li><li>Did the overall figure go up?</li></ul>
 <h2 id="use">How to use it</h2>
 <div class="usage">
   <ol class="how">
@@ -119,7 +129,7 @@
 </main>
 <footer><div class="in">
   <span>HTML Charts v1.1.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
-  <span>All values on this site are random placeholders.</span>
+  <span><a href="about.html">About</a> · <a href="platforms.html">Setup guide</a> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/mock.js"></script>
 <script src="assets/site.js"></script>

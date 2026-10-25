@@ -1,0 +1,828 @@
+# HTML Charts – full reference
+
+> 41 free Chart.js charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+
+Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://kaijxnes.github.io/HTML-Charts/
+
+## How every chart works
+
+1. Put a grid (or any HTML table) with the chart's column headers on the same page.
+2. Add a placeholder: <div data-chart-embed="CHART-ID" style="height:100%"></div>
+3. Load the chart script with its SRI hash (copy the loader from the chart's page).
+The chart finds the headers (spaces and capitals ignored), reads every row – scrolling grids that only draw what's on screen – and redraws when the grid changes. Nothing is uploaded.
+
+## Placeholder options
+
+- data-columns: map your header names to the chart's keys, e.g. data-columns='{"v1":"Revenue","units":"Customers"}'
+- data-labels: shorter on-screen names, same keys
+- data-title: replaces the heading
+- data-lower-better: metrics where a fall is good, e.g. '["v2"]'
+- data-min-volume: Monthly Bars only – flags months with fewer Units
+- data-grid-class / data-scroll-class: grid container and scroll box classes for grids that draw rows in batches (MicroStrategy: mstrmojo-Xtab / mstrmojo-scrollNode)
+
+## Platforms
+
+- MicroStrategy: HTML container (HTML Text) with the grid on the same page – works as-is.
+- Any web page: table plus snippet – works as-is.
+- Tableau: dashboard extension that writes worksheet summary data into a table, then loads the chart.
+- Looker: custom visualization that writes query results into a table.
+- Power BI: only as a custom visual (pbiviz) with the chart bundled in.
+- Qlik Sense: extension that writes the hypercube into a table.
+
+## Charts
+
+### Monthly Bars
+
+A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.
+
+When to use it: Use it when you track one value per month and want to see the trend, how recent months compare with the six-month average, and whether thin months can be trusted.
+Questions it answers: Is this month above or below our recent average? Which months had too few units to rely on? How does the 18- or 24-month view compare with 12?
+
+Page: https://kaijxnes.github.io/HTML-Charts/monthly-bars.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/monthly-bars-1.1.0.js
+Placeholder id: monthly-bars
+Columns:
+- Month Key (key month, required): One bar per month (e.g. 202608).
+- Metric 1 (key v12, required): $ value per unit. Metric 2 and Metric 3 add the toggle.
+- Metric 1 Avg (key a12, optional): Filled for the latest 6 months only – drives the average cards (also Metric 2/3 Avg).
+- Units (key units, optional): Units – how many users, customers or orders – drawn as the line.
+- Month Index (key idx, optional): Used to order months if the month key can't be read.
+Features:
+- Bars for the chosen metric by month; click a card or button to switch
+- Cards with the 6-month average of each metric
+- Dashed average line; months outside the window are faded
+- Units as a line on its own axis
+- Optional low-volume flag: add data-min-volume="600" to stripe and badge months with fewer Units than that (on in this demo)
+
+### Stacked Segments
+
+Metric × units by month, stacked by segment (any combination of three dimensions), with filters and a ranking.
+
+When to use it: Use it when a monthly total is made up of segments and you need to see which combinations drive it – for example channel × product.
+Questions it answers: Which segment combination contributes most each month? How does a filtered selection compare with the rest? Is value per unit rising or falling?
+
+Page: https://kaijxnes.github.io/HTML-Charts/stacked-segments.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/stacked-segments-1.1.0.js
+Placeholder id: stacked-segments
+Columns:
+- Month Key (key month, required): One bar per month.
+- Units (key units, required): Units – how many users, customers or orders in the row – total = Metric × Units.
+- Metric 1 (key v12, required): $ value per unit. Metric 2/3 add the toggle.
+- Dimension A (key dimA, optional): Segment and filter.
+- Dimension B (key dimB, optional): Segment and filter.
+- Dimension C (key dimC, optional): Segment and filter.
+- Month Index (key idx, optional): Optional.
+Features:
+- Segments from any combination of Dimension A, B and C (e.g. A1 × B2)
+- Multi-select filters; the selection is compared with the total
+- Ranking of every segment with share, count and value per unit
+- Value-per-unit line over the stacked bars
+- Reads grids of thousands of rows by scrolling through them (for grids that draw rows in batches)
+- Loading screen until every row is read; Read details log for troubleshooting
+
+### Segment Breakdown
+
+The stacked segment view for grids with the month first and two dimensions – starts on Dimension A, combine with Dimension C.
+
+When to use it: Use it when your grid starts with the month and has one or two dimensions, and you want a stacked view you can split and filter.
+Questions it answers: Which segment contributes most each month? How do two dimensions combine? What share of the total does the top segment hold?
+
+Page: https://kaijxnes.github.io/HTML-Charts/segment-breakdown.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/segment-breakdown-1.1.0.js
+Placeholder id: segment-breakdown
+Columns:
+- Month Key (key month, required): One bar per month (can be the first column).
+- Units (key units, required): Units – how many users, customers or orders in the row.
+- Metric 1 (key v12, required): $ value per unit.
+- Dimension A (key dimA, optional): Segment and filter.
+- Dimension C (key dimC, optional): Segment and filter.
+- Month Index (key idx, optional): Optional.
+Features:
+- Starts on Dimension A; click Dimension C to combine them
+- Metric toggle hides itself when the grid only has Metric 1
+- Merged labels are carried down to every row
+- Handles grids with a frozen header and batch-loaded rows
+- Same filters, ranking and loading screen as Stacked Segments
+
+### Cost vs Return
+
+Cost against return (units × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.
+
+When to use it: Use it when you spend money each month to get units, and want to know whether what they're worth covers what they cost.
+Questions it answers: What's our ROI and ROAS this period? Is cost per unit below value per unit? Which months lost money?
+
+Page: https://kaijxnes.github.io/HTML-Charts/cost-vs-return.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/cost-vs-return-1.1.0.js
+Placeholder id: cost-vs-return
+Columns:
+- Month Key (key month, required): Month. Rows without one are left out.
+- Cost (key cost, required): $ cost for the month.
+- Units (key units, required): Units – how many users, customers or orders – used for cost per unit and return.
+- Metric 1 (key v12, required): $ value per unit; return = Units × Metric 1.
+- Month Index (key idx, optional): Optional.
+Features:
+- Net return, ROI and ROAS, cost, return, cost per unit and count cards
+- Cost vs return bars with an ROI line and break-even marker
+- Cost per unit vs value per unit, shaded green where value is higher
+- Monthly table with totals
+- Rows with no month key are left out and counted in the subtitle
+
+### Month Heatmap
+
+A heatmap of a $ metric by start month and month index – per month, cumulative or per unit – with every month's curve against the average.
+
+When to use it: Use it for cohort-style data: groups that start in a month and build up value over the months after – the classic triangle view.
+Questions it answers: Which start months perform best after six months? How quickly does value build up after the start? Are newer groups ahead of or behind older ones?
+
+Page: https://kaijxnes.github.io/HTML-Charts/month-heatmap.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/month-heatmap-1.1.0.js
+Placeholder id: month-heatmap
+Columns:
+- Month Key (key month, required): The start month – one heatmap row each.
+- Month Index (key idx, required): Months since the start month (0, 1, 2 …) – one column each.
+- Metric 1 (key v1, required): $ value for that month and index.
+- Units (key units, optional): Units – how many users, customers or orders – index 0 is the base for the per-unit view.
+Features:
+- Heatmap shaded within each index column, so later columns stay readable
+- Per month, cumulative and per-unit views (per unit = cumulative ÷ the month's Units at index 0)
+- Average row, plus a line chart of every month's curve against the average
+- Cards for the total, the average at the furthest index most months have reached, and the best month
+- Months are sorted by their key; merged month labels are carried down
+
+### KPI Scorecard
+
+Up to six metrics as cards with the latest value, change vs the previous month, a 3-month average or last year, and a sparkline; click one for its trend.
+
+When to use it: Use it as the top strip of a dashboard: the latest value of each key metric, its change and a sparkline, with one click to the full trend.
+Questions it answers: How did each KPI move against last month or last year? Which metrics are trending the wrong way? What did the scorecard look like in a past month?
+
+Page: https://kaijxnes.github.io/HTML-Charts/kpi-scorecard.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/kpi-scorecard-1.1.0.js
+Placeholder id: kpi-scorecard
+Columns:
+- Month Key (key month, required): One point per month; several rows in a month are added together.
+- Metric 1 (key v1, required): Any metric – $, % or a count is read from the grid's own formatting.
+- Metric 2 … Metric 6 (key v2 … v6, optional): Up to five more metrics; cards only appear for the ones in the grid.
+Features:
+- Cards with the latest value, the change and a 12-month sparkline
+- Compare to the previous month, the 3-month average or the same month last year
+- Pick any month with “As of” to see the scorecard at that point
+- Percentages are averaged and compared in points; $ and counts are totalled and compared in %
+- Mark metrics where lower is better with data-lower-better='["v3"]' so a fall shows green (Metric 3 in this demo)
+- Click a card for a 24-month bar chart with a 3-month rolling average
+
+### Time Series Trio
+
+Three metrics, each on its own row: a scorecard for the latest 7/28/90 days or months against the period before, next to a chart of all the data over time.
+
+When to use it: Use it when a few metrics each deserve their own row: a scorecard for the latest 7, 28 or 90 days next to the full history.
+Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
+
+Page: https://kaijxnes.github.io/HTML-Charts/time-series-trio.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js
+Placeholder id: time-series-trio
+Columns:
+- Date (key date, required): A daily date (2026-10-23, 23/10/2026, 23 Oct 2026) or a month key (202610). Several rows on a date are added together.
+- Metric 1 (key v1, required): Any metric – $, % or a count, read from the grid's formatting.
+- Metric 2 (key v2, optional): Second row.
+- Metric 3 (key v3, optional): Third row.
+Features:
+- Scorecard per metric: latest range total, change vs the same-length range before, average and peak
+- Range buttons: 7, 28, 90 days or 12 months for daily data; 1, 3, 6 or 12 months for monthly data
+- Chart grouping: daily, weekly or monthly (monthly or quarterly for monthly data)
+- The latest range is shaded on each chart, the range it's compared with faintly
+- Percentages are averaged and compared in points; $ and counts are totalled
+- Mark metrics where lower is better with data-lower-better='["v2"]'
+
+### Funnel
+
+Counts through ordered stages as a funnel, with step and overall conversion, the biggest drop-off and a conversion curve per segment.
+
+When to use it: Use it for any process with ordered steps – sign-up to purchase, lead to deal – to see where people drop out.
+Questions it answers: Where is the biggest drop-off? What's the overall conversion from first to last step? Which segment converts best at each step?
+
+Page: https://kaijxnes.github.io/HTML-Charts/funnel.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/funnel-1.1.0.js
+Placeholder id: funnel
+Columns:
+- Stage (key stage, required): Stage name – stages keep the order they first appear in the grid.
+- Metric 1 (key v1, required): Count at that stage.
+- Dimension A (key dimA, optional): Optional segment – adds buttons and a curve per segment.
+Features:
+- Funnel bars sized against the first stage
+- % of previous stage and % of first stage on every step, with the drop between steps
+- Cards for overall conversion, top and end of funnel and the biggest drop-off
+- Segment buttons (top 6 by size) and a line per segment showing % of the first stage reaching each stage
+
+### Change Bridge
+
+A waterfall from one total to another, showing how much each item added or took away – e.g. last period to this period.
+
+When to use it: Use it to explain why a total moved between two periods, by showing what each item added or took away.
+Questions it answers: What drove the change from last period to this one? Which items grew and which shrank? How much did the smaller items add up to?
+
+Page: https://kaijxnes.github.io/HTML-Charts/change-bridge.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/change-bridge-1.1.0.js
+Placeholder id: change-bridge
+Columns:
+- Dimension A (key dimA, required): The item each step belongs to.
+- Metric 1 (key v1, required): The before value (e.g. last period).
+- Metric 2 (key v2, required): The after value (e.g. this period).
+Features:
+- Bridge from the before total to the after total, one step per item
+- Order by biggest change or keep the grid's order; small items grouped into Other
+- Rises in green, falls in red, labels on every step
+- Cards for the change, start, end, biggest rise and biggest fall
+- Ranked list of every item's change with before → after
+
+### Pareto
+
+Items ranked largest first with a cumulative share line, showing how few items make up 80% of the total.
+
+When to use it: Use it to find the vital few: how many items make up most of a total, and which ones they are.
+Questions it answers: How many items make up 80% of the total? How dependent are we on the top item? Where does the long tail start?
+
+Page: https://kaijxnes.github.io/HTML-Charts/pareto.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/pareto-1.1.0.js
+Placeholder id: pareto
+Columns:
+- Dimension A (key dimA, required): The item – rows with the same item are added together.
+- Metric 1 (key v1, required): The value to rank by.
+Features:
+- Bars largest first, coloured by whether they fall inside the first 80%
+- Cumulative share line with an 80% marker
+- Top 10 / 20 / 50 / All
+- Cards for how many items make 80%, the total, the top item and the top-5 share
+
+### Target Pacing
+
+Month-to-date actual against target by day, with a month-end projection, % of target and the daily rate needed to hit it.
+
+When to use it: Use it during a month to see whether you're on track to hit target, and what each remaining day needs to deliver.
+Questions it answers: Are we ahead or behind target so far this month? Where will we land at month end? How much do we need per day to hit target?
+
+Page: https://kaijxnes.github.io/HTML-Charts/target-pacing.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/target-pacing-1.1.0.js
+Placeholder id: target-pacing
+Columns:
+- Date (key date, required): A daily date. Future days can have a target and no actual.
+- Metric 1 (key v1, required): The actual for the day.
+- Metric 2 (key v2, optional): The target for the day – without it you get a run-rate projection.
+Features:
+- Daily bars with cumulative actual and cumulative target lines
+- Month-end projection on the target's daily shape (or the run rate if there's no target)
+- Cards for actual and target to date, projected month end and the daily rate needed
+- Pick any month in the grid
+
+### Quadrant Scatter
+
+Each item plotted by two metrics, sized by a third, split into four quadrants at the averages – spot the high-value, low-cost winners.
+
+When to use it: Use it to compare items on two measures at once and sort them into four groups – high/high winners, and the ones to fix.
+Questions it answers: Which items are high on both measures? Which are high cost but low value? Are the biggest items in the right quadrant?
+
+Page: https://kaijxnes.github.io/HTML-Charts/quadrant-scatter.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/quadrant-scatter-1.1.0.js
+Placeholder id: quadrant-scatter
+Columns:
+- Dimension A (key dimA, required): The item – one bubble each; several rows are combined.
+- Metric 1 (key v1, required): Across (x).
+- Metric 2 (key v2, required): Up (y).
+- Metric 3 (key v3, optional): Bubble size.
+Features:
+- Bubbles coloured by quadrant, with dashed average lines
+- Cards counting the items in each quadrant, with examples
+- Labels for the top 8, all or none
+- Percentages are averaged per item; $ and counts are totalled
+
+### Mix Shift
+
+How the share of a total moves between segments month by month, as 100% stacked bars with gains and losses in points.
+
+When to use it: Use it when the total matters less than how it's split, and you want to see which segments are gaining or losing share.
+Questions it answers: Which segment gained the most share this year? Is the mix shifting even if the total is flat? What share does the largest segment hold now?
+
+Page: https://kaijxnes.github.io/HTML-Charts/mix-shift.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/mix-shift-1.1.0.js
+Placeholder id: mix-shift
+Columns:
+- Month Key (key month, required): One bar per month.
+- Dimension A (key dimA, required): The segment – the top 6 shown, the rest grouped as Other.
+- Metric 1 (key v1, required): The value to split.
+Features:
+- Share % or values view
+- Cards for the largest segment and the biggest gain and loss in share since the first month
+- List of every segment's share first month → latest, in points
+
+### Calendar Heatmap
+
+A daily metric laid out as a calendar, one square per day, with averages by weekday and totals by month.
+
+When to use it: Use it for daily data to spot patterns by weekday, season and streak at a glance.
+Questions it answers: Which weekday is strongest? Are there seasonal highs and lows? When were the best and worst days?
+
+Page: https://kaijxnes.github.io/HTML-Charts/calendar-heatmap.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/calendar-heatmap-1.1.0.js
+Placeholder id: calendar-heatmap
+Columns:
+- Date (key date, required): A daily date.
+- Metric 1 (key v1, required): The value for the day.
+Features:
+- Calendar of the last 12 months or any year, shaded in five levels
+- Cards for the total, best day, strongest weekday, best month and longest run above the median
+- Average by weekday and totals by month
+
+### Year over Year
+
+A metric by calendar month for this year against the two before, monthly or year to date, with the YTD change.
+
+When to use it: Use it for any monthly metric with seasonality, to compare this year with the last two month by month and year to date.
+Questions it answers: Are we ahead of last year so far? How many months beat the same month last year? Does this year follow the usual seasonal shape?
+
+Page: https://kaijxnes.github.io/HTML-Charts/year-over-year.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/year-over-year-1.1.0.js
+Placeholder id: year-over-year
+Columns:
+- Month Key (key month, required): Month (e.g. 202609) – daily dates are rolled up to months.
+- Metric 1 (key v1, required): The value.
+Features:
+- This year against the previous two, Jan–Dec
+- Monthly or cumulative year-to-date lines
+- Cards for YTD vs the same months last year, the latest month vs last year, months ahead and the best month
+- Pick any year in the grid
+
+### Leaderboard
+
+A ranked table for any month with change vs the month before, rank movement, share, a 12-month total and a trend sparkline.
+
+When to use it: Use it to rank entries – teams, products, regions – for any month, with how they moved and a 12-month trend for each.
+Questions it answers: Who's number one this month and for how long? Who climbed or fell the most places? Which entries are trending up?
+
+Page: https://kaijxnes.github.io/HTML-Charts/leaderboard.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/leaderboard-1.1.0.js
+Placeholder id: leaderboard
+Columns:
+- Month Key (key month, required): Month.
+- Dimension A (key dimA, required): The entry being ranked.
+- Metric 1 (key v1, required): The value to rank by.
+Features:
+- Rank by the month's value, the change or the last 12 months
+- Rank movement arrows against the month before
+- Cards for number 1, the total, the biggest climber and the biggest faller
+- Pick any month; trend sparklines cover the 12 months to it
+
+### Distribution
+
+A histogram of one value per row (e.g. per customer or order), with median, mean, P10–P90 and how much the top 10% hold – optionally split into groups.
+
+When to use it: Use it when you have one value per row – per customer, order or day – and averages hide what's really going on.
+Questions it answers: What's typical: the median or the mean? How wide is the spread? How much of the total comes from the top 10%?
+
+Page: https://kaijxnes.github.io/HTML-Charts/distribution.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/distribution-1.1.0.js
+Placeholder id: distribution
+Columns:
+- Metric 1 (key v1, required): One value per grid row.
+- Dimension A (key dimA, optional): Optional group – up to 4 groups overlaid as % of each group.
+Features:
+- Automatic bin sizes (or 10 / 20 / 40), with the option to trim the top 1%
+- Median and mean marked on the chart
+- Cards for median, mean, P10–P90, standard deviation and the top-10% share of the total
+
+### Target Attainment
+
+Actual against target for every item as bullet bars, coloured by % of target, with the overall position and who's furthest ahead or behind.
+
+When to use it: Use it to show every item's actual against its own target, so it's obvious who's ahead and who needs help.
+Questions it answers: How many items are on target? Who's furthest behind and by how much? What's the overall attainment?
+
+Page: https://kaijxnes.github.io/HTML-Charts/target-attainment.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/target-attainment-1.1.0.js
+Placeholder id: target-attainment
+Columns:
+- Dimension A (key dimA, required): The item.
+- Metric 1 (key v1, required): Actual.
+- Metric 2 (key v2, required): Target.
+Features:
+- A bar per item with a target marker; green at 100%+, amber 90–100%, red under 90%
+- Sort by % of target, gap, target size or grid order
+- Cards for overall %, how many are on target, and the furthest ahead and behind
+- For costs, add data-lower-better='["v1"]' so being under target counts as good
+
+### Anomaly Watch
+
+A daily or monthly metric against its rolling average with a normal band, flagging the points that are unusually high or low.
+
+When to use it: Use it to monitor a daily or monthly metric and catch the days that are unusually high or low against recent history.
+Questions it answers: Is today's number normal? When did something unusual last happen? How many unusual days were there recently?
+
+Page: https://kaijxnes.github.io/HTML-Charts/anomaly-watch.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/anomaly-watch-1.1.0.js
+Placeholder id: anomaly-watch
+Columns:
+- Date (key date, required): A daily date or a month key.
+- Metric 1 (key v1, required): The value.
+Features:
+- Expected value = the average of the previous 7 / 14 / 28 days (or 3 / 6 / 12 months)
+- Normal band of ±2, 2.5 or 3 standard deviations; points outside it are flagged
+- Cards for the latest value vs expected, its status, recent unusual points and the most recent one
+- List of every unusual point with how far out it was
+
+### Treemap
+
+Rectangles sized by value, grouped by one dimension and split by a second – click a group to zoom in.
+
+When to use it: Use it to show how a total splits across a hierarchy – groups and the items inside them – in one view.
+Questions it answers: Which groups make up most of the total? What's the biggest item inside each group? How concentrated is the total?
+
+Page: https://kaijxnes.github.io/HTML-Charts/treemap.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/treemap-1.1.0.js
+Placeholder id: treemap
+Columns:
+- Dimension A (key dimA, required): The group.
+- Dimension B (key dimB, optional): The items inside each group.
+- Metric 1 (key v1, required): The value (positive values only).
+Features:
+- Squarified layout so tiles stay readable
+- Nested view or groups only; click a group to zoom into it
+- Cards for the total, the largest item, the top-3 share and the number of items
+
+### Small Multiples
+
+A small chart per segment, side by side, with the latest value and change – on the same scale or each on its own.
+
+When to use it: Use it to compare the trend of many segments side by side without one chart turning into spaghetti.
+Questions it answers: Which segments are growing and which are shrinking? Do they share the same seasonal shape? Which segment changed most last month?
+
+Page: https://kaijxnes.github.io/HTML-Charts/small-multiples.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/small-multiples-1.1.0.js
+Placeholder id: small-multiples
+Columns:
+- Month Key (key month, required): Month (daily dates are rolled up).
+- Dimension A (key dimA, required): One tile each – up to 16.
+- Metric 1 (key v1, required): The value.
+Features:
+- One mini chart per segment, coloured by its latest change
+- Same scale for fair comparison or own scale to see each shape
+- Order by size, growth or name
+
+### Variance Table
+
+A table of up to three metrics by segment for any month against the previous month or last year, with colour-coded changes and totals.
+
+When to use it: Use it when people want the numbers: each segment this month against last month or last year, with the changes coloured.
+Questions it answers: Which segments moved most against last month? Is the total up or down on last year? Which metric is driving the change?
+
+Page: https://kaijxnes.github.io/HTML-Charts/variance-table.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/variance-table-1.1.0.js
+Placeholder id: variance-table
+Columns:
+- Month Key (key month, required): Month.
+- Dimension A (key dimA, required): One table row each.
+- Metric 1 (key v1, required): First metric.
+- Metric 2 (key v2, optional): Second metric.
+- Metric 3 (key v3, optional): Third metric.
+Features:
+- Current, comparison and change columns for each metric, with a total row
+- Compare to the previous month or the same month last year; pick any month
+- Changes shaded green or red by size; click a column to sort by it
+- A card per metric with its total and change
+
+### Gauges
+
+Up to 12 KPIs as dials against their targets, with red/amber/green zones and a target marker.
+
+When to use it: Use it for a handful of headline KPIs with targets, where a dial reads faster than a table.
+Questions it answers: Which KPIs are on target? Which one needs attention first? How far off target is each one?
+
+Page: https://kaijxnes.github.io/HTML-Charts/gauges.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/gauges-1.1.0.js
+Placeholder id: gauges
+Columns:
+- Dimension A (key dimA, required): The KPI name – one dial each.
+- Metric 1 (key v1, required): Actual. Each KPI keeps its own $, % or count format.
+- Metric 2 (key v2, required): Target.
+Features:
+- A dial per KPI with zones for under 90%, 90–100% and on target
+- Each row can be a different kind of number – $, % or count
+- Cards for how many are on target, the best and the one needing attention
+- Mark KPIs where lower is better by name: data-lower-better='["Goal 4"]' (on in this demo)
+
+### Combo Chart
+
+Bars for one metric with one or two more as lines on a second axis, grouped by day, week, month, quarter or year.
+
+When to use it: Use it when a volume and a rate belong together – revenue and margin, orders and conversion – on one time axis.
+Questions it answers: How do volume and rate move together? Did the rate drop when volume grew? What happened last period vs the one before?
+
+Page: https://kaijxnes.github.io/HTML-Charts/combo-chart.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/combo-chart-1.1.0.js
+Placeholder id: combo-chart
+Columns:
+- Date (key date, required): A daily date or a month key.
+- Metric 1 (key v1, required): Bars.
+- Metric 2 (key v2, optional): Line on the right axis.
+- Metric 3 (key v3, optional): Second line – shares the right axis if it's the same kind of number.
+Features:
+- Group daily data by day, week or month, and monthly data by month, quarter or year
+- Last 12, last 24 or all periods
+- A card per metric with the latest period and its change
+
+### Flow (Sankey)
+
+How a total flows from one dimension to another – e.g. source to outcome – as bands sized by value. Click a node to highlight its flows.
+
+When to use it: Use it to show how a total flows from one category to another – source to outcome, channel to product.
+Questions it answers: Where does each source end up? What's the biggest single flow? Which outcome depends most on one source?
+
+Page: https://kaijxnes.github.io/HTML-Charts/flow-sankey.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/flow-sankey-1.1.0.js
+Placeholder id: flow-sankey
+Columns:
+- Dimension A (key dimA, required): Where it comes from (left).
+- Dimension B (key dimB, required): Where it goes (right).
+- Metric 1 (key v1, required): The amount flowing (positive values).
+Features:
+- Up to 9 nodes a side, the rest grouped as Other
+- Colour by either side; click a node to highlight just its flows
+- Cards for the total, the biggest flow and the largest node on each side
+
+### Box Plot
+
+The spread of a value within each group – median, middle 50%, whiskers, mean and outliers – to compare groups fairly.
+
+When to use it: Use it to compare spreads between groups, not just their averages – who's consistent and who's all over the place.
+Questions it answers: Which group has the highest typical value? Which group varies the most? Where are the outliers?
+
+Page: https://kaijxnes.github.io/HTML-Charts/box-plot.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/box-plot-1.1.0.js
+Placeholder id: box-plot
+Columns:
+- Dimension A (key dimA, required): The group – needs at least 3 values each.
+- Metric 1 (key v1, required): One value per grid row.
+Features:
+- Box for the middle 50%, line for the median, red dot for the mean
+- Whiskers to 1.5× the box height, outliers as dots
+- Sort by median, spread or name
+- Cards for the overall median, the highest and lowest median and the widest spread
+
+### Radar Compare
+
+Compare up to five segments across several metrics on one radar, each metric scored 0–100 against the best segment.
+
+When to use it: Use it to compare the profile of a few segments across several metrics with different units.
+Questions it answers: Which segment is strongest overall? Where is each segment weak? Which segment leads on each metric?
+
+Page: https://kaijxnes.github.io/HTML-Charts/radar-compare.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/radar-compare-1.1.0.js
+Placeholder id: radar-compare
+Columns:
+- Dimension A (key dimA, required): The segment.
+- Metric 1 … Metric 6 (key v1 … v6, required): At least 3 metrics – $, % or counts.
+Features:
+- Scores each metric 0–100 against the best segment, so different units sit on one chart
+- Pick up to 5 segments to compare
+- Table of the real values with the best on each metric highlighted
+- Lower-is-better metrics are scored the other way round (Metric 4 in this demo)
+
+### Bump Chart
+
+How each segment's rank changes month by month – who's rising, who's falling and how often the leader changes.
+
+When to use it: Use it when rank matters more than value: who's first, who's climbing and how often the lead changes.
+Questions it answers: Who's held the top spot longest? Who climbed the most places this year? How often did the leader change?
+
+Page: https://kaijxnes.github.io/HTML-Charts/bump-chart.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/bump-chart-1.1.0.js
+Placeholder id: bump-chart
+Columns:
+- Month Key (key month, required): Month.
+- Dimension A (key dimA, required): The entry being ranked.
+- Metric 1 (key v1, required): The value to rank by.
+Features:
+- A line per segment showing its rank each month, labelled at the end
+- Top 5 / 8 / 12 / all; click a line to highlight it
+- Cards for the leader and its streak, the biggest climb and drop, and how often the lead changed
+
+### Indexed Growth
+
+Every segment's trend indexed to 100 at a base month, so growth can be compared regardless of size.
+
+When to use it: Use it to compare growth between segments of very different sizes by starting them all at 100.
+Questions it answers: Which segment grew fastest since a chosen month? Who's growing faster than the total? Which segments are shrinking?
+
+Page: https://kaijxnes.github.io/HTML-Charts/indexed-growth.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/indexed-growth-1.1.0.js
+Placeholder id: indexed-growth
+Columns:
+- Month Key (key month, required): Month.
+- Dimension A (key dimA, required): The segment – the 8 largest are shown.
+- Metric 1 (key v1, required): The value.
+Features:
+- Lines for each segment and the total, all starting at 100
+- Pick any base month
+- Cards for total growth, the fastest and slowest, and how many beat the total
+
+### Dumbbell
+
+Before and after for every item as two joined dots, coloured by whether it got better or worse.
+
+When to use it: Use it for before-and-after comparisons across many items – last year vs this year, before vs after a change.
+Questions it answers: How many items improved? Which improved or fell the most? Did the overall figure go up?
+
+Page: https://kaijxnes.github.io/HTML-Charts/dumbbell.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/dumbbell-1.1.0.js
+Placeholder id: dumbbell
+Columns:
+- Dimension A (key dimA, required): The item.
+- Metric 1 (key v1, required): Before.
+- Metric 2 (key v2, required): After.
+Features:
+- A dot for before and after on one shared scale, joined by a line
+- Sort by change, by the after value or keep grid order
+- Cards for how many improved, the biggest rise and fall and the overall change
+- Percentages compare in points; mark lower-is-better with data-lower-better
+
+### Correlation Matrix
+
+How strongly up to six metrics move together across rows, as a colour-coded matrix – click a cell to see the scatter.
+
+When to use it: Use it to explore which metrics move together across rows before building a model or a story.
+Questions it answers: Which metrics rise and fall together? Is there a negative relationship worth checking? What does the scatter of any pair look like?
+
+Page: https://kaijxnes.github.io/HTML-Charts/correlation-matrix.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/correlation-matrix-1.1.0.js
+Placeholder id: correlation-matrix
+Columns:
+- Metric 1 … Metric 6 (key v1 … v6, required): At least 2 metrics; each grid row is one observation.
+- Dimension A (key dimA, optional): Optional label shown on the scatter tooltip.
+Features:
+- Pearson correlation for every pair, green for positive and red for negative
+- Click a cell for a scatter of that pair with a trend line
+- Cards for the strongest positive and negative links
+
+### Time Series Stack
+
+Up to six metrics, each on its own row with a latest-range scorecard and a chart of all the data over time.
+
+When to use it: Use it when you want the Time Series Trio layout for more metrics – up to six rows, each with a scorecard and full history.
+Questions it answers: How did each of six metrics move over the latest range? Which metrics are up and which are down? Where are the peaks across all of them?
+
+Page: https://kaijxnes.github.io/HTML-Charts/time-series-stack.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/time-series-stack-1.1.0.js
+Placeholder id: time-series-stack
+Columns:
+- Date (key date, required): A daily date or a month key.
+- Metric 1 … Metric 6 (key v1 … v6, required): 1 to 6 metrics – a row appears for each one in the grid.
+Features:
+- Everything the Time Series Trio does, for up to six metrics
+- Range buttons: 7, 28, 90 days or 12 months (1, 3, 6, 12 months for monthly data)
+- Daily, weekly or monthly chart grouping, with the latest range shaded
+
+### Time Series – 1 metric
+
+One metric with a scorecard for the latest 7/28/90 days against the period before, next to its full history.
+
+When to use it: Use it when a few metrics each deserve their own row: a scorecard for the latest 7, 28 or 90 days next to the full history.
+Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
+
+Page: https://kaijxnes.github.io/HTML-Charts/time-series-single.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js
+Placeholder id: time-series-trio
+Columns:
+- Date (key date, required): A daily date or a month key.
+- Metric 1 (key v1, required): The metric.
+Features:
+- The Time Series Trio script with one metric in the grid – it only draws the rows it finds
+
+### Time Series – 2 metrics
+
+Two metrics, each with a latest-range scorecard and a chart over time.
+
+When to use it: Use it when a few metrics each deserve their own row: a scorecard for the latest 7, 28 or 90 days next to the full history.
+Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
+
+Page: https://kaijxnes.github.io/HTML-Charts/time-series-duo.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/time-series-trio-1.1.0.js
+Placeholder id: time-series-trio
+Columns:
+- Date (key date, required): A daily date or a month key.
+- Metric 1 (key v1, required): First row.
+- Metric 2 (key v2, required): Second row.
+Features:
+- The Time Series Trio script with two metrics in the grid
+
+### KPI Scorecard – 3 metrics
+
+Three KPI cards with the latest value, change and sparkline, and a trend chart for the selected one.
+
+When to use it: Use it as the top strip of a dashboard: the latest value of each key metric, its change and a sparkline, with one click to the full trend.
+Questions it answers: How did each KPI move against last month or last year? Which metrics are trending the wrong way? What did the scorecard look like in a past month?
+
+Page: https://kaijxnes.github.io/HTML-Charts/kpi-scorecard-trio.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/kpi-scorecard-1.1.0.js
+Placeholder id: kpi-scorecard
+Columns:
+- Month Key (key month, required): Month.
+- Metric 1 … Metric 3 (key v1 … v3, required): Three metrics.
+Features:
+- The KPI Scorecard script with three metrics in the grid
+
+### Combo Chart – bar + line
+
+One metric as bars and one as a line on a second axis – e.g. a total and a rate.
+
+When to use it: Use it when a volume and a rate belong together – revenue and margin, orders and conversion – on one time axis.
+Questions it answers: How do volume and rate move together? Did the rate drop when volume grew? What happened last period vs the one before?
+
+Page: https://kaijxnes.github.io/HTML-Charts/combo-bar-line.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/combo-chart-1.1.0.js
+Placeholder id: combo-chart
+Columns:
+- Date (key date, required): A daily date or a month key.
+- Metric 1 (key v1, required): Bars.
+- Metric 2 (key v2, required): Line, right axis.
+Features:
+- The Combo Chart script with two metrics in the grid
+
+### Variance Table – 1 metric
+
+One metric by segment for any month against the previous month or last year.
+
+When to use it: Use it when people want the numbers: each segment this month against last month or last year, with the changes coloured.
+Questions it answers: Which segments moved most against last month? Is the total up or down on last year? Which metric is driving the change?
+
+Page: https://kaijxnes.github.io/HTML-Charts/variance-table-single.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/variance-table-1.1.0.js
+Placeholder id: variance-table
+Columns:
+- Month Key (key month, required): Month.
+- Dimension A (key dimA, required): One row each.
+- Metric 1 (key v1, required): The metric.
+Features:
+- The Variance Table script with one metric in the grid
+
+### Funnel – no segments
+
+A single funnel from stage counts, with step and overall conversion and the biggest drop-off.
+
+When to use it: Use it for any process with ordered steps – sign-up to purchase, lead to deal – to see where people drop out.
+Questions it answers: Where is the biggest drop-off? What's the overall conversion from first to last step? Which segment converts best at each step?
+
+Page: https://kaijxnes.github.io/HTML-Charts/funnel-simple.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/funnel-1.1.0.js
+Placeholder id: funnel
+Columns:
+- Stage (key stage, required): Stage name, in order.
+- Metric 1 (key v1, required): Count at that stage.
+Features:
+- The Funnel script without a segment column – the segment buttons hide themselves
+
+### Treemap – one level
+
+One tile per item, sized by value.
+
+When to use it: Use it to show how a total splits across a hierarchy – groups and the items inside them – in one view.
+Questions it answers: Which groups make up most of the total? What's the biggest item inside each group? How concentrated is the total?
+
+Page: https://kaijxnes.github.io/HTML-Charts/treemap-flat.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/treemap-1.1.0.js
+Placeholder id: treemap
+Columns:
+- Dimension A (key dimA, required): The item.
+- Metric 1 (key v1, required): The value.
+Features:
+- The Treemap script without a second dimension
+
+### Quadrant Scatter – 2 metrics
+
+Items plotted by two metrics, split into quadrants at the averages, without bubble sizing.
+
+When to use it: Use it to compare items on two measures at once and sort them into four groups – high/high winners, and the ones to fix.
+Questions it answers: Which items are high on both measures? Which are high cost but low value? Are the biggest items in the right quadrant?
+
+Page: https://kaijxnes.github.io/HTML-Charts/quadrant-scatter-plain.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/quadrant-scatter-1.1.0.js
+Placeholder id: quadrant-scatter
+Columns:
+- Dimension A (key dimA, required): The item.
+- Metric 1 (key v1, required): Across (x).
+- Metric 2 (key v2, required): Up (y).
+Features:
+- The Quadrant Scatter script without a size metric
+
+### Radar Compare – 4 metrics
+
+Segments compared across four metrics on a radar.
+
+When to use it: Use it to compare the profile of a few segments across several metrics with different units.
+Questions it answers: Which segment is strongest overall? Where is each segment weak? Which segment leads on each metric?
+
+Page: https://kaijxnes.github.io/HTML-Charts/radar-compare-four.html
+Script: https://kaijxnes.github.io/HTML-Charts/charts/radar-compare-1.1.0.js
+Placeholder id: radar-compare
+Columns:
+- Dimension A (key dimA, required): The segment.
+- Metric 1 … Metric 4 (key v1 … v4, required): Four metrics.
+Features:
+- The Radar Compare script with four metrics in the grid

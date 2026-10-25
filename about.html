@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About HTML Charts and Kai Jones</title>
+<meta name="description" content="Why HTML Charts exists, how the charts read a dashboard grid without an API, and who built it – Kai Jones, data analyst.">
+<meta name="author" content="Kai Jones">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1B2238">
+<link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/about.html">
+<link rel="author" href="https://kaijxnes.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HTML Charts">
+<meta property="og:title" content="About HTML Charts and Kai Jones">
+<meta property="og:description" content="Why HTML Charts exists, how the charts read a dashboard grid without an API, and who built it – Kai Jones, data analyst.">
+<meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/about.html">
+<meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/og.png">
+<meta property="og:image:alt" content="About HTML Charts and Kai Jones">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About HTML Charts and Kai Jones">
+<meta name="twitter:description" content="Why HTML Charts exists, how the charts read a dashboard grid without an API, and who built it – Kai Jones, data analyst.">
+<meta name="twitter:image" content="https://kaijxnes.github.io/HTML-Charts/assets/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AboutPage", "name": "About HTML Charts", "url": "https://kaijxnes.github.io/HTML-Charts/about.html", "about": {"@type": "SoftwareSourceCode", "name": "HTML Charts", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "programmingLanguage": "JavaScript"}, "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "mainEntity": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}}</script>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
+  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html">Setup guide</a><a href="about.html" class="on">About</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
+</div></header>
+<main>
+
+<div class="crumbs"><a href="index.html">HTML Charts</a> / About</div>
+<section class="hero">
+  <h1>About HTML Charts</h1>
+  <p class="lede">A library of 41 dashboard charts built by Kai Jones, a data analyst, to get better visuals out of a BI tool without waiting for new features or installs.</p>
+</section>
+
+<h2>Why it exists</h2>
+<p style="max-width:70ch">Dashboards in big BI tools are good at grids and basic charts, but the visuals analysts actually want – scorecards next to trends, funnels, cohort heatmaps, pacing against target – often mean a plugin, an admin, or a wait. The BI tool's API wasn't an option either: single sign-on blocked it. But the tool could run a little HTML and JavaScript in a container on the page, and the data was already on that page in a grid.</p>
+<p style="max-width:70ch">So each chart reads the grid the viewer can already see, and redraws it. No API, no install, no server – and because it only reads what's on screen, the viewer's normal permissions still apply.</p>
+
+<h2>How it works</h2>
+<ul class="features">
+  <li><b>Finding the grid.</b> The chart looks for column headers by their text, ignoring spaces and capitals, and picks the set that sit on the same row – so a field list elsewhere on the page doesn't confuse it.</li>
+  <li><b>Reading the rows.</b> Each cell is placed under a column by its position on screen, so blank cells and merged labels don't shift values. Merged labels are carried down; totals are skipped.</li>
+  <li><b>Big grids.</b> BI grids only draw the rows on screen. The chart scrolls the grid's own scroll box, waits for each batch to load, keeps what it has read, and only draws once every row is in – with a progress screen instead of half a chart.</li>
+  <li><b>Staying live.</b> It watches the page and re-reads when filters change the grid, with a cheap check first so it doesn't loop.</li>
+  <li><b>Safe to embed.</b> Every script is versioned and loaded with an SRI hash; Chart.js is self-hosted with a fallback. Nothing is uploaded.</li>
+  <li><b>Tested on random data.</b> Each chart is checked against totals worked out independently from the demo grid, on load and after shuffling.</li>
+</ul>
+
+<h2>Who made it</h2>
+<div class="author" style="margin-top:8px;border-top:0;padding-top:0">
+  <div class="av">KJ</div>
+  <div><h3>Kai Jones</h3>
+  <p>Data analyst working in commercial and marketing analytics – SQL, Python, BI dashboards and reporting. HTML Charts started as a fix for one dashboard and grew into a library.</p>
+  <p><a class="cta" href="https://kaijxnes.com" rel="author me">View my CV</a> <a class="cta ghost" href="https://github.com/kaijxnes" rel="me">GitHub</a> <a class="cta ghost" href="https://github.com/kaijxnes/HTML-Charts">Source code</a></p></div>
+</div>
+
+</main>
+<footer><div class="in">
+  <span>HTML Charts v1.1.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
+  <span><a href="about.html">About</a> · <a href="platforms.html">Setup guide</a> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
+</div></footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

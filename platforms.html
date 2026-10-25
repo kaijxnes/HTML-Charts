@@ -3,30 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Setup guide – HTML Charts on MicroStrategy, Tableau, Looker, Power BI</title>
-<meta name="description" content="Set up HTML Charts on MicroStrategy, web pages, Tableau, Looker, Power BI and Qlik: snippet builder with your own column names, every option, and troubleshooting.">
+<title>Setup guide: MicroStrategy, Tableau, Looker, Power BI</title>
+<meta name="description" content="Set up the charts on MicroStrategy, web pages, Tableau, Looker, Power BI or Qlik, with a snippet builder for your own column names.">
 <meta name="author" content="Kai Jones">
 <meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1B2238">
 <link rel="canonical" href="https://kaijxnes.github.io/HTML-Charts/platforms.html">
 <link rel="author" href="https://kaijxnes.com">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HTML Charts">
-<meta property="og:title" content="Setup guide – HTML Charts on MicroStrategy, Tableau, Looker, Power BI">
-<meta property="og:description" content="Set up HTML Charts on MicroStrategy, web pages, Tableau, Looker, Power BI and Qlik: snippet builder with your own column names, every option, and troubleshooting.">
+<meta property="og:title" content="Setup guide: MicroStrategy, Tableau, Looker, Power BI">
+<meta property="og:description" content="Set up the charts on MicroStrategy, web pages, Tableau, Looker, Power BI or Qlik, with a snippet builder for your own column names.">
 <meta property="og:url" content="https://kaijxnes.github.io/HTML-Charts/platforms.html">
-<meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/thumbs/monthly-bars.png">
+<meta property="og:image" content="https://kaijxnes.github.io/HTML-Charts/assets/og.png">
+<meta property="og:image:alt" content="Setup guide: MicroStrategy, Tableau, Looker, Power BI">
+<meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Setup guide: MicroStrategy, Tableau, Looker, Power BI">
+<meta name="twitter:description" content="Set up the charts on MicroStrategy, web pages, Tableau, Looker, Power BI or Qlik, with a snippet builder for your own column names.">
+<meta name="twitter:image" content="https://kaijxnes.github.io/HTML-Charts/assets/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161f'/%3E%3Crect x='8' y='15' width='4' height='10' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='14' y='10' width='4' height='15' rx='1.5' fill='%237C5CFF'/%3E%3Crect x='20' y='6' width='4' height='19' rx='1.5' fill='%237C5CFF'/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to add HTML Charts to a dashboard", "description": "Set up Chart.js charts that read a grid on the same page, on MicroStrategy, plain web pages, Tableau, Looker, Power BI and Qlik.", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "step": [{"@type": "HowToStep", "text": "Add a grid with the chart's columns to the same page, behind the chart and tall."}, {"@type": "HowToStep", "text": "Map your grid's header names to the chart's column keys with data-columns."}, {"@type": "HowToStep", "text": "Paste the snippet into an HTML container and check the row count against the grid."}]}</script>
 </head>
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html" class="on">Setup guide</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
+  <nav class="nav"><a href="index.html">Home</a><a href="index.html#charts">All charts</a><a href="platforms.html" class="on">Setup guide</a><a href="about.html">About</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
 </div></header>
 <main>
 
@@ -234,7 +242,7 @@ paint: function ($element, layout) {
 </main>
 <footer><div class="in">
   <span>HTML Charts v1.1.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
-  <span>All values on this site are random placeholders.</span>
+  <span><a href="about.html">About</a> · <a href="platforms.html">Setup guide</a> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
 </div></footer>
 <script src="assets/builder.js"></script>
 <script src="assets/site.js"></script>

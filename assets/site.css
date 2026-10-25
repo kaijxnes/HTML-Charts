@@ -94,7 +94,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 36px 24px 72px; }
 .card { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; display: flex; flex-direction: column; color: var(--ink); transition: border-color .15s; }
 .card:hover { border-color: var(--violet); text-decoration: none; }
 .card[hidden] { display: none; }
-.card .thumb { aspect-ratio: 16 / 9; background: var(--rule-2) center top / cover no-repeat; border-bottom: 1px solid var(--rule); }
+.card .thumb { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; background: var(--rule-2); border-bottom: 1px solid var(--rule); }
 .card .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .card .body p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
 .card .spec { display: flex; flex-wrap: wrap; gap: 5px; }
