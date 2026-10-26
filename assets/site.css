@@ -265,3 +265,4 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 24px 24px 36px; font-si
 .live-shuffle:hover { background: #5a37f0; }
 .live-shuffle:focus-visible { outline: 2.5px solid var(--ink); outline-offset: 2px; }
 @media (max-width: 520px) { .live-body { grid-template-columns: 1fr; } .live-grid { order: 2; } }
+.builder [hidden] { display: none !important; }

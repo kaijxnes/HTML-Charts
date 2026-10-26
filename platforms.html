@@ -56,7 +56,7 @@
   <div class="form">
     <div class="row2">
       <label class="f">Chart<select data-b="chart"></select></label>
-      <label class="f">Platform<select data-b="platform"><option value="mstr">MicroStrategy</option><option value="web">Web page</option></select></label>
+      <label class="f">Platform<select data-b="platform"><option value="mstr">MicroStrategy</option><option value="web">Web page</option><option value="tableau">Tableau</option><option value="looker">Looker</option><option value="pbi">Power BI</option><option value="qlik">Qlik Sense</option></select></label>
     </div>
     <div>
       <table class="map"><thead><tr><th>Chart expects</th><th>Your header</th><th>Show as (optional)</th></tr></thead><tbody data-b="cols"></tbody></table>
@@ -67,11 +67,13 @@
       <label class="f">Height<input type="text" data-b="height" value="100%"></label>
     </div>
     <fieldset data-b="lowerbox"><legend>Lower is better</legend><div class="checks" data-b="lower"></div><p class="hint">Tick metrics where a fall is good news, like costs.</p></fieldset>
+    <label class="f" data-b="srcbox" hidden>Worksheet with the chart's data<input type="text" data-b="src" value="Chart data"><span class="hint">The name of the (hidden) worksheet on your Tableau dashboard.</span></label>
     <label class="f" data-b="minbox" hidden>Flag months with fewer Units than<input type="number" data-b="min" placeholder="e.g. 600" min="0"></label>
   </div>
   <div class="out">
     <div class="code"><div class="bar"><span>Your snippet</span><button class="copy" data-copy="bout">Copy</button></div><pre id="bout"></pre></div>
     <ul class="changes" data-b="changes"></ul>
+    <div data-b="stepsbox"><h3 style="font-size:15px;margin:4px 0 4px">Next steps</h3><ol class="changes" data-b="steps"></ol></div>
     <a data-b="demo" href="#">Open this chart's demo</a>
   </div>
 </div>
