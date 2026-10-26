@@ -4,7 +4,7 @@ Built and maintained by [Kai Jones](https://kaijxnes.com), data analyst.
 
 41 free Chart.js charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
 
-**Site:** https://viz.kaijxnes.com/ · [Setup guide and snippet builder](https://viz.kaijxnes.com/platforms.html) · [About](https://viz.kaijxnes.com/about.html)
+**Site:** https://viz.kaijxnes.com · [Setup guide and snippet builder](https://viz.kaijxnes.com/platforms) · [About](https://viz.kaijxnes.com/about)
 
 The home page can be filtered by chart type, number of metrics, number of dimensions and whether a date column is needed. Each chart has a page with a live demo on random data (hit *Shuffle data* to watch it redraw), the grid columns it reads, and a copy-paste snippet.
 

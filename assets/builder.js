@@ -29,7 +29,7 @@
     }).join("");
     $("lowerbox").hidden = !metrics.length;
     $("minbox").hidden = !c.minVolume;
-    $("demo").href = c.id + ".html";
+    $("demo").href = "/" + c.id;
     $("demo").textContent = "Open the " + c.name + " demo";
     root.querySelectorAll("input").forEach(function (el) { el.oninput = build; el.onchange = build; });
     build();
