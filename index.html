@@ -36,7 +36,7 @@
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="/"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
-  <nav class="nav"><a href="/" class="on">Home</a><a href="/#charts">All charts</a><a href="/platforms">Setup guide</a><a href="/about">About</a><a class="me" href="https://kaijxnes.com" rel="author me">Kai Jones</a></nav>
+  <nav class="nav"><a href="/" class="on">Home</a><a href="/#charts">All charts</a><a href="/platforms">Setup guide</a><a href="/about">About</a></nav>
 </div></header>
 <main>
 
@@ -46,11 +46,18 @@
     <p class="lede">41 free Chart.js charts that read a normal grid on the same page. Paste a snippet into an HTML container and the rows become cards, trends, funnels and heatmaps – no API, no install, and nothing leaves the browser.</p>
     <div class="hero-cta"><a class="btn" href="#charts">Browse the charts</a><a class="btn ghost" href="/platforms">Set one up</a></div>
   </div>
-  <figure class="morph" aria-hidden="true">
-    <table><thead><tr><th>Month Key</th><th style="text-align:right">Metric 1</th><th></th></tr></thead><tbody>
-    <tr><td>202603</td><td class="v">$41,200</td><td class="b"><i style="--w:52%;--d:0"></i></td></tr><tr><td>202604</td><td class="v">$47,950</td><td class="b"><i style="--w:61%;--d:1"></i></td></tr><tr><td>202605</td><td class="v">$44,300</td><td class="b"><i style="--w:56%;--d:2"></i></td></tr><tr><td>202606</td><td class="v">$58,120</td><td class="b"><i style="--w:74%;--d:3"></i></td></tr><tr><td>202607</td><td class="v">$62,480</td><td class="b"><i style="--w:79%;--d:4"></i></td></tr><tr><td>202608</td><td class="v">$60,010</td><td class="b"><i style="--w:76%;--d:5"></i></td></tr><tr class="hi"><td>202609</td><td class="v">$71,640</td><td class="b"><i style="--w:91%;--d:6"></i></td></tr>
-    </tbody></table>
-    <figcaption>The grid stays where it is – the chart reads it and draws on top.</figcaption>
+  <figure class="live" data-live aria-label="Live demo: edit the grid or drag the bars and the chart redraws">
+    <div class="live-top">
+      <div class="live-kpi"><span>Total, last 7 months</span><b data-live-total>–</b><em data-live-delta></em></div>
+      <div class="live-seg" role="group" aria-label="Chart type">
+        <button type="button" data-mode="bars" aria-pressed="true">Bars</button><button type="button" data-mode="line" aria-pressed="false">Line</button><button type="button" data-mode="area" aria-pressed="false">Area</button>
+      </div>
+    </div>
+    <div class="live-body">
+      <table class="live-grid"><thead><tr><th scope="col">Month Key</th><th scope="col">Metric 1</th></tr></thead><tbody data-live-rows></tbody></table>
+      <div class="live-chart"><svg data-live-svg viewBox="0 0 400 300" role="img" aria-label="Chart of Metric 1 by month"></svg></div>
+    </div>
+    <div class="live-foot"><button type="button" class="live-shuffle" data-live-shuffle>Shuffle</button><span>Type in the grid or drag a bar – the chart follows the grid.</span></div>
   </figure>
 </section>
 
@@ -89,6 +96,7 @@
   <span>HTML Charts v1.2.0, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Charts are drawn with <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT)</span>
   <span><a href="/about">About</a> · <a href="/platforms">Setup guide</a> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
 </div></footer>
+<script src="assets/hero.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>
