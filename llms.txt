@@ -54,6 +54,7 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 
 - [llms-full.txt](https://viz.kaijxnes.com/llms-full.txt): every chart's columns, options and use cases in one file
 - [About](https://viz.kaijxnes.com/about): why it was built and how it works
+- [Privacy](https://viz.kaijxnes.com/privacy): Google Analytics only with consent; the chart scripts collect nothing
 
 ## Setup
 

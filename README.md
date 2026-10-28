@@ -51,6 +51,10 @@ The snippet adds a placeholder `<div data-chart-embed="…">` and loads the char
 
 Charts look for generic headers (`Month Key`, `Metric 1`, `Dimension A`, …). To use your own header names, map them on the placeholder with `data-columns='{"v12":"Your Header"}'`. `data-labels` changes only the names shown on screen, and `data-title` changes the heading.
 
+## Privacy
+
+The website uses Google Analytics only after a visitor accepts (`assets/consent.js`); the choice can be changed from *Cookie settings* in the footer. The chart scripts contain no analytics and send no data. See [Privacy](https://viz.kaijxnes.com/privacy).
+
 ## Versioning
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.

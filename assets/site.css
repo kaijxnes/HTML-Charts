@@ -266,3 +266,22 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 24px 24px 36px; font-si
 .live-shuffle:focus-visible { outline: 2.5px solid var(--ink); outline-offset: 2px; }
 @media (max-width: 520px) { .live-body { grid-template-columns: 1fr; } .live-grid { order: 2; } }
 .builder [hidden] { display: none !important; }
+
+/* ---------- analytics consent ---------- */
+.consent { position: fixed; z-index: 100; left: 16px; right: 16px; bottom: 16px; max-width: 760px; margin: 0 auto; display: flex; gap: 14px 18px; align-items: center; flex-wrap: wrap;
+  background: var(--ink); color: #E7EAF4; border-radius: 14px; padding: 14px 16px 14px 20px; box-shadow: 0 18px 50px -12px rgba(27, 34, 56, .55); font-size: 14.5px; }
+.consent[hidden] { display: none; }
+.consent p { margin: 0; flex: 1 1 320px; line-height: 1.5; }
+.consent b { color: #fff; margin-right: 4px; }
+.consent a { color: #C9BEFF; }
+.consent .now { color: #B9C0D9; }
+.consent-btns { display: flex; gap: 8px; }
+.consent-btns button { all: unset; cursor: pointer; font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 9px; white-space: nowrap; }
+.consent-btns .ok { background: #fff; color: var(--ink); }
+.consent-btns .ok:hover { background: var(--violet-2); }
+.consent-btns .no { color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+.consent-btns .no:hover { box-shadow: inset 0 0 0 1px #fff; }
+.consent-btns button:focus-visible { outline: 2.5px solid #C9BEFF; outline-offset: 2px; }
+.linkbtn { all: unset; cursor: pointer; color: var(--violet); }
+.linkbtn:hover { text-decoration: underline; }
+.linkbtn:focus-visible { outline: 2.5px solid var(--violet); outline-offset: 2px; border-radius: 3px; }
