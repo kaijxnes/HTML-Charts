@@ -58,7 +58,7 @@
     var h = plat === "tableau" ? "100vh" : (plat === "web" && height === "100%") ? "600px" : height;
     lines.push('     style="height:' + esc(h) + '"></div>');
     var placeholder = lines.join("\n");
-    var src = BASE + "/charts/" + c.script + "-" + version + ".js";
+    var src = BASE + "/charts/" + c.script + "-" + (c.ver || version) + ".js";
     var loaderBody = '  var s = document.createElement("script");\n  s.src = "' + src + '";\n  s.integrity = "' + c.sri + '";\n  s.crossOrigin = "anonymous";\n  document.head.appendChild(s);';
     var loadFn = "function loadChart() {\n" + loaderBody + "\n}";
     var writeTable = 'function writeTable(headers, rows) {\n  var t = document.getElementById("grid");\n  if (!t) { t = document.createElement("table"); t.id = "grid"; document.body.appendChild(t); }\n' +
