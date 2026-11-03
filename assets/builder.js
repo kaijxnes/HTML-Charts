@@ -29,6 +29,7 @@
     }).join("");
     $("lowerbox").hidden = !metrics.length;
     $("minbox").hidden = !c.minVolume;
+    $("dfbox").hidden = !c.cols.some(function (col) { return col.key === "month" || col.key === "date"; });
     $("demo").href = "/" + c.id;
     $("demo").textContent = "Open the " + c.name + " demo";
     root.querySelectorAll("input").forEach(function (el) { el.oninput = build; el.onchange = build; });
@@ -53,6 +54,9 @@
     if (Object.keys(labs).length) lines.push("     data-labels='" + attrJson(labs) + "'");
     if (title) { lines.push('     data-title="' + esc(title) + '"'); notes.push("Heading: " + title); }
     if (lower.length) { lines.push("     data-lower-better='" + attrJson(lower) + "'"); notes.push("A fall counts as good for " + lower.length + " metric" + (lower.length > 1 ? "s" : "")); }
+    var df = $("datefmt").value === "custom" ? $("dfc").value.trim().replace(/["<>&']/g, "") : $("datefmt").value;
+    $("dfcbox").hidden = $("datefmt").value !== "custom";
+    if (df && !$("dfbox").hidden) { lines.push('     data-date-format="' + esc(df) + '"'); notes.push("Dates read as " + df); }
     if (c.minVolume && min) { lines.push('     data-min-volume="' + esc(min) + '"'); notes.push("Months under " + min + " Units are flagged"); }
     if (mstr) lines.push('     data-grid-class="mstrmojo-Xtab" data-scroll-class="mstrmojo-scrollNode"');
     var h = plat === "tableau" ? "100vh" : (plat === "web" && height === "100%") ? "600px" : height;
@@ -121,6 +125,7 @@
 
   $("chart").onchange = fillColumns;
   $("platform").onchange = build;
+  $("datefmt").onchange = function () { build(); if ($("datefmt").value === "custom") $("dfc").focus(); };
   $("src").oninput = build;
   fillColumns();
 })();

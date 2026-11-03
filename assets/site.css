@@ -285,3 +285,12 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 24px 24px 36px; font-si
 .linkbtn { all: unset; cursor: pointer; color: var(--violet); }
 .linkbtn:hover { text-decoration: underline; }
 .linkbtn:focus-visible { outline: 2.5px solid var(--violet); outline-offset: 2px; border-radius: 3px; }
+
+/* ---------- date format picker ---------- */
+.datefmt { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 14px 0 12px; }
+.datefmt label { font-weight: 600; font-size: 14.5px; }
+.datefmt select, .datefmt input { font: inherit; font-size: 14px; padding: 7px 10px; border: 1px solid var(--rule, #E3E7F0); border-radius: 9px; background: #fff; color: inherit; max-width: 100%; }
+.datefmt input { width: 170px; font-family: "IBM Plex Mono", monospace; }
+.datefmt select:focus-visible, .datefmt input:focus-visible { outline: 2.5px solid var(--violet); outline-offset: 1px; }
+.datefmt p { flex-basis: 100%; margin: 0; }
+.datefmt [hidden] { display: none; }

@@ -10,38 +10,38 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 
 | Chart | Page | Script |
 |---|---|---|
-| Monthly Bars | `monthly-bars.html` | `charts/monthly-bars-1.2.0.js` |
-| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.2.0.js` |
-| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.2.0.js` |
-| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.2.0.js` |
-| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.2.0.js` |
-| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.2.0.js` |
-| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.3.0.js` |
-| Funnel | `funnel.html` | `charts/funnel-1.2.0.js` |
-| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.2.0.js` |
-| Pareto | `pareto.html` | `charts/pareto-1.2.0.js` |
-| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.2.0.js` |
-| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.2.0.js` |
-| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.2.0.js` |
-| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.2.0.js` |
-| Year over Year | `year-over-year.html` | `charts/year-over-year-1.2.0.js` |
-| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.2.0.js` |
-| Distribution | `distribution.html` | `charts/distribution-1.2.0.js` |
-| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.2.0.js` |
-| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.2.0.js` |
-| Treemap | `treemap.html` | `charts/treemap-1.2.0.js` |
-| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.2.0.js` |
-| Variance Table | `variance-table.html` | `charts/variance-table-1.2.0.js` |
-| Gauges | `gauges.html` | `charts/gauges-1.2.0.js` |
-| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.2.0.js` |
-| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.2.0.js` |
-| Box Plot | `box-plot.html` | `charts/box-plot-1.2.0.js` |
-| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.2.0.js` |
-| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.2.0.js` |
-| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.2.0.js` |
-| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.2.0.js` |
-| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.2.0.js` |
-| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.2.0.js` |
+| Monthly Bars | `monthly-bars.html` | `charts/monthly-bars-1.4.0.js` |
+| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.4.0.js` |
+| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.4.0.js` |
+| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.4.0.js` |
+| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.4.0.js` |
+| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.4.0.js` |
+| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.4.0.js` |
+| Funnel | `funnel.html` | `charts/funnel-1.4.0.js` |
+| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.4.0.js` |
+| Pareto | `pareto.html` | `charts/pareto-1.4.0.js` |
+| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.4.0.js` |
+| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.4.0.js` |
+| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.4.0.js` |
+| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.4.0.js` |
+| Year over Year | `year-over-year.html` | `charts/year-over-year-1.4.0.js` |
+| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.4.0.js` |
+| Distribution | `distribution.html` | `charts/distribution-1.4.0.js` |
+| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.4.0.js` |
+| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.4.0.js` |
+| Treemap | `treemap.html` | `charts/treemap-1.4.0.js` |
+| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.4.0.js` |
+| Variance Table | `variance-table.html` | `charts/variance-table-1.4.0.js` |
+| Gauges | `gauges.html` | `charts/gauges-1.4.0.js` |
+| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.4.0.js` |
+| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.4.0.js` |
+| Box Plot | `box-plot.html` | `charts/box-plot-1.4.0.js` |
+| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.4.0.js` |
+| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.4.0.js` |
+| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.4.0.js` |
+| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.4.0.js` |
+| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.4.0.js` |
+| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.4.0.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
 
@@ -49,7 +49,7 @@ The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – n
 
 The snippet adds a placeholder `<div data-chart-embed="…">` and loads the chart script, pinned with an SRI hash. The script reads the grid on the same page from what's on screen and draws the chart in the viewer's browser. It only downloads the chart script and Chart.js. No data is sent anywhere.
 
-Charts look for generic headers (`Month Key`, `Metric 1`, `Dimension A`, …). To use your own header names, map them on the placeholder with `data-columns='{"v12":"Your Header"}'`. `data-labels` changes only the names shown on screen, and `data-title` changes the heading.
+Charts look for generic headers (`Month Key`, `Metric 1`, `Dimension A`, …). To use your own header names, map them on the placeholder with `data-columns='{"v12":"Your Header"}'`. `data-labels` changes only the names shown on screen, and `data-title` changes the heading. `data-date-format` pins how dates are written in the grid (tokens `YYYY YY MMMM MMM MM M DD D ww`; anything else is matched as written). Without it the format is detected.
 
 ## Privacy
 
@@ -59,6 +59,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.4.0** – every chart reads dates the same way: auto-detects 20261023, 2026-10-23, 23/10/2026, 10/23/2026, 23 Oct 2026, 2026 W44, 202610, Oct 2026 and October, 2026, and monthly charts roll daily or weekly dates up to months. `data-date-format` (e.g. `"DD/MM/YYYY"`, `"YYYY Www"`) pins a format; each chart page and the snippet builder has a picker for it. If dates can't be read, the chart says which value it couldn't read.
 - **1.3.0** (Time Series Trio only) – reads week labels such as `2026 W44`, `2026-W44` or `Week 44, 2026` as ISO weeks, with week ranges (1, 4, 13, 52 weeks), weekly or monthly grouping and per-week averages.
 - **1.2.0** – Chart.js loads from viz.kaijxnes.com; small wording fixes ("1 metric", treemap zoom hint only when there's a second level).
 - **1.1.0** – the count column is called Units (key `units`); Cost vs Return's cost column is Cost.

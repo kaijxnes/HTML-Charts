@@ -75,3 +75,21 @@ document.querySelectorAll("[data-tabs]").forEach(function (box) {
   var pick = tabs.find(function (t) { return t.id === "t-" + hash; });
   if (pick) show(pick);
 });
+
+// Date format picker on chart pages: adds data-date-format to the snippets on the page.
+document.querySelectorAll("[data-datefmt-box]").forEach(function (box) {
+  var sel = box.querySelector("[data-datefmt]"), custom = box.querySelector("[data-datefmt-custom]");
+  var pres = Array.prototype.slice.call(document.querySelectorAll("pre[id^='snip']"));
+  pres.forEach(function (p) { p.setAttribute("data-orig", p.textContent); });
+  function apply() {
+    custom.hidden = sel.value !== "custom";
+    var f = sel.value === "custom" ? custom.value.trim() : sel.value;
+    f = f.replace(/["<>&']/g, "");
+    pres.forEach(function (p) {
+      var t = p.getAttribute("data-orig");
+      p.textContent = f ? t.replace(/(data-chart-embed="[^"]*")/, '$1 data-date-format="' + f + '"') : t;
+    });
+  }
+  sel.addEventListener("change", function () { apply(); if (sel.value === "custom") custom.focus(); });
+  custom.addEventListener("input", apply);
+});
