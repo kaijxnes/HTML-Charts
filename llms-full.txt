@@ -304,7 +304,7 @@ When to use it: Use it when the total matters less than how it's split, and you 
 Questions it answers: Which segment gained the most share this year? Is the mix shifting even if the total is flat? What share does the largest segment hold now?
 
 Page: https://viz.kaijxnes.com/mix-shift
-Script: https://viz.kaijxnes.com/charts/mix-shift-1.4.1.js
+Script: https://viz.kaijxnes.com/charts/mix-shift-1.4.2.js
 Placeholder id: mix-shift
 Columns:
 - Month Key (key month, required): One bar per month.
