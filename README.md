@@ -10,38 +10,38 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 
 | Chart | Page | Script |
 |---|---|---|
-| Monthly Bars | `monthly-bars.html` | `charts/monthly-bars-1.4.1.js` |
-| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.4.1.js` |
-| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.4.1.js` |
-| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.4.2.js` |
-| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.4.1.js` |
-| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.4.1.js` |
-| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.4.1.js` |
-| Funnel | `funnel.html` | `charts/funnel-1.4.1.js` |
-| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.4.1.js` |
-| Pareto | `pareto.html` | `charts/pareto-1.4.1.js` |
-| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.4.1.js` |
-| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.4.1.js` |
-| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.4.2.js` |
-| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.4.1.js` |
-| Year over Year | `year-over-year.html` | `charts/year-over-year-1.4.1.js` |
-| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.4.1.js` |
-| Distribution | `distribution.html` | `charts/distribution-1.4.1.js` |
-| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.4.1.js` |
-| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.4.1.js` |
-| Treemap | `treemap.html` | `charts/treemap-1.4.1.js` |
-| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.4.1.js` |
-| Variance Table | `variance-table.html` | `charts/variance-table-1.4.1.js` |
-| Gauges | `gauges.html` | `charts/gauges-1.4.1.js` |
-| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.4.1.js` |
-| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.4.1.js` |
-| Box Plot | `box-plot.html` | `charts/box-plot-1.4.1.js` |
-| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.4.1.js` |
-| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.4.1.js` |
-| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.4.1.js` |
-| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.4.1.js` |
-| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.4.1.js` |
-| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.4.1.js` |
+| Monthly Bars | `monthly-bars.html` | `charts/monthly-bars-1.4.3.js` |
+| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.4.3.js` |
+| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.4.3.js` |
+| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.4.3.js` |
+| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.4.3.js` |
+| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.4.3.js` |
+| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.4.3.js` |
+| Funnel | `funnel.html` | `charts/funnel-1.4.3.js` |
+| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.4.3.js` |
+| Pareto | `pareto.html` | `charts/pareto-1.4.3.js` |
+| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.4.3.js` |
+| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.4.3.js` |
+| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.4.3.js` |
+| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.4.3.js` |
+| Year over Year | `year-over-year.html` | `charts/year-over-year-1.4.3.js` |
+| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.4.3.js` |
+| Distribution | `distribution.html` | `charts/distribution-1.4.3.js` |
+| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.4.3.js` |
+| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.4.3.js` |
+| Treemap | `treemap.html` | `charts/treemap-1.4.3.js` |
+| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.4.3.js` |
+| Variance Table | `variance-table.html` | `charts/variance-table-1.4.3.js` |
+| Gauges | `gauges.html` | `charts/gauges-1.4.3.js` |
+| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.4.3.js` |
+| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.4.3.js` |
+| Box Plot | `box-plot.html` | `charts/box-plot-1.4.3.js` |
+| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.4.3.js` |
+| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.4.3.js` |
+| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.4.3.js` |
+| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.4.3.js` |
+| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.4.3.js` |
+| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.4.3.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
 
@@ -49,7 +49,7 @@ The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – n
 
 The snippet adds a placeholder `<div data-chart-embed="…">` and loads the chart script, pinned with an SRI hash. The script reads the grid on the same page from what's on screen and draws the chart in the viewer's browser. It only downloads the chart script and Chart.js. No data is sent anywhere.
 
-Charts look for generic headers (`Month Key`, `Metric 1`, `Dimension A`, …). To use your own header names, map them on the placeholder with `data-columns='{"v12":"Your Header"}'`. `data-labels` changes only the names shown on screen, and `data-title` changes the heading. `data-date-format` pins how dates are written in the grid (tokens `YYYY YY MMMM MMM MM M DD D ww`; anything else is matched as written). Without it the format is detected.
+Charts look for generic headers (`Month Key`, `Metric 1`, `Dimension A`, …). To use your own header names, map them on the placeholder with `data-columns='{"v12":"Your Header"}'`. `data-labels` changes only the names shown on screen, and `data-title` changes the heading. `data-date-format` pins how dates are written in the grid (tokens `YYYY YY MMMM MMM MM M DD D ww`; anything else is matched as written). Without it the format is detected. `data-hide-while-reading="false"` keeps a big grid visible while the chart scrolls it to read every row.
 
 ## Privacy
 
@@ -59,6 +59,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.4.3** – all charts: while a chart scrolls a big grid to read every row, the grid is hidden so it doesn't visibly jump, then shown again (`data-hide-while-reading="false"` turns this off). Includes the 1.4.2 changes below.
 - **1.4.2** (Cost vs Return) – fits its container: the charts grow and shrink with the space and the monthly table scrolls inside the chart instead of forcing a 900px height.
 - **1.4.2** (Mix Shift) – a *Compare with* control: the latest month against the same month last year (default), the month before, or the first month in the grid.
 - **1.4.1** – fixes grids where the row headers and the metrics sit in separate side-by-side panes (as in MicroStrategy): a column's header no longer swallows its whole pane.
