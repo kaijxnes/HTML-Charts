@@ -113,7 +113,7 @@ When to use it: Use it when you spend money each month to get units, and want to
 Questions it answers: What's our ROI and ROAS this period? Is cost per unit below value per unit? Which months lost money?
 
 Page: https://viz.kaijxnes.com/cost-vs-return
-Script: https://viz.kaijxnes.com/charts/cost-vs-return-1.4.1.js
+Script: https://viz.kaijxnes.com/charts/cost-vs-return-1.4.2.js
 Placeholder id: cost-vs-return
 Columns:
 - Month Key (key month, required): Month. Rows without one are left out.

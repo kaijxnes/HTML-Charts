@@ -13,7 +13,7 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Monthly Bars | `monthly-bars.html` | `charts/monthly-bars-1.4.1.js` |
 | Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.4.1.js` |
 | Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.4.1.js` |
-| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.4.1.js` |
+| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.4.2.js` |
 | Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.4.1.js` |
 | KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.4.1.js` |
 | Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.4.1.js` |
@@ -59,7 +59,8 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
-- **1.4.2** (Mix Shift only) – a *Compare with* control: the latest month against the same month last year (default), the month before, or the first month in the grid.
+- **1.4.2** (Cost vs Return) – fits its container: the charts grow and shrink with the space and the monthly table scrolls inside the chart instead of forcing a 900px height.
+- **1.4.2** (Mix Shift) – a *Compare with* control: the latest month against the same month last year (default), the month before, or the first month in the grid.
 - **1.4.1** – fixes grids where the row headers and the metrics sit in separate side-by-side panes (as in MicroStrategy): a column's header no longer swallows its whole pane.
 - **1.4.0** – every chart reads dates the same way: auto-detects 20261023, 2026-10-23, 23/10/2026, 10/23/2026, 23 Oct 2026, 2026 W44, 202610, Oct 2026 and October, 2026, and monthly charts roll daily or weekly dates up to months. `data-date-format` (e.g. `"DD/MM/YYYY"`, `"YYYY Www"`) pins a format; each chart page and the snippet builder has a picker for it. If dates can't be read, the chart says which value it couldn't read.
 - **1.3.0** (Time Series Trio only) – reads week labels such as `2026 W44`, `2026-W44` or `Week 44, 2026` as ISO weeks, with week ranges (1, 4, 13, 52 weeks), weekly or monthly grouping and per-week averages.
