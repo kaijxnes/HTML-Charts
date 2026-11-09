@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 41 free Chart.js charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 42 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -794,6 +794,26 @@ Columns:
 - Metric 1 (key v1, required): The value.
 Features:
 - The Treemap script without a second dimension
+
+### Value Matrix
+
+Value per unit for every pair of two dimensions as a heatmap, with totals weighted by volume and a switch between up to three value columns.
+
+When to use it: Use it when a grid compares cohorts on a value per unit – value per customer, per order or per player – across two groupings, with no date involved.
+Questions it answers: Which combination of the two groupings is worth the most per unit? Is a group strong everywhere, or only in one column? Are the best-looking cohorts big enough to matter?
+
+Page: https://viz.kaijxnes.com/value-matrix
+Script: https://viz.kaijxnes.com/charts/value-matrix-1.4.3.js
+Placeholder id: value-matrix
+Columns:
+- Dimension A (key dimA, required): Rows of the matrix.
+- Dimension B (key dimB, optional): Columns of the matrix.
+- Units (key units, optional): Volume per row; weights the averages.
+- Metric 1 (key v1, required): Value per unit.
+- Metric 2 (key v2, optional): A second value per unit – adds a switch.
+- Metric 3 (key v3, optional): A third value per unit.
+Features:
+- Totals are averages weighted by units; small cohorts (data-min-volume, default 1% of units) are outlined and left out of highest/lowest
 
 ### Quadrant Scatter – 2 metrics
 

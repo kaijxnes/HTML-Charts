@@ -355,6 +355,18 @@
     for (var a = 1; a <= 14; a++) rows.push(["A" + a, money(Math.exp(R(9, 13)))]);
     return { hd: hd, num: [1], rows: rows };
   };
+  GEN["value-matrix"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Units", "Metric 1", "Metric 2", "Metric 3"], rows = [];
+    var bs = ["B1", "B2", "B3", "B4"], lift = [1, 1.45, 0.75, 1.15];
+    for (var a = 1; a <= 6; a++) {
+      var af = R(0.7, 1.3), vol = R(300, 2600);
+      bs.forEach(function (b, j) {
+        var v = R(40, 70) * af * lift[j], g = R(1.15, 1.35);
+        rows.push([j ? "" : "A" + a, b, count(vol * R(0.3, 1.2)), money2(v), money2(v * g), money2(v * (g + R(0.1, 0.25)))]);
+      });
+    }
+    return { hd: hd, num: [2, 3, 4, 5], rows: rows };
+  };
   GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
   GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 

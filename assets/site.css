@@ -294,3 +294,6 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 24px 24px 36px; font-si
 .datefmt select:focus-visible, .datefmt input:focus-visible { outline: 2.5px solid var(--violet); outline-offset: 1px; }
 .datefmt p { flex-basis: 100%; margin: 0; }
 .datefmt [hidden] { display: none; }
+
+/* column tables scroll sideways on narrow screens instead of widening the page */
+@media (max-width: 640px) { table.cols { display: block; overflow-x: auto; max-width: 100%; } table.cols code { word-break: break-word; } }
