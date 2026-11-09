@@ -367,6 +367,21 @@
     }
     return { hd: hd, num: [2, 3, 4, 5], rows: rows };
   };
+  GEN["contribution-breakdown"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Dimension C", "Units", "Metric 1", "Metric 2", "Metric 3"], rows = [];
+    var bs = ["B1", "B2", "B3", "B4", "B5"], cs = ["C1", "C2", "C3"];
+    for (var a = 1; a <= 6; a++) {
+      var af = R(0.8, 1.25), vol = R(80, 900) * (7 - a) / 3, first = true;
+      bs.forEach(function (b, j) {
+        cs.forEach(function (c, k) {
+          var v = R(40, 80) * af * [1, 1.4, 0.75][k] * [1, 0.85, 0.7, 1.25, 1.1][j], g = R(1.15, 1.35);
+          rows.push([first ? "A" + a : "", k ? "" : b, c, count(vol * R(0.3, 1.3)), money2(v), money2(v * g), money2(v * (g + R(0.1, 0.25)))]);
+          first = false;
+        });
+      });
+    }
+    return { hd: hd, num: [3, 4, 5, 6], rows: rows };
+  };
   GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
   GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 

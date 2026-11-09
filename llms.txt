@@ -1,6 +1,6 @@
 # HTML Charts
 
-> 42 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 43 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Built and maintained by Kai Jones, data analyst (CV: https://kaijxnes.com). Source: https://github.com/kaijxnes/HTML-Charts
 
@@ -48,6 +48,7 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Funnel – no segments](https://viz.kaijxnes.com/funnel-simple): A single funnel from stage counts, with step and overall conversion and the biggest drop-off. Script: https://viz.kaijxnes.com/charts/funnel-1.4.3.js
 - [Treemap – one level](https://viz.kaijxnes.com/treemap-flat): One tile per item, sized by value. Script: https://viz.kaijxnes.com/charts/treemap-1.4.3.js
 - [Value Matrix](https://viz.kaijxnes.com/value-matrix): A heatmap of value per unit across two dimensions, weighted by volume. No date needed. Script: https://viz.kaijxnes.com/charts/value-matrix-1.4.3.js
+- [Contribution Breakdown](https://viz.kaijxnes.com/contribution-breakdown): Bars by any dimension, split by up to two others, for total value, volume or value per unit. No date needed. Script: https://viz.kaijxnes.com/charts/contribution-breakdown-1.4.3.js
 - [Quadrant Scatter – 2 metrics](https://viz.kaijxnes.com/quadrant-scatter-plain): Items plotted by two metrics, split into quadrants at the averages, without bubble sizing. Script: https://viz.kaijxnes.com/charts/quadrant-scatter-1.4.3.js
 - [Radar Compare – 4 metrics](https://viz.kaijxnes.com/radar-compare-four): Segments compared across four metrics on a radar. Script: https://viz.kaijxnes.com/charts/radar-compare-1.4.3.js
 

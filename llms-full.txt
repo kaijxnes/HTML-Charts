@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 42 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 43 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -814,6 +814,23 @@ Columns:
 - Metric 3 (key v3, optional): A third value per unit.
 Features:
 - Totals are averages weighted by units; small cohorts (data-min-volume, default 1% of units) are outlined and left out of highest/lowest
+
+### Contribution Breakdown
+
+One bar per item of any dimension, split by up to two others, showing total value (units × value per unit), units, or value per unit – with a mix % view. No date needed.
+
+When to use it: Use it when you would normally chart cohorts by month, but the thing to compare is a group instead – a licence, a region, a brand – and you want to see where its value comes from.
+
+Page: https://viz.kaijxnes.com/contribution-breakdown
+Script: https://viz.kaijxnes.com/charts/contribution-breakdown-1.4.3.js
+Placeholder id: contribution-breakdown
+Columns:
+- Dimension A (key dimA, required): One bar each.
+- Dimension B (key dimB, optional): First split.
+- Dimension C (key dimC, optional): Second split.
+- Units (key units, optional): Volume per row; needed for total value.
+- Metric 1 (key v1, required): Value per unit.
+- Metric 2, Metric 3 (keys v2, v3, optional): More values per unit – add a switch.
 
 ### Quadrant Scatter – 2 metrics
 

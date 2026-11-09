@@ -2,7 +2,7 @@
 
 Built and maintained by [Kai Jones](https://kaijxnes.com), data analyst.
 
-42 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
+43 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
 
 **Site:** https://viz.kaijxnes.com · [Setup guide and snippet builder](https://viz.kaijxnes.com/platforms) · [About](https://viz.kaijxnes.com/about)
 
@@ -42,6 +42,7 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Dumbbell | `dumbbell.html` | `charts/dumbbell-1.4.3.js` |
 | Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.4.3.js` |
 | Value Matrix | `value-matrix.html` | `charts/value-matrix-1.4.3.js` |
+| Contribution Breakdown | `contribution-breakdown.html` | `charts/contribution-breakdown-1.4.3.js` |
 | Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.4.3.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
@@ -60,6 +61,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.4.3** – new chart: **Contribution Breakdown** (bars by any dimension split by up to two others; no date needed).
 - **1.4.3** – new chart: **Value Matrix** (heatmap of value per unit across two dimensions, weighted by volume; no date needed).
 - **1.4.3** – all charts: while a chart scrolls a big grid to read every row, the grid is hidden so it doesn't visibly jump, then shown again (`data-hide-while-reading="false"` turns this off). Includes the 1.4.2 changes below.
 - **1.4.2** (Cost vs Return) – fits its container: the charts grow and shrink with the space and the monthly table scrolls inside the chart instead of forcing a 900px height.
