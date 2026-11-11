@@ -16,7 +16,7 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.4.3.js` |
 | Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.4.3.js` |
 | KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.4.3.js` |
-| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.4.3.js` |
+| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.4.4.js` |
 | Funnel | `funnel.html` | `charts/funnel-1.4.3.js` |
 | Change Bridge | `change-bridge.html` | `charts/change-bridge-1.4.3.js` |
 | Pareto | `pareto.html` | `charts/pareto-1.4.3.js` |
@@ -61,6 +61,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.4.4** (Time Series Trio) – *Compare with: Last year*: the scorecards compare the latest period with the same weeks, days or months a year earlier (same ISO week number for weekly data), and each chart shows the latest year with last year as a dashed line. `data-compare="prev"` starts on the previous-period comparison instead.
 - **1.4.3** – new chart: **Contribution Breakdown** (bars by any dimension split by up to two others; no date needed).
 - **1.4.3** – new chart: **Value Matrix** (heatmap of value per unit across two dimensions, weighted by volume; no date needed).
 - **1.4.3** – all charts: while a chart scrolls a big grid to read every row, the grid is hidden so it doesn't visibly jump, then shown again (`data-hide-while-reading="false"` turns this off). Includes the 1.4.2 changes below.

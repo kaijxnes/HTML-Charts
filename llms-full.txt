@@ -180,7 +180,7 @@ When to use it: Use it when a few metrics each deserve their own row: a scorecar
 Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
 
 Page: https://viz.kaijxnes.com/time-series-trio
-Script: https://viz.kaijxnes.com/charts/time-series-trio-1.4.3.js
+Script: https://viz.kaijxnes.com/charts/time-series-trio-1.4.4.js
 Placeholder id: time-series-trio
 Columns:
 - Date (key date, required): A daily date (2026-10-23, 23/10/2026, 23 Oct 2026), a week label (2026 W44) or a month key (202610). Several rows on a date are added together.
@@ -688,7 +688,7 @@ When to use it: Use it when a few metrics each deserve their own row: a scorecar
 Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
 
 Page: https://viz.kaijxnes.com/time-series-single
-Script: https://viz.kaijxnes.com/charts/time-series-trio-1.4.3.js
+Script: https://viz.kaijxnes.com/charts/time-series-trio-1.4.4.js
 Placeholder id: time-series-trio
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -704,7 +704,7 @@ When to use it: Use it when a few metrics each deserve their own row: a scorecar
 Questions it answers: How did the last 28 days compare with the 28 before? What's the daily average and peak day? Is the trend weekly-seasonal or steady?
 
 Page: https://viz.kaijxnes.com/time-series-duo
-Script: https://viz.kaijxnes.com/charts/time-series-trio-1.4.3.js
+Script: https://viz.kaijxnes.com/charts/time-series-trio-1.4.4.js
 Placeholder id: time-series-trio
 Columns:
 - Date (key date, required): A daily date or a month key.
