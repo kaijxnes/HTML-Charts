@@ -11,39 +11,39 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Chart | Page | Script |
 |---|---|---|
 | Monthly Bars | `monthly-bars.html` | `charts/monthly-bars-1.4.3.js` |
-| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.4.3.js` |
-| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.4.3.js` |
-| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.4.3.js` |
-| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.4.3.js` |
-| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.4.3.js` |
-| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.4.4.js` |
-| Funnel | `funnel.html` | `charts/funnel-1.4.3.js` |
-| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.4.3.js` |
-| Pareto | `pareto.html` | `charts/pareto-1.4.3.js` |
-| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.4.3.js` |
-| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.4.3.js` |
-| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.4.6.js` |
-| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.4.3.js` |
-| Year over Year | `year-over-year.html` | `charts/year-over-year-1.4.3.js` |
-| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.4.3.js` |
-| Distribution | `distribution.html` | `charts/distribution-1.4.3.js` |
-| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.4.3.js` |
-| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.4.3.js` |
-| Treemap | `treemap.html` | `charts/treemap-1.4.3.js` |
-| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.4.3.js` |
-| Variance Table | `variance-table.html` | `charts/variance-table-1.4.3.js` |
-| Gauges | `gauges.html` | `charts/gauges-1.4.3.js` |
-| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.4.3.js` |
-| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.4.3.js` |
-| Box Plot | `box-plot.html` | `charts/box-plot-1.4.3.js` |
-| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.4.3.js` |
-| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.4.3.js` |
-| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.4.3.js` |
-| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.4.3.js` |
-| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.4.3.js` |
-| Value Matrix | `value-matrix.html` | `charts/value-matrix-1.4.3.js` |
-| Contribution Breakdown | `contribution-breakdown.html` | `charts/contribution-breakdown-1.4.3.js` |
-| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.4.3.js` |
+| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.5.0.js` |
+| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.5.0.js` |
+| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.5.0.js` |
+| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.5.0.js` |
+| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.5.0.js` |
+| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.5.0.js` |
+| Funnel | `funnel.html` | `charts/funnel-1.5.0.js` |
+| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.5.0.js` |
+| Pareto | `pareto.html` | `charts/pareto-1.5.0.js` |
+| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.5.0.js` |
+| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.5.0.js` |
+| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.5.0.js` |
+| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.5.0.js` |
+| Year over Year | `year-over-year.html` | `charts/year-over-year-1.5.0.js` |
+| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.5.0.js` |
+| Distribution | `distribution.html` | `charts/distribution-1.5.0.js` |
+| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.5.0.js` |
+| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.5.0.js` |
+| Treemap | `treemap.html` | `charts/treemap-1.5.0.js` |
+| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.5.0.js` |
+| Variance Table | `variance-table.html` | `charts/variance-table-1.5.0.js` |
+| Gauges | `gauges.html` | `charts/gauges-1.5.0.js` |
+| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.5.0.js` |
+| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.5.0.js` |
+| Box Plot | `box-plot.html` | `charts/box-plot-1.5.0.js` |
+| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.5.0.js` |
+| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.5.0.js` |
+| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.5.0.js` |
+| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.5.0.js` |
+| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.5.0.js` |
+| Value Matrix | `value-matrix.html` | `charts/value-matrix-1.5.0.js` |
+| Contribution Breakdown | `contribution-breakdown.html` | `charts/contribution-breakdown-1.5.0.js` |
+| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.5.0.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
 
@@ -61,6 +61,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.5.0** – all charts except Monthly Bars: grids whose row labels sit in a separate frozen pane (as in MicroStrategy) are read row by row as they appear on screen, so a label can no longer be joined to another row's (e.g. "Poker Casino"); text scrolled out of view inside the grid is ignored, and each scroll step is only read once the grid has stopped moving. Includes all 1.4.x chart changes.
 - **1.4.6** (Mix Shift) – starting choices on the placeholder: `data-compare` (`year`, `month`, `first`), `data-show` (`share`, `value`) and `data-layout` (`stack`, `side`, `line`).
 - **1.4.5** (Mix Shift) – fills its container exactly with no scrolling: the chart and side list stretch to the height given, the cards go compact in short boxes and are dropped in very short ones, and the side list is hidden in narrow ones.
 - **1.4.4** (Mix Shift) – *Layout* switch: stacked, side by side, or a line per segment (`data-layout="side"` / `"line"` to start there); fits short containers (minimum height 380px, scrolls inside if needed).
