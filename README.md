@@ -22,7 +22,7 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Pareto | `pareto.html` | `charts/pareto-1.4.3.js` |
 | Target Pacing | `target-pacing.html` | `charts/target-pacing-1.4.3.js` |
 | Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.4.3.js` |
-| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.4.4.js` |
+| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.4.5.js` |
 | Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.4.3.js` |
 | Year over Year | `year-over-year.html` | `charts/year-over-year-1.4.3.js` |
 | Leaderboard | `leaderboard.html` | `charts/leaderboard-1.4.3.js` |
@@ -61,6 +61,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.4.5** (Mix Shift) – fills its container exactly with no scrolling: the chart and side list stretch to the height given, the cards go compact in short boxes and are dropped in very short ones, and the side list is hidden in narrow ones.
 - **1.4.4** (Mix Shift) – *Layout* switch: stacked, side by side, or a line per segment (`data-layout="side"` / `"line"` to start there); fits short containers (minimum height 380px, scrolls inside if needed).
 - **1.4.4** (Time Series Trio) – *Compare with: Last year*: the scorecards compare the latest period with the same weeks, days or months a year earlier (same ISO week number for weekly data), and each chart shows the latest year with last year as a dashed line. `data-compare="prev"` starts on the previous-period comparison instead.
 - **1.4.3** – new chart: **Contribution Breakdown** (bars by any dimension split by up to two others; no date needed).
