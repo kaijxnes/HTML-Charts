@@ -11,40 +11,40 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Chart | Page | Script |
 |---|---|---|
 | Monthly Bars | `monthly-bars.html` | `charts/monthly-bars-1.4.3.js` |
-| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.5.0.js` |
-| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.5.0.js` |
-| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.5.0.js` |
-| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.5.0.js` |
-| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.5.0.js` |
-| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.5.0.js` |
-| Funnel | `funnel.html` | `charts/funnel-1.5.0.js` |
-| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.5.0.js` |
-| Pareto | `pareto.html` | `charts/pareto-1.5.0.js` |
-| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.5.0.js` |
-| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.5.0.js` |
-| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.5.0.js` |
-| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.5.0.js` |
-| Year over Year | `year-over-year.html` | `charts/year-over-year-1.5.0.js` |
-| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.5.0.js` |
-| Distribution | `distribution.html` | `charts/distribution-1.5.0.js` |
-| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.5.0.js` |
-| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.5.0.js` |
-| Treemap | `treemap.html` | `charts/treemap-1.5.0.js` |
-| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.5.0.js` |
-| Variance Table | `variance-table.html` | `charts/variance-table-1.5.0.js` |
-| Gauges | `gauges.html` | `charts/gauges-1.5.0.js` |
-| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.5.0.js` |
-| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.5.0.js` |
-| Box Plot | `box-plot.html` | `charts/box-plot-1.5.0.js` |
-| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.5.0.js` |
-| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.5.0.js` |
-| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.5.0.js` |
-| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.5.0.js` |
-| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.5.0.js` |
-| Value Matrix | `value-matrix.html` | `charts/value-matrix-1.5.0.js` |
-| Contribution Breakdown | `contribution-breakdown.html` | `charts/contribution-breakdown-1.5.0.js` |
-| Ribbon Chart | `ribbon-chart.html` | `charts/ribbon-chart-1.5.1.js` |
-| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.5.0.js` |
+| Stacked Segments | `stacked-segments.html` | `charts/stacked-segments-1.5.2.js` |
+| Segment Breakdown | `segment-breakdown.html` | `charts/segment-breakdown-1.5.2.js` |
+| Cost vs Return | `cost-vs-return.html` | `charts/cost-vs-return-1.5.2.js` |
+| Month Heatmap | `month-heatmap.html` | `charts/month-heatmap-1.5.2.js` |
+| KPI Scorecard | `kpi-scorecard.html` | `charts/kpi-scorecard-1.5.2.js` |
+| Time Series Trio | `time-series-trio.html` | `charts/time-series-trio-1.5.2.js` |
+| Funnel | `funnel.html` | `charts/funnel-1.5.2.js` |
+| Change Bridge | `change-bridge.html` | `charts/change-bridge-1.5.2.js` |
+| Pareto | `pareto.html` | `charts/pareto-1.5.2.js` |
+| Target Pacing | `target-pacing.html` | `charts/target-pacing-1.5.2.js` |
+| Quadrant Scatter | `quadrant-scatter.html` | `charts/quadrant-scatter-1.5.2.js` |
+| Mix Shift | `mix-shift.html` | `charts/mix-shift-1.5.2.js` |
+| Calendar Heatmap | `calendar-heatmap.html` | `charts/calendar-heatmap-1.5.2.js` |
+| Year over Year | `year-over-year.html` | `charts/year-over-year-1.5.2.js` |
+| Leaderboard | `leaderboard.html` | `charts/leaderboard-1.5.2.js` |
+| Distribution | `distribution.html` | `charts/distribution-1.5.2.js` |
+| Target Attainment | `target-attainment.html` | `charts/target-attainment-1.5.2.js` |
+| Anomaly Watch | `anomaly-watch.html` | `charts/anomaly-watch-1.5.2.js` |
+| Treemap | `treemap.html` | `charts/treemap-1.5.2.js` |
+| Small Multiples | `small-multiples.html` | `charts/small-multiples-1.5.2.js` |
+| Variance Table | `variance-table.html` | `charts/variance-table-1.5.2.js` |
+| Gauges | `gauges.html` | `charts/gauges-1.5.2.js` |
+| Combo Chart | `combo-chart.html` | `charts/combo-chart-1.5.2.js` |
+| Flow (Sankey) | `flow-sankey.html` | `charts/flow-sankey-1.5.2.js` |
+| Box Plot | `box-plot.html` | `charts/box-plot-1.5.2.js` |
+| Radar Compare | `radar-compare.html` | `charts/radar-compare-1.5.2.js` |
+| Bump Chart | `bump-chart.html` | `charts/bump-chart-1.5.2.js` |
+| Indexed Growth | `indexed-growth.html` | `charts/indexed-growth-1.5.2.js` |
+| Dumbbell | `dumbbell.html` | `charts/dumbbell-1.5.2.js` |
+| Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.5.2.js` |
+| Value Matrix | `value-matrix.html` | `charts/value-matrix-1.5.2.js` |
+| Contribution Breakdown | `contribution-breakdown.html` | `charts/contribution-breakdown-1.5.2.js` |
+| Ribbon Chart | `ribbon-chart.html` | `charts/ribbon-chart-1.5.2.js` |
+| Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.5.2.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
 
@@ -62,6 +62,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.5.2** – all charts except Monthly Bars hold their data: resizing the page or the grid redrawing no longer triggers a re-read; a change must still be there a moment later before the grid is read again, a re-read that finds nothing new isn't redrawn and backs off further checks, and a *Refresh data* button re-reads on demand. `data-refresh="manual"` turns automatic re-reading off.
 - **1.5.1** (Ribbon Chart) – weekly grids (e.g. `2026 W45`) get one column per week, with 13 / 26 / 52-week ranges.
 - **1.5.0** – new chart: **Ribbon Chart** (stacked columns ranked each month, with ribbons showing how each segment's size and rank move).
 - **1.5.0** – all charts except Monthly Bars: grids whose row labels sit in a separate frozen pane (as in MicroStrategy) are read row by row as they appear on screen, so a label can no longer be joined to another row's (e.g. "Poker Casino"); text scrolled out of view inside the grid is ignored, and each scroll step is only read once the grid has stopped moving. Includes all 1.4.x chart changes.
