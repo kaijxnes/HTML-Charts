@@ -839,7 +839,7 @@ Month-by-month totals split by segment, ranked in each column with ribbons linki
 When to use it: Use it when you want month-by-month totals for a few segments and care about which one leads – the ribbons make every change in rank easy to spot.
 
 Page: https://viz.kaijxnes.com/ribbon-chart
-Script: https://viz.kaijxnes.com/charts/ribbon-chart-1.5.0.js
+Script: https://viz.kaijxnes.com/charts/ribbon-chart-1.5.1.js
 Placeholder id: ribbon-chart
 Columns:
 - Month Key (key month, required): Month of the row; most date formats are read.
