@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 43 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 44 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -831,6 +831,21 @@ Columns:
 - Units (key units, optional): Volume per row; needed for total value.
 - Metric 1 (key v1, required): Value per unit.
 - Metric 2, Metric 3 (keys v2, v3, optional): More values per unit – add a switch.
+
+### Ribbon Chart
+
+Month-by-month totals split by segment, ranked in each column with ribbons linking each segment over time, so you can see both size and changes in rank.
+
+When to use it: Use it when you want month-by-month totals for a few segments and care about which one leads – the ribbons make every change in rank easy to spot.
+
+Page: https://viz.kaijxnes.com/ribbon-chart
+Script: https://viz.kaijxnes.com/charts/ribbon-chart-1.5.0.js
+Placeholder id: ribbon-chart
+Columns:
+- Month Key (key month, required): Month of the row; most date formats are read.
+- Dimension A (key dimA, required): The segments.
+- Metric 1 (key v1, required): The value to add up.
+Options: data-show="share", data-range="24" or "all".
 
 ### Quadrant Scatter – 2 metrics
 

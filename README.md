@@ -2,7 +2,7 @@
 
 Built and maintained by [Kai Jones](https://kaijxnes.com), data analyst.
 
-43 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
+44 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
 
 **Site:** https://viz.kaijxnes.com · [Setup guide and snippet builder](https://viz.kaijxnes.com/platforms) · [About](https://viz.kaijxnes.com/about)
 
@@ -43,6 +43,7 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Correlation Matrix | `correlation-matrix.html` | `charts/correlation-matrix-1.5.0.js` |
 | Value Matrix | `value-matrix.html` | `charts/value-matrix-1.5.0.js` |
 | Contribution Breakdown | `contribution-breakdown.html` | `charts/contribution-breakdown-1.5.0.js` |
+| Ribbon Chart | `ribbon-chart.html` | `charts/ribbon-chart-1.5.0.js` |
 | Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.5.0.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
@@ -61,6 +62,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.5.0** – new chart: **Ribbon Chart** (stacked columns ranked each month, with ribbons showing how each segment's size and rank move).
 - **1.5.0** – all charts except Monthly Bars: grids whose row labels sit in a separate frozen pane (as in MicroStrategy) are read row by row as they appear on screen, so a label can no longer be joined to another row's (e.g. "Poker Casino"); text scrolled out of view inside the grid is ignored, and each scroll step is only read once the grid has stopped moving. Includes all 1.4.x chart changes.
 - **1.4.6** (Mix Shift) – starting choices on the placeholder: `data-compare` (`year`, `month`, `first`), `data-show` (`share`, `value`) and `data-layout` (`stack`, `side`, `line`).
 - **1.4.5** (Mix Shift) – fills its container exactly with no scrolling: the chart and side list stretch to the height given, the cards go compact in short boxes and are dropped in very short ones, and the side list is hidden in narrow ones.
