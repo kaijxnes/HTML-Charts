@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 58 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 83 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -1047,6 +1047,368 @@ Columns:
 - Dimension B (key dimB, optional): The items. Without it, Dimension A is the items.
 - Dimension A (key dimA, required): Groups – the bubble colours.
 - Metric 1 (key v1, required): The value (bubble area).
+
+### YTD Race
+
+This year's running total month by month against last year's – and an optional target – with a projected full year.
+
+When to use it: Use it to answer 'are we ahead of last year?' at any point in the year – and where the year is likely to land.
+
+Page: https://viz.kaijxnes.com/ytd-race
+Script: https://viz.kaijxnes.com/charts/ytd-race-1.5.2.js
+Placeholder id: ytd-race
+Columns:
+- Month Key (key month, required): The month of each row (two years for the comparison).
+- Metric 1 (key v1, required): The value, added up through the year.
+- Metric 2 (key v2, optional): Monthly target – drawn as a cumulative line.
+
+### Streamgraph
+
+Stacked layers that flow around a centre line – how a total and its mix change over time, in a softer, more organic shape than a stacked area.
+
+When to use it: Use it for a storytelling view of how segments grow and shrink over many periods – where exact values matter less than the overall shape.
+
+Page: https://viz.kaijxnes.com/streamgraph
+Script: https://viz.kaijxnes.com/charts/streamgraph-1.5.2.js
+Placeholder id: streamgraph
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Dimension A (key dimA, required): One layer each.
+- Metric 1 (key v1, required): The value.
+
+### Timeline
+
+A Gantt-style timeline: one bar per item from its start date to its end date, coloured by group, with today marked.
+
+When to use it: Use it for campaigns, promotions, projects or contracts – anything with a start and an end – to see what overlaps and what's coming.
+
+Page: https://viz.kaijxnes.com/timeline-chart
+Script: https://viz.kaijxnes.com/charts/timeline-chart-1.5.2.js
+Placeholder id: timeline-chart
+Columns:
+- Dimension A (key dimA, required): The item – one bar each.
+- Metric 1 (key v1, required): Start date (e.g. 2026-10-01 or 01/10/2026).
+- Metric 2 (key v2, required): End date.
+- Metric 3 (key v3, optional): A value shown on each bar (e.g. spend).
+- Dimension B (key dimB, optional): Group – sets the colour.
+
+### Punch Card
+
+Day of week by hour of day, with dot size showing the value – when activity peaks during the week.
+
+When to use it: Use it to find the busiest times – deposits, sign-ups, traffic or tickets – for scheduling, staffing or sending campaigns.
+
+Page: https://viz.kaijxnes.com/punch-card
+Script: https://viz.kaijxnes.com/charts/punch-card-1.5.2.js
+Placeholder id: punch-card
+Columns:
+- Dimension A (key dimA, required): Day of week (Mon, Monday) or a date.
+- Dimension B (key dimB, required): Hour of day (0–23, 14:00, 2pm).
+- Metric 1 (key v1, required): The value.
+
+### Sparkline Table
+
+A table with a mini trend line for every row, plus the latest value, change on the previous period, change on a year ago and the total.
+
+When to use it: Use it in place of a plain table when people need exact numbers and the direction of travel for many items at once.
+
+Page: https://viz.kaijxnes.com/sparkline-table
+Script: https://viz.kaijxnes.com/charts/sparkline-table-1.5.2.js
+Placeholder id: sparkline-table
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Dimension A (key dimA, required): One row each.
+- Metric 1 (key v1, required): The value.
+
+### Concentration Curve
+
+How concentrated a total is: the share of the total against the share of items, biggest first, with a Gini score and the top 10% / 20% share.
+
+When to use it: Use it to see whether value depends on a few big items (players, affiliates, customers) – and whether that's getting more concentrated.
+
+Page: https://viz.kaijxnes.com/concentration-curve
+Script: https://viz.kaijxnes.com/charts/concentration-curve-1.5.2.js
+Placeholder id: concentration-curve
+Columns:
+- Dimension A (key dimA, required): The items.
+- Metric 1 (key v1, required): The value.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Venn Overlap
+
+Two or three overlapping circles with the count in every overlap – how many are in one group only, two, or all three.
+
+When to use it: Use it for cross-sell questions – how many customers use one product, two, or all three.
+
+Page: https://viz.kaijxnes.com/venn-overlap
+Script: https://viz.kaijxnes.com/charts/venn-overlap-1.5.2.js
+Placeholder id: venn-overlap
+Columns:
+- Dimension A (key dimA, required): The combination, e.g. "A", "A &amp; B", "A &amp; B &amp; C" (also + , / or "and").
+- Metric 1 (key v1, required): The count in exactly that combination.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### UpSet Plot
+
+Every combination of groups as a bar, with a dot matrix showing which groups it contains – the readable alternative to a Venn for 4+ groups.
+
+When to use it: Use it when a Venn would get messy – customers across five products, users across many features.
+
+Page: https://viz.kaijxnes.com/upset-plot
+Script: https://viz.kaijxnes.com/charts/upset-plot-1.5.2.js
+Placeholder id: upset-plot
+Columns:
+- Dimension A (key dimA, required): The combination, e.g. "A &amp; B &amp; D".
+- Metric 1 (key v1, required): The count in exactly that combination.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Percentile Bands
+
+The spread of a value across items in each period – 10th–90th and 25th–75th percentile bands with the median line.
+
+When to use it: Use it when an average hides what's going on – deposit sizes, order values, session lengths – to see if the typical value and the spread are moving.
+
+Page: https://viz.kaijxnes.com/percentile-bands
+Script: https://viz.kaijxnes.com/charts/percentile-bands-1.5.2.js
+Placeholder id: percentile-bands
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Metric 1 (key v1, required): The value – one per row (or per item).
+- Dimension A (key dimA, optional): The item; rows for the same item in a period are added first.
+
+### Forecast
+
+Projects a series forward from its trend – and its seasonal pattern when there are two years of history – with an 80% range and the typical error.
+
+When to use it: Use it for a quick, transparent outlook – next month, next quarter – not as a replacement for a proper planning model.
+
+Page: https://viz.kaijxnes.com/forecast-chart
+Script: https://viz.kaijxnes.com/charts/forecast-chart-1.5.2.js
+Placeholder id: forecast-chart
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Metric 1 (key v1, required): The value.
+
+### Rolling 12 Months
+
+Monthly values with the moving annual total – the sum of the latest 12 months – which takes out the season so the real direction shows.
+
+When to use it: Use it for seasonal businesses where month-on-month comparisons mislead – the rolling total only moves when the business really changes.
+
+Page: https://viz.kaijxnes.com/rolling-12
+Script: https://viz.kaijxnes.com/charts/rolling-12-1.5.2.js
+Placeholder id: rolling-12
+Columns:
+- Month Key (key month, required): The month of each row (13+ months).
+- Metric 1 (key v1, required): The value.
+
+### Weekday Profile
+
+What a typical Monday, Tuesday… looks like from daily data – average or median, middle half and range – with the latest week on top.
+
+When to use it: Use it for daily metrics with a weekly rhythm – to plan by weekday and check whether this week is running normally.
+
+Page: https://viz.kaijxnes.com/weekday-profile
+Script: https://viz.kaijxnes.com/charts/weekday-profile-1.5.2.js
+Placeholder id: weekday-profile
+Columns:
+- Date (key month, required): A daily date (2026-10-23, 23/10/2026…).
+- Metric 1 (key v1, required): The value.
+
+### Parallel Coordinates
+
+Every item as a line across up to six metrics, each on its own scale – trade-offs, clusters and all-rounders at a glance.
+
+When to use it: Use it to compare many items on many measures – affiliates on volume, value, conversion and cost – and see who is strong where.
+
+Page: https://viz.kaijxnes.com/parallel-coordinates
+Script: https://viz.kaijxnes.com/charts/parallel-coordinates-1.5.2.js
+Placeholder id: parallel-coordinates
+Columns:
+- Dimension A (key dimA, required): One line each.
+- Metric 1 (key v1, required): First axis (also sets the colour).
+- Metric 2 (key v2, required): Second axis.
+- Metric 3–6 (key v3, optional): More axes: v3, v4, v5, v6.
+
+### Dot Plot
+
+One row per item with a coloured dot for each series, joined from lowest to highest – a cleaner alternative to grouped bars.
+
+When to use it: Use it to compare a few series (channels, regions, years) across many items, where bars would get crowded.
+
+Page: https://viz.kaijxnes.com/dot-plot
+Script: https://viz.kaijxnes.com/charts/dot-plot-1.5.2.js
+Placeholder id: dot-plot
+Columns:
+- Dimension A (key dimA, required): One row each.
+- Dimension B (key dimB, optional): The series – one dot each (up to 6).
+- Metric 1 (key v1, required): The value.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Grouped Bars
+
+Bars side by side for each category – series from a second dimension, or one bar per metric column.
+
+When to use it: Use it for straightforward comparisons of a few series across a handful of categories.
+
+Page: https://viz.kaijxnes.com/grouped-bars
+Script: https://viz.kaijxnes.com/charts/grouped-bars-1.5.2.js
+Placeholder id: grouped-bars
+Columns:
+- Dimension A (key dimA, required): The categories.
+- Dimension B (key dimB, optional): The series. Without it, each metric column is a series.
+- Metric 1 (key v1, required): The value.
+- Metric 2–4 (key v2, optional): More series when there's no Dimension B: v2, v3, v4.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Likert Bars
+
+Survey answers as diverging stacked bars – negative answers to the left, positive to the right – with an NPS for 0–10 scores.
+
+When to use it: Use it for surveys, ratings and feedback – which statements people agree with, and which they don't.
+
+Page: https://viz.kaijxnes.com/likert-bars
+Script: https://viz.kaijxnes.com/charts/likert-bars-1.5.2.js
+Placeholder id: likert-bars
+Columns:
+- Dimension A (key dimA, required): The question or item.
+- Dimension B (key dimB, required): The answer (Strongly disagree … Strongly agree, or 0–10).
+- Metric 1 (key v1, required): Number of answers.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Target Trend
+
+Actual against target over time, shaded green where ahead and red where behind, with a cumulative view and what's needed to finish on target.
+
+When to use it: Use it for monthly or weekly targets – to see when you fell behind and what each remaining period needs.
+
+Page: https://viz.kaijxnes.com/target-trend
+Script: https://viz.kaijxnes.com/charts/target-trend-1.5.2.js
+Placeholder id: target-trend
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Metric 1 (key v1, required): Actual.
+- Metric 2 (key v2, required): Target (future periods can have a target and no actual).
+
+### Cohort Curves
+
+One line per start-month cohort showing value per unit building up (or retention falling) as it ages, with the average of all cohorts in bold.
+
+When to use it: Use it to see whether newer cohorts are better or worse than older ones at the same age – lifetime value, retention or payback.
+
+Page: https://viz.kaijxnes.com/cohort-curves
+Script: https://viz.kaijxnes.com/charts/cohort-curves-1.5.2.js
+Placeholder id: cohort-curves
+Columns:
+- Month Key (key month, required): The cohort's start month.
+- Period (key idx, required): Periods since start: 0, 1, 2 (or M3, Month 3, or the activity month).
+- Metric 1 (key v1, required): The value in that period.
+- Units (key units, optional): Cohort size, for per-unit values and % retention.
+
+### Bar Chart Race
+
+The top 10 animated period by period – bars overtake each other as the running totals (or each period's values) change. Press play or drag the slider.
+
+When to use it: Use it to tell the story of how a ranking changed – for a presentation, a review or a screen on the wall.
+
+Page: https://viz.kaijxnes.com/bar-chart-race
+Script: https://viz.kaijxnes.com/charts/bar-chart-race-1.5.2.js
+Placeholder id: bar-chart-race
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Dimension A (key dimA, required): The items that race.
+- Metric 1 (key v1, required): The value.
+
+### Motion Scatter
+
+Bubbles that move period by period – one metric across, one up, a third as size – with trails showing where each has been. Press play.
+
+When to use it: Use it to show how items moved on two measures over time – volume vs margin, spend vs ROI.
+
+Page: https://viz.kaijxnes.com/motion-scatter
+Script: https://viz.kaijxnes.com/charts/motion-scatter-1.5.2.js
+Placeholder id: motion-scatter
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Dimension A (key dimA, required): One bubble each.
+- Metric 1 (key v1, required): Across.
+- Metric 2 (key v2, required): Up.
+- Metric 3 (key v3, optional): Bubble size.
+
+### Interval Plot
+
+An estimate with its low–high range for each item, against the average – items whose whole range is above or below are flagged.
+
+When to use it: Use it for test results, conversion rates or forecasts with uncertainty – to avoid over-reading small differences.
+
+Page: https://viz.kaijxnes.com/interval-plot
+Script: https://viz.kaijxnes.com/charts/interval-plot-1.5.2.js
+Placeholder id: interval-plot
+Columns:
+- Dimension A (key dimA, required): One row each.
+- Metric 1 (key v1, required): The estimate.
+- Metric 2 (key v2, required): Low end of the range.
+- Metric 3 (key v3, required): High end of the range.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Goal Rings
+
+Progress to target as concentric rings – a full circle is 100% – with every item listed beside.
+
+When to use it: Use it for a handful of targets on a dashboard home page – teams, markets, products.
+
+Page: https://viz.kaijxnes.com/goal-rings
+Script: https://viz.kaijxnes.com/charts/goal-rings-1.5.2.js
+Placeholder id: goal-rings
+Columns:
+- Dimension A (key dimA, required): The item.
+- Metric 1 (key v1, required): Actual.
+- Metric 2 (key v2, required): Target.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Word Cloud
+
+Words or phrases sized by their value – search terms, reasons, tags or products.
+
+When to use it: Use it for text categories where an at-a-glance impression matters more than exact ranking.
+
+Page: https://viz.kaijxnes.com/word-cloud
+Script: https://viz.kaijxnes.com/charts/word-cloud-1.5.2.js
+Placeholder id: word-cloud
+Columns:
+- Dimension A (key dimA, required): The word or phrase.
+- Metric 1 (key v1, required): Its weight (count, value).
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Radial Bars
+
+A top 10 as rings – a ranked bar chart wrapped round a circle.
+
+When to use it: Use it for a compact, eye-catching top 10 on a summary page.
+
+Page: https://viz.kaijxnes.com/radial-bars
+Script: https://viz.kaijxnes.com/charts/radial-bars-1.5.2.js
+Placeholder id: radial-bars
+Columns:
+- Dimension A (key dimA, required): The items.
+- Metric 1 (key v1, required): The value.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Trend Scatter
+
+Two metrics for every item with a best-fit line, how well it fits (r²), the slope, and the items well above or below the line.
+
+When to use it: Use it to test a relationship – spend vs return, volume vs value – and find the items that beat or miss what the line expects.
+
+Page: https://viz.kaijxnes.com/trend-scatter
+Script: https://viz.kaijxnes.com/charts/trend-scatter-1.5.2.js
+Placeholder id: trend-scatter
+Columns:
+- Dimension A (key dimA, required): One dot each.
+- Metric 1 (key v1, required): Across.
+- Metric 2 (key v2, required): Up.
+- Units (key units, optional): Dot size.
+- Month Key (key month, optional): If present, only the latest month is used.
 
 ### Quadrant Scatter – 2 metrics
 

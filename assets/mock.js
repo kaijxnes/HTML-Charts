@@ -461,6 +461,144 @@
     for (var i = 1; i <= 40; i++) rows.push([A[i % 4], "B" + i, count(Math.exp(R(4, 8.5)))]);
     return { hd: hd, num: [2], rows: rows };
   };
+  // ---- 25 more (v1.5.2) ----
+  var A_ = function (n, p) { var o = []; for (var i = 1; i <= n; i++) o.push((p || "A") + i); return o; };
+  var ymd = function (d) { var x = new Date(d * 864e5); return x.getUTCFullYear() + "-" + String(x.getUTCMonth() + 1).padStart(2, "0") + "-" + String(x.getUTCDate()).padStart(2, "0"); };
+  var season = function (m) { return 1 + 0.22 * Math.sin((m - 2) / 12 * 2 * Math.PI) + (m === 11 ? 0.18 : 0); };
+  GEN["ytd-race"] = function () {
+    var hd = ["Month Key", "Metric 1", "Metric 2"], rows = [], b = R(40000, 90000), g = R(0.04, 0.16);
+    for (var m = 12; m >= 1; m--) { var k = "2026" + (m < 10 ? "0" : "") + m, t = b * (1 + g * 0.8) * season(m - 1); rows.push([k, m <= 9 ? money(b * (1 + g) * season(m - 1) * noise(0.1)) : "", money(t)]); }
+    for (m = 12; m >= 1; m--) rows.push(["2025" + (m < 10 ? "0" : "") + m, money(b * season(m - 1) * noise(0.1)), ""]);
+    return { hd: hd, num: [1, 2], rows: rows };
+  };
+  GEN["streamgraph"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = A_(6), p = {};
+    A.forEach(function (a) { p[a] = { b: R(300, 2000), g: R(-0.05, 0.07), ph: R(0, 6) }; });
+    keys(24).forEach(function (k, t) { var i = 23 - t; A.forEach(function (a) { var q = p[a]; rows.push([k, a, count(q.b * Math.pow(1 + q.g, i) * (1 + 0.2 * Math.sin(i / 2 + q.ph)) * noise(0.06))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["timeline-chart"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1", "Metric 2", "Metric 3"], rows = [], today = Math.floor(Date.now() / 864e5), B = ["B1", "B2", "B3"];
+    for (var i = 1; i <= 12; i++) { var st = today + RI(-150, 90), len = RI(10, 120); rows.push(["Item " + i, B[i % 3], ymd(st), ymd(st + len), money(R(5000, 80000))]); }
+    rows.sort(function (a, b) { return a[2] < b[2] ? -1 : 1; });
+    return { hd: hd, num: [4], rows: rows };
+  };
+  GEN["punch-card"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], D = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], pk = R(18, 21);
+    D.forEach(function (d, i) { for (var h = 0; h < 24; h++) { var day = Math.exp(-Math.pow(h - 12.5, 2) / 30) + 0.9 * Math.exp(-Math.pow(h - pk, 2) / 6) + 0.05, wk = i >= 5 ? 1.25 : 1; rows.push([d, String(h), count(400 * day * wk * noise(0.15))]); } });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["sparkline-table"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = A_(10), p = {};
+    A.forEach(function (a) { p[a] = { b: R(500, 6000), g: R(-0.06, 0.07) }; });
+    keys(13).forEach(function (k, t) { A.forEach(function (a) { rows.push([k, a, money(p[a].b * Math.pow(1 + p[a].g, 12 - t) * noise(0.1))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["concentration-curve"] = function () {
+    var hd = ["Dimension A", "Metric 1"], rows = [], sk = R(1, 1.6);
+    for (var i = 1; i <= 60; i++) rows.push(["A" + i, money(Math.exp(R(5, 9) * sk / 1.3) * R(0.6, 1.4))]);
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["venn-overlap"] = function () {
+    var hd = ["Dimension A", "Metric 1"], S = ["Set A", "Set B", "Set C"], w = [R(3000, 6000), R(2000, 4000), R(1000, 3000)];
+    var rows = [[S[0], count(w[0])], [S[1], count(w[1])], [S[2], count(w[2])], [S[0] + " & " + S[1], count(R(400, 1200))], [S[0] + " & " + S[2], count(R(200, 800))], [S[1] + " & " + S[2], count(R(100, 600))], [S[0] + " & " + S[1] + " & " + S[2], count(R(50, 300))]];
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["upset-plot"] = function () {
+    var hd = ["Dimension A", "Metric 1"], S = ["Set A", "Set B", "Set C", "Set D", "Set E"], rows = [], w = [5, 4, 3, 2, 1.5];
+    for (var m = 1; m < 32; m++) { var parts = S.filter(function (s, i) { return m & (1 << i); }), v = parts.reduce(function (a, s) { return a * w[S.indexOf(s)]; }, 1) * Math.pow(0.18, parts.length - 1) * R(150, 260);
+      if (parts.length > 3 && Math.random() < 0.5) continue; rows.push([parts.join(" & "), count(v)]); }
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["percentile-bands"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = A_(40), base = {};
+    A.forEach(function (a) { base[a] = Math.exp(R(-0.9, 0.9)); });
+    keys(18).forEach(function (k, t) { var lvl = 120 * Math.pow(1.015, 17 - t); A.forEach(function (a) { rows.push([k, a, money2(lvl * base[a] * Math.exp(R(-0.25, 0.25)))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["forecast-chart"] = function () {
+    var hd = ["Month Key", "Metric 1"], rows = [], b = R(20000, 50000), g = R(0.004, 0.015);
+    keys(30).forEach(function (k, t) { var i = 29 - t, m = +k.slice(4) - 1; rows.push([k, count(b * (1 + g * i) * season(m) * noise(0.05))]); });
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["rolling-12"] = function () {
+    var hd = ["Month Key", "Metric 1"], rows = [], b = R(20000, 50000), g = R(-0.004, 0.012);
+    keys(36).forEach(function (k, t) { var i = 35 - t, m = +k.slice(4) - 1; rows.push([k, money(b * (1 + g * i) * season(m) * noise(0.08))]); });
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["weekday-profile"] = function () {
+    var hd = ["Date", "Metric 1"], rows = [], end = Date.UTC(2026, 8, 30) / 864e5, f = [1, 1.04, 1.06, 1.1, 1.3, 1.45, 0.9].map(function (x) { return x * R(0.9, 1.1); });
+    for (var d = end; d > end - 120; d--) { var wd = (new Date(d * 864e5).getUTCDay() + 6) % 7; rows.push([ymd(d), count(1800 * f[wd] * noise(0.14))]); }
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["parallel-coordinates"] = function () {
+    var hd = ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5"], rows = [];
+    for (var i = 1; i <= 20; i++) { var s = R(0.3, 1.7), q = R(0.5, 1.5); rows.push(["A" + i, money(s * 40000 * noise(0.2)), count(s * 900 * noise(0.3)), pct(q * 4), money2(q * 35 * noise(0.2)), pct(R(20, 70) / q)]); }
+    return { hd: hd, num: [1, 2, 3, 4, 5], rows: rows };
+  };
+  GEN["dot-plot"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], B = ["B1", "B2", "B3"];
+    A_(12).forEach(function (a) { var s = R(20, 80); B.forEach(function (b, j) { rows.push([a, b, pct(Math.min(99, s * [1, R(0.7, 1.3), R(0.6, 1.5)][j]))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["grouped-bars"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], B = ["B1", "B2", "B3", "B4"];
+    A_(6).forEach(function (a) { var s = R(0.4, 1.6); B.forEach(function (b, j) { rows.push([a, b, count(s * [1600, 1100, 800, 500][j] * R(0.6, 1.4))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["likert-bars"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], L5 = ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"];
+    for (var i = 1; i <= 8; i++) { var m = R(-0.8, 1.2); L5.forEach(function (l, j) { rows.push(["Statement " + i, l, count(200 * Math.exp(-Math.pow(j - 2 - m, 2) / 2.2) * noise(0.2))]); }); }
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["target-trend"] = function () {
+    var hd = ["Month Key", "Metric 1", "Metric 2"], rows = [], b = R(30000, 60000);
+    for (var m = 12; m >= 1; m--) { var t = b * (1 + 0.02 * m); rows.push(["2026" + (m < 10 ? "0" : "") + m, m <= 9 ? money(t * R(0.85, 1.12)) : "", money(t)]); }
+    return { hd: hd, num: [1, 2], rows: rows };
+  };
+  GEN["cohort-curves"] = function () {
+    var hd = ["Month Key", "Period", "Units", "Metric 1"], rows = [], ks = keys(12).reverse(), arpu = R(20, 45), decay = R(0.8, 0.9);
+    ks.forEach(function (k, c) { var size = R(800, 2400), f = R(0.85, 1.2) * (1 + c * 0.01);
+      for (var o = 0; o < 12 - c; o++) rows.push([k, String(o), count(size), money(size * arpu * f * Math.pow(decay, o) * noise(0.06))]); });
+    return { hd: hd, num: [2, 3], rows: rows };
+  };
+  GEN["bar-chart-race"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = A_(14), p = {};
+    A.forEach(function (a) { p[a] = { b: R(200, 2000), g: R(-0.06, 0.12) }; });
+    keys(24).forEach(function (k, t) { A.forEach(function (a) { rows.push([k, a, count(p[a].b * Math.pow(1 + p[a].g, 23 - t) * noise(0.15))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["motion-scatter"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1", "Metric 2", "Metric 3"], rows = [], A = A_(10), p = {};
+    A.forEach(function (a) { p[a] = { x: R(5000, 40000), y: R(1, 6), z: R(200, 3000), gx: R(-0.04, 0.08), gy: R(-0.05, 0.06) }; });
+    keys(12).forEach(function (k, t) { var i = 11 - t; A.forEach(function (a) { var q = p[a]; rows.push([k, a, money(q.x * Math.pow(1 + q.gx, i) * noise(0.05)), pct(q.y * Math.pow(1 + q.gy, i) * noise(0.05)), count(q.z * Math.pow(1.02, i))]); }); });
+    return { hd: hd, num: [2, 3, 4], rows: rows };
+  };
+  GEN["interval-plot"] = function () {
+    var hd = ["Dimension A", "Metric 1", "Metric 2", "Metric 3"], rows = [];
+    A_(14).forEach(function (a) { var v = R(2, 9), w = R(0.4, 2.5); rows.push([a, pct(v), pct(Math.max(0, v - w)), pct(v + w * R(0.8, 1.2))]); });
+    return { hd: hd, num: [1, 2, 3], rows: rows };
+  };
+  GEN["goal-rings"] = function () {
+    var hd = ["Dimension A", "Metric 1", "Metric 2"], rows = [];
+    A_(7).forEach(function (a) { var t = R(20000, 120000); rows.push([a, money(t * R(0.45, 1.2)), money(t)]); });
+    return { hd: hd, num: [1, 2], rows: rows };
+  };
+  GEN["word-cloud"] = function () {
+    var hd = ["Dimension A", "Metric 1"], W = ["alpha", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel", "india", "juliet", "kilo", "lima", "mike", "november", "oscar", "papa", "quebec", "romeo", "sierra", "tango", "uniform", "victor", "whiskey", "x-ray", "yankee", "zulu", "amber", "cobalt", "crimson", "indigo", "jade", "lemon", "olive", "orchid", "pearl", "ruby", "saffron", "silver", "teal", "violet"];
+    W.sort(function () { return Math.random() - 0.5; });
+    return { hd: hd, num: [1], rows: W.map(function (w, i) { return [w, count(9000 / Math.pow(i + 1, 0.85) * noise(0.1))]; }) };
+  };
+  GEN["radial-bars"] = function () {
+    var hd = ["Dimension A", "Metric 1"], rows = [];
+    A_(12).forEach(function (a) { rows.push([a, count(Math.exp(R(6, 9.5)))]); });
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["trend-scatter"] = function () {
+    var hd = ["Dimension A", "Units", "Metric 1", "Metric 2"], rows = [], roi = R(1.4, 2.6);
+    for (var i = 1; i <= 50; i++) { var x = R(2000, 60000), y = x * roi * noise(0.18) + R(-3000, 3000); if (i % 17 === 0) y *= R(0, 1) < 0.5 ? 0.35 : 1.8; rows.push(["A" + i, count(R(50, 2000)), money(x), money(Math.max(0, y))]); }
+    return { hd: hd, num: [1, 2, 3], rows: rows };
+  };
   GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
   GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 

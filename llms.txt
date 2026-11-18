@@ -1,6 +1,6 @@
 # HTML Charts
 
-> 58 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 83 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Built and maintained by Kai Jones, data analyst (CV: https://kaijxnes.com). Source: https://github.com/kaijxnes/HTML-Charts
 
@@ -49,6 +49,31 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Funnel – no segments](https://viz.kaijxnes.com/funnel-simple): A single funnel from stage counts, with step and overall conversion and the biggest drop-off. Script: https://viz.kaijxnes.com/charts/funnel-1.5.2.js
 - [Treemap – one level](https://viz.kaijxnes.com/treemap-flat): One tile per item, sized by value. Script: https://viz.kaijxnes.com/charts/treemap-1.5.2.js
 - [Value Matrix](https://viz.kaijxnes.com/value-matrix): A heatmap of value per unit across two dimensions, weighted by volume. No date needed. Script: https://viz.kaijxnes.com/charts/value-matrix-1.5.2.js
+- [Trend Scatter](https://viz.kaijxnes.com/trend-scatter): Scatter with best-fit line, r² and outliers flagged. Script: https://viz.kaijxnes.com/charts/trend-scatter-1.5.2.js
+- [Radial Bars](https://viz.kaijxnes.com/radial-bars): A top 10 as rings – an eye-catching ranked bar chart. Script: https://viz.kaijxnes.com/charts/radial-bars-1.5.2.js
+- [Word Cloud](https://viz.kaijxnes.com/word-cloud): Words sized by value – search terms, reasons, tags. Script: https://viz.kaijxnes.com/charts/word-cloud-1.5.2.js
+- [Goal Rings](https://viz.kaijxnes.com/goal-rings): Progress to target as concentric rings, plus a full list. Script: https://viz.kaijxnes.com/charts/goal-rings-1.5.2.js
+- [Interval Plot](https://viz.kaijxnes.com/interval-plot): Estimates with their ranges, flagged when clearly above or below average. Script: https://viz.kaijxnes.com/charts/interval-plot-1.5.2.js
+- [Motion Scatter](https://viz.kaijxnes.com/motion-scatter): Animated bubbles moving period by period, with trails. Script: https://viz.kaijxnes.com/charts/motion-scatter-1.5.2.js
+- [Bar Chart Race](https://viz.kaijxnes.com/bar-chart-race): Animated top 10 – bars overtake each other period by period. Script: https://viz.kaijxnes.com/charts/bar-chart-race-1.5.2.js
+- [Cohort Curves](https://viz.kaijxnes.com/cohort-curves): One line per cohort as it ages, against the average. Script: https://viz.kaijxnes.com/charts/cohort-curves-1.5.2.js
+- [Target Trend](https://viz.kaijxnes.com/target-trend): Actual vs target over time, shaded ahead/behind, with what's needed to catch up. Script: https://viz.kaijxnes.com/charts/target-trend-1.5.2.js
+- [Likert Bars](https://viz.kaijxnes.com/likert-bars): Survey answers as diverging bars, with NPS for 0–10 scores. Script: https://viz.kaijxnes.com/charts/likert-bars-1.5.2.js
+- [Grouped Bars](https://viz.kaijxnes.com/grouped-bars): Side-by-side bars per category, from a dimension or several metrics. Script: https://viz.kaijxnes.com/charts/grouped-bars-1.5.2.js
+- [Dot Plot](https://viz.kaijxnes.com/dot-plot): A dot per series on each row – cleaner than grouped bars. Script: https://viz.kaijxnes.com/charts/dot-plot-1.5.2.js
+- [Parallel Coordinates](https://viz.kaijxnes.com/parallel-coordinates): Items as lines across up to six metric axes – trade-offs and clusters. Script: https://viz.kaijxnes.com/charts/parallel-coordinates-1.5.2.js
+- [Weekday Profile](https://viz.kaijxnes.com/weekday-profile): A typical day of the week from daily data, with this week on top. Script: https://viz.kaijxnes.com/charts/weekday-profile-1.5.2.js
+- [Rolling 12 Months](https://viz.kaijxnes.com/rolling-12): Monthly bars with the moving annual total – trend without the season. Script: https://viz.kaijxnes.com/charts/rolling-12-1.5.2.js
+- [Forecast](https://viz.kaijxnes.com/forecast-chart): Trend + seasonal projection with an 80% range. Script: https://viz.kaijxnes.com/charts/forecast-chart-1.5.2.js
+- [Percentile Bands](https://viz.kaijxnes.com/percentile-bands): Median with 25–75 and 10–90 percentile bands over time. Script: https://viz.kaijxnes.com/charts/percentile-bands-1.5.2.js
+- [UpSet Plot](https://viz.kaijxnes.com/upset-plot): Every combination as a bar, with a dot matrix – overlaps of 4+ groups. Script: https://viz.kaijxnes.com/charts/upset-plot-1.5.2.js
+- [Venn Overlap](https://viz.kaijxnes.com/venn-overlap): 2–3 overlapping circles with the count in every overlap. Script: https://viz.kaijxnes.com/charts/venn-overlap-1.5.2.js
+- [Concentration Curve](https://viz.kaijxnes.com/concentration-curve): How much of the total comes from the biggest items – with a Gini score. Script: https://viz.kaijxnes.com/charts/concentration-curve-1.5.2.js
+- [Sparkline Table](https://viz.kaijxnes.com/sparkline-table): One row per item with a mini trend, latest value and changes. Script: https://viz.kaijxnes.com/charts/sparkline-table-1.5.2.js
+- [Punch Card](https://viz.kaijxnes.com/punch-card): Weekday × hour dots – when in the week things actually happen. Script: https://viz.kaijxnes.com/charts/punch-card-1.5.2.js
+- [Timeline](https://viz.kaijxnes.com/timeline-chart): Gantt-style bars from start to end date, coloured by group, with today marked. Script: https://viz.kaijxnes.com/charts/timeline-chart-1.5.2.js
+- [Streamgraph](https://viz.kaijxnes.com/streamgraph): Flowing layers around a centre line – a total and its mix over time. Script: https://viz.kaijxnes.com/charts/streamgraph-1.5.2.js
+- [YTD Race](https://viz.kaijxnes.com/ytd-race): This year's running total against last year's and target, with a full-year projection. Script: https://viz.kaijxnes.com/charts/ytd-race-1.5.2.js
 - [Bubble Cloud](https://viz.kaijxnes.com/bubble-cloud): Packed bubbles sized by value and coloured by group – what's big, at a glance. Script: https://viz.kaijxnes.com/charts/bubble-cloud-1.5.2.js
 - [Chord Diagram](https://viz.kaijxnes.com/chord-diagram): Flows between items around a circle – who sends what to whom. Script: https://viz.kaijxnes.com/charts/chord-diagram-1.5.2.js
 - [Butterfly Chart](https://viz.kaijxnes.com/butterfly-chart): Two measures back to back per item, like a population pyramid. Script: https://viz.kaijxnes.com/charts/butterfly-chart-1.5.2.js
