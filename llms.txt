@@ -1,6 +1,6 @@
 # HTML Charts
 
-> 44 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 48 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Built and maintained by Kai Jones, data analyst (CV: https://kaijxnes.com). Source: https://github.com/kaijxnes/HTML-Charts
 
@@ -49,6 +49,10 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Funnel – no segments](https://viz.kaijxnes.com/funnel-simple): A single funnel from stage counts, with step and overall conversion and the biggest drop-off. Script: https://viz.kaijxnes.com/charts/funnel-1.5.2.js
 - [Treemap – one level](https://viz.kaijxnes.com/treemap-flat): One tile per item, sized by value. Script: https://viz.kaijxnes.com/charts/treemap-1.5.2.js
 - [Value Matrix](https://viz.kaijxnes.com/value-matrix): A heatmap of value per unit across two dimensions, weighted by volume. No date needed. Script: https://viz.kaijxnes.com/charts/value-matrix-1.5.2.js
+- [Cohort Triangle](https://viz.kaijxnes.com/cohort-triangle): The classic cohort retention triangle: start month × periods since start, as % retained, values or cumulative per unit. Script: https://viz.kaijxnes.com/charts/cohort-triangle-1.5.2.js
+- [Slope Chart](https://viz.kaijxnes.com/slope-chart): Before and after for each item as up/down lines, with rank changes and % change. Script: https://viz.kaijxnes.com/charts/slope-chart-1.5.2.js
+- [Bullet Chart](https://viz.kaijxnes.com/bullet-chart): Actual vs target per item as compact bars, with performance bands and a previous-period marker. Script: https://viz.kaijxnes.com/charts/bullet-chart-1.5.2.js
+- [Donut Chart](https://viz.kaijxnes.com/donut-chart): Share of a total by segment, with the change in share against the previous period. Script: https://viz.kaijxnes.com/charts/donut-chart-1.5.2.js
 - [Contribution Breakdown](https://viz.kaijxnes.com/contribution-breakdown): Bars by any dimension, split by up to two others, for total value, volume or value per unit. No date needed. Script: https://viz.kaijxnes.com/charts/contribution-breakdown-1.5.2.js
 - [Quadrant Scatter – 2 metrics](https://viz.kaijxnes.com/quadrant-scatter-plain): Items plotted by two metrics, split into quadrants at the averages, without bubble sizing. Script: https://viz.kaijxnes.com/charts/quadrant-scatter-1.5.2.js
 - [Radar Compare – 4 metrics](https://viz.kaijxnes.com/radar-compare-four): Segments compared across four metrics on a radar. Script: https://viz.kaijxnes.com/charts/radar-compare-1.5.2.js

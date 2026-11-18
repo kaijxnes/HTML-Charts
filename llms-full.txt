@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 44 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 48 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -846,6 +846,65 @@ Columns:
 - Dimension A (key dimA, required): The segments.
 - Metric 1 (key v1, required): The value to add up.
 Options: data-show="share", data-range="24" or "all".
+
+### Donut Chart
+
+Each segment's share of a total as a donut, with the total in the middle, a ranked list and the change in share against the previous period.
+
+When to use it: Use it to show how a total splits between a handful of segments at one point in time – a month, the last 12 months or everything.
+
+Page: https://viz.kaijxnes.com/donut-chart
+Script: https://viz.kaijxnes.com/charts/donut-chart-1.5.2.js
+Placeholder id: donut-chart
+Columns:
+- Dimension A (key dimA, required): The segments.
+- Metric 1 (key v1, required): The value to add up.
+- Month Key (key month, optional): Adds Latest month / Last 12 months / All, and the change in share against the previous period.
+
+### Bullet Chart
+
+Actual against target for each item as compact bullet bars, with shaded bands for how close each is, a target marker and an optional previous-period dot.
+
+When to use it: Use it when each item has a target – budget, quota, forecast – and you want to see at a glance which are on track and which are behind.
+
+Page: https://viz.kaijxnes.com/bullet-chart
+Script: https://viz.kaijxnes.com/charts/bullet-chart-1.5.2.js
+Placeholder id: bullet-chart
+Columns:
+- Dimension A (key dimA, required): One bar each.
+- Metric 1 (key v1, required): The actual value.
+- Target (key v2, optional): The target – bars are then shown as % of target.
+- Previous (key v3, optional): A comparison value (e.g. last year), drawn as a dot.
+
+### Slope Chart
+
+Each item's value at two points – the latest month against the same month last year, the previous month or the first month – as lines that slope up or down.
+
+When to use it: Use it to compare two points in time for a set of items, when both the change and the change in order matter.
+
+Page: https://viz.kaijxnes.com/slope-chart
+Script: https://viz.kaijxnes.com/charts/slope-chart-1.5.2.js
+Placeholder id: slope-chart
+Columns:
+- Month Key (key month, optional): The period of each row. Without it, Metric 1 is compared with Metric 2.
+- Dimension A (key dimA, required): One line each.
+- Metric 1 (key v1, required): The value (or the 'before' value when there's no month).
+- Metric 2 (key v2, optional): The 'after' value, only used without a month column.
+
+### Cohort Triangle
+
+Cohorts by start month down the side and periods since start across the top, shaded by retention %, value or cumulative value per unit – the classic retention triangle.
+
+When to use it: Use it for any cohort that starts in a month and is tracked afterwards – customers, players, subscribers – to see how quickly each one drops off or builds value.
+
+Page: https://viz.kaijxnes.com/cohort-triangle
+Script: https://viz.kaijxnes.com/charts/cohort-triangle-1.5.2.js
+Placeholder id: cohort-triangle
+Columns:
+- Month Key (key month, required): The cohort's start month.
+- Period (key idx, required): Periods since start (0, 1, 2 or M0, M1…) – or the activity month, which is turned into periods since start.
+- Metric 1 (key v1, required): The value in that period (e.g. active customers or revenue).
+- Units (key units, optional): The cohort's starting size – used for % retained and per-unit values. Without it, % is of period 0.
 
 ### Quadrant Scatter – 2 metrics
 

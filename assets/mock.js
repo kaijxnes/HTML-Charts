@@ -382,6 +382,37 @@
     }
     return { hd: hd, num: [3, 4, 5, 6], rows: rows };
   };
+  GEN["donut-chart"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = ["A1", "A2", "A3", "A4", "A5"], w = {}, g = {};
+    A.forEach(function (a) { w[a] = R(0.4, 1.8); g[a] = R(-0.04, 0.05); });
+    keys(12).forEach(function (k, t) { A.forEach(function (a) { rows.push([k, a, count(w[a] * 900 * Math.pow(1 + g[a], 11 - t) * noise(0.12))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["bullet-chart"] = function () {
+    var hd = ["Dimension A", "Metric 1", "Target", "Previous"], rows = [];
+    ["A1", "A2", "A3", "A4", "A5", "A6", "A7"].forEach(function (a) {
+      var t = R(20000, 90000), v = t * R(0.55, 1.2);
+      rows.push([a, money(v), money(t), money(v * R(0.8, 1.15))]);
+    });
+    return { hd: hd, num: [1, 2, 3], rows: rows };
+  };
+  GEN["slope-chart"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = ["A1", "A2", "A3", "A4", "A5", "A6", "A7"], w = {}, g = {};
+    A.forEach(function (a) { w[a] = R(1500, 9000); g[a] = R(-0.05, 0.06); });
+    keys(13).forEach(function (k, t) { A.forEach(function (a) { rows.push([k, a, count(w[a] * Math.pow(1 + g[a], 12 - t) * noise(0.08))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["cohort-triangle"] = function () {
+    var hd = ["Month Key", "Period", "Units", "Metric 1"], rows = [], ks = keys(12).reverse(), keep = R(0.5, 0.65), decay = R(0.82, 0.9);
+    ks.forEach(function (k, c) {
+      var size = R(800, 2400), f = R(0.92, 1.08);
+      for (var o = 0; o < 12 - c; o++) {
+        var share = o === 0 ? 1 : keep * f * Math.pow(decay, o - 1) * noise(0.04);
+        rows.push([k, String(o), count(size), count(size * Math.min(1, share))]);
+      }
+    });
+    return { hd: hd, num: [2, 3], rows: rows };
+  };
   GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
   GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 
