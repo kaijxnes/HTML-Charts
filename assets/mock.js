@@ -413,6 +413,54 @@
     });
     return { hd: hd, num: [2, 3], rows: rows };
   };
+  GEN["marimekko"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [];
+    ["A1", "A2", "A3", "A4", "A5"].forEach(function (a) { var s = R(0.3, 2); ["B1", "B2", "B3", "B4"].forEach(function (b) { rows.push([a, b, count(s * R(200, 2500))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["sunburst"] = GEN["marimekko"];
+  GEN["waffle-chart"] = function () {
+    var hd = ["Dimension A", "Metric 1"], rows = [];
+    ["A1", "A2", "A3", "A4", "A5"].forEach(function (a, i) { rows.push([a, count(R(300, 3000) / (1 + i * 0.4))]); });
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["diverging-bars"] = function () {
+    var hd = ["Dimension A", "Metric 1", "Metric 2"], rows = [];
+    ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8"].forEach(function (a) { var b = R(8000, 60000); rows.push([a, money(b * R(0.65, 1.4)), money(b)]); });
+    return { hd: hd, num: [1, 2], rows: rows };
+  };
+  GEN["horizon-chart"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8"], p = {};
+    A.forEach(function (a) { p[a] = { b: R(1000, 8000), g: R(-0.03, 0.04), s: R(0, 6) }; });
+    keys(24).forEach(function (k, t) { A.forEach(function (a) { var q = p[a], i = 23 - t; rows.push([k, a, count(q.b * Math.pow(1 + q.g, i) * (1 + 0.25 * Math.sin((i + q.s) / 1.9)) * noise(0.08))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["rose-chart"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = ["A1", "A2", "A3"], w = {};
+    A.forEach(function (a) { w[a] = R(400, 1600); });
+    keys(24).forEach(function (k, t) { var season = 1 + 0.35 * Math.sin((t + 3) / 1.9); A.forEach(function (a) { rows.push([k, a, count(w[a] * season * (t < 12 ? 1.1 : 1) * noise(0.12))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["beeswarm"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], A = ["A1", "A2", "A3"];
+    for (var i = 1; i <= 90; i++) { var a = A[i % 3], m = [9000, 14000, 6000][i % 3]; rows.push([a, "B" + i, money(Math.max(100, m * Math.exp(R(-1.1, 0.9))))]); }
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["butterfly-chart"] = function () {
+    var hd = ["Dimension A", "Metric 1", "Metric 2"], rows = [];
+    ["A1", "A2", "A3", "A4", "A5", "A6", "A7"].forEach(function (a, i) { var c = 1 - Math.abs(i - 2.5) / 4; rows.push([a, count(R(800, 1400) * c * 3), count(R(800, 1400) * c * 3 * R(0.7, 1.3))]); });
+    return { hd: hd, num: [1, 2], rows: rows };
+  };
+  GEN["chord-diagram"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], A = ["A1", "A2", "A3", "A4", "A5"];
+    A.forEach(function (a) { A.forEach(function (b) { if (a !== b && Math.random() > 0.15) rows.push([a, b, count(R(40, 900))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["bubble-cloud"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], A = ["A1", "A2", "A3", "A4"];
+    for (var i = 1; i <= 40; i++) rows.push([A[i % 4], "B" + i, count(Math.exp(R(4, 8.5)))]);
+    return { hd: hd, num: [2], rows: rows };
+  };
   GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
   GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 

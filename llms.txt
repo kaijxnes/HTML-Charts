@@ -1,6 +1,6 @@
 # HTML Charts
 
-> 48 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 58 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Built and maintained by Kai Jones, data analyst (CV: https://kaijxnes.com). Source: https://github.com/kaijxnes/HTML-Charts
 
@@ -49,6 +49,16 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Funnel – no segments](https://viz.kaijxnes.com/funnel-simple): A single funnel from stage counts, with step and overall conversion and the biggest drop-off. Script: https://viz.kaijxnes.com/charts/funnel-1.5.2.js
 - [Treemap – one level](https://viz.kaijxnes.com/treemap-flat): One tile per item, sized by value. Script: https://viz.kaijxnes.com/charts/treemap-1.5.2.js
 - [Value Matrix](https://viz.kaijxnes.com/value-matrix): A heatmap of value per unit across two dimensions, weighted by volume. No date needed. Script: https://viz.kaijxnes.com/charts/value-matrix-1.5.2.js
+- [Bubble Cloud](https://viz.kaijxnes.com/bubble-cloud): Packed bubbles sized by value and coloured by group – what's big, at a glance. Script: https://viz.kaijxnes.com/charts/bubble-cloud-1.5.2.js
+- [Chord Diagram](https://viz.kaijxnes.com/chord-diagram): Flows between items around a circle – who sends what to whom. Script: https://viz.kaijxnes.com/charts/chord-diagram-1.5.2.js
+- [Butterfly Chart](https://viz.kaijxnes.com/butterfly-chart): Two measures back to back per item, like a population pyramid. Script: https://viz.kaijxnes.com/charts/butterfly-chart-1.5.2.js
+- [Beeswarm](https://viz.kaijxnes.com/beeswarm): Every item as a dot, one swarm per group, with the median – spread and outliers at a glance. Script: https://viz.kaijxnes.com/charts/beeswarm-1.5.2.js
+- [Rose Chart](https://viz.kaijxnes.com/rose-chart): Months as petals around a clock face, with last year's outline – seasonality at a glance. Script: https://viz.kaijxnes.com/charts/rose-chart-1.5.2.js
+- [Horizon Chart](https://viz.kaijxnes.com/horizon-chart): Dozens of trends in a small space – each band shaded by how far it is from its own average. Script: https://viz.kaijxnes.com/charts/horizon-chart-1.5.2.js
+- [Diverging Bars](https://viz.kaijxnes.com/diverging-bars): Gains to the right, losses to the left: change or variance per item around zero. Script: https://viz.kaijxnes.com/charts/diverging-bars-1.5.2.js
+- [Waffle Chart](https://viz.kaijxnes.com/waffle-chart): 100 squares, each 1% of the total – shares you can literally count. Script: https://viz.kaijxnes.com/charts/waffle-chart-1.5.2.js
+- [Sunburst](https://viz.kaijxnes.com/sunburst): Two-level breakdown as rings – click a slice to zoom in. Script: https://viz.kaijxnes.com/charts/sunburst-1.5.2.js
+- [Marimekko](https://viz.kaijxnes.com/marimekko): Column width = size, column split = mix: two dimensions' shares in one picture. Script: https://viz.kaijxnes.com/charts/marimekko-1.5.2.js
 - [Cohort Triangle](https://viz.kaijxnes.com/cohort-triangle): The classic cohort retention triangle: start month × periods since start, as % retained, values or cumulative per unit. Script: https://viz.kaijxnes.com/charts/cohort-triangle-1.5.2.js
 - [Slope Chart](https://viz.kaijxnes.com/slope-chart): Before and after for each item as up/down lines, with rank changes and % change. Script: https://viz.kaijxnes.com/charts/slope-chart-1.5.2.js
 - [Bullet Chart](https://viz.kaijxnes.com/bullet-chart): Actual vs target per item as compact bars, with performance bands and a previous-period marker. Script: https://viz.kaijxnes.com/charts/bullet-chart-1.5.2.js

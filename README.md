@@ -2,7 +2,7 @@
 
 Built and maintained by [Kai Jones](https://kaijxnes.com), data analyst.
 
-48 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
+58 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
 
 **Site:** https://viz.kaijxnes.com · [Setup guide and snippet builder](https://viz.kaijxnes.com/platforms) · [About](https://viz.kaijxnes.com/about)
 
@@ -48,6 +48,16 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Bullet Chart | `bullet-chart.html` | `charts/bullet-chart-1.5.2.js` |
 | Slope Chart | `slope-chart.html` | `charts/slope-chart-1.5.2.js` |
 | Cohort Triangle | `cohort-triangle.html` | `charts/cohort-triangle-1.5.2.js` |
+| Marimekko | `marimekko.html` | `charts/marimekko-1.5.2.js` |
+| Sunburst | `sunburst.html` | `charts/sunburst-1.5.2.js` |
+| Waffle Chart | `waffle-chart.html` | `charts/waffle-chart-1.5.2.js` |
+| Diverging Bars | `diverging-bars.html` | `charts/diverging-bars-1.5.2.js` |
+| Horizon Chart | `horizon-chart.html` | `charts/horizon-chart-1.5.2.js` |
+| Rose Chart | `rose-chart.html` | `charts/rose-chart-1.5.2.js` |
+| Beeswarm | `beeswarm.html` | `charts/beeswarm-1.5.2.js` |
+| Butterfly Chart | `butterfly-chart.html` | `charts/butterfly-chart-1.5.2.js` |
+| Chord Diagram | `chord-diagram.html` | `charts/chord-diagram-1.5.2.js` |
+| Bubble Cloud | `bubble-cloud.html` | `charts/bubble-cloud-1.5.2.js` |
 | Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.5.2.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
@@ -66,6 +76,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.5.2** – new charts: **Marimekko**, **Sunburst**, **Waffle Chart**, **Diverging Bars**, **Horizon Chart**, **Rose Chart**, **Beeswarm**, **Butterfly Chart**, **Chord Diagram** and **Bubble Cloud**.
 - **1.5.2** – new charts: **Donut Chart**, **Bullet Chart**, **Slope Chart** and **Cohort Triangle**.
 - **1.5.2** – all charts except Monthly Bars hold their data: resizing the page or the grid redrawing no longer triggers a re-read; a change must still be there a moment later before the grid is read again, a re-read that finds nothing new isn't redrawn and backs off further checks, and a *Refresh data* button re-reads on demand. `data-refresh="manual"` turns automatic re-reading off.
 - **1.5.1** (Ribbon Chart) – weekly grids (e.g. `2026 W45`) get one column per week, with 13 / 26 / 52-week ranges.

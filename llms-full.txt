@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 48 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 58 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -905,6 +905,148 @@ Columns:
 - Period (key idx, required): Periods since start (0, 1, 2 or M0, M1…) – or the activity month, which is turned into periods since start.
 - Metric 1 (key v1, required): The value in that period (e.g. active customers or revenue).
 - Units (key units, optional): The cohort's starting size – used for % retained and per-unit values. Without it, % is of period 0.
+
+### Marimekko
+
+A 100% chart where each column's width is its share of the total and its height is split by a second dimension – size and mix in one picture.
+
+When to use it: Use it when you want to see both how big each group is and what it's made of – for example licences by vertical.
+
+Page: https://viz.kaijxnes.com/marimekko
+Script: https://viz.kaijxnes.com/charts/marimekko-1.5.2.js
+Placeholder id: marimekko
+Columns:
+- Dimension A (key dimA, required): The columns – their width is their share of the total.
+- Dimension B (key dimB, required): The split within each column.
+- Metric 1 (key v1, required): The value to add up.
+- Month Key (key month, optional): If present, only the latest month is shown.
+
+### Sunburst
+
+Two levels of a total as rings: Dimension A on the inner ring and Dimension B around it. Click a slice to zoom into it.
+
+When to use it: Use it for a total that breaks down in two levels – a group and the items inside it – when you want to see both at once.
+
+Page: https://viz.kaijxnes.com/sunburst
+Script: https://viz.kaijxnes.com/charts/sunburst-1.5.2.js
+Placeholder id: sunburst
+Columns:
+- Dimension A (key dimA, required): The inner ring.
+- Dimension B (key dimB, required): The outer ring, inside each Dimension A.
+- Metric 1 (key v1, required): The value to add up.
+- Month Key (key month, optional): If present, only the latest month is shown.
+
+### Waffle Chart
+
+A 10 × 10 grid where every square is 1% of the total, coloured by segment – shares you can count.
+
+When to use it: Use it when the audience needs to grasp shares quickly – '23 in every 100' – rather than read a scale.
+
+Page: https://viz.kaijxnes.com/waffle-chart
+Script: https://viz.kaijxnes.com/charts/waffle-chart-1.5.2.js
+Placeholder id: waffle-chart
+Columns:
+- Dimension A (key dimA, required): The segments.
+- Metric 1 (key v1, required): The value to add up.
+- Month Key (key month, optional): If present, only the latest month is shown.
+
+### Diverging Bars
+
+Bars either side of zero – the difference or % change between two measures for each item, or a value that can be negative – green to the right, red to the left.
+
+When to use it: Use it to show winners and losers – this year vs last, actual vs budget, or any value that can be positive or negative.
+
+Page: https://viz.kaijxnes.com/diverging-bars
+Script: https://viz.kaijxnes.com/charts/diverging-bars-1.5.2.js
+Placeholder id: diverging-bars
+Columns:
+- Dimension A (key dimA, required): One bar each.
+- Metric 1 (key v1, required): The value (or 'this period').
+- Metric 2 (key v2, optional): The comparison (e.g. last year). Without it, Metric 1 is drawn around zero as it is.
+
+### Horizon Chart
+
+Many time series in very little space: one thin band each, shaded by how far it is above (purple) or below (red) its own average.
+
+When to use it: Use it to scan lots of series at once – licences, markets, products – and spot which are running hot or cold right now.
+
+Page: https://viz.kaijxnes.com/horizon-chart
+Script: https://viz.kaijxnes.com/charts/horizon-chart-1.5.2.js
+Placeholder id: horizon-chart
+Columns:
+- Month Key (key month, required): The month (or week) of each row.
+- Dimension A (key dimA, required): One band each.
+- Metric 1 (key v1, required): The value.
+
+### Rose Chart
+
+The last 12 or 24 months as petals around a circle – petal area is the value – with an outline for the same month a year earlier. Great for seasonality.
+
+When to use it: Use it to show seasonality and year-on-year change in a striking way – which months are strongest, and whether each beat last year.
+
+Page: https://viz.kaijxnes.com/rose-chart
+Script: https://viz.kaijxnes.com/charts/rose-chart-1.5.2.js
+Placeholder id: rose-chart
+Columns:
+- Month Key (key month, required): The month of each row.
+- Metric 1 (key v1, required): The value.
+- Dimension A (key dimA, optional): Stacks each petal by segment.
+
+### Beeswarm
+
+Every item as a dot placed by its value, packed so none overlap, with one swarm per group and a median line – the spread and the individual items at once.
+
+When to use it: Use it when you want to see each item as well as the spread – affiliates by revenue, campaigns by CPA – and spot outliers.
+
+Page: https://viz.kaijxnes.com/beeswarm
+Script: https://viz.kaijxnes.com/charts/beeswarm-1.5.2.js
+Placeholder id: beeswarm
+Columns:
+- Dimension B (key dimB, optional): The item each dot is (e.g. affiliate). Rows for the same item are added together.
+- Dimension A (key dimA, optional): Groups – one swarm each.
+- Metric 1 (key v1, required): The value.
+
+### Butterfly Chart
+
+Two measures back to back for each item – one bar to the left, one to the right – like a population pyramid.
+
+When to use it: Use it to compare two sides across the same categories – male vs female by age band, new vs returning by channel, this year vs last.
+
+Page: https://viz.kaijxnes.com/butterfly-chart
+Script: https://viz.kaijxnes.com/charts/butterfly-chart-1.5.2.js
+Placeholder id: butterfly-chart
+Columns:
+- Dimension A (key dimA, required): The categories down the middle.
+- Metric 1 (key v1, required): The left side.
+- Metric 2 (key v2, required): The right side.
+
+### Chord Diagram
+
+Flows between items around a circle – each item's arc is its total in and out, and a ribbon joins the two ends of every flow.
+
+When to use it: Use it for movement between the same set of things – players moving between verticals, customers switching products, traffic between sites.
+
+Page: https://viz.kaijxnes.com/chord-diagram
+Script: https://viz.kaijxnes.com/charts/chord-diagram-1.5.2.js
+Placeholder id: chord-diagram
+Columns:
+- Dimension A (key dimA, required): Where each flow starts.
+- Dimension B (key dimB, required): Where each flow ends.
+- Metric 1 (key v1, required): The size of the flow.
+
+### Bubble Cloud
+
+One bubble per item, area proportional to its value, coloured by group and packed together – an eye-catching view of what's big.
+
+When to use it: Use it for a quick, eye-catching view of which items are biggest – campaigns, affiliates, games – grouped by a category.
+
+Page: https://viz.kaijxnes.com/bubble-cloud
+Script: https://viz.kaijxnes.com/charts/bubble-cloud-1.5.2.js
+Placeholder id: bubble-cloud
+Columns:
+- Dimension B (key dimB, optional): The items. Without it, Dimension A is the items.
+- Dimension A (key dimA, required): Groups – the bubble colours.
+- Metric 1 (key v1, required): The value (bubble area).
 
 ### Quadrant Scatter – 2 metrics
 
