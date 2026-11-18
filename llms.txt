@@ -1,6 +1,6 @@
 # HTML Charts
 
-> 83 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 94 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Built and maintained by Kai Jones, data analyst (CV: https://kaijxnes.com). Source: https://github.com/kaijxnes/HTML-Charts
 
@@ -49,6 +49,17 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Funnel – no segments](https://viz.kaijxnes.com/funnel-simple): A single funnel from stage counts, with step and overall conversion and the biggest drop-off. Script: https://viz.kaijxnes.com/charts/funnel-1.5.2.js
 - [Treemap – one level](https://viz.kaijxnes.com/treemap-flat): One tile per item, sized by value. Script: https://viz.kaijxnes.com/charts/treemap-1.5.2.js
 - [Value Matrix](https://viz.kaijxnes.com/value-matrix): A heatmap of value per unit across two dimensions, weighted by volume. No date needed. Script: https://viz.kaijxnes.com/charts/value-matrix-1.5.2.js
+- [Month-to-Date Compare](https://viz.kaijxnes.com/mtd-compare): This month to date vs last month and last year at the same day. Script: https://viz.kaijxnes.com/charts/mtd-compare-1.5.2.js
+- [Conversion Trend](https://viz.kaijxnes.com/conversion-trend): Funnel conversion rates over time, step by step. Script: https://viz.kaijxnes.com/charts/conversion-trend-1.5.2.js
+- [Heat Table](https://viz.kaijxnes.com/heat-table): Pivot table with colour-scaled cells and totals. Script: https://viz.kaijxnes.com/charts/heat-table-1.5.2.js
+- [Lollipop Chart](https://viz.kaijxnes.com/lollipop-chart): Ranked stems and dots, average line and last month's position. Script: https://viz.kaijxnes.com/charts/lollipop-chart-1.5.2.js
+- [Cumulative Distribution](https://viz.kaijxnes.com/cumulative-distribution): Share of rows at or below each value, per group (ECDF). Script: https://viz.kaijxnes.com/charts/cumulative-distribution-1.5.2.js
+- [Ridgeline](https://viz.kaijxnes.com/ridgeline): Distribution shapes stacked by group or month, with medians. Script: https://viz.kaijxnes.com/charts/ridgeline-1.5.2.js
+- [Spiral Plot](https://viz.kaijxnes.com/spiral-plot): Years wound into a spiral so the same month lines up each turn. Script: https://viz.kaijxnes.com/charts/spiral-plot-1.5.2.js
+- [Cycle Plot](https://viz.kaijxnes.com/cycle-plot): Each calendar month across the years – season and trend side by side. Script: https://viz.kaijxnes.com/charts/cycle-plot-1.5.2.js
+- [Price-Volume-Mix Bridge](https://viz.kaijxnes.com/pvm-bridge): Change in value split into volume, mix and rate effects. Script: https://viz.kaijxnes.com/charts/pvm-bridge-1.5.2.js
+- [Burn-down](https://viz.kaijxnes.com/burn-down): Budget left by day against an even-spend line, with run-out date. Script: https://viz.kaijxnes.com/charts/burn-down-1.5.2.js
+- [Growth Accounting](https://viz.kaijxnes.com/growth-accounting): New and returning up, lost down, net change and quick ratio per period. Script: https://viz.kaijxnes.com/charts/growth-accounting-1.5.2.js
 - [Trend Scatter](https://viz.kaijxnes.com/trend-scatter): Scatter with best-fit line, r² and outliers flagged. Script: https://viz.kaijxnes.com/charts/trend-scatter-1.5.2.js
 - [Radial Bars](https://viz.kaijxnes.com/radial-bars): A top 10 as rings – an eye-catching ranked bar chart. Script: https://viz.kaijxnes.com/charts/radial-bars-1.5.2.js
 - [Word Cloud](https://viz.kaijxnes.com/word-cloud): Words sized by value – search terms, reasons, tags. Script: https://viz.kaijxnes.com/charts/word-cloud-1.5.2.js

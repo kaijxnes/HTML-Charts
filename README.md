@@ -2,7 +2,7 @@
 
 Built and maintained by [Kai Jones](https://kaijxnes.com), data analyst.
 
-83 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
+94 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
 
 **Site:** https://viz.kaijxnes.com · [Setup guide and snippet builder](https://viz.kaijxnes.com/platforms) · [About](https://viz.kaijxnes.com/about)
 
@@ -83,6 +83,17 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Word Cloud | `word-cloud.html` | `charts/word-cloud-1.5.2.js` |
 | Radial Bars | `radial-bars.html` | `charts/radial-bars-1.5.2.js` |
 | Trend Scatter | `trend-scatter.html` | `charts/trend-scatter-1.5.2.js` |
+| Growth Accounting | `growth-accounting.html` | `charts/growth-accounting-1.5.2.js` |
+| Burn-down | `burn-down.html` | `charts/burn-down-1.5.2.js` |
+| Price-Volume-Mix Bridge | `pvm-bridge.html` | `charts/pvm-bridge-1.5.2.js` |
+| Cycle Plot | `cycle-plot.html` | `charts/cycle-plot-1.5.2.js` |
+| Spiral Plot | `spiral-plot.html` | `charts/spiral-plot-1.5.2.js` |
+| Ridgeline | `ridgeline.html` | `charts/ridgeline-1.5.2.js` |
+| Cumulative Distribution | `cumulative-distribution.html` | `charts/cumulative-distribution-1.5.2.js` |
+| Lollipop Chart | `lollipop-chart.html` | `charts/lollipop-chart-1.5.2.js` |
+| Heat Table | `heat-table.html` | `charts/heat-table-1.5.2.js` |
+| Conversion Trend | `conversion-trend.html` | `charts/conversion-trend-1.5.2.js` |
+| Month-to-Date Compare | `mtd-compare.html` | `charts/mtd-compare-1.5.2.js` |
 | Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.5.2.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
@@ -101,6 +112,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.5.2** – new charts: **Growth Accounting**, **Burn-down**, **Price-Volume-Mix Bridge**, **Cycle Plot**, **Spiral Plot**, **Ridgeline**, **Cumulative Distribution**, **Lollipop Chart**, **Heat Table**, **Conversion Trend** and **Month-to-Date Compare**.
 - **1.5.2** – new charts: **YTD Race**, **Streamgraph**, **Timeline**, **Punch Card**, **Sparkline Table**, **Concentration Curve**, **Venn Overlap**, **UpSet Plot**, **Percentile Bands**, **Forecast**, **Rolling 12 Months**, **Weekday Profile**, **Parallel Coordinates**, **Dot Plot**, **Grouped Bars**, **Likert Bars**, **Target Trend**, **Cohort Curves**, **Bar Chart Race**, **Motion Scatter**, **Interval Plot**, **Goal Rings**, **Word Cloud**, **Radial Bars** and **Trend Scatter**.
 - **1.5.2** – new charts: **Marimekko**, **Sunburst**, **Waffle Chart**, **Diverging Bars**, **Horizon Chart**, **Rose Chart**, **Beeswarm**, **Butterfly Chart**, **Chord Diagram** and **Bubble Cloud**.
 - **1.5.2** – new charts: **Donut Chart**, **Bullet Chart**, **Slope Chart** and **Cohort Triangle**.

@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 83 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 94 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -1409,6 +1409,161 @@ Columns:
 - Metric 2 (key v2, required): Up.
 - Units (key units, optional): Dot size.
 - Month Key (key month, optional): If present, only the latest month is used.
+
+### Growth Accounting
+
+Each period's gains (new and returning) above zero and losses below, with the net change line and the quick ratio – why an active base grew or shrank.
+
+When to use it: Use it for any base of customers, players or subscribers – to see whether growth is coming from acquisition, win-back or lower churn.
+
+Page: https://viz.kaijxnes.com/growth-accounting
+Script: https://viz.kaijxnes.com/charts/growth-accounting-1.5.2.js
+Placeholder id: growth-accounting
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Metric 1 (key v1, required): New (e.g. activations).
+- Metric 2 (key v2, optional): Returning / reactivated.
+- Metric 3 (key v3, required): Lost (churned) – positive or negative numbers both work.
+- Metric 4 (key v4, optional): Active base, for the churn rate.
+
+### Burn-down
+
+What's left of a budget day by day against the even-spend line to zero, with the pace and the date it runs out.
+
+When to use it: Use it for marketing budgets, bonus pots or any allowance that should last a set period.
+
+Page: https://viz.kaijxnes.com/burn-down
+Script: https://viz.kaijxnes.com/charts/burn-down-1.5.2.js
+Placeholder id: burn-down
+Columns:
+- Date (key month, required): The day (or week, or month) of each row.
+- Metric 1 (key v1, required): Spend in that period.
+- Metric 2 (key v2, optional): The total budget. Or set data-budget="50000".
+
+### Price-Volume-Mix Bridge
+
+Why value changed between two periods, split into volume (more or fewer units), mix (a shift between segments) and rate (value per unit within each segment).
+
+When to use it: Use it when revenue or margin moved and you need to say how much was more customers, a different mix, or more value per customer.
+
+Page: https://viz.kaijxnes.com/pvm-bridge
+Script: https://viz.kaijxnes.com/charts/pvm-bridge-1.5.2.js
+Placeholder id: pvm-bridge
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Dimension A (key dimA, required): The segments (e.g. product, vertical).
+- Units (key units, required): Volume – customers, orders, actives.
+- Metric 1 (key v1, required): Value – revenue, GP.
+
+### Cycle Plot
+
+One small panel per calendar month, each showing that month across the years with its average – the seasonal pattern and the year-on-year trend side by side.
+
+When to use it: Use it with two or more years of monthly data to see which months are strong and whether every month is improving.
+
+Page: https://viz.kaijxnes.com/cycle-plot
+Script: https://viz.kaijxnes.com/charts/cycle-plot-1.5.2.js
+Placeholder id: cycle-plot
+Columns:
+- Month Key (key month, required): The month of each row (2+ years).
+- Metric 1 (key v1, required): The value.
+
+### Spiral Plot
+
+A long series wound into a spiral – one turn per year (or per week for daily data) – so the same point in every cycle lines up. Colour and thickness show the value.
+
+When to use it: Use it for several years of data to show seasonality and growth in one striking picture.
+
+Page: https://viz.kaijxnes.com/spiral-plot
+Script: https://viz.kaijxnes.com/charts/spiral-plot-1.5.2.js
+Placeholder id: spiral-plot
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Metric 1 (key v1, required): The value.
+
+### Ridgeline
+
+The shape of a value's distribution for each group – or each month – stacked like a mountain range, with the median and middle half marked.
+
+When to use it: Use it to compare how values are spread across several groups or over time – deposit sizes by channel, order values by month.
+
+Page: https://viz.kaijxnes.com/ridgeline
+Script: https://viz.kaijxnes.com/charts/ridgeline-1.5.2.js
+Placeholder id: ridgeline
+Columns:
+- Dimension A (key dimA, optional): The groups – one ridge each. Without it, one ridge per month.
+- Month Key (key month, optional): Used for the ridges when there is no Dimension A.
+- Metric 1 (key v1, required): One value per row.
+
+### Cumulative Distribution
+
+The share of rows at or below each value – one line per group – so you can read off 'what % are under X' and compare groups at every level.
+
+When to use it: Use it for thresholds – what share of deposits are under £10, how many sessions last under a minute – and to compare groups at every point, not just the average.
+
+Page: https://viz.kaijxnes.com/cumulative-distribution
+Script: https://viz.kaijxnes.com/charts/cumulative-distribution-1.5.2.js
+Placeholder id: cumulative-distribution
+Columns:
+- Metric 1 (key v1, required): One value per row.
+- Dimension A (key dimA, optional): Groups – one line each (up to 6).
+
+### Lollipop Chart
+
+A ranked list as stems and dots with the average marked – and, with a month column, a hollow dot for the previous month so movers stand out.
+
+When to use it: Use it in place of a bar chart for a cleaner ranking, especially with many items or when the change matters.
+
+Page: https://viz.kaijxnes.com/lollipop-chart
+Script: https://viz.kaijxnes.com/charts/lollipop-chart-1.5.2.js
+Placeholder id: lollipop-chart
+Columns:
+- Dimension A (key dimA, required): The items.
+- Metric 1 (key v1, required): The value.
+- Month Key (key month, optional): Shows the latest month with the month before as hollow dots.
+
+### Heat Table
+
+A pivot of two dimensions with colour-scaled cells and row and column totals – as values, % of row or % of column.
+
+When to use it: Use it whenever people want the exact numbers of a two-way breakdown but need the big cells to jump out.
+
+Page: https://viz.kaijxnes.com/heat-table
+Script: https://viz.kaijxnes.com/charts/heat-table-1.5.2.js
+Placeholder id: heat-table
+Columns:
+- Dimension A (key dimA, required): Rows.
+- Dimension B (key dimB, required): Columns.
+- Metric 1 (key v1, required): The value.
+- Month Key (key month, optional): If present, only the latest month is used.
+
+### Conversion Trend
+
+Step-to-step conversion rates of a funnel over time – visits → registrations → first deposits – so you can see which step moved.
+
+When to use it: Use it when end-to-end conversion changed and you need to know which step caused it.
+
+Page: https://viz.kaijxnes.com/conversion-trend
+Script: https://viz.kaijxnes.com/charts/conversion-trend-1.5.2.js
+Placeholder id: conversion-trend
+Columns:
+- Month Key (key month, required): The month (or week, or day) of each row.
+- Metric 1 (key v1, required): First step (e.g. visits).
+- Metric 2 (key v2, required): Second step.
+- Metric 3–5 (key v3, optional): Further steps: v3, v4, v5.
+
+### Month-to-Date Compare
+
+This month's running total by day of month against last month and the same month last year at the same day, with the month-end at the current pace.
+
+When to use it: Use it for daily reporting without a target – 'are we ahead of last month at this point?'
+
+Page: https://viz.kaijxnes.com/mtd-compare
+Script: https://viz.kaijxnes.com/charts/mtd-compare-1.5.2.js
+Placeholder id: mtd-compare
+Columns:
+- Date (key month, required): A daily date (needs this month, last month and ideally the same month last year).
+- Metric 1 (key v1, required): The value.
 
 ### Quadrant Scatter – 2 metrics
 

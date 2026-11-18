@@ -599,6 +599,64 @@
     for (var i = 1; i <= 50; i++) { var x = R(2000, 60000), y = x * roi * noise(0.18) + R(-3000, 3000); if (i % 17 === 0) y *= R(0, 1) < 0.5 ? 0.35 : 1.8; rows.push(["A" + i, count(R(50, 2000)), money(x), money(Math.max(0, y))]); }
     return { hd: hd, num: [1, 2, 3], rows: rows };
   };
+  // ---- 11 more (v1.5.2) ----
+  GEN["growth-accounting"] = function () {
+    var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4"], rows = [], act = R(20000, 40000), ks = keys(18).reverse(), out = [];
+    ks.forEach(function (k, i) { var m = +k.slice(4) - 1, nw = act * R(0.08, 0.13) * season(m), rt = act * R(0.03, 0.06), lo = act * R(0.1, 0.15); out.push([k, count(nw), count(rt), count(lo), count(act)]); act = act + nw + rt - lo; });
+    return { hd: hd, num: [1, 2, 3, 4], rows: out.reverse() };
+  };
+  GEN["burn-down"] = function () {
+    var hd = ["Date", "Metric 1", "Metric 2"], rows = [], b = Math.round(R(40, 90)) * 1000, start = Date.UTC(2026, 10, 1) / 864e5, f = R(0.85, 1.25);
+    for (var d = 0; d < 18; d++) { var wd = (new Date((start + d) * 864e5).getUTCDay() + 6) % 7; rows.push([ymd(start + d), money(b / 30 * f * (wd >= 5 ? 0.7 : 1.1) * noise(0.25)), money(b)]); }
+    return { hd: hd, num: [1, 2], rows: rows.reverse() };
+  };
+  GEN["pvm-bridge"] = function () {
+    var hd = ["Month Key", "Dimension A", "Units", "Metric 1"], rows = [], A = ["A1", "A2", "A3", "A4", "A5"], p = {};
+    A.forEach(function (a, i) { p[a] = { u: R(300, 3000), r: R(20, 200), gu: R(-0.06, 0.08), gr: R(-0.03, 0.04) }; });
+    keys(13).forEach(function (k, t) { var i = 12 - t; A.forEach(function (a) { var q = p[a], u = q.u * Math.pow(1 + q.gu, i) * noise(0.06); rows.push([k, a, count(u), money(u * q.r * Math.pow(1 + q.gr, i) * noise(0.04))]); }); });
+    return { hd: hd, num: [2, 3], rows: rows };
+  };
+  GEN["cycle-plot"] = function () {
+    var hd = ["Month Key", "Metric 1"], rows = [], b = R(20000, 40000), g = R(0.002, 0.012);
+    keys(48).forEach(function (k, t) { var i = 47 - t, m = +k.slice(4) - 1; rows.push([k, count(b * (1 + g * i) * season(m) * noise(0.05))]); });
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["spiral-plot"] = function () {
+    var hd = ["Month Key", "Metric 1"], rows = [], b = R(20000, 40000), g = R(0.003, 0.012);
+    keys(60).forEach(function (k, t) { var i = 59 - t, m = +k.slice(4) - 1; rows.push([k, count(b * (1 + g * i) * season(m) * noise(0.06))]); });
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["ridgeline"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], A = A_(7);
+    A.forEach(function (a, j) { var mu = R(3.5, 5.5), sd = R(0.3, 0.8); for (var i = 0; i < 60; i++) { var z = (Math.random() + Math.random() + Math.random() - 1.5) * 2; rows.push([a, "B" + (j * 60 + i), money2(Math.exp(mu + sd * z))]); } });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["cumulative-distribution"] = function () {
+    var hd = ["Dimension A", "Metric 1"], rows = [], A = ["A1", "A2", "A3"], mu = [4, 4.4, 3.7];
+    for (var i = 0; i < 240; i++) { var j = i % 3, z = (Math.random() + Math.random() + Math.random() - 1.5) * 2; rows.push([A[j], money2(Math.exp(mu[j] + 0.6 * z))]); }
+    return { hd: hd, num: [1], rows: rows };
+  };
+  GEN["lollipop-chart"] = function () {
+    var hd = ["Month Key", "Dimension A", "Metric 1"], rows = [], A = A_(12), w = {};
+    A.forEach(function (a) { w[a] = R(800, 9000); });
+    keys(2).forEach(function (k) { A.forEach(function (a) { rows.push([k, a, count(w[a] * R(0.8, 1.2))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["heat-table"] = function () {
+    var hd = ["Dimension A", "Dimension B", "Metric 1"], rows = [], B = ["B1", "B2", "B3", "B4", "B5", "B6"], bw = B.map(function () { return R(0.4, 1.6); });
+    A_(10).forEach(function (a) { var s = R(0.3, 2); B.forEach(function (b, j) { if (Math.random() > 0.06) rows.push([a, b, money(s * bw[j] * R(2000, 9000))]); }); });
+    return { hd: hd, num: [2], rows: rows };
+  };
+  GEN["conversion-trend"] = function () {
+    var hd = ["Month Key", "Metric 1", "Metric 2", "Metric 3", "Metric 4"], rows = [], c1 = R(0.06, 0.1), c2 = R(0.3, 0.5), c3 = R(0.5, 0.7);
+    keys(18).forEach(function (k, t) { var i = 17 - t, v = R(80000, 120000), r = v * c1 * (1 + 0.004 * i) * noise(0.06), f = r * c2 * noise(0.05), d = f * c3 * (1 - 0.006 * i) * noise(0.04); rows.push([k, count(v), count(r), count(f), count(d)]); });
+    return { hd: hd, num: [1, 2, 3, 4], rows: rows };
+  };
+  GEN["mtd-compare"] = function () {
+    var hd = ["Date", "Metric 1"], rows = [], end = Date.UTC(2026, 10, 17) / 864e5, start = Date.UTC(2025, 10, 1) / 864e5, f = [1, 1.04, 1.06, 1.1, 1.3, 1.45, 0.9];
+    for (var d = end; d >= start; d--) { var dm = new Date(d * 864e5).getUTCMonth(), dy = new Date(d * 864e5).getUTCFullYear(); if (!(dy === 2026 && dm >= 9) && !(dy === 2025 && dm === 10)) continue; var wd = (new Date(d * 864e5).getUTCDay() + 6) % 7, grow = 1 + (d - start) / 365 * 0.12; rows.push([ymd(d), money(3000 * f[wd] * grow * noise(0.15))]); }
+    return { hd: hd, num: [1], rows: rows };
+  };
   GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
   GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 
