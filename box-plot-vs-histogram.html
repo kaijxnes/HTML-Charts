@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Box plot vs histogram vs ridgeline: which should you use? | HTML Charts</title>
+<meta name="description" content="Use a histogram to see the full shape of one distribution. Use a box plot to compare the median and spread of several groups side by side. Use a ridgeline…">
+<meta name="author" content="Kai Jones">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1B2238">
+<link rel="canonical" href="https://viz.kaijxnes.com/box-plot-vs-histogram">
+<link rel="author" href="https://kaijxnes.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HTML Charts">
+<meta property="og:title" content="Box plot vs histogram vs ridgeline: which should you use? | HTML Charts">
+<meta property="og:description" content="Use a histogram to see the full shape of one distribution. Use a box plot to compare the median and spread of several groups side by side. Use a ridgeline…">
+<meta property="og:url" content="https://viz.kaijxnes.com/box-plot-vs-histogram">
+<meta property="og:image" content="https://viz.kaijxnes.com/assets/og.png">
+<meta property="og:image:alt" content="Box plot vs histogram vs ridgeline: which should you use? | HTML Charts">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Box plot vs histogram vs ridgeline: which should you use? | HTML Charts">
+<meta name="twitter:description" content="Use a histogram to see the full shape of one distribution. Use a box plot to compare the median and spread of several groups side by side. Use a ridgeline…">
+<meta name="twitter:image" content="https://viz.kaijxnes.com/assets/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Box plot vs histogram vs ridgeline", "description": "Use a histogram to see the full shape of one distribution. Use a box plot to compare the median and spread of several groups side by side. Use a ridgeline when you want to compare the full shapes of several groups, or of one value across months.", "url": "https://viz.kaijxnes.com/box-plot-vs-histogram", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "author": {"@type": "Person", "name": "Kai Jones", "url": "https://kaijxnes.com"}, "publisher": {"@type": "Person", "name": "Kai Jones"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which is better, a box plot or a histogram?", "acceptedAnswer": {"@type": "Answer", "text": "Neither – a histogram shows the shape of one distribution in detail; a box plot summarises many distributions compactly for comparison."}}, {"@type": "Question", "name": "What is a ridgeline plot?", "acceptedAnswer": {"@type": "Answer", "text": "Several distribution curves stacked vertically with a slight overlap, like a mountain range, used to compare the shapes of many groups."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://viz.kaijxnes.com"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://viz.kaijxnes.com/guides"}, {"@type": "ListItem", "position": 3, "name": "Box plot vs histogram vs ridgeline", "item": "https://viz.kaijxnes.com/box-plot-vs-histogram"}]}</script>
+<script src="assets/consent.js" defer></script>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="/"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
+  <nav class="nav"><a href="/">Home</a><a href="/#charts">All charts</a><a href="/platforms">Setup guide</a><a href="/guides">Guides</a><a href="/about">About</a></nav>
+</div></header>
+<main>
+
+<div class="crumbs"><a href="/">HTML Charts</a> / <a href="/guides">Guides</a> / Box plot vs histogram vs ridgeline</div>
+<section class="hero"><div class="eyebrow">Chart comparison</div><h1>Box plot vs histogram vs ridgeline</h1><p class="lede">Use a histogram to see the full shape of one distribution. Use a box plot to compare the median and spread of several groups side by side. Use a ridgeline when you want to compare the full shapes of several groups, or of one value across months.</p></section>
+<div class="gtiles"><a href="/box-plot"><img src="assets/thumbs/box-plot.png" alt="Box Plot chart example" loading="lazy" width="1100" height="620"><b>Box Plot</b></a><a href="/distribution"><img src="assets/thumbs/distribution.png" alt="Distribution chart example" loading="lazy" width="1100" height="620"><b>Distribution</b></a><a href="/ridgeline"><img src="assets/thumbs/ridgeline.png" alt="Ridgeline chart example" loading="lazy" width="1100" height="620"><b>Ridgeline</b></a></div>
+<h2>Side by side</h2>
+<table class="cols gcmp"><thead><tr><th></th><th>Box Plot</th><th>Distribution</th></tr></thead><tbody><tr><td><b>Groups</b></td><td>Many, side by side</td><td>One</td></tr><tr><td><b>Shows shape?</b></td><td>No – summary only (median, quartiles, range)</td><td>Yes – full shape</td></tr><tr><td><b>Outliers</b></td><td>Marked individually</td><td>Visible as a long tail</td></tr><tr><td><b>Best for</b></td><td>Comparing groups quickly</td><td>Understanding one value in detail</td></tr></tbody></table>
+<h2>Common questions</h2>
+<h3>Which is better, a box plot or a histogram?</h3><p style="max-width:70ch">Neither – a histogram shows the shape of one distribution in detail; a box plot summarises many distributions compactly for comparison.</p><h3>What is a ridgeline plot?</h3><p style="max-width:70ch">Several distribution curves stacked vertically with a slight overlap, like a mountain range, used to compare the shapes of many groups.</p>
+<div class="note">Every chart here is free: paste a snippet into a MicroStrategy HTML container (or any web page) and it reads the grid on the same page. See the <a href="/microstrategy-custom-charts">MicroStrategy guide</a> or <a href="/which-chart">which chart should I use?</a></div>
+</main>
+<footer><div class="in">
+  <span>HTML Charts v1.5.2, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Some charts use <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT); the rest are drawn as plain SVG</span>
+  <span><a href="/about">About</a> · <a href="/platforms">Setup guide</a> · <a href="/guides">Guides</a> · <a href="/privacy">Privacy</a> · <button type="button" class="linkbtn" data-cookie-settings>Cookie settings</button> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
+</div></footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
