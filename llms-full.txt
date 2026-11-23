@@ -670,7 +670,7 @@ When to use it: Use it when you want the Time Series Trio layout for more metric
 Questions it answers: How did each of six metrics move over the latest range? Which metrics are up and which are down? Where are the peaks across all of them?
 
 Page: https://viz.kaijxnes.com/time-series-stack
-Script: https://viz.kaijxnes.com/charts/time-series-stack-1.5.2.js
+Script: https://viz.kaijxnes.com/charts/time-series-stack-1.5.3.js
 Placeholder id: time-series-stack
 Columns:
 - Date (key date, required): A daily date or a month key.
