@@ -49,7 +49,7 @@ How it works: add a grid with the chart's columns to the dashboard page, add an 
 - [Funnel – no segments](https://viz.kaijxnes.com/funnel-simple): A single funnel from stage counts, with step and overall conversion and the biggest drop-off. Script: https://viz.kaijxnes.com/charts/funnel-1.5.2.js
 - [Treemap – one level](https://viz.kaijxnes.com/treemap-flat): One tile per item, sized by value. Script: https://viz.kaijxnes.com/charts/treemap-1.5.2.js
 - [Value Matrix](https://viz.kaijxnes.com/value-matrix): A heatmap of value per unit across two dimensions, weighted by volume. No date needed. Script: https://viz.kaijxnes.com/charts/value-matrix-1.5.2.js
-- [Segment Change Finder](https://viz.kaijxnes.com/segment-change-finder): Finds which group changed most this week – and whether it was fewer customers or lower spend each. Script: https://viz.kaijxnes.com/charts/segment-change-finder-1.5.8.js
+- [Segment Change Finder](https://viz.kaijxnes.com/segment-change-finder): Finds which group changed most this week – and whether it was fewer customers or lower spend each. Script: https://viz.kaijxnes.com/charts/segment-change-finder-1.5.9.js
 - [Month-to-Date Compare](https://viz.kaijxnes.com/mtd-compare): This month to date vs last month and last year at the same day. Script: https://viz.kaijxnes.com/charts/mtd-compare-1.5.2.js
 - [Conversion Trend](https://viz.kaijxnes.com/conversion-trend): Funnel conversion rates over time, step by step. Script: https://viz.kaijxnes.com/charts/conversion-trend-1.5.2.js
 - [Heat Table](https://viz.kaijxnes.com/heat-table): Pivot table with colour-scaled cells and totals. Script: https://viz.kaijxnes.com/charts/heat-table-1.5.2.js
