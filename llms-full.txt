@@ -1572,7 +1572,7 @@ A grid of small daily charts – one per combination of two dimensions – each 
 When to use it: Use it for daily monitoring across products × segments, channels × regions or similar, when the question is 'what moved, and why?'
 
 Page: https://viz.kaijxnes.com/segment-change-finder
-Script: https://viz.kaijxnes.com/charts/segment-change-finder-1.5.3.js
+Script: https://viz.kaijxnes.com/charts/segment-change-finder-1.5.4.js
 Placeholder id: segment-change-finder
 Columns:
 - Date (key month, required): A daily date (8 weeks or more is best).
