@@ -120,6 +120,7 @@ Published files are never edited. A change means a new file (e.g. `monthly-bars-
 - **1.5.5** – **Segment Change Finder**: day-on-day view (`data-period="dod"`), uses every date in the grid, mini charts use the full tile width.
 - **1.5.4** – **Segment Change Finder**: mini charts fit the dates in the grid, and it says clearly when the comparison day is missing.
 - **1.5.3** – **Segment Change Finder** gets a day view (`data-period="day"`): the latest day against the same day last week.
+- **1.5.4** – **Time Series Stack** reads MicroStrategy grids from MicroStrategy's own data (`data-read="model"` never scrolls), and locks the page against unrequested scrolling.
 - **1.5.3** – **Time Series Stack** reads dates with no year (e.g. `22/11` with `data-date-format="DD/MM"`), taking the most recent year that keeps the date out of the future.
 - **1.5.2** – new charts:  and **Segment Change Finder**.
 - **1.5.2** – new charts: **Growth Accounting**, **Burn-down**, **Price-Volume-Mix Bridge**, **Cycle Plot**, **Spiral Plot**, **Ridgeline**, **Cumulative Distribution**, **Lollipop Chart**, **Heat Table**, **Conversion Trend** and **Month-to-Date Compare**.
