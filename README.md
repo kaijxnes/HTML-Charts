@@ -2,7 +2,7 @@
 
 Built and maintained by [Kai Jones](https://kaijxnes.com), data analyst.
 
-94 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
+95 free charts for dashboards. Each one reads a grid on the same page – a MicroStrategy HTML container, a web page, or a Tableau/Looker extension – and redraws it. No API, no install, and no data leaves the browser.
 
 **Site:** https://viz.kaijxnes.com · [Setup guide and snippet builder](https://viz.kaijxnes.com/platforms) · [About](https://viz.kaijxnes.com/about)
 
@@ -94,6 +94,7 @@ The home page can be filtered by chart type, number of metrics, number of dimens
 | Heat Table | `heat-table.html` | `charts/heat-table-1.5.2.js` |
 | Conversion Trend | `conversion-trend.html` | `charts/conversion-trend-1.5.2.js` |
 | Month-to-Date Compare | `mtd-compare.html` | `charts/mtd-compare-1.5.2.js` |
+| Segment Change Finder | `segment-change-finder.html` | `charts/segment-change-finder-1.5.2.js` |
 | Time Series Stack | `time-series-stack.html` | `charts/time-series-stack-1.5.3.js` |
 
 The site also has variant pages (e.g. *Time Series – 2 metrics*, *Funnel – no segments*) that reuse one of these scripts with fewer columns in the grid – every chart only draws what it finds.
@@ -113,6 +114,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
 - **1.5.3** – **Time Series Stack** reads dates with no year (e.g. `22/11` with `data-date-format="DD/MM"`), taking the most recent year that keeps the date out of the future.
+- **1.5.2** – new charts:  and **Segment Change Finder**.
 - **1.5.2** – new charts: **Growth Accounting**, **Burn-down**, **Price-Volume-Mix Bridge**, **Cycle Plot**, **Spiral Plot**, **Ridgeline**, **Cumulative Distribution**, **Lollipop Chart**, **Heat Table**, **Conversion Trend** and **Month-to-Date Compare**.
 - **1.5.2** – new charts: **YTD Race**, **Streamgraph**, **Timeline**, **Punch Card**, **Sparkline Table**, **Concentration Curve**, **Venn Overlap**, **UpSet Plot**, **Percentile Bands**, **Forecast**, **Rolling 12 Months**, **Weekday Profile**, **Parallel Coordinates**, **Dot Plot**, **Grouped Bars**, **Likert Bars**, **Target Trend**, **Cohort Curves**, **Bar Chart Race**, **Motion Scatter**, **Interval Plot**, **Goal Rings**, **Word Cloud**, **Radial Bars** and **Trend Scatter**.
 - **1.5.2** – new charts: **Marimekko**, **Sunburst**, **Waffle Chart**, **Diverging Bars**, **Horizon Chart**, **Rose Chart**, **Beeswarm**, **Butterfly Chart**, **Chord Diagram** and **Bubble Cloud**.

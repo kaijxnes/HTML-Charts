@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segment Change Finder (What Changed This Week) – Free for MicroStrategy &amp; Dashboards | HTML Charts</title>
+<meta name="description" content="Finds which group changed most this week – and whether it was fewer customers or lower spend each. Free copy-paste chart for MicroStrategy and any HTML dashboard – live demo, no plugin.">
+<meta name="author" content="Kai Jones">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1B2238">
+<link rel="canonical" href="https://viz.kaijxnes.com/segment-change-finder">
+<link rel="author" href="https://kaijxnes.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HTML Charts">
+<meta property="og:title" content="Segment Change Finder (What Changed This Week) – Free for MicroStrategy &amp; Dashboards | HTML Charts">
+<meta property="og:description" content="Finds which group changed most this week – and whether it was fewer customers or lower spend each. Free copy-paste chart for MicroStrategy and any HTML dashboard – live demo, no plugin.">
+<meta property="og:url" content="https://viz.kaijxnes.com/segment-change-finder">
+<meta property="og:image" content="https://viz.kaijxnes.com/assets/thumbs/segment-change-finder.png">
+<meta property="og:image:alt" content="Segment Change Finder (What Changed This Week) – Free for MicroStrategy &amp; Dashboards | HTML Charts">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Segment Change Finder (What Changed This Week) – Free for MicroStrategy &amp; Dashboards | HTML Charts">
+<meta name="twitter:description" content="Finds which group changed most this week – and whether it was fewer customers or lower spend each. Free copy-paste chart for MicroStrategy and any HTML dashboard – live demo, no plugin.">
+<meta name="twitter:image" content="https://viz.kaijxnes.com/assets/thumbs/segment-change-finder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Segment Change Finder – HTML container chart", "description": "A grid of small daily charts – one per combination of two dimensions – each coloured by how much it changed in the last 7 days, with the biggest fall called out and explained as fewer customers or lower spend per customer.", "url": "https://viz.kaijxnes.com/segment-change-finder", "image": "https://viz.kaijxnes.com/assets/thumbs/segment-change-finder.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://viz.kaijxnes.com/charts/segment-change-finder-1.5.2.js", "version": "1.5.2", "keywords": "Treemap, Share, 1 dimension, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-11-20", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://viz.kaijxnes.com"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://viz.kaijxnes.com"}, {"@type": "ListItem", "position": 2, "name": "Segment Change Finder", "item": "https://viz.kaijxnes.com/segment-change-finder"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What data does the Segment Change Finder need?", "acceptedAnswer": {"@type": "Answer", "text": "A grid on the same page with these columns: Date (required); Dimension A (required); Dimension B (required); Metric 1 (required); Units (optional). Your own header names can be mapped with data-columns."}}, {"@type": "Question", "name": "When should I use a segment change finder?", "acceptedAnswer": {"@type": "Answer", "text": "Use it for daily monitoring across products × segments, channels × regions or similar, when the question is 'what moved, and why?'"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to add a Segment Change Finder to a MicroStrategy or HTML dashboard", "description": "A segment change finder is a grid of small daily charts, one per combination of two dimensions such as product × segment, coloured by how much each changed in the last week – so the group that moved most stands out, along with whether it was fewer customers or lower spend per customer.", "totalTime": "PT5M", "image": "https://viz.kaijxnes.com/assets/thumbs/segment-change-finder.png", "step": [{"@type": "HowToStep", "position": 1, "name": "Add the grid", "text": "Add a grid with the columns this chart needs on the same dashboard page, and place it behind the chart."}, {"@type": "HowToStep", "position": 2, "name": "Paste the snippet", "text": "Add an HTML container that runs JavaScript and paste the snippet from this page. Map your own column names with data-columns if they differ."}, {"@type": "HowToStep", "position": 3, "name": "View the page", "text": "Open the dashboard: the chart finds the grid, reads every row and draws itself, updating when filters change."}]}</script>
+<script src="assets/consent.js" defer></script>
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="/"><span class="mark"><span><i style="height:6px"></i><i style="height:10px"></i><i style="height:14px"></i></span></span>HTML Charts</a>
+  <nav class="nav"><a href="/">Home</a><a href="/#charts">All charts</a><a href="/platforms">Setup guide</a><a href="/guides">Guides</a><a href="/about">About</a></nav>
+</div></header>
+<main>
+
+<div class="crumbs"><a href="/">HTML Charts</a> / Segment Change Finder</div>
+<section class="hero">
+  <div class="eyebrow">Free HTML chart for MicroStrategy &amp; other dashboards</div>
+  <h1>Segment Change Finder</h1>
+  <p class="lede">A grid of small daily charts – one per combination of two dimensions – each coloured by how much it changed in the last 7 days, with the biggest fall called out and explained as fewer customers or lower spend per customer.</p>
+  <div class="pillrow"><span class="pill">v1.5.2</span><span class="pill mock">Live demo · random data</span><span class="pill m">1 metric + units</span><span class="pill ">2 dimensions</span><span class="pill">Over time</span><span class="pill">Comparison</span></div>
+</section>
+
+<div class="demo">
+  <div class="label"><span>Live demo – the chart is reading the random grid underneath, exactly as it reads a real one</span>
+    <button class="shuffle" type="button" data-shuffle>↻ Shuffle data</button></div>
+  <div class="frame" style="height:600px">
+    <div data-chart-embed="segment-change-finder" style="height:100%"></div>
+  </div>
+  <div class="gridbox">
+    <div class="head"><span>Demo grid · <span data-rows>…</span> rows of random values</span><span>In use this is your grid, tucked behind the chart</span></div>
+    <div class="gridscroll"><table class="mock" data-gen="segment-change-finder"></table></div>
+  </div>
+</div>
+
+<section class="whatis"><h2 id="what">What is a Segment Change Finder?</h2><p>A segment change finder is a grid of small daily charts, one per combination of two dimensions such as product × segment, coloured by how much each changed in the last week – so the group that moved most stands out, along with whether it was fewer customers or lower spend per customer. This Segment Change Finder is free to copy and paste: it reads a grid on the same page – in a MicroStrategy (Strategy One) dashboard's HTML container, or any web page – and draws itself in the browser, with no plugin, server or data upload.</p></section>
+<h2 id="when">When to use it</h2><p class="lede" style="font-size:17px">Use it for daily monitoring across products × segments, channels × regions or similar, when the question is 'what moved, and why?'</p><h3 style="margin-top:16px">Questions it answers</h3><ul class="features"><li>Which group fell the most this week?</li><li>Was it fewer customers or lower spend per customer?</li><li>Is it a sudden drop or a slow slide?</li></ul>
+<h2 id="use">How to use it</h2>
+<div class="usage">
+  <ol class="how">
+    <li>On your dashboard page, add a <b>grid</b> with the columns below (or map your own header names – see below). Keep it on the <b>same page</b> – tuck it behind the chart rather than hiding it, and make it tall.</li>
+    <li>Add an <b>HTML container</b> (one that runs JavaScript) and paste the snippet.</li>
+    <li>View the page. The chart finds the grid, reads every row and draws itself; it updates when filters change the grid.</li>
+  </ol>
+  <table class="cols"><thead><tr><th>Default header</th><th>Key</th><th></th><th>What it's for</th></tr></thead><tbody><tr><td><code>Date</code></td><td><code>month</code></td><td><span class="req">Required</span></td><td>A daily date (8 weeks or more is best).</td></tr><tr><td><code>Dimension A</code></td><td><code>dimA</code></td><td><span class="req">Required</span></td><td>Rows of the grid (up to 6), e.g. product.</td></tr><tr><td><code>Dimension B</code></td><td><code>dimB</code></td><td><span class="req">Required</span></td><td>Columns of the grid (up to 4), e.g. segment.</td></tr><tr><td><code>Metric 1</code></td><td><code>v1</code></td><td><span class="req">Required</span></td><td>The value, e.g. revenue.</td></tr><tr><td><code>Units</code></td><td><code>units</code></td><td><span class="opt">Optional</span></td><td>Customers or users per day – adds the per-customer view and the 'why'.</td></tr></tbody></table>
+  <div class="datefmt" data-datefmt-box><label for="dfmt">Date format in your grid</label><select id="dfmt" data-datefmt><option value="">Auto-detect (recommended)</option><option value="YYYYMMDD">YYYYMMDD – 20261023</option><option value="DD/MM/YYYY">DD/MM/YYYY – 23/10/2026</option><option value="MM/DD/YYYY">MM/DD/YYYY – 10/23/2026</option><option value="YYYY-MM-DD">YYYY-MM-DD – 2026-10-23</option><option value="DD MMM YYYY">DD MMM YYYY – 23 Oct 2026</option><option value="YYYY Www">YYYY Www – 2026 W44 (ISO week)</option><option value="YYYYMM">YYYYMM – 202610</option><option value="YYYY-MM">YYYY-MM – 2026-10</option><option value="MMM YYYY">MMM YYYY – Oct 2026</option><option value="MMMM, YYYY">MMMM, YYYY – October, 2026</option><option value="custom">Custom…</option></select><input type="text" data-datefmt-custom placeholder="e.g. DD.MM.YYYY" aria-label="Custom date format" hidden><p class="small muted">Auto-detect reads all of these. Pick one to pin it – the snippet below updates. Tokens: <code>YYYY</code> <code>MM</code> <code>MMM</code> <code>MMMM</code> <code>DD</code> <code>ww</code> (week); anything else is matched as written.</p></div>
+  <div class="code"><div class="bar"><span>Snippet for the HTML container</span><button class="copy" data-copy="snip1">Copy</button></div><pre id="snip1">&lt;div data-chart-embed=&quot;segment-change-finder&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+(function () {
+  var s = document.createElement(&quot;script&quot;);
+  s.src = &quot;https://viz.kaijxnes.com/charts/segment-change-finder-1.5.2.js&quot;;
+  s.integrity = &quot;sha384-Mv3HlZ7rLf1WSrca8fMh2vEc0s7A2Xz4bIEe0FnAMrC35eOfSipT/ZLB5Y0Pzyeg&quot;;
+  s.crossOrigin = &quot;anonymous&quot;;
+  document.head.appendChild(s);
+})();
+&lt;/script&gt;</pre></div>
+  <dl class="kv">
+    <dt>Script URL</dt><dd><a href="charts/segment-change-finder-1.5.2.js"><code>https://viz.kaijxnes.com/charts/segment-change-finder-1.5.2.js</code></a></dd>
+    <dt>Integrity (SRI)</dt><dd><code>sha384-Mv3HlZ7rLf1WSrca8fMh2vEc0s7A2Xz4bIEe0FnAMrC35eOfSipT/ZLB5Y0Pzyeg</code></dd>
+  </dl>
+  <div class="note">The integrity value pins this exact version: the browser refuses to run the script if a single byte changes. New versions get a new file name and a new snippet, so a dashboard only changes when you paste the new snippet.</div>
+  <h3 style="margin-top:18px">Your own column names</h3>
+  <p class="small muted" style="margin:0 0 8px">The chart looks for the default headers above. If your grid's headers are different, map them by key with <code>data-columns</code> on the placeholder – the chart then shows your names too. <code>data-labels</code> (same keys) changes just the on-screen names, and <code>data-title</code> changes the heading. For grids that draw rows in batches, <code>data-grid-class</code> and <code>data-scroll-class</code> name the grid's container and its scroll box so every row is read.</p>
+  <div class="code"><div class="bar"><span>Example</span><button class="copy" data-copy="snip2">Copy</button></div><pre id="snip2">&lt;div data-chart-embed=&quot;segment-change-finder&quot; data-columns=&#x27;{&quot;month&quot;: &quot;Your Date Header&quot;, &quot;dimA&quot;: &quot;Your Product Header&quot;, &quot;dimB&quot;: &quot;Your Segment Header&quot;, &quot;v1&quot;: &quot;Your Revenue Header&quot;, &quot;units&quot;: &quot;Your Customers Header&quot;}&#x27; data-title=&quot;Your title&quot; style=&quot;height:100%&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+(function () {
+  var s = document.createElement(&quot;script&quot;);
+  s.src = &quot;https://viz.kaijxnes.com/charts/segment-change-finder-1.5.2.js&quot;;
+  s.integrity = &quot;sha384-Mv3HlZ7rLf1WSrca8fMh2vEc0s7A2Xz4bIEe0FnAMrC35eOfSipT/ZLB5Y0Pzyeg&quot;;
+  s.crossOrigin = &quot;anonymous&quot;;
+  document.head.appendChild(s);
+})();
+&lt;/script&gt;</pre></div>
+</div>
+
+<h2>What it does</h2>
+<ul class="features"><li>One tile per combination, red or green by size of change</li><li>Last 7 days vs the previous 7 days or the previous 4 weeks (<code>data-compare="4wk"</code>)</li><li>Revenue, units or revenue per unit (<code>data-show</code>)</li><li>Headline card names the biggest fall and splits it into fewer units vs lower value per unit</li><li>Reads dates with or without a year (e.g. <code>data-date-format="DD/MM"</code>)</li><li>Fits its container: cards compact in short boxes, side panels drop in narrow ones</li><li>No Chart.js needed – drawn as SVG</li></ul>
+
+<h2>Data &amp; security</h2>
+<ul class="features">
+  <li>Reads only what is drawn on the page for the viewer, so the viewer's normal permissions still apply</li>
+  <li>Calculations happen in the viewer's browser; nothing is uploaded or sent anywhere</li>
+  <li>The only download is this script, integrity-checked</li>
+  <li>No logins, API keys, cookies or browser storage</li>
+</ul>
+
+<h2>Related charts</h2>
+<div class="more"><a href="/small-multiples"><b>Small Multiples</b><span>A small chart per segment, side by side, with the latest value and change – on the same scale or each on its own.</span></a><a href="/anomaly-watch"><b>Anomaly Watch</b><span>A daily or monthly metric against its rolling average with a normal band, flagging the points that are unusually high or low.</span></a><a href="/pvm-bridge"><b>Price-Volume-Mix Bridge</b><span>Change in value split into volume, mix and rate effects.</span></a><a href="/dumbbell"><b>Dumbbell</b><span>Before and after for every item as two joined dots, coloured by whether it got better or worse.</span></a><a href="/monthly-bars"><b>Monthly Bars</b><span>A $ metric by month as bars, with a toggle between three metrics, 6-month average cards and a second metric as a line.</span></a><a href="/cost-vs-return"><b>Cost vs Return</b><span>Cost against return (units × value) by month: net return, ROI, cost per unit vs value per unit and a monthly table.</span></a><a href="/kpi-scorecard"><b>KPI Scorecard</b><span>Up to six metrics as cards with the latest value, change vs the previous month, a 3-month average or last year, and a sparkline; click one for its trend.</span></a><a href="/time-series-trio"><b>Time Series Trio</b><span>Three metrics, each on its own row: a scorecard for the latest 7/28/90 days or months against the period before, next to a chart of all the data over time.</span></a></div>
+<p class="small" data-guides>Guides: <a href="/which-chart">Which chart should I use?</a> · <a href="/microstrategy-custom-charts">Custom charts in MicroStrategy</a></p>
+<p class="small"><a href="/#charts">See all 94 charts →</a></p>
+
+<div class="byline">Made by <a href="https://kaijxnes.com" rel="author">Kai Jones</a> – data analyst building custom visuals for reporting. <a href="https://kaijxnes.com">See my CV</a></div>
+
+<script>
+(function () {
+  var s = document.createElement("script");
+  s.src = "charts/segment-change-finder-1.5.2.js";
+  s.integrity = "sha384-Mv3HlZ7rLf1WSrca8fMh2vEc0s7A2Xz4bIEe0FnAMrC35eOfSipT/ZLB5Y0Pzyeg";
+  s.crossOrigin = "anonymous";
+  document.head.appendChild(s);
+})();
+</script>
+
+</main>
+<footer><div class="in">
+  <span>HTML Charts v1.5.2, built and maintained by <a href="https://kaijxnes.com" rel="author me">Kai Jones</a>, data analyst, with the <a href="https://github.com/kaijxnes/HTML-Charts">source on GitHub</a>. Some charts use <a href="https://www.chartjs.org">Chart.js</a> 4.4.1 (MIT); the rest are drawn as plain SVG</span>
+  <span><a href="/about">About</a> · <a href="/platforms">Setup guide</a> · <a href="/guides">Guides</a> · <a href="/privacy">Privacy</a> · <button type="button" class="linkbtn" data-cookie-settings>Cookie settings</button> · <a href="llms.txt">llms.txt</a> · All values on this site are random placeholders.</span>
+</div></footer>
+<script src="assets/mock.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # HTML Charts – full reference
 
-> 94 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
+> 95 free charts for dashboards. Each reads a grid on the same page and redraws it – no API, no install, and no data leaves the browser.
 
 Author: Kai Jones, data analyst – https://kaijxnes.com · Source: https://github.com/kaijxnes/HTML-Charts · Site: https://viz.kaijxnes.com
 
@@ -1564,6 +1564,22 @@ Placeholder id: mtd-compare
 Columns:
 - Date (key month, required): A daily date (needs this month, last month and ideally the same month last year).
 - Metric 1 (key v1, required): The value.
+
+### Segment Change Finder
+
+A grid of small daily charts – one per combination of two dimensions – each coloured by how much it changed in the last 7 days, with the biggest fall called out and explained as fewer customers or lower spend per customer.
+
+When to use it: Use it for daily monitoring across products × segments, channels × regions or similar, when the question is 'what moved, and why?'
+
+Page: https://viz.kaijxnes.com/segment-change-finder
+Script: https://viz.kaijxnes.com/charts/segment-change-finder-1.5.2.js
+Placeholder id: segment-change-finder
+Columns:
+- Date (key month, required): A daily date (8 weeks or more is best).
+- Dimension A (key dimA, required): Rows of the grid (up to 6), e.g. product.
+- Dimension B (key dimB, required): Columns of the grid (up to 4), e.g. segment.
+- Metric 1 (key v1, required): The value, e.g. revenue.
+- Units (key units, optional): Customers or users per day – adds the per-customer view and the 'why'.
 
 ### Quadrant Scatter – 2 metrics
 

@@ -657,6 +657,13 @@
     for (var d = end; d >= start; d--) { var dm = new Date(d * 864e5).getUTCMonth(), dy = new Date(d * 864e5).getUTCFullYear(); if (!(dy === 2026 && dm >= 9) && !(dy === 2025 && dm === 10)) continue; var wd = (new Date(d * 864e5).getUTCDay() + 6) % 7, grow = 1 + (d - start) / 365 * 0.12; rows.push([ymd(d), money(3000 * f[wd] * grow * noise(0.15))]); }
     return { hd: hd, num: [1], rows: rows };
   };
+  GEN["segment-change-finder"] = function () {
+    var hd = ["Date", "Dimension A", "Dimension B", "Units", "Metric 1"], rows = [], end = Date.UTC(2026, 10, 23) / 864e5, A = ["A1", "A2", "A3", "A4"], B = ["B1", "B2"], wd = [0.9, 0.92, 0.95, 1, 1.08, 1.15, 1.05], p = {}, hit = A[RI(0, 3)] + B[RI(0, 1)];
+    A.forEach(function (a) { B.forEach(function (b) { p[a + b] = { u: R(300, 3000), v: R(6, 40) }; }); });
+    for (var d = end; d > end - 56; d--) { var w = wd[(new Date(d * 864e5).getUTCDay() + 6) % 7];
+      A.forEach(function (a) { B.forEach(function (b) { var q = p[a + b], u = q.u * w * R(0.94, 1.06), v = q.v * R(0.9, 1.1); if (a + b === hit && d > end - 7) v *= 0.75; rows.push([ymd(d), a, b, count(u), money(u * v)]); }); }); }
+    return { hd: hd, num: [3, 4], rows: rows };
+  };
   GEN["quadrant-scatter-plain"] = pick("quadrant-scatter", [0, 1, 2]);
   GEN["radar-compare-four"] = pick("radar-compare", [0, 1, 2, 3, 5], ["Dimension A", "Metric 1", "Metric 2", "Metric 3", "Metric 4"]);
 
