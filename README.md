@@ -113,6 +113,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.5.8** – **Segment Change Finder**: points on every date (hover for values, click to compare that day); fixes the same-day-last-week view.
 - **1.5.7** – **Segment Change Finder**: `data-read="model"` reads only MicroStrategy's data and never scrolls the grid; says which grids and headers it found if none match.
 - **1.5.6** – **Segment Change Finder** reads MicroStrategy grids from MicroStrategy's own data (all rows, no scrolling); wider row labels.
 - **1.5.5** – **Segment Change Finder**: day-on-day view (`data-period="dod"`), uses every date in the grid, mini charts use the full tile width.
