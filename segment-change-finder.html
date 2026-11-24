@@ -29,7 +29,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="alternate" type="text/plain" title="LLM summary" href="llms.txt">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Segment Change Finder – HTML container chart", "description": "A grid of small daily charts – one per combination of two dimensions – each coloured by how much it changed in the last 7 days, with the biggest fall called out and explained as fewer customers or lower spend per customer.", "url": "https://viz.kaijxnes.com/segment-change-finder", "image": "https://viz.kaijxnes.com/assets/thumbs/segment-change-finder.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://viz.kaijxnes.com/charts/segment-change-finder-1.5.10.js", "version": "1.5.2", "keywords": "Treemap, Share, 1 dimension, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-11-20", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://viz.kaijxnes.com"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Segment Change Finder – HTML container chart", "description": "A grid of small daily charts – one per combination of two dimensions – each coloured by how much it changed in the last 7 days, with the biggest fall called out and explained as fewer customers or lower spend per customer.", "url": "https://viz.kaijxnes.com/segment-change-finder", "image": "https://viz.kaijxnes.com/assets/thumbs/segment-change-finder.png", "programmingLanguage": "JavaScript", "runtimePlatform": "Web browser (Chart.js 4.4.1)", "codeRepository": "https://github.com/kaijxnes/HTML-Charts", "contentUrl": "https://viz.kaijxnes.com/charts/segment-change-finder-1.5.11.js", "version": "1.5.2", "keywords": "Treemap, Share, 1 dimension, Chart.js, HTML container, dashboard, custom visual", "author": {"@type": "Person", "name": "Kai Jones", "jobTitle": "Data Analyst", "url": "https://kaijxnes.com", "sameAs": ["https://github.com/kaijxnes"]}, "dateModified": "2026-11-20", "license": "https://github.com/kaijxnes/HTML-Charts", "isPartOf": {"@type": "WebSite", "name": "HTML Charts", "url": "https://viz.kaijxnes.com"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "HTML Charts", "item": "https://viz.kaijxnes.com"}, {"@type": "ListItem", "position": 2, "name": "Segment Change Finder", "item": "https://viz.kaijxnes.com/segment-change-finder"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What data does the Segment Change Finder need?", "acceptedAnswer": {"@type": "Answer", "text": "A grid on the same page with these columns: Date (required); Dimension A (required); Dimension B (required); Metric 1 (required); Units (optional). Your own header names can be mapped with data-columns."}}, {"@type": "Question", "name": "When should I use a segment change finder?", "acceptedAnswer": {"@type": "Answer", "text": "Use it for daily monitoring across products × segments, channels × regions or similar, when the question is 'what moved, and why?'"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to add a Segment Change Finder to a MicroStrategy or HTML dashboard", "description": "A segment change finder is a grid of small daily charts, one per combination of two dimensions such as product × segment, coloured by how much each changed in the last week – so the group that moved most stands out, along with whether it was fewer customers or lower spend per customer.", "totalTime": "PT5M", "image": "https://viz.kaijxnes.com/assets/thumbs/segment-change-finder.png", "step": [{"@type": "HowToStep", "position": 1, "name": "Add the grid", "text": "Add a grid with the columns this chart needs on the same dashboard page, and place it behind the chart."}, {"@type": "HowToStep", "position": 2, "name": "Paste the snippet", "text": "Add an HTML container that runs JavaScript and paste the snippet from this page. Map your own column names with data-columns if they differ."}, {"@type": "HowToStep", "position": 3, "name": "View the page", "text": "Open the dashboard: the chart finds the grid, reads every row and draws itself, updating when filters change."}]}</script>
@@ -77,15 +77,15 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://viz.kaijxnes.com/charts/segment-change-finder-1.5.10.js&quot;;
-  s.integrity = &quot;sha384-QjRfopjWMp6oUNyWL5j0GScF3TiuBA8e4aGaKba2rplq2MBME51uFPVbC9hsHW7N&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/segment-change-finder-1.5.11.js&quot;;
+  s.integrity = &quot;sha384-excLmvveaH7OC9I76R9a+f27mpmtYZk1xR+de7esU3GbjNBaP2+MeMnI58uE97TU&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
 &lt;/script&gt;</pre></div>
   <dl class="kv">
-    <dt>Script URL</dt><dd><a href="charts/segment-change-finder-1.5.10.js"><code>https://viz.kaijxnes.com/charts/segment-change-finder-1.5.10.js</code></a></dd>
-    <dt>Integrity (SRI)</dt><dd><code>sha384-QjRfopjWMp6oUNyWL5j0GScF3TiuBA8e4aGaKba2rplq2MBME51uFPVbC9hsHW7N</code></dd>
+    <dt>Script URL</dt><dd><a href="charts/segment-change-finder-1.5.11.js"><code>https://viz.kaijxnes.com/charts/segment-change-finder-1.5.11.js</code></a></dd>
+    <dt>Integrity (SRI)</dt><dd><code>sha384-excLmvveaH7OC9I76R9a+f27mpmtYZk1xR+de7esU3GbjNBaP2+MeMnI58uE97TU</code></dd>
   </dl>
   <div class="note">The integrity value pins this exact version: the browser refuses to run the script if a single byte changes. New versions get a new file name and a new snippet, so a dashboard only changes when you paste the new snippet.</div>
   <h3 style="margin-top:18px">Your own column names</h3>
@@ -94,8 +94,8 @@
 &lt;script&gt;
 (function () {
   var s = document.createElement(&quot;script&quot;);
-  s.src = &quot;https://viz.kaijxnes.com/charts/segment-change-finder-1.5.10.js&quot;;
-  s.integrity = &quot;sha384-QjRfopjWMp6oUNyWL5j0GScF3TiuBA8e4aGaKba2rplq2MBME51uFPVbC9hsHW7N&quot;;
+  s.src = &quot;https://viz.kaijxnes.com/charts/segment-change-finder-1.5.11.js&quot;;
+  s.integrity = &quot;sha384-excLmvveaH7OC9I76R9a+f27mpmtYZk1xR+de7esU3GbjNBaP2+MeMnI58uE97TU&quot;;
   s.crossOrigin = &quot;anonymous&quot;;
   document.head.appendChild(s);
 })();
@@ -123,8 +123,8 @@
 <script>
 (function () {
   var s = document.createElement("script");
-  s.src = "charts/segment-change-finder-1.5.10.js";
-  s.integrity = "sha384-QjRfopjWMp6oUNyWL5j0GScF3TiuBA8e4aGaKba2rplq2MBME51uFPVbC9hsHW7N";
+  s.src = "charts/segment-change-finder-1.5.11.js";
+  s.integrity = "sha384-excLmvveaH7OC9I76R9a+f27mpmtYZk1xR+de7esU3GbjNBaP2+MeMnI58uE97TU";
   s.crossOrigin = "anonymous";
   document.head.appendChild(s);
 })();
