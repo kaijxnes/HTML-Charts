@@ -670,7 +670,7 @@ When to use it: Use it when you want the Time Series Trio layout for more metric
 Questions it answers: How did each of six metrics move over the latest range? Which metrics are up and which are down? Where are the peaks across all of them?
 
 Page: https://viz.kaijxnes.com/time-series-stack
-Script: https://viz.kaijxnes.com/charts/time-series-stack-1.5.8.js
+Script: https://viz.kaijxnes.com/charts/time-series-stack-1.5.9.js
 Placeholder id: time-series-stack
 Columns:
 - Date (key date, required): A daily date or a month key.
@@ -1572,7 +1572,7 @@ A grid of small daily charts – one per combination of two dimensions – each 
 When to use it: Use it for daily monitoring across products × segments, channels × regions or similar, when the question is 'what moved, and why?'
 
 Page: https://viz.kaijxnes.com/segment-change-finder
-Script: https://viz.kaijxnes.com/charts/segment-change-finder-1.5.13.js
+Script: https://viz.kaijxnes.com/charts/segment-change-finder-1.5.14.js
 Placeholder id: segment-change-finder
 Columns:
 - Date (key month, required): A daily date (8 weeks or more is best).
