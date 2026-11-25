@@ -113,7 +113,7 @@ When to use it: Use it when you spend money each month to get units, and want to
 Questions it answers: What's our ROI and ROAS this period? Is cost per unit below value per unit? Which months lost money?
 
 Page: https://viz.kaijxnes.com/cost-vs-return
-Script: https://viz.kaijxnes.com/charts/cost-vs-return-1.5.14.js
+Script: https://viz.kaijxnes.com/charts/cost-vs-return-1.5.15.js
 Placeholder id: cost-vs-return
 Columns:
 - Month Key (key month, required): Month. Rows without one are left out.
@@ -803,7 +803,7 @@ When to use it: Use it when a grid compares cohorts on a value per unit – valu
 Questions it answers: Which combination of the two groupings is worth the most per unit? Is a group strong everywhere, or only in one column? Are the best-looking cohorts big enough to matter?
 
 Page: https://viz.kaijxnes.com/value-matrix
-Script: https://viz.kaijxnes.com/charts/value-matrix-1.5.14.js
+Script: https://viz.kaijxnes.com/charts/value-matrix-1.5.15.js
 Placeholder id: value-matrix
 Columns:
 - Dimension A (key dimA, required): Rows of the matrix.
