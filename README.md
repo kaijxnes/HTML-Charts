@@ -113,6 +113,7 @@ The website uses Google Analytics only after a visitor accepts (`assets/consent.
 
 Published files are never edited. A change means a new file (e.g. `monthly-bars-1.3.0.js`), a new SRI hash and a new snippet.
 
+- **1.5.13** – **Segment Change Finder** and **Time Series Stack** (1.5.8): wait until MicroStrategy has filled in every row's labels before drawing, and fall back to its element lists for labels.
 - **1.5.12** – **Segment Change Finder** and **Time Series Stack** (1.5.7): the grand-total comparison is a note, not a block – unique counts, averages and rates never add up to their total.
 - **1.5.11** – **Segment Change Finder** and **Time Series Stack** (1.5.6): recognise MicroStrategy grand-total rows with no label, so the total is never added to a date.
 - **1.5.10** – **Segment Change Finder** and **Time Series Stack** (1.5.5): in MicroStrategy, only draw once every row of the grid is loaded and – if the grid has a total row – the rows add up to it.
